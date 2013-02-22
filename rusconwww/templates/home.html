@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load cms_tags sekizai_tags %}
+{% load page_tags %}
+
+{% block widepromo %}
+<div class="widepromo">
+	<div class="container">
+		<div class="ship">
+			<img border="0" width="439" height="272" src="{{ STATIC_URL }}ruscon/images/ship.png" />
+		</div>
+		<div class="prom">
+			<p class="tit">
+				{% placeholder "bigpromo-title" %}
+			</p>
+			<p class="tex">
+				{% placeholder "bigpromo-text" %}
+			</p>
+		</div>
+	</div>
+</div>
+{% endblock widepromo %}
+
+{% block maincontent %}
+<div class="line">
+	&nbsp;
+</div>
+
+<div class="item">
+	{cms_part:submenu:1}
+
+</div>
+
+<div class="item">
+	{cms_part:submenu:2}
+</div>
+
+<div class="item">
+	{cms_part:submenu:3}
+</div>
+
+<div class="item">
+	{press_releases}
+</div>
+
+<div class="item">
+	{cms_part:submenu:25}
+</div>
+
+<div class="item">
+	{cms_part:submenu:39}
+	<!--{cms_part:submenu:6}-->
+</div>
+
+<div class="clear"></div>
+
+<div class="item" style="padding-left: 20px; padding-right: 20px; width: 96%;">
+	{last_news}
+</div>
+<div class="clear"></div>
+{% endblock maincontent %}

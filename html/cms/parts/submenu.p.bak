@@ -1,0 +1,79 @@
+﻿
+$MAIN:menu[^table::sql{select id, menu_title, menu_uri, visible, menu_parent_id from ${MAIN:sql_config.table_prefix}menu where menu_id = '1' and (menu_parent_id = '^MAIN:part_params.int(0)' or id = '^MAIN:part_params.int(0)') order by order_by ASC}]
+$menu_id[^MAIN:part_params.int(0)]
+
+^if(^MAIN:menu.locate[id;$menu_id]){
+
+<span class="title"><a href="^uri:get_uri_by_menu_id[${MAIN:menu.id}]">^MAIN:menu.menu_title.upper[]</a>  $menu_id </span>
+
+^if(-f "/files/menu/${menu_id}.jpg"){
+<img class="pic shadow radius8" src="/files/menu/${menu_id}.jpg" alt="$MAIN:menu.menu_title" title="$MAIN:menu.menu_title" />}
+
+$MAIN:submenu[^table::sql{select id, menu_id, menu_title, menu_uri, menu_parent_id, visible, module from ${MAIN:sql_config.table_prefix}menu where menu_parent_id = '${menu_id}' order by order_by ASC}]
+^if($MAIN:submenu){
+
+^if($MAIN:menu.menu_title eq "Клиентам" || $MAIN:menu.menu_title eq "E-Commerce"){
+^MAIN:submenu.menu{
+<a class="spo" href="^uri:get_uri_by_menu_id[${MAIN:submenu.id}]"><span>$MAIN:submenu.menu_title</span></a>
+}
+}{
+<p>
+^MAIN:submenu.menu{
+<a href="^uri:get_uri_by_menu_id[${MAIN:submenu.id}]">$MAIN:submenu.menu_title</a>
+}[ | ]
+</p>
+}
+
+}{
+	^if(^MAIN:part_params.int(0) eq "4"){
+
+	$table_name[${MAIN:sql_config.table_prefix}module_publications]
+	$f[^table::sql{select id, title, announce, body, published, updated from $table_name where menu_id = '4' order by published DESC}[$.limit(3) $.offset(0)]]
+
+	^if($f){
+
+		^f.menu{
+			<li style="list-style: none^; margin-bottom: 20px^;">
+
+
+				<b>$f.title</b>
+$rep_announce[^table::create{from	to
+<p>	
+</p>	}]
+				$announce[^untaint{$f.announce}]
+				$announce[^announce.replace[$rep_announce]]
+				<p>$announce<br /><a href="^uri:get_uri_by_menu_id[4]${f.id}.html">^if($MAIN:language_prefix eq "/en"){read more}{подробнее}...</a></p>
+
+		}
+
+
+	}
+
+	}
+}
+
+}
+
+
+
+
+^if($MAIN:menu.menu_title eq "Контакты" || $MAIN:menu.menu_title eq "Contacts"){
+#<span class="title">КОНТАКТЫ</span>
+#<img class="pic shadow radius8" src="{template}pics/pictures_38.jpg" />
+^if($MAIN:language_prefix eq "/en"){
+<p>18, Bumazhnaya str., 123105 St.Petersburg, Russia<br />
+Phone: +7 (812) 335-00-21<br />
+Fax: +7 (812) 335-00-21<br />
+E-mail: <a href="mailto:info@ruscon.gcs-group.ru">info@ruscon.gcs-group.ru</a><br />
+</p> 
+}{
+<p>Россия,<br/>
+123105, Санкт-Петербург<br/>
+ул. Бумажная, 18<br/>
+Телефон: +7 (812) 335-00-21<br/> 
+Телефон: +7 (812) 335-00-21 <br/><br/>
+Факс:       +7 (812) 335-00-21<br/> 
+E-mail:     <a href="mailto:info@ruscon.gcs-group.ru">info@ruscon.gcs-group.ru</a><br/>
+</p> 
+}
+}

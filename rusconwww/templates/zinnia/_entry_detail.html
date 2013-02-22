@@ -1,0 +1,63 @@
+{% extends "zinnia/_entry_detail_base.html" %}
+{% load i18n %}
+{% block entry-comments %}
+{% endblock entry-comments %}
+
+{% block entry-image %}
+{% if object.image %}
+{% load thumbnail %}
+{% thumbnail object.image "160x120" crop="center" as im %}
+<div class="entry-image">
+	<div>		
+		{% if continue_reading %}
+		 <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="lightbox[{{ object.pk }}]">
+			<img src="{{ im.url }}" alt="{{ object.title }}" class="left" /> 
+		</a>
+		{% else %}		
+		{% thumbnail object.image "800x600" as bim %}
+		{% thumbnail object.image "330x220" crop="center" as im %}
+		<a href="{{ bim.url }}" title="{{ object.title }}" rel="lightbox[{{ object.pk }}]">
+		<img src="{{ im.url }}" alt="{{ object.title }}" class="left" />
+		</a>
+		{% endthumbnail %}
+		{% endthumbnail %}
+		{% endif %}		
+	</div>
+</div>
+{% endthumbnail %}
+{% endif %}
+{% endblock %}
+
+{% block entry-info %}{% endblock entry-info %}
+
+{% block entry-last-update %}
+{% if object.start_publication  %}
+<p class="entry-last-update">
+	<abbr class="updated" title="{{ object.start_publication|date:"c" }}">{{ object.start_publication|date:"DATE_FORMAT" }}</abbr>
+</p>
+{% endif  %}
+{% endblock %}
+
+{% block entry-tags %}
+	{% if object.tags_list %}
+    <p class="entry-tags">
+      <strong>{% trans "Tags" %}</strong> :
+      {% for tag in object.tags_list %}
+      <a href="{% url 'zinnia_tag_detail' tag %}"
+         title="{% blocktrans %}Show all entries tagged by {{ tag }}{% endblocktrans %}"
+         rel="tag">{{ tag }}</a>      
+      {% endfor %}
+    </p>
+    {% endif %}
+{% endblock %}
+
+{% block entry-shorturl %}
+{% endblock entry-shorturl %}
+
+{% block entry-content %}
+<div class="entry-content">
+	<p>
+	{{ object_content }}
+	</p>
+</div>
+{% endblock %}

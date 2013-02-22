@@ -1,0 +1,1 @@
+﻿content^if(^request:uri.left(7) eq "/order/" && def $MAIN:user){_}
