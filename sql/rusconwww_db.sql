@@ -736,6 +736,53 @@ CREATE TABLE cmsplugin_calendarentriesplugin (
 ALTER TABLE public.cmsplugin_calendarentriesplugin OWNER TO django_login;
 
 --
+-- Name: cmsplugin_contact; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE cmsplugin_contact (
+    cmsplugin_ptr_id integer NOT NULL,
+    site_email character varying(75) NOT NULL,
+    email_label character varying(100) NOT NULL,
+    subject_label character varying(200) NOT NULL,
+    content_label character varying(100) NOT NULL,
+    thanks text NOT NULL,
+    submit character varying(30) NOT NULL,
+    spam_protection_method smallint NOT NULL,
+    akismet_api_key character varying(255) NOT NULL,
+    recaptcha_public_key character varying(255) NOT NULL,
+    recaptcha_private_key character varying(255) NOT NULL,
+    recaptcha_theme character varying(20) NOT NULL
+);
+
+
+ALTER TABLE public.cmsplugin_contact OWNER TO postgres;
+
+--
+-- Name: cmsplugin_customcontact; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE cmsplugin_customcontact (
+    cmsplugin_ptr_id integer NOT NULL,
+    site_email character varying(75) NOT NULL,
+    email_label character varying(100) NOT NULL,
+    subject_label character varying(200) NOT NULL,
+    content_label character varying(100) NOT NULL,
+    thanks text NOT NULL,
+    submit character varying(30) NOT NULL,
+    spam_protection_method smallint NOT NULL,
+    akismet_api_key character varying(255) NOT NULL,
+    recaptcha_public_key character varying(255) NOT NULL,
+    recaptcha_private_key character varying(255) NOT NULL,
+    recaptcha_theme character varying(20) NOT NULL,
+    name_label character varying(100) NOT NULL,
+    phone_label character varying(30) NOT NULL,
+    town_label character varying(30) NOT NULL
+);
+
+
+ALTER TABLE public.cmsplugin_customcontact OWNER TO postgres;
+
+--
 -- Name: cmsplugin_file; Type: TABLE; Schema: public; Owner: django_login; Tablespace: 
 --
 
@@ -747,6 +794,88 @@ CREATE TABLE cmsplugin_file (
 
 
 ALTER TABLE public.cmsplugin_file OWNER TO django_login;
+
+--
+-- Name: cmsplugin_filer_image_thumbnailoption; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE cmsplugin_filer_image_thumbnailoption (
+    id integer NOT NULL,
+    name character varying(100) NOT NULL,
+    width integer NOT NULL,
+    height integer NOT NULL,
+    crop boolean NOT NULL,
+    upscale boolean NOT NULL
+);
+
+
+ALTER TABLE public.cmsplugin_filer_image_thumbnailoption OWNER TO postgres;
+
+--
+-- Name: cmsplugin_filer_image_thumbnailoption_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE cmsplugin_filer_image_thumbnailoption_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.cmsplugin_filer_image_thumbnailoption_id_seq OWNER TO postgres;
+
+--
+-- Name: cmsplugin_filer_image_thumbnailoption_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE cmsplugin_filer_image_thumbnailoption_id_seq OWNED BY cmsplugin_filer_image_thumbnailoption.id;
+
+
+--
+-- Name: cmsplugin_filerfolder; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE cmsplugin_filerfolder (
+    cmsplugin_ptr_id integer NOT NULL,
+    title character varying(255),
+    view_option character varying(10) NOT NULL,
+    folder_id integer NOT NULL
+);
+
+
+ALTER TABLE public.cmsplugin_filerfolder OWNER TO postgres;
+
+--
+-- Name: cmsplugin_filerimage; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE cmsplugin_filerimage (
+    cmsplugin_ptr_id integer NOT NULL,
+    image_id integer,
+    alt_text character varying(255),
+    caption_text character varying(255),
+    use_autoscale boolean NOT NULL,
+    width integer,
+    height integer,
+    alignment character varying(10),
+    free_link character varying(255),
+    page_link_id integer,
+    description text,
+    image_url character varying(200),
+    thumbnail_option_id integer,
+    crop boolean NOT NULL,
+    upscale boolean NOT NULL,
+    original_link boolean NOT NULL,
+    file_link_id integer,
+    use_original_image boolean NOT NULL,
+    target_blank boolean NOT NULL,
+    CONSTRAINT cmsplugin_filerimage_height_check CHECK ((height >= 0)),
+    CONSTRAINT cmsplugin_filerimage_width_check CHECK ((width >= 0))
+);
+
+
+ALTER TABLE public.cmsplugin_filerimage OWNER TO postgres;
 
 --
 -- Name: cmsplugin_googlemap; Type: TABLE; Schema: public; Owner: django_login; Tablespace: 
@@ -869,6 +998,22 @@ CREATE TABLE cmsplugin_snippetptr (
 
 
 ALTER TABLE public.cmsplugin_snippetptr OWNER TO django_login;
+
+--
+-- Name: cmsplugin_teaser; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE cmsplugin_teaser (
+    cmsplugin_ptr_id integer NOT NULL,
+    title character varying(255) NOT NULL,
+    image character varying(100),
+    page_link_id integer,
+    url character varying(255),
+    description text
+);
+
+
+ALTER TABLE public.cmsplugin_teaser OWNER TO postgres;
 
 --
 -- Name: cmsplugin_text; Type: TABLE; Schema: public; Owner: django_login; Tablespace: 
@@ -1219,6 +1364,295 @@ ALTER TABLE public.django_site_id_seq OWNER TO django_login;
 
 ALTER SEQUENCE django_site_id_seq OWNED BY django_site.id;
 
+
+--
+-- Name: easy_thumbnails_source; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE easy_thumbnails_source (
+    id integer NOT NULL,
+    name character varying(255) NOT NULL,
+    modified timestamp with time zone NOT NULL,
+    storage_hash character varying(40) NOT NULL
+);
+
+
+ALTER TABLE public.easy_thumbnails_source OWNER TO postgres;
+
+--
+-- Name: easy_thumbnails_source_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE easy_thumbnails_source_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.easy_thumbnails_source_id_seq OWNER TO postgres;
+
+--
+-- Name: easy_thumbnails_source_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE easy_thumbnails_source_id_seq OWNED BY easy_thumbnails_source.id;
+
+
+--
+-- Name: easy_thumbnails_thumbnail; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE easy_thumbnails_thumbnail (
+    id integer NOT NULL,
+    name character varying(255) NOT NULL,
+    modified timestamp with time zone NOT NULL,
+    source_id integer NOT NULL,
+    storage_hash character varying(40) NOT NULL
+);
+
+
+ALTER TABLE public.easy_thumbnails_thumbnail OWNER TO postgres;
+
+--
+-- Name: easy_thumbnails_thumbnail_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE easy_thumbnails_thumbnail_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.easy_thumbnails_thumbnail_id_seq OWNER TO postgres;
+
+--
+-- Name: easy_thumbnails_thumbnail_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE easy_thumbnails_thumbnail_id_seq OWNED BY easy_thumbnails_thumbnail.id;
+
+
+--
+-- Name: filer_clipboard; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE filer_clipboard (
+    id integer NOT NULL,
+    user_id integer NOT NULL
+);
+
+
+ALTER TABLE public.filer_clipboard OWNER TO postgres;
+
+--
+-- Name: filer_clipboard_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE filer_clipboard_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.filer_clipboard_id_seq OWNER TO postgres;
+
+--
+-- Name: filer_clipboard_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE filer_clipboard_id_seq OWNED BY filer_clipboard.id;
+
+
+--
+-- Name: filer_clipboarditem; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE filer_clipboarditem (
+    id integer NOT NULL,
+    file_id integer NOT NULL,
+    clipboard_id integer NOT NULL
+);
+
+
+ALTER TABLE public.filer_clipboarditem OWNER TO postgres;
+
+--
+-- Name: filer_clipboarditem_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE filer_clipboarditem_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.filer_clipboarditem_id_seq OWNER TO postgres;
+
+--
+-- Name: filer_clipboarditem_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE filer_clipboarditem_id_seq OWNED BY filer_clipboarditem.id;
+
+
+--
+-- Name: filer_file; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE filer_file (
+    id integer NOT NULL,
+    folder_id integer,
+    file character varying(255),
+    _file_size integer,
+    has_all_mandatory_data boolean NOT NULL,
+    original_filename character varying(255),
+    name character varying(255) NOT NULL,
+    owner_id integer,
+    uploaded_at timestamp with time zone NOT NULL,
+    modified_at timestamp with time zone NOT NULL,
+    description text,
+    is_public boolean NOT NULL,
+    sha1 character varying(40) NOT NULL,
+    polymorphic_ctype_id integer
+);
+
+
+ALTER TABLE public.filer_file OWNER TO postgres;
+
+--
+-- Name: filer_file_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE filer_file_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.filer_file_id_seq OWNER TO postgres;
+
+--
+-- Name: filer_file_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE filer_file_id_seq OWNED BY filer_file.id;
+
+
+--
+-- Name: filer_folder; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE filer_folder (
+    id integer NOT NULL,
+    parent_id integer,
+    name character varying(255) NOT NULL,
+    owner_id integer,
+    uploaded_at timestamp with time zone NOT NULL,
+    created_at timestamp with time zone NOT NULL,
+    modified_at timestamp with time zone NOT NULL,
+    lft integer NOT NULL,
+    rght integer NOT NULL,
+    tree_id integer NOT NULL,
+    level integer NOT NULL,
+    CONSTRAINT filer_folder_level_check CHECK ((level >= 0)),
+    CONSTRAINT filer_folder_lft_check CHECK ((lft >= 0)),
+    CONSTRAINT filer_folder_rght_check CHECK ((rght >= 0)),
+    CONSTRAINT filer_folder_tree_id_check CHECK ((tree_id >= 0))
+);
+
+
+ALTER TABLE public.filer_folder OWNER TO postgres;
+
+--
+-- Name: filer_folder_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE filer_folder_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.filer_folder_id_seq OWNER TO postgres;
+
+--
+-- Name: filer_folder_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE filer_folder_id_seq OWNED BY filer_folder.id;
+
+
+--
+-- Name: filer_folderpermission; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE filer_folderpermission (
+    id integer NOT NULL,
+    folder_id integer,
+    type smallint NOT NULL,
+    user_id integer,
+    group_id integer,
+    everybody boolean NOT NULL,
+    can_edit smallint,
+    can_read smallint,
+    can_add_children smallint
+);
+
+
+ALTER TABLE public.filer_folderpermission OWNER TO postgres;
+
+--
+-- Name: filer_folderpermission_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE filer_folderpermission_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.filer_folderpermission_id_seq OWNER TO postgres;
+
+--
+-- Name: filer_folderpermission_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE filer_folderpermission_id_seq OWNED BY filer_folderpermission.id;
+
+
+--
+-- Name: filer_image; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE filer_image (
+    file_ptr_id integer NOT NULL,
+    _height integer,
+    _width integer,
+    date_taken timestamp with time zone,
+    default_alt_text character varying(255),
+    default_caption character varying(255),
+    author character varying(255),
+    must_always_publish_author_credit boolean NOT NULL,
+    must_always_publish_copyright boolean NOT NULL,
+    subject_location character varying(64)
+);
+
+
+ALTER TABLE public.filer_image OWNER TO postgres;
 
 --
 -- Name: menus_cachekey; Type: TABLE; Schema: public; Owner: django_login; Tablespace: 
@@ -1775,6 +2209,13 @@ ALTER TABLE ONLY cms_title ALTER COLUMN id SET DEFAULT nextval('cms_title_id_seq
 
 
 --
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY cmsplugin_filer_image_thumbnailoption ALTER COLUMN id SET DEFAULT nextval('cmsplugin_filer_image_thumbnailoption_id_seq'::regclass);
+
+
+--
 -- Name: id; Type: DEFAULT; Schema: public; Owner: django_login
 --
 
@@ -1835,6 +2276,55 @@ ALTER TABLE ONLY django_content_type ALTER COLUMN id SET DEFAULT nextval('django
 --
 
 ALTER TABLE ONLY django_site ALTER COLUMN id SET DEFAULT nextval('django_site_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY easy_thumbnails_source ALTER COLUMN id SET DEFAULT nextval('easy_thumbnails_source_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY easy_thumbnails_thumbnail ALTER COLUMN id SET DEFAULT nextval('easy_thumbnails_thumbnail_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY filer_clipboard ALTER COLUMN id SET DEFAULT nextval('filer_clipboard_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY filer_clipboarditem ALTER COLUMN id SET DEFAULT nextval('filer_clipboarditem_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY filer_file ALTER COLUMN id SET DEFAULT nextval('filer_file_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY filer_folder ALTER COLUMN id SET DEFAULT nextval('filer_folder_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY filer_folderpermission ALTER COLUMN id SET DEFAULT nextval('filer_folderpermission_id_seq'::regclass);
 
 
 --
@@ -2074,6 +2564,49 @@ COPY auth_permission (id, name, content_type_id, codename) FROM stdin;
 123	Can add kv store	40	add_kvstore
 124	Can change kv store	40	change_kvstore
 125	Can delete kv store	40	delete_kvstore
+126	Can add contact	41	add_contact
+127	Can change contact	41	change_contact
+128	Can delete contact	41	delete_contact
+129	Can add source	42	add_source
+130	Can change source	42	change_source
+131	Can delete source	42	delete_source
+132	Can add thumbnail	43	add_thumbnail
+133	Can change thumbnail	43	change_thumbnail
+134	Can delete thumbnail	43	delete_thumbnail
+135	Can add custom contact	44	add_customcontact
+136	Can change custom contact	44	change_customcontact
+137	Can delete custom contact	44	delete_customcontact
+138	Can add Folder	45	add_folder
+139	Can change Folder	45	change_folder
+140	Can delete Folder	45	delete_folder
+141	Can use directory listing	45	can_use_directory_listing
+142	Can add folder permission	46	add_folderpermission
+143	Can change folder permission	46	change_folderpermission
+144	Can delete folder permission	46	delete_folderpermission
+145	Can add file	47	add_file
+146	Can change file	47	change_file
+147	Can delete file	47	delete_file
+148	Can add clipboard	48	add_clipboard
+149	Can change clipboard	48	change_clipboard
+150	Can delete clipboard	48	delete_clipboard
+151	Can add clipboard item	49	add_clipboarditem
+152	Can change clipboard item	49	change_clipboarditem
+153	Can delete clipboard item	49	delete_clipboarditem
+154	Can add image	50	add_image
+155	Can change image	50	change_image
+156	Can delete image	50	delete_image
+157	Can add filer folder	51	add_filerfolder
+158	Can change filer folder	51	change_filerfolder
+159	Can delete filer folder	51	delete_filerfolder
+160	Can add filer image	52	add_filerimage
+161	Can change filer image	52	change_filerimage
+162	Can delete filer image	52	delete_filerimage
+163	Can add thumbnail option	53	add_thumbnailoption
+164	Can change thumbnail option	53	change_thumbnailoption
+165	Can delete thumbnail option	53	delete_thumbnailoption
+166	Can add teaser	54	add_teaser
+167	Can change teaser	54	change_teaser
+168	Can delete teaser	54	delete_teaser
 \.
 
 
@@ -2081,7 +2614,7 @@ COPY auth_permission (id, name, content_type_id, codename) FROM stdin;
 -- Name: auth_permission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: django_login
 --
 
-SELECT pg_catalog.setval('auth_permission_id_seq', 125, true);
+SELECT pg_catalog.setval('auth_permission_id_seq', 168, true);
 
 
 --
@@ -2089,7 +2622,7 @@ SELECT pg_catalog.setval('auth_permission_id_seq', 125, true);
 --
 
 COPY auth_user (id, username, first_name, last_name, email, password, is_staff, is_active, is_superuser, last_login, date_joined) FROM stdin;
-1	picasso	Павел	Саввин	it-support2@ruscon.gcs-group.ru	pbkdf2_sha256$10000$Vc4m0P0zmaeh$K7KjNdnSmJBQbBvLCQDCCEYbzjm39PpFhN+nVZ8gOQk=	t	t	t	2013-02-14 16:50:12+04	2013-02-11 08:59:46+04
+1	picasso	Павел	Саввин	it-support2@ruscon.gcs-group.ru	pbkdf2_sha256$10000$Vc4m0P0zmaeh$K7KjNdnSmJBQbBvLCQDCCEYbzjm39PpFhN+nVZ8gOQk=	t	t	t	2013-02-23 19:14:59.878944+04	2013-02-11 08:59:46+04
 \.
 
 
@@ -2157,6 +2690,12 @@ COPY cms_cmsplugin (id, placeholder_id, parent_id, "position", language, plugin_
 24	20	\N	0	en	TextPlugin	2013-02-22 12:08:46.127465+04	2013-02-22 13:19:10.896182+04	0	1	2	20
 26	21	\N	0	ru	TextPlugin	2013-02-22 13:26:48.279664+04	2013-02-22 13:27:52.336099+04	0	1	2	21
 27	21	\N	0	en	TextPlugin	2013-02-22 13:26:48.279664+04	2013-02-22 13:31:54.437749+04	0	1	2	22
+34	25	\N	0	ru	TextPlugin	2013-02-23 23:32:32.235755+04	2013-02-23 23:34:55.671876+04	0	1	2	29
+32	25	\N	0	en	TextPlugin	2013-02-23 23:32:32.235755+04	2013-02-23 23:35:18.308068+04	0	1	2	27
+36	25	\N	2	ru	CustomContactPlugin	2013-02-24 12:58:50.856891+04	2013-02-24 13:24:37.03875+04	0	1	2	30
+37	25	\N	1	en	CustomContactPlugin	2013-02-24 14:18:34.279943+04	2013-02-24 14:19:21.020444+04	0	1	2	31
+41	29	\N	2	ru	FilerImagePlugin	2013-02-24 19:25:44.657816+04	2013-02-24 22:01:48.323795+04	0	1	2	34
+43	31	\N	1	ru	FilerGalleryPlugin	2013-02-24 22:17:51.709368+04	2013-02-24 22:23:11.769689+04	0	1	2	36
 \.
 
 
@@ -2164,7 +2703,7 @@ COPY cms_cmsplugin (id, placeholder_id, parent_id, "position", language, plugin_
 -- Name: cms_cmsplugin_id_seq; Type: SEQUENCE SET; Schema: public; Owner: django_login
 --
 
-SELECT pg_catalog.setval('cms_cmsplugin_id_seq', 29, true);
+SELECT pg_catalog.setval('cms_cmsplugin_id_seq', 44, true);
 
 
 --
@@ -2223,12 +2762,15 @@ SELECT pg_catalog.setval('cms_helper_clocktown_id_seq', 7, true);
 --
 
 COPY cms_page (id, created_by, changed_by, parent_id, creation_date, changed_date, publication_date, publication_end_date, in_navigation, soft_root, reverse_id, navigation_extenders, published, template, site_id, moderator_state, level, lft, rght, tree_id, login_required, limit_visibility_in_menu, publisher_is_draft, publisher_public_id, publisher_state) FROM stdin;
-8	picasso	picasso	2	2013-02-21 13:07:27.706385+04	2013-02-21 13:24:57.70644+04	2013-02-21 13:10:03.275317+04	\N	t	f	\N		t	INHERIT	1	0	1	4	5	2	f	\N	t	\N	1
 3	picasso	picasso	\N	2013-02-15 11:42:24.135752+04	2013-02-22 08:47:00.19695+04	\N	\N	t	f	global_placeholder		f	global_placeholder.html	1	0	0	1	2	3	f	\N	t	\N	1
 1	picasso	picasso	\N	2013-02-11 09:28:39.70025+04	2013-02-22 12:04:50.849583+04	2013-02-11 09:32:25.525471+04	\N	t	f	\N		t	home.html	1	0	0	1	2	1	f	\N	t	\N	1
-2	picasso	picasso	\N	2013-02-12 11:34:09.471682+04	2013-02-22 13:31:56.176656+04	2013-02-12 11:34:24.973068+04	\N	t	f	company		t	page.html	1	0	0	1	6	2	f	\N	t	\N	1
-7	picasso	picasso	2	2013-02-21 12:29:49.894086+04	2013-02-22 14:15:19.443784+04	2013-02-21 12:30:05.301344+04	\N	t	f	\N		t	INHERIT	1	0	1	2	3	2	f	\N	t	\N	1
 4	picasso	picasso	\N	2013-02-20 12:08:38.401493+04	2013-02-21 12:24:56.197502+04	2013-02-20 12:20:50.227565+04	\N	f	f	zinnia		f	base.html	1	0	0	1	2	4	f	\N	t	\N	1
+9	picasso	picasso	\N	2013-02-23 22:41:19.300663+04	2013-02-24 00:38:25.658768+04	2013-02-23 22:42:40.341665+04	\N	t	f	feedback		t	page.html	1	0	0	1	2	5	f	\N	t	\N	1
+7	picasso	picasso	2	2013-02-21 12:29:49.894086+04	2013-02-22 14:15:19.443784+04	2013-02-21 12:30:05.301344+04	\N	t	f	\N		t	INHERIT	1	0	1	2	3	2	f	\N	t	\N	1
+8	picasso	picasso	2	2013-02-21 13:07:27.706385+04	2013-02-24 15:09:36.449673+04	2013-02-21 13:10:03.275317+04	\N	t	f	\N		t	INHERIT	1	0	1	4	5	2	f	\N	t	\N	1
+2	picasso	picasso	\N	2013-02-12 11:34:09.471682+04	2013-02-22 13:31:56.176656+04	2013-02-12 11:34:24.973068+04	\N	t	f	company		t	page.html	1	0	0	1	10	2	f	\N	t	\N	1
+10	picasso	picasso	2	2013-02-24 17:08:22.593049+04	2013-02-24 21:52:54.949378+04	2013-02-24 17:10:51.798718+04	\N	t	f	\N		t	INHERIT	1	0	1	6	9	2	f	\N	t	\N	1
+11	picasso	picasso	10	2013-02-24 22:00:28.667304+04	2013-02-24 23:05:19.306493+04	2013-02-24 22:00:51.491762+04	\N	f	f	\N		t	INHERIT	1	0	2	7	8	2	f	\N	t	\N	1
 \.
 
 
@@ -2236,7 +2778,7 @@ COPY cms_page (id, created_by, changed_by, parent_id, creation_date, changed_dat
 -- Name: cms_page_id_seq; Type: SEQUENCE SET; Schema: public; Owner: django_login
 --
 
-SELECT pg_catalog.setval('cms_page_id_seq', 8, true);
+SELECT pg_catalog.setval('cms_page_id_seq', 11, true);
 
 
 --
@@ -2262,6 +2804,14 @@ COPY cms_page_placeholders (id, page_id, placeholder_id) FROM stdin;
 21	2	21
 22	7	22
 23	7	23
+24	9	24
+25	9	25
+26	8	26
+27	8	27
+28	10	28
+29	10	29
+30	11	30
+31	11	31
 \.
 
 
@@ -2269,7 +2819,7 @@ COPY cms_page_placeholders (id, page_id, placeholder_id) FROM stdin;
 -- Name: cms_page_placeholders_id_seq; Type: SEQUENCE SET; Schema: public; Owner: django_login
 --
 
-SELECT pg_catalog.setval('cms_page_placeholders_id_seq', 23, true);
+SELECT pg_catalog.setval('cms_page_placeholders_id_seq', 31, true);
 
 
 --
@@ -2356,6 +2906,14 @@ COPY cms_placeholder (id, slot, default_width) FROM stdin;
 21	page-content	\N
 22	bigpromo-title	\N
 23	page-content	\N
+24	bigpromo-title	\N
+25	page-content	\N
+26	bigpromo-title	\N
+27	page-content	\N
+28	bigpromo-title	\N
+29	page-content	\N
+30	bigpromo-title	\N
+31	page-content	\N
 \.
 
 
@@ -2363,7 +2921,7 @@ COPY cms_placeholder (id, slot, default_width) FROM stdin;
 -- Name: cms_placeholder_id_seq; Type: SEQUENCE SET; Schema: public; Owner: django_login
 --
 
-SELECT pg_catalog.setval('cms_placeholder_id_seq', 23, true);
+SELECT pg_catalog.setval('cms_placeholder_id_seq', 31, true);
 
 
 --
@@ -2371,8 +2929,6 @@ SELECT pg_catalog.setval('cms_placeholder_id_seq', 23, true);
 --
 
 COPY cms_title (id, language, title, menu_title, slug, path, has_url_overwrite, application_urls, redirect, meta_description, meta_keywords, page_title, page_id, creation_date) FROM stdin;
-13	ru	Редирект		redirekt	zinnia/categories/press-releases	t						8	2013-02-21 13:07:27.7157+04
-14	en	Redirect		redirect	company/redirect	f		/zinnia/categories/press-releases				8	2013-02-21 13:09:27.786581+04
 4	en	Company		company	company	f						2	2013-02-12 12:21:31.564438+04
 12	ru	История		history	company/history	f						7	2013-02-21 12:29:49.904681+04
 15	en	History		history	company/history	f	\N	\N				7	2013-02-22 14:15:19.460375+04
@@ -2383,6 +2939,12 @@ COPY cms_title (id, language, title, menu_title, slug, path, has_url_overwrite, 
 6	en	Global Placeholder		base	base	f						3	2013-02-15 11:43:09.520358+04
 7	ru	Zinnia		zinnia	zinnia	f	ZinniaApphook					4	2013-02-20 12:08:38.62098+04
 8	en	Zinnia		zinnia	zinnia	f	ZinniaApphook					4	2013-02-20 12:28:21.347387+04
+17	en	Feedback		feedback	feedback	f						9	2013-02-23 22:42:14.56851+04
+16	ru	Обратная связь		feedback	feedback	f						9	2013-02-23 22:41:19.333124+04
+13	ru	Пресс-релизы		press	zinnia/categories/press-releases	t		/zinnia/categories/press-releases				8	2013-02-21 13:07:27.7157+04
+14	en	Press-Releases		press	zinnia/categories/press-releases	t		/zinnia/categories/press-releases				8	2013-02-21 13:09:27.786581+04
+18	ru	Фотогалерея		gallery	company/gallery	f						10	2013-02-24 17:08:22.629059+04
+19	ru	Припортовый терминал Новороссийск		terminal	company/gallery/terminal	f						11	2013-02-24 22:00:28.70162+04
 \.
 
 
@@ -2390,7 +2952,7 @@ COPY cms_title (id, language, title, menu_title, slug, path, has_url_overwrite, 
 -- Name: cms_title_id_seq; Type: SEQUENCE SET; Schema: public; Owner: django_login
 --
 
-SELECT pg_catalog.setval('cms_title_id_seq', 15, true);
+SELECT pg_catalog.setval('cms_title_id_seq', 19, true);
 
 
 --
@@ -2402,10 +2964,61 @@ COPY cmsplugin_calendarentriesplugin (cmsplugin_ptr_id, year, month) FROM stdin;
 
 
 --
+-- Data for Name: cmsplugin_contact; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY cmsplugin_contact (cmsplugin_ptr_id, site_email, email_label, subject_label, content_label, thanks, submit, spam_protection_method, akismet_api_key, recaptcha_public_key, recaptcha_private_key, recaptcha_theme) FROM stdin;
+\.
+
+
+--
+-- Data for Name: cmsplugin_customcontact; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY cmsplugin_customcontact (cmsplugin_ptr_id, site_email, email_label, subject_label, content_label, thanks, submit, spam_protection_method, akismet_api_key, recaptcha_public_key, recaptcha_private_key, recaptcha_theme, name_label, phone_label, town_label) FROM stdin;
+36	picasso75@yandex.ru	Еmail *	Тема	Вопрос *	<p>Спасибо за вопрос!</p>	Отправить	0				clean	Ваше имя *	Телефон	Город
+37	picasso75@yandex.ru	Email *	Subject *	Question *	<p>Thank you!</p>	Submit	0				clean	Your name *	Phone	Town
+\.
+
+
+--
 -- Data for Name: cmsplugin_file; Type: TABLE DATA; Schema: public; Owner: django_login
 --
 
 COPY cmsplugin_file (cmsplugin_ptr_id, file, title) FROM stdin;
+\.
+
+
+--
+-- Data for Name: cmsplugin_filer_image_thumbnailoption; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY cmsplugin_filer_image_thumbnailoption (id, name, width, height, crop, upscale) FROM stdin;
+\.
+
+
+--
+-- Name: cmsplugin_filer_image_thumbnailoption_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('cmsplugin_filer_image_thumbnailoption_id_seq', 1, false);
+
+
+--
+-- Data for Name: cmsplugin_filerfolder; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY cmsplugin_filerfolder (cmsplugin_ptr_id, title, view_option, folder_id) FROM stdin;
+43	Припортовый терминал Новороссийск	list	2
+\.
+
+
+--
+-- Data for Name: cmsplugin_filerimage; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY cmsplugin_filerimage (cmsplugin_ptr_id, image_id, alt_text, caption_text, use_autoscale, width, height, alignment, free_link, page_link_id, description, image_url, thumbnail_option_id, crop, upscale, original_link, file_link_id, use_original_image, target_blank) FROM stdin;
+41	2		Припортовый терминал Новороссийск	f	100	70	\N		11			\N	t	t	f	\N	f	f
 \.
 
 
@@ -2479,6 +3092,14 @@ COPY cmsplugin_snippetptr (cmsplugin_ptr_id, snippet_id) FROM stdin;
 
 
 --
+-- Data for Name: cmsplugin_teaser; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY cmsplugin_teaser (cmsplugin_ptr_id, title, image, page_link_id, url, description) FROM stdin;
+\.
+
+
+--
 -- Data for Name: cmsplugin_text; Type: TABLE DATA; Schema: public; Owner: django_login
 --
 
@@ -2499,6 +3120,8 @@ COPY cmsplugin_text (cmsplugin_ptr_id, body) FROM stdin;
 23	<p>Международные</p><p>контейнерные</p><p>перевозки</p>
 24	<p>Container Shipping</p><p>in Russia and world-wide</p>
 26	<p>\nРускон оказывает услуги по международной доставке грузов в контейнерах через порты России.</p>\n<p>\nОпираясь на высококвалифицированный персонал и собственные транспортные активы в крупнейших российский портах и регионах, мы предлагаем логистические решения, полностью адаптированные нуждам наших клиентов. Рускон является одним из признанных лидеров в сфере логистики, перевалки, хранения и таможенного оформления контейнерных грузов в России и СНГ.</p>
+32	
+34	<p>Нам очень важно Ваше мнение о нашей компании и предлагаемых ей услугах. Оставьте Ваши отклики и предложения в окне внизу – мы обязательно учтем их в нашей работе!</p>
 \.
 
 
@@ -2689,6 +3312,28 @@ COPY django_admin_log (id, action_time, user_id, content_type_id, object_id, obj
 120	2013-02-22 14:13:45.836691+04	1	10	7	История	2	Изменен moderator_state.
 121	2013-02-22 14:15:19.471234+04	1	10	7	История	2	Изменен title,slug,language и moderator_state.
 122	2013-02-22 14:26:53.420614+04	1	31	3	Хохо: опубликован	3	
+123	2013-02-23 22:41:19.35412+04	1	10	9	Обратная связь	1	
+124	2013-02-23 22:42:14.587903+04	1	10	9	Обратная связь	2	Изменен title,slug,language и moderator_state.
+125	2013-02-23 22:42:20.537241+04	1	10	9	Обратная связь	2	Изменен slug и moderator_state.
+126	2013-02-23 23:32:56.787566+04	1	10	9	Feedback	2	Изменен language и moderator_state.
+127	2013-02-24 00:38:25.689256+04	1	10	9	Обратная связь	2	Изменен reverse_id и moderator_state.
+128	2013-02-24 11:21:27.919232+04	1	31	2	ГКС/Рускон запустил регулярный контейнерный поезд между портом Усть-Луга и Нижним Новгородом для General Motors Korea: опубликован	2	Изменен image.
+129	2013-02-24 14:22:05.493239+04	1	10	8	Редирект	2	Изменен title,slug и moderator_state.
+130	2013-02-24 14:22:16.304998+04	1	10	8	Redirect	2	Изменен title,slug,language и moderator_state.
+131	2013-02-24 15:01:18.253842+04	1	10	8	Пресс-релизы	2	Изменен overwrite_url,redirect и moderator_state.
+132	2013-02-24 15:01:34.932197+04	1	10	8	Press-Releases	2	Изменен language и moderator_state.
+133	2013-02-24 15:02:32.757965+04	1	10	8	Пресс-релизы	2	Изменен redirect и moderator_state.
+134	2013-02-24 15:09:05.836518+04	1	10	8	Пресс-релизы	2	Изменен overwrite_url и moderator_state.
+135	2013-02-24 15:09:36.487727+04	1	10	8	Press-Releases	2	Изменен overwrite_url,language и moderator_state.
+136	2013-02-24 17:08:22.643323+04	1	10	10	Фотогалерея	1	
+137	2013-02-24 17:10:27.093003+04	1	10	10	Фотогалерея	2	Изменен moderator_state.
+138	2013-02-24 17:19:47.820211+04	1	10	10	Фотогалерея	2	Изменен moderator_state.
+139	2013-02-24 19:30:10.778737+04	1	10	10	Фотогалерея	2	Изменен moderator_state.
+140	2013-02-24 21:52:54.98417+04	1	10	10	Фотогалерея	2	Изменен moderator_state.
+141	2013-02-24 22:00:28.714579+04	1	10	11	Припортовый терминал Новороссийск	1	
+142	2013-02-24 22:01:19.075945+04	1	10	11	Припортовый терминал Новороссийск	2	Изменен moderator_state.
+143	2013-02-24 22:18:12.005389+04	1	10	11	Припортовый терминал Новороссийск	2	Изменен moderator_state.
+144	2013-02-24 23:05:19.342638+04	1	10	11	Припортовый терминал Новороссийск	2	Изменен moderator_state.
 \.
 
 
@@ -2696,7 +3341,7 @@ COPY django_admin_log (id, action_time, user_id, content_type_id, object_id, obj
 -- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: django_login
 --
 
-SELECT pg_catalog.setval('django_admin_log_id_seq', 122, true);
+SELECT pg_catalog.setval('django_admin_log_id_seq', 144, true);
 
 
 --
@@ -2774,6 +3419,20 @@ COPY django_content_type (id, name, app_label, model) FROM stdin;
 38	query entries plugin	cmsplugin_zinnia	queryentriesplugin
 39	calendar entries plugin	cmsplugin_zinnia	calendarentriesplugin
 40	kv store	thumbnail	kvstore
+41	contact	cmsplugin_contact	contact
+42	source	easy_thumbnails	source
+43	thumbnail	easy_thumbnails	thumbnail
+44	custom contact	cms_helper	customcontact
+45	Folder	filer	folder
+46	folder permission	filer	folderpermission
+47	file	filer	file
+48	clipboard	filer	clipboard
+49	clipboard item	filer	clipboarditem
+50	image	filer	image
+51	filer folder	cmsplugin_filer_folder	filerfolder
+52	filer image	cmsplugin_filer_image	filerimage
+53	thumbnail option	cmsplugin_filer_image	thumbnailoption
+54	teaser	teaser	teaser
 \.
 
 
@@ -2781,7 +3440,7 @@ COPY django_content_type (id, name, app_label, model) FROM stdin;
 -- Name: django_content_type_id_seq; Type: SEQUENCE SET; Schema: public; Owner: django_login
 --
 
-SELECT pg_catalog.setval('django_content_type_id_seq', 40, true);
+SELECT pg_catalog.setval('django_content_type_id_seq', 54, true);
 
 
 --
@@ -2790,6 +3449,7 @@ SELECT pg_catalog.setval('django_content_type_id_seq', 40, true);
 
 COPY django_session (session_key, session_data, expire_date) FROM stdin;
 975982c067e4336e05b61f4ff15a55a5	MWYzMTE3ZmE1MjlhNmI5MGUwYWVmZjhlYTgxOTc1YjhiNjNjMGEzNDqAAn1xAShVDmNtc19hZG1p\nbl9zaXRlSwFVDV9hdXRoX3VzZXJfaWRLAVUJX21lc3NhZ2VzXXECKGNkamFuZ28uY29udHJpYi5t\nZXNzYWdlcy5zdG9yYWdlLmJhc2UKTWVzc2FnZQpxAymBcQR9cQUoVQpleHRyYV90YWdzcQZOVQdt\nZXNzYWdlcQdYuQAAAHRleHQgItCc0LXQttC00YPQvdCw0YDQvtC00L3Ri9C1INC60L7QvdGC0LXQ\nudC90LXRgNC90YvQtSDQv9C10YAuLi4iINCx0YvQuyDRg9GB0L/QtdGI0L3QviDQtNC+0LHQsNCy\n0LvQtdC9LiDQndC40LbQtSDQstGLINC80L7QttC10YLQtSDRgdC90L7QstCwINC10LPQviDQvtGC\n0YDQtdC00LDQutGC0LjRgNC+0LLQsNGC0YwuVQVsZXZlbHEISxR1YmgDKYFxCX1xCihoBlgAAAAA\naAdYlgAAANGB0YLRgNCw0L3QuNGG0LAgItCa0L7QvNC/0LDQvdC40Y8iINCx0YvQuyDRg9GB0L/Q\ntdGI0L3QviDQuNC30LzQtdC90LXQvS4g0J3QuNC20LUg0LLRiyDQvNC+0LbQtdGC0LUg0YHQvdC+\n0LLQsCDQtdCz0L4g0L7RgtGA0LXQtNCw0LrRgtC40YDQvtCy0LDRgtGMLmgISxR1YmgDKYFxC31x\nDChoBlgAAAAAaAdYtwAAAHRleHQgItCc0LXQttC00YPQvdCw0YDQvtC00L3Ri9C1INC60L7QvdGC\n0LXQudC90LXRgNC90YvQtSDQv9C10YAuLi4iINCx0YvQuyDRg9GB0L/QtdGI0L3QviDQuNC30LzQ\ntdC90LXQvS4g0J3QuNC20LUg0LLRiyDQvNC+0LbQtdGC0LUg0YHQvdC+0LLQsCDQtdCz0L4g0L7R\ngtGA0LXQtNCw0LrRgtC40YDQvtCy0LDRgtGMLmgISxR1YmgDKYFxDX1xDihoBlgAAAAAaAdYtwAA\nAHRleHQgItCc0LXQttC00YPQvdCw0YDQvtC00L3Ri9C1INC60L7QvdGC0LXQudC90LXRgNC90YvQ\ntSDQv9C10YAuLi4iINCx0YvQuyDRg9GB0L/QtdGI0L3QviDQuNC30LzQtdC90LXQvS4g0J3QuNC2\n0LUg0LLRiyDQvNC+0LbQtdGC0LUg0YHQvdC+0LLQsCDQtdCz0L4g0L7RgtGA0LXQtNCw0LrRgtC4\n0YDQvtCy0LDRgtGMLmgISxR1YmgDKYFxD31xEChoBlgAAAAAaAdYtwAAAHRleHQgItCc0LXQttC0\n0YPQvdCw0YDQvtC00L3Ri9C1INC60L7QvdGC0LXQudC90LXRgNC90YvQtSDQv9C10YAuLi4iINCx\n0YvQuyDRg9GB0L/QtdGI0L3QviDQuNC30LzQtdC90LXQvS4g0J3QuNC20LUg0LLRiyDQvNC+0LbQ\ntdGC0LUg0YHQvdC+0LLQsCDQtdCz0L4g0L7RgtGA0LXQtNCw0LrRgtC40YDQvtCy0LDRgtGMLmgI\nSxR1YmgDKYFxEX1xEihoBlgAAAAAaAdYtwAAAHRleHQgItCc0LXQttC00YPQvdCw0YDQvtC00L3R\ni9C1INC60L7QvdGC0LXQudC90LXRgNC90YvQtSDQv9C10YAuLi4iINCx0YvQuyDRg9GB0L/QtdGI\n0L3QviDQuNC30LzQtdC90LXQvS4g0J3QuNC20LUg0LLRiyDQvNC+0LbQtdGC0LUg0YHQvdC+0LLQ\nsCDQtdCz0L4g0L7RgtGA0LXQtNCw0LrRgtC40YDQvtCy0LDRgtGMLmgISxR1YmgDKYFxE31xFCho\nBlgAAAAAaAdYuQAAAHRleHQgItCc0LXQttC00YPQvdCw0YDQvtC00L3Ri9C10LrQvtC90YLQtdC5\n0L3QtdGA0L3Ri9C10L/QtdGA0LXQsi4uLiIg0LHRi9C7INGD0YHQv9C10YjQvdC+INC40LfQvNC1\n0L3QtdC9LiDQndC40LbQtSDQstGLINC80L7QttC10YLQtSDRgdC90L7QstCwINC10LPQviDQvtGC\n0YDQtdC00LDQutGC0LjRgNC+0LLQsNGC0YwuaAhLFHViaAMpgXEVfXEWKGgGWAAAAABoB1i5AAAA\ndGV4dCAi0JzQtdC20LTRg9C90LDRgNC+0LTQvdGL0LXQutC+0L3RgtC10LnQvdC10YDQvdGL0LXQ\nv9C10YDQtdCyLi4uIiDQsdGL0Lsg0YPRgdC/0LXRiNC90L4g0LjQt9C80LXQvdC10L0uINCd0LjQ\nttC1INCy0Ysg0LzQvtC20LXRgtC1INGB0L3QvtCy0LAg0LXQs9C+INC+0YLRgNC10LTQsNC60YLQ\nuNGA0L7QstCw0YLRjC5oCEsUdWJoAymBcRd9cRgoaAZYAAAAAGgHWJsAAAB0ZXh0ICJDb250YWlu\nZXIgU2hpcHBpbmdpbiBSdXNzaWEgLi4uLi4iINCx0YvQuyDRg9GB0L/QtdGI0L3QviDQuNC30LzQ\ntdC90LXQvS4g0J3QuNC20LUg0LLRiyDQvNC+0LbQtdGC0LUg0YHQvdC+0LLQsCDQtdCz0L4g0L7R\ngtGA0LXQtNCw0LrRgtC40YDQvtCy0LDRgtGMLmgISxR1YmgDKYFxGX1xGihoBlgAAAAAaAdYQAAA\nANGB0YLRgNCw0L3QuNGG0LAgIkNvbXBhbnkiINCx0YvQuyDRg9GB0L/QtdGI0L3QviDQuNC30LzQ\ntdC90LXQvS5oCEsUdWJoAymBcRt9cRwoaAZYAAAAAGgHWK8AAAB0ZXh0ICLQoNGD0YHQutC+0L0g\n0L7QutCw0LfRi9Cy0LDQtdGCINGD0YHQu9GD0LPQuCAuLi4uLi4iINCx0YvQuyDRg9GB0L/QtdGI\n0L3QviDQtNC+0LHQsNCy0LvQtdC9LiDQndC40LbQtSDQstGLINC80L7QttC10YLQtSDRgdC90L7Q\nstCwINC10LPQviDQvtGC0YDQtdC00LDQutGC0LjRgNC+0LLQsNGC0YwuaAhLFHViaAMpgXEdfXEe\nKGgGWAAAAABoB1iSAAAAdGV4dCAiUnVzY29uIHByb3ZpZGVzIGEgLi4uLi4uIiDQsdGL0Lsg0YPR\ngdC/0LXRiNC90L4g0LjQt9C80LXQvdC10L0uINCd0LjQttC1INCy0Ysg0LzQvtC20LXRgtC1INGB\n0L3QvtCy0LAg0LXQs9C+INC+0YLRgNC10LTQsNC60YLQuNGA0L7QstCw0YLRjC5oCEsUdWJoAymB\ncR99cSAoaAZYAAAAAGgHWEAAAADRgdGC0YDQsNC90LjRhtCwICJDb21wYW55IiDQsdGL0Lsg0YPR\ngdC/0LXRiNC90L4g0LjQt9C80LXQvdC10L0uaAhLFHViaAMpgXEhfXEiKGgGWAAAAABoB1ipAAAA\ndGV4dCAi0JrQvtC80L/QsNC90LjRjyDQoNGD0YHQutC+0L0g0LHRi9C70LAgLi4uLi4uIiDQsdGL\n0Lsg0YPRgdC/0LXRiNC90L4g0LTQvtCx0LDQstC70LXQvS4g0J3QuNC20LUg0LLRiyDQvNC+0LbQ\ntdGC0LUg0YHQvdC+0LLQsCDQtdCz0L4g0L7RgtGA0LXQtNCw0LrRgtC40YDQvtCy0LDRgtGMLmgI\nSxR1YmgDKYFxI31xJChoBlgAAAAAaAdYRwAAANGB0YLRgNCw0L3QuNGG0LAgItCY0YHRgtC+0YDQ\nuNGPIiDQsdGL0Lsg0YPRgdC/0LXRiNC90L4g0LjQt9C80LXQvdC10L0uaAhLFHViaAMpgXElfXEm\nKGgGWAAAAABoB1iTAAAAdGV4dCAiUnVzY29uIHdhcyBmb3VuZGVkIC4uLi4uLiIg0LHRi9C7INGD\n0YHQv9C10YjQvdC+INC40LfQvNC10L3QtdC9LiDQndC40LbQtSDQstGLINC80L7QttC10YLQtSDR\ngdC90L7QstCwINC10LPQviDQvtGC0YDQtdC00LDQutGC0LjRgNC+0LLQsNGC0YwuaAhLFHViaAMp\ngXEnfXEoKGgGWAAAAABoB1hHAAAA0YHRgtGA0LDQvdC40YbQsCAi0JjRgdGC0L7RgNC40Y8iINCx\n0YvQuyDRg9GB0L/QtdGI0L3QviDQuNC30LzQtdC90LXQvS5oCEsUdWJoAymBcSl9cSooaAZYAAAA\nAGgHWC0AAADQo9GB0L/QtdGI0L3QviDRg9C00LDQu9C10L3RiyAxINC30LDQv9C40YHRjC5oCEsU\ndWJlVRJfYXV0aF91c2VyX2JhY2tlbmRVKWRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9k\nZWxCYWNrZW5kVQ9kamFuZ29fbGFuZ3VhZ2VYAgAAAHJ1cSt1Lg==\n	2013-03-08 15:11:15.239484+04
+19830519c5fcbf5a6bab7b52baf16846	NzE1ZmYxN2Q2MzE2M2JhOTgxZjhhOTNhZjcyZjdkMzA1NmMwZDllNDqAAn1xAShVDmNtc19hZG1p\nbl9zaXRlSwFVDV9hdXRoX3VzZXJfaWRLAVUUZmlsZXJfbGFzdF9mb2xkZXJfaWRYAQAAADJVEl9h\ndXRoX3VzZXJfYmFja2VuZFUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tl\nbmRVCV9tZXNzYWdlc11xAihjZGphbmdvLmNvbnRyaWIubWVzc2FnZXMuc3RvcmFnZS5iYXNlCk1l\nc3NhZ2UKcQMpgXEEfXEFKFUKZXh0cmFfdGFnc3EGWAAAAABVB21lc3NhZ2VxB1ifAAAAdGV4dCAi\n0J3QsNC8INC+0YfQtdC90Ywg0LLQsNC20L3QviAuLi4uLi4iINCx0YvQuyDRg9GB0L/QtdGI0L3Q\nviDQtNC+0LHQsNCy0LvQtdC9LiDQndC40LbQtSDQstGLINC80L7QttC10YLQtSDRgdC90L7QstCw\nINC10LPQviDQvtGC0YDQtdC00LDQutGC0LjRgNC+0LLQsNGC0YwuVQVsZXZlbHEISxR1YmgDKYFx\nCX1xCihoBlgAAAAAaAdYQQAAANGB0YLRgNCw0L3QuNGG0LAgIkZlZWRiYWNrIiDQsdGL0Lsg0YPR\ngdC/0LXRiNC90L4g0LjQt9C80LXQvdC10L0uaAhLFHViaAMpgXELfXEMKGgGWAAAAABoB1idAAAA\ndGV4dCAi0J3QsNC8INC+0YfQtdC90Ywg0LLQsNC20L3QviAuLi4uLi4iINCx0YvQuyDRg9GB0L/Q\ntdGI0L3QviDQuNC30LzQtdC90LXQvS4g0J3QuNC20LUg0LLRiyDQvNC+0LbQtdGC0LUg0YHQvdC+\n0LLQsCDQtdCz0L4g0L7RgtGA0LXQtNCw0LrRgtC40YDQvtCy0LDRgtGMLmgISxR1YmgDKYFxDX1x\nDihoBlgAAAAAaAdYfQAAAHRleHQgIi4uLiIg0LHRi9C7INGD0YHQv9C10YjQvdC+INC40LfQvNC1\n0L3QtdC9LiDQndC40LbQtSDQstGLINC80L7QttC10YLQtSDRgdC90L7QstCwINC10LPQviDQvtGC\n0YDQtdC00LDQutGC0LjRgNC+0LLQsNGC0YwuaAhLFHViaAMpgXEPfXEQKGgGWAAAAABoB1hUAAAA\n0YHRgtGA0LDQvdC40YbQsCAi0J7QsdGA0LDRgtC90LDRjyDRgdCy0Y/Qt9GMIiDQsdGL0Lsg0YPR\ngdC/0LXRiNC90L4g0LjQt9C80LXQvdC10L0uaAhLFHViaAMpgXERfXESKGgGWAAAAABoB1gVAQAA\n0LfQsNC/0LjRgdGMICLQk9Ca0KEv0KDRg9GB0LrQvtC9INC30LDQv9GD0YHRgtC40Lsg0YDQtdCz\n0YPQu9GP0YDQvdGL0Lkg0LrQvtC90YLQtdC50L3QtdGA0L3Ri9C5INC/0L7QtdC30LQg0LzQtdC2\n0LTRgyDQv9C+0YDRgtC+0Lwg0KPRgdGC0Ywt0JvRg9Cz0LAg0Lgg0J3QuNC20L3QuNC8INCd0L7Q\nstCz0L7RgNC+0LTQvtC8INC00LvRjyBHZW5lcmFsIE1vdG9ycyBLb3JlYTog0L7Qv9GD0LHQu9C4\n0LrQvtCy0LDQvSIg0LHRi9C7INGD0YHQv9C10YjQvdC+INC40LfQvNC10L3QtdC9LmgISxR1YmgD\nKYFxE31xFChoBlgAAAAAaAdYmQAAAGN1c3RvbSBjb250YWN0ICJwaWNhc3NvNzVAeWFuZGV4LnJ1\nIiDQsdGL0Lsg0YPRgdC/0LXRiNC90L4g0LTQvtCx0LDQstC70LXQvS4g0J3QuNC20LUg0LLRiyDQ\nvNC+0LbQtdGC0LUg0YHQvdC+0LLQsCDQtdCz0L4g0L7RgtGA0LXQtNCw0LrRgtC40YDQvtCy0LDR\ngtGMLmgISxR1YmgDKYFxFX1xFihoBlgAAAAAaAdYlwAAAGN1c3RvbSBjb250YWN0ICJwaWNhc3Nv\nNzVAeWFuZGV4LnJ1IiDQsdGL0Lsg0YPRgdC/0LXRiNC90L4g0LjQt9C80LXQvdC10L0uINCd0LjQ\nttC1INCy0Ysg0LzQvtC20LXRgtC1INGB0L3QvtCy0LAg0LXQs9C+INC+0YLRgNC10LTQsNC60YLQ\nuNGA0L7QstCw0YLRjC5oCEsUdWJoAymBcRd9cRgoaAZYAAAAAGgHWJcAAABjdXN0b20gY29udGFj\ndCAicGljYXNzbzc1QHlhbmRleC5ydSIg0LHRi9C7INGD0YHQv9C10YjQvdC+INC40LfQvNC10L3Q\ntdC9LiDQndC40LbQtSDQstGLINC80L7QttC10YLQtSDRgdC90L7QstCwINC10LPQviDQvtGC0YDQ\ntdC00LDQutGC0LjRgNC+0LLQsNGC0YwuaAhLFHViaAMpgXEZfXEaKGgGWAAAAABoB1iZAAAAY3Vz\ndG9tIGNvbnRhY3QgInBpY2Fzc283NUB5YW5kZXgucnUiINCx0YvQuyDRg9GB0L/QtdGI0L3QviDQ\ntNC+0LHQsNCy0LvQtdC9LiDQndC40LbQtSDQstGLINC80L7QttC10YLQtSDRgdC90L7QstCwINC1\n0LPQviDQvtGC0YDQtdC00LDQutGC0LjRgNC+0LLQsNGC0YwuaAhLFHViaAMpgXEbfXEcKGgGWAAA\nAABoB1hJAAAA0YHRgtGA0LDQvdC40YbQsCAi0KDQtdC00LjRgNC10LrRgiIg0LHRi9C7INGD0YHQ\nv9C10YjQvdC+INC40LfQvNC10L3QtdC9LmgISxR1YmgDKYFxHX1xHihoBlgAAAAAaAdYQQAAANGB\n0YLRgNCw0L3QuNGG0LAgIlJlZGlyZWN0IiDQsdGL0Lsg0YPRgdC/0LXRiNC90L4g0LjQt9C80LXQ\nvdC10L0uaAhLFHViaAMpgXEffXEgKGgGWAAAAABoB1hQAAAA0YHRgtGA0LDQvdC40YbQsCAi0J/R\ngNC10YHRgS3RgNC10LvQuNC30YsiINCx0YvQuyDRg9GB0L/QtdGI0L3QviDQuNC30LzQtdC90LXQ\nvS5oCEsUdWJoAymBcSF9cSIoaAZYAAAAAGgHWEcAAADRgdGC0YDQsNC90LjRhtCwICJQcmVzcy1S\nZWxlYXNlcyIg0LHRi9C7INGD0YHQv9C10YjQvdC+INC40LfQvNC10L3QtdC9LmgISxR1YmgDKYFx\nI31xJChoBlgAAAAAaAdYUAAAANGB0YLRgNCw0L3QuNGG0LAgItCf0YDQtdGB0YEt0YDQtdC70LjQ\nt9GLIiDQsdGL0Lsg0YPRgdC/0LXRiNC90L4g0LjQt9C80LXQvdC10L0uaAhLFHViaAMpgXElfXEm\nKGgGWAAAAABoB1hQAAAA0YHRgtGA0LDQvdC40YbQsCAi0J/RgNC10YHRgS3RgNC10LvQuNC30Ysi\nINCx0YvQuyDRg9GB0L/QtdGI0L3QviDQuNC30LzQtdC90LXQvS5oCEsUdWJoAymBcSd9cSgoaAZY\nAAAAAGgHWEcAAADRgdGC0YDQsNC90LjRhtCwICJQcmVzcy1SZWxlYXNlcyIg0LHRi9C7INGD0YHQ\nv9C10YjQvdC+INC40LfQvNC10L3QtdC9LmgISxR1YmgDKYFxKX1xKihoBlgAAAAAaAdYngAAANGB\n0YLRgNCw0L3QuNGG0LAgItCk0L7RgtC+0LPQsNC70LXRgNC10Y8iINCx0YvQuyDRg9GB0L/QtdGI\n0L3QviDQtNC+0LHQsNCy0LvQtdC9LiDQndC40LbQtSDQstGLINC80L7QttC10YLQtSDRgdC90L7Q\nstCwINC10LPQviDQvtGC0YDQtdC00LDQutGC0LjRgNC+0LLQsNGC0YwuaAhLFHViaAMpgXErfXEs\nKGgGWAAAAABoB1jEAAAAZmlsZXIgZm9sZGVyICLQn9GA0LjQv9C+0YDRgtC+0LLRi9C5INGC0LXR\ngNC80LjQvdCw0Lsg0J3QvtCy0L7RgNC+0YHRgdC40LnRgdC6IiDQsdGL0Lsg0YPRgdC/0LXRiNC9\n0L4g0LTQvtCx0LDQstC70LXQvS4g0J3QuNC20LUg0LLRiyDQvNC+0LbQtdGC0LUg0YHQvdC+0LLQ\nsCDQtdCz0L4g0L7RgtGA0LXQtNCw0LrRgtC40YDQvtCy0LDRgtGMLmgISxR1YmgDKYFxLX1xLiho\nBlgAAAAAaAdYxAAAAGZpbGVyIGZvbGRlciAi0J/RgNC40L/QvtGA0YLQvtCy0YvQuSDRgtC10YDQ\nvNC40L3QsNC7INCd0L7QstC+0YDQvtGB0YHQuNC50YHQuiIg0LHRi9C7INGD0YHQv9C10YjQvdC+\nINC00L7QsdCw0LLQu9C10L0uINCd0LjQttC1INCy0Ysg0LzQvtC20LXRgtC1INGB0L3QvtCy0LAg\n0LXQs9C+INC+0YLRgNC10LTQsNC60YLQuNGA0L7QstCw0YLRjC5oCEsUdWJoAymBcS99cTAoaAZY\nAAAAAGgHWE8AAADRgdGC0YDQsNC90LjRhtCwICLQpNC+0YLQvtCz0LDQu9C10YDQtdGPIiDQsdGL\n0Lsg0YPRgdC/0LXRiNC90L4g0LjQt9C80LXQvdC10L0uaAhLFHViaAMpgXExfXEyKGgGWAAAAABo\nB1iOAAAAcGljdHVyZSAiMjEwMTIwMTIxMDMuanBnIiDQsdGL0Lsg0YPRgdC/0LXRiNC90L4g0LTQ\nvtCx0LDQstC70LXQvS4g0J3QuNC20LUg0LLRiyDQvNC+0LbQtdGC0LUg0YHQvdC+0LLQsCDQtdCz\n0L4g0L7RgtGA0LXQtNCw0LrRgtC40YDQvtCy0LDRgtGMLmgISxR1YmgDKYFxM31xNChoBlgAAAAA\naAdYTwAAANGB0YLRgNCw0L3QuNGG0LAgItCk0L7RgtC+0LPQsNC70LXRgNC10Y8iINCx0YvQuyDR\ng9GB0L/QtdGI0L3QviDQuNC30LzQtdC90LXQvS5oCEsUdWJoAymBcTV9cTYoaAZYAAAAAGgHWKUA\nAADQuNC30L7QsdGA0LDQttC10L3QuNC1IChmaWxlcikgIjIxMDEyMDEyMTAzLmpwZyIg0LHRi9C7\nINGD0YHQv9C10YjQvdC+INC00L7QsdCw0LLQu9C10L0uINCd0LjQttC1INCy0Ysg0LzQvtC20LXR\ngtC1INGB0L3QvtCy0LAg0LXQs9C+INC+0YLRgNC10LTQsNC60YLQuNGA0L7QstCw0YLRjC5oCEsU\ndWJoAymBcTd9cTgoaAZYAAAAAGgHWE8AAADRgdGC0YDQsNC90LjRhtCwICLQpNC+0YLQvtCz0LDQ\nu9C10YDQtdGPIiDQsdGL0Lsg0YPRgdC/0LXRiNC90L4g0LjQt9C80LXQvdC10L0uaAhLFHViaAMp\ngXE5fXE6KGgGWAAAAABoB1ijAAAA0LjQt9C+0LHRgNCw0LbQtdC90LjQtSAoZmlsZXIpICIyMTAx\nMjAxMjEwMy5qcGciINCx0YvQuyDRg9GB0L/QtdGI0L3QviDQuNC30LzQtdC90LXQvS4g0J3QuNC2\n0LUg0LLRiyDQvNC+0LbQtdGC0LUg0YHQvdC+0LLQsCDQtdCz0L4g0L7RgtGA0LXQtNCw0LrRgtC4\n0YDQvtCy0LDRgtGMLmgISxR1YmgDKYFxO31xPChoBlgAAAAAaAdYTwAAANGB0YLRgNCw0L3QuNGG\n0LAgItCk0L7RgtC+0LPQsNC70LXRgNC10Y8iINCx0YvQuyDRg9GB0L/QtdGI0L3QviDQuNC30LzQ\ntdC90LXQvS5oCEsUdWJoAymBcT19cT4oaAZYAAAAAGgHWHsAAADRgdGC0YDQsNC90LjRhtCwICLQ\nn9GA0LjQv9C+0YDRgtC+0LLRi9C5INGC0LXRgNC80LjQvdCw0Lsg0J3QvtCy0L7RgNC+0YHRgdC4\n0LnRgdC6IiDQsdGL0Lsg0YPRgdC/0LXRiNC90L4g0LTQvtCx0LDQstC70LXQvS5oCEsUdWJoAymB\ncT99cUAoaAZYAAAAAGgHWMQAAABmaWxlciBmb2xkZXIgItCf0YDQuNC/0L7RgNGC0L7QstGL0Lkg\n0YLQtdGA0LzQuNC90LDQuyDQndC+0LLQvtGA0L7RgdGB0LjQudGB0LoiINCx0YvQuyDRg9GB0L/Q\ntdGI0L3QviDQtNC+0LHQsNCy0LvQtdC9LiDQndC40LbQtSDQstGLINC80L7QttC10YLQtSDRgdC9\n0L7QstCwINC10LPQviDQvtGC0YDQtdC00LDQutGC0LjRgNC+0LLQsNGC0YwuaAhLFHViaAMpgXFB\nfXFCKGgGWAAAAABoB1h5AAAA0YHRgtGA0LDQvdC40YbQsCAi0J/RgNC40L/QvtGA0YLQvtCy0YvQ\nuSDRgtC10YDQvNC40L3QsNC7INCd0L7QstC+0YDQvtGB0YHQuNC50YHQuiIg0LHRi9C7INGD0YHQ\nv9C10YjQvdC+INC40LfQvNC10L3QtdC9LmgISxR1YmgDKYFxQ31xRChoBlgAAAAAaAdYowAAANC4\n0LfQvtCx0YDQsNC20LXQvdC40LUgKGZpbGVyKSAiMjEwMTIwMTIxMDMuanBnIiDQsdGL0Lsg0YPR\ngdC/0LXRiNC90L4g0LjQt9C80LXQvdC10L0uINCd0LjQttC1INCy0Ysg0LzQvtC20LXRgtC1INGB\n0L3QvtCy0LAg0LXQs9C+INC+0YLRgNC10LTQsNC60YLQuNGA0L7QstCw0YLRjC5oCEsUdWJoAymB\ncUV9cUYoaAZYAAAAAGgHWIgAAABmaWxlciBmb2xkZXIgIk9MT0wiINCx0YvQuyDRg9GB0L/QtdGI\n0L3QviDQtNC+0LHQsNCy0LvQtdC9LiDQndC40LbQtSDQstGLINC80L7QttC10YLQtSDRgdC90L7Q\nstCwINC10LPQviDQvtGC0YDQtdC00LDQutGC0LjRgNC+0LLQsNGC0YwuaAhLFHViaAMpgXFHfXFI\nKGgGWAAAAABoB1h5AAAA0YHRgtGA0LDQvdC40YbQsCAi0J/RgNC40L/QvtGA0YLQvtCy0YvQuSDR\ngtC10YDQvNC40L3QsNC7INCd0L7QstC+0YDQvtGB0YHQuNC50YHQuiIg0LHRi9C7INGD0YHQv9C1\n0YjQvdC+INC40LfQvNC10L3QtdC9LmgISxR1YmgDKYFxSX1xSihoBlgAAAAAaAdYwgAAAGZpbGVy\nIGZvbGRlciAi0J/RgNC40L/QvtGA0YLQvtCy0YvQuSDRgtC10YDQvNC40L3QsNC7INCd0L7QstC+\n0YDQvtGB0YHQuNC50YHQuiIg0LHRi9C7INGD0YHQv9C10YjQvdC+INC40LfQvNC10L3QtdC9LiDQ\nndC40LbQtSDQstGLINC80L7QttC10YLQtSDRgdC90L7QstCwINC10LPQviDQvtGC0YDQtdC00LDQ\nutGC0LjRgNC+0LLQsNGC0YwuaAhLFHViaAMpgXFLfXFMKGgGWAAAAABoB1jCAAAAZmlsZXIgZm9s\nZGVyICLQn9GA0LjQv9C+0YDRgtC+0LLRi9C5INGC0LXRgNC80LjQvdCw0Lsg0J3QvtCy0L7RgNC+\n0YHRgdC40LnRgdC6IiDQsdGL0Lsg0YPRgdC/0LXRiNC90L4g0LjQt9C80LXQvdC10L0uINCd0LjQ\nttC1INCy0Ysg0LzQvtC20LXRgtC1INGB0L3QvtCy0LAg0LXQs9C+INC+0YLRgNC10LTQsNC60YLQ\nuNGA0L7QstCw0YLRjC5oCEsUdWJoAymBcU19cU4oaAZYAAAAAGgHWMIAAABmaWxlciBmb2xkZXIg\nItCf0YDQuNC/0L7RgNGC0L7QstGL0Lkg0YLQtdGA0LzQuNC90LDQuyDQndC+0LLQvtGA0L7RgdGB\n0LjQudGB0LoiINCx0YvQuyDRg9GB0L/QtdGI0L3QviDQuNC30LzQtdC90LXQvS4g0J3QuNC20LUg\n0LLRiyDQvNC+0LbQtdGC0LUg0YHQvdC+0LLQsCDQtdCz0L4g0L7RgtGA0LXQtNCw0LrRgtC40YDQ\nvtCy0LDRgtGMLmgISxR1YmgDKYFxT31xUChoBlgAAAAAaAdYlAAAAHRlYXNlciAi0J3QvtCy0YvQ\nuSDRgtC40LfQtdGAISIg0LHRi9C7INGD0YHQv9C10YjQvdC+INC00L7QsdCw0LLQu9C10L0uINCd\n0LjQttC1INCy0Ysg0LzQvtC20LXRgtC1INGB0L3QvtCy0LAg0LXQs9C+INC+0YLRgNC10LTQsNC6\n0YLQuNGA0L7QstCw0YLRjC5oCEsUdWJoAymBcVF9cVIoaAZYAAAAAGgHWHkAAADRgdGC0YDQsNC9\n0LjRhtCwICLQn9GA0LjQv9C+0YDRgtC+0LLRi9C5INGC0LXRgNC80LjQvdCw0Lsg0J3QvtCy0L7R\ngNC+0YHRgdC40LnRgdC6IiDQsdGL0Lsg0YPRgdC/0LXRiNC90L4g0LjQt9C80LXQvdC10L0uaAhL\nFHViZVUPZGphbmdvX2xhbmd1YWdlWAIAAABydXFTdS4=\n	2013-03-10 22:38:03.237975+04
 \.
 
 
@@ -2810,12 +3470,160 @@ SELECT pg_catalog.setval('django_site_id_seq', 1, true);
 
 
 --
+-- Data for Name: easy_thumbnails_source; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY easy_thumbnails_source (id, name, modified, storage_hash) FROM stdin;
+1	uploads/zinnia/stars_near_cho_la_LJ.jpg	2013-02-23 18:36:43.482936+04	f9bde26a1556cd667f742bd34ec7c55e
+2	uploads/zinnia/ёлки.jpg	2013-02-24 11:21:27.818397+04	f9bde26a1556cd667f742bd34ec7c55e
+3	filer_public/2013/02/24/.jpg	2013-02-24 17:04:18.7586+04	f9bde26a1556cd667f742bd34ec7c55e
+4	filer_public/2013/02/24/21012012103.jpg	2013-02-24 17:04:24.6626+04	f9bde26a1556cd667f742bd34ec7c55e
+\.
+
+
+--
+-- Name: easy_thumbnails_source_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('easy_thumbnails_source_id_seq', 4, true);
+
+
+--
+-- Data for Name: easy_thumbnails_thumbnail; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY easy_thumbnails_thumbnail (id, name, modified, source_id, storage_hash) FROM stdin;
+1	uploads/zinnia/stars_near_cho_la_LJ.jpg.160x120_q85_crop-smart.jpg	2013-02-24 11:17:47.506395+04	1	d26becbf46ac48eda79c7a39a13a02dd
+2	uploads/zinnia/stars_near_cho_la_LJ.jpg.330x220_q85_crop-smart.jpg	2013-02-24 11:17:56.674395+04	1	d26becbf46ac48eda79c7a39a13a02dd
+3	uploads/zinnia/ёлки.jpg.160x120_q85_crop-smart.jpg	2013-02-24 11:21:31.614398+04	2	d26becbf46ac48eda79c7a39a13a02dd
+4	uploads/zinnia/ёлки.jpg.330x220_q85_crop-smart.jpg	2013-02-24 11:21:34.674397+04	2	d26becbf46ac48eda79c7a39a13a02dd
+5	uploads/zinnia/ёлки.jpg.800x600_q85.jpg	2013-02-24 11:22:11.794398+04	2	d26becbf46ac48eda79c7a39a13a02dd
+6	filer_public_thumbnails/filer_public/2013/02/24/.jpg__16x16_q85_crop_upscale.jpg	2013-02-24 17:04:19.2626+04	3	f9bde26a1556cd667f742bd34ec7c55e
+7	filer_public_thumbnails/filer_public/2013/02/24/.jpg__32x32_q85_crop_upscale.jpg	2013-02-24 17:04:19.4346+04	3	f9bde26a1556cd667f742bd34ec7c55e
+8	filer_public_thumbnails/filer_public/2013/02/24/.jpg__48x48_q85_crop_upscale.jpg	2013-02-24 17:04:19.6026+04	3	f9bde26a1556cd667f742bd34ec7c55e
+9	filer_public_thumbnails/filer_public/2013/02/24/.jpg__64x64_q85_crop_upscale.jpg	2013-02-24 17:04:19.8786+04	3	f9bde26a1556cd667f742bd34ec7c55e
+10	filer_public_thumbnails/filer_public/2013/02/24/21012012103.jpg__16x16_q85_crop_upscale.jpg	2013-02-24 17:04:24.8506+04	4	f9bde26a1556cd667f742bd34ec7c55e
+11	filer_public_thumbnails/filer_public/2013/02/24/21012012103.jpg__32x32_q85_crop_upscale.jpg	2013-02-24 17:04:25.3066+04	4	f9bde26a1556cd667f742bd34ec7c55e
+12	filer_public_thumbnails/filer_public/2013/02/24/21012012103.jpg__48x48_q85_crop_upscale.jpg	2013-02-24 17:04:25.4906+04	4	f9bde26a1556cd667f742bd34ec7c55e
+13	filer_public_thumbnails/filer_public/2013/02/24/21012012103.jpg__64x64_q85_crop_upscale.jpg	2013-02-24 17:04:25.6666+04	4	f9bde26a1556cd667f742bd34ec7c55e
+14	filer_public_thumbnails/filer_public/2013/02/24/21012012103.jpg__210x10000_q85.jpg	2013-02-24 17:04:35.6586+04	4	f9bde26a1556cd667f742bd34ec7c55e
+15	filer_public_thumbnails/filer_public/2013/02/24/21012012103.jpg__32x32_q85_crop-True_upscale-True.jpg	2013-02-24 17:10:59.526604+04	4	f9bde26a1556cd667f742bd34ec7c55e
+16	filer_public_thumbnails/filer_public/2013/02/24/.jpg__32x32_q85_crop-True_upscale-True.jpg	2013-02-24 17:10:59.694604+04	3	f9bde26a1556cd667f742bd34ec7c55e
+17	filer_public_thumbnails/filer_public/2013/02/24/21012012103.jpg__100x70_q85_crop_upscale.jpg	2013-02-24 19:26:57.918684+04	4	f9bde26a1556cd667f742bd34ec7c55e
+18	filer_public_thumbnails/filer_public/2013/02/24/21012012103.jpg__200x200_q85_crop-True_upscale-True.jpg	2013-02-24 22:22:06.562788+04	4	f9bde26a1556cd667f742bd34ec7c55e
+19	filer_public_thumbnails/filer_public/2013/02/24/.jpg__200x200_q85_crop-True_upscale-True.jpg	2013-02-24 22:22:06.774787+04	3	f9bde26a1556cd667f742bd34ec7c55e
+20	filer_public_thumbnails/filer_public/2013/02/24/21012012103.jpg__800x600_q85.jpg	2013-02-24 22:27:51.174791+04	4	f9bde26a1556cd667f742bd34ec7c55e
+21	filer_public_thumbnails/filer_public/2013/02/24/21012012103.jpg__100x75_q85_crop-True_upscale-True.jpg	2013-02-24 22:27:51.562791+04	4	f9bde26a1556cd667f742bd34ec7c55e
+22	filer_public_thumbnails/filer_public/2013/02/24/.jpg__800x600_q85.jpg	2013-02-24 22:27:51.846791+04	3	f9bde26a1556cd667f742bd34ec7c55e
+23	filer_public_thumbnails/filer_public/2013/02/24/.jpg__100x75_q85_crop-True_upscale-True.jpg	2013-02-24 22:27:52.122791+04	3	f9bde26a1556cd667f742bd34ec7c55e
+24	uploads/zinnia/stars_near_cho_la_LJ.jpg.800x600_q85.jpg	2013-02-24 23:06:20.314814+04	1	d26becbf46ac48eda79c7a39a13a02dd
+\.
+
+
+--
+-- Name: easy_thumbnails_thumbnail_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('easy_thumbnails_thumbnail_id_seq', 24, true);
+
+
+--
+-- Data for Name: filer_clipboard; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY filer_clipboard (id, user_id) FROM stdin;
+1	1
+\.
+
+
+--
+-- Name: filer_clipboard_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('filer_clipboard_id_seq', 1, true);
+
+
+--
+-- Data for Name: filer_clipboarditem; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY filer_clipboarditem (id, file_id, clipboard_id) FROM stdin;
+\.
+
+
+--
+-- Name: filer_clipboarditem_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('filer_clipboarditem_id_seq', 2, true);
+
+
+--
+-- Data for Name: filer_file; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY filer_file (id, folder_id, file, _file_size, has_all_mandatory_data, original_filename, name, owner_id, uploaded_at, modified_at, description, is_public, sha1, polymorphic_ctype_id) FROM stdin;
+1	2	filer_public/2013/02/24/.jpg	774097	f	ёлки.jpg		1	2013-02-24 17:04:18.788037+04	2013-02-24 17:04:29.537035+04	\N	t	ee081b73b0618c932194901fcad1be87d6664d29	50
+2	2	filer_public/2013/02/24/21012012103.jpg	809090	f	21012012103.jpg		1	2013-02-24 17:04:24.682209+04	2013-02-24 17:04:29.571673+04	\N	t	ea3b16a0a4fe54bd6b610ab85198e998a992c2fc	50
+\.
+
+
+--
+-- Name: filer_file_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('filer_file_id_seq', 2, true);
+
+
+--
+-- Data for Name: filer_folder; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY filer_folder (id, parent_id, name, owner_id, uploaded_at, created_at, modified_at, lft, rght, tree_id, level) FROM stdin;
+1	\N	galleries	1	2013-02-24 17:03:32.749603+04	2013-02-24 17:03:32.749644+04	2013-02-24 17:03:32.749667+04	1	4	1	0
+2	1	terminal	1	2013-02-24 17:04:06.712128+04	2013-02-24 17:04:06.712166+04	2013-02-24 17:04:06.712188+04	2	3	1	1
+\.
+
+
+--
+-- Name: filer_folder_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('filer_folder_id_seq', 2, true);
+
+
+--
+-- Data for Name: filer_folderpermission; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY filer_folderpermission (id, folder_id, type, user_id, group_id, everybody, can_edit, can_read, can_add_children) FROM stdin;
+\.
+
+
+--
+-- Name: filer_folderpermission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('filer_folderpermission_id_seq', 1, false);
+
+
+--
+-- Data for Name: filer_image; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY filer_image (file_ptr_id, _height, _width, date_taken, default_alt_text, default_caption, author, must_always_publish_author_credit, must_always_publish_copyright, subject_location) FROM stdin;
+1	2048	1536	2013-02-24 17:04:18.716578+04	\N	\N	\N	f	f	\N
+2	1536	2048	2013-02-24 17:04:24.658151+04	\N	\N	\N	f	f	\N
+\.
+
+
+--
 -- Data for Name: menus_cachekey; Type: TABLE DATA; Schema: public; Owner: django_login
 --
 
 COPY menus_cachekey (id, language, site, key) FROM stdin;
-98	ru	1	cms-menu_nodes_ru_1_1_user
-99	en	1	cms-menu_nodes_en_1_1_user
+123	ru	1	cms-menu_nodes_ru_1_1_user
+124	en	1	cms-menu_nodes_en_1_1_user
 \.
 
 
@@ -2823,7 +3631,7 @@ COPY menus_cachekey (id, language, site, key) FROM stdin;
 -- Name: menus_cachekey_id_seq; Type: SEQUENCE SET; Schema: public; Owner: django_login
 --
 
-SELECT pg_catalog.setval('menus_cachekey_id_seq', 99, true);
+SELECT pg_catalog.setval('menus_cachekey_id_seq', 124, true);
 
 
 --
@@ -2946,7 +3754,6 @@ COPY south_migrationhistory (id, app_name, migration, applied) FROM stdin;
 97	zinnia	0015_rename_template	2013-02-12 13:32:55.96408+04
 98	zinnia	0016_entry_content_template	2013-02-12 13:32:56.01071+04
 99	cms_helper	0001_initial	2013-02-12 16:52:23.022062+04
-100	zinnia	0017_auto__add_field_category_title_en__add_field_category_title_ru__add_fi	2013-02-12 16:55:27.846508+04
 101	cms_helper	0002_auto__add_clocktown	2013-02-14 16:49:22.476375+04
 102	cms_helper	0003_auto__add_field_clocktown_town_en__add_field_clocktown_town_ru	2013-02-14 16:52:42.681967+04
 103	cms_helper	0004_auto__add_field_clocktown_order	2013-02-15 09:31:35.566253+04
@@ -2954,6 +3761,51 @@ COPY south_migrationhistory (id, app_name, migration, applied) FROM stdin;
 105	cmsplugin_zinnia	0002_query_entries_plugin	2013-02-19 11:48:30.65348+04
 106	cmsplugin_zinnia	0003_calendar_entries_plugin	2013-02-19 11:48:30.715929+04
 108	thumbnail	0001_initial	2013-02-19 14:06:04.124207+04
+109	cmsplugin_contact	0001_initial	2013-02-23 22:39:36.596323+04
+110	cmsplugin_contact	0002_auto__chg_field_contact_thanks	2013-02-23 22:39:36.654365+04
+111	easy_thumbnails	0001_initial	2013-02-24 11:09:52.800021+04
+112	easy_thumbnails	0002_filename_indexes	2013-02-24 11:09:52.916279+04
+113	easy_thumbnails	0003_auto__add_storagenew	2013-02-24 11:09:53.074882+04
+114	easy_thumbnails	0004_auto__add_field_source_storage_new__add_field_thumbnail_storage_new	2013-02-24 11:09:53.183156+04
+115	easy_thumbnails	0005_storage_fks_null	2013-02-24 11:09:53.429894+04
+116	easy_thumbnails	0006_copy_storage	2013-02-24 11:09:53.458153+04
+117	easy_thumbnails	0007_storagenew_fks_not_null	2013-02-24 11:09:53.584846+04
+118	easy_thumbnails	0008_auto__del_field_source_storage__del_field_thumbnail_storage	2013-02-24 11:09:53.612795+04
+119	easy_thumbnails	0009_auto__del_storage	2013-02-24 11:09:53.648123+04
+120	easy_thumbnails	0010_rename_storage	2013-02-24 11:09:53.691597+04
+121	easy_thumbnails	0011_auto__add_field_source_storage_hash__add_field_thumbnail_storage_hash	2013-02-24 11:09:54.002351+04
+122	easy_thumbnails	0012_build_storage_hashes	2013-02-24 11:09:54.016548+04
+123	easy_thumbnails	0013_auto__del_storage__del_field_source_storage__del_field_thumbnail_stora	2013-02-24 11:09:54.122506+04
+124	easy_thumbnails	0014_auto__add_unique_source_name_storage_hash__add_unique_thumbnail_name_s	2013-02-24 11:09:54.200262+04
+125	easy_thumbnails	0015_auto__del_unique_thumbnail_name_storage_hash__add_unique_thumbnail_sou	2013-02-24 11:09:54.27637+04
+126	cms_helper	0005_auto__add_customcontact	2013-02-24 12:57:32.950377+04
+127	filer	0001_initial	2013-02-24 17:01:32.324211+04
+128	filer	0002_rename_file_field	2013-02-24 17:01:32.388882+04
+129	filer	0003_add_description_field	2013-02-24 17:01:32.422144+04
+130	filer	0004_auto__del_field_file__file__add_field_file_file__add_field_file_is_pub	2013-02-24 17:01:32.630921+04
+131	filer	0005_auto__add_field_file_sha1__chg_field_file_file	2013-02-24 17:01:32.844946+04
+132	filer	0006_polymorphic__add_field_file_polymorphic_ctype	2013-02-24 17:01:32.923608+04
+133	filer	0007_polymorphic__content_type_data	2013-02-24 17:01:32.956019+04
+134	filer	0008_polymorphic__del_field_file__file_type_plugin_name	2013-02-24 17:01:32.998531+04
+135	filer	0009_auto__add_field_folderpermission_can_edit_new__add_field_folderpermiss	2013-02-24 17:01:33.031503+04
+136	filer	0010_folderpermissions	2013-02-24 17:01:33.061467+04
+137	filer	0011_auto__del_field_folderpermission_can_add_children__del_field_folderper	2013-02-24 17:01:33.097882+04
+138	filer	0012_renaming_folderpermissions	2013-02-24 17:01:33.147277+04
+139	filer	0013_remove_null_file_name	2013-02-24 17:01:33.173386+04
+140	filer	0014_auto__add_field_image_related_url__chg_field_file_name	2013-02-24 17:01:33.239436+04
+141	cmsplugin_filer_folder	0001_initial	2013-02-24 17:07:18.326435+04
+142	cmsplugin_filer_image	0001_initial	2013-02-24 19:25:16.423798+04
+143	cmsplugin_filer_image	0002_auto__add_field_filerimage_image_url__chg_field_filerimage_image	2013-02-24 19:25:16.540887+04
+144	cmsplugin_filer_image	0003_auto__add_thumbnailoption__add_field_filerimage_thumbnail_option	2013-02-24 19:25:16.640192+04
+145	cmsplugin_filer_image	0004_auto__del_field_thumbnailoption_is_scaled__del_field_thumbnailoption_i	2013-02-24 19:25:17.110311+04
+146	cmsplugin_filer_image	0005_rename_float_to_alignment	2013-02-24 19:25:17.16441+04
+147	cmsplugin_filer_image	0006_auto__add_field_filerimage_original_link	2013-02-24 19:25:17.33645+04
+148	cmsplugin_filer_image	0007_rename_caption_to_caption_text	2013-02-24 19:25:17.389375+04
+149	cmsplugin_filer_image	0008_auto__add_field_filerimage_file_link	2013-02-24 19:25:17.465742+04
+150	cmsplugin_filer_image	0009_auto__add_field_filerimage_use_original_image	2013-02-24 19:25:17.707867+04
+151	cmsplugin_filer_image	0010_auto__add_field_filerimage_target_blank	2013-02-24 19:25:17.984206+04
+152	teaser	0001_initial	2013-02-24 23:04:04.102989+04
+153	teaser	0002_publisher2	2013-02-24 23:04:04.119583+04
 \.
 
 
@@ -2961,7 +3813,7 @@ COPY south_migrationhistory (id, app_name, migration, applied) FROM stdin;
 -- Name: south_migrationhistory_id_seq; Type: SEQUENCE SET; Schema: public; Owner: django_login
 --
 
-SELECT pg_catalog.setval('south_migrationhistory_id_seq', 108, true);
+SELECT pg_catalog.setval('south_migrationhistory_id_seq', 153, true);
 
 
 --
@@ -3038,7 +3890,7 @@ SELECT pg_catalog.setval('zinnia_category_id_seq', 2, true);
 
 COPY zinnia_entry (status, last_update, comment_enabled, tags, image, title, excerpt, slug, content, end_publication, start_publication, creation_date, id, pingback_enabled, login_required, password, detail_template, featured, comment_count, pingback_count, trackback_count, trackback_enabled, content_template, title_en, title_ru, content_en, content_ru, excerpt_en, excerpt_ru) FROM stdin;
 2	2013-02-20 09:59:02.44042+04	t		uploads/zinnia/stars_near_cho_la_LJ.jpg	ГКС завершает основную инвестиционную программу по увеличению мощности терминала МАНП в Москве	Глобальный Контейнерный Сервис (GCS) добавил второй козловой контейнерный кран (RMG) на свой терминал МАНП, расположенный неподалеку от Москвы. Этот позволит увеличить количество поездов, которые могут быть отработаны, до пяти-шести в неделю. Кроме того, ввод нового крана повысил вместимость контейнерной площадки до 2500 TEU, и длину жд фронта до 3 км....	testovaya-zapis	Глобальный Контейнерный Сервис (GCS) добавил второй козловой контейнерный кран (RMG) на свой терминал МАНП, расположенный неподалеку от Москвы. Этот позволит увеличить количество поездов, которые могут быть отработаны, до пяти-шести в неделю. Кроме того, ввод нового крана повысил вместимость контейнерной площадки до 2500 TEU, и длину жд фронта до 3 км.\r\nНовый кран был сделан в России компанией «Техноросс», и имеет грузоподъемность 36 тонн. Кран рассчитан на обработку штабеля высотой  5+1. Внутренний пролет крана составляет 42 метра, что соответствует 12 контейнерам в ширину.\r\nМАНП располагается рядом с железнодорожной станцией Кресты в 45 км на юго-запад от МКАД, недалеко от границы с Калужской области, в районе с высокой концентрацией сборочных производств и распределительных центров многих крупных зарубежных компаний. Среди них такие известные производители и марки, как Samsung, Panasonic, LG, PSA Peugeot Citroën, Mitsubishi, Adidas, X5 и Nestlé. Некоторые из этих компаний уже используют МАНП как терминал для получения, хранения и распределения товаров в регионе Центральной России.\r\nТерминал МАНП занимает 14,6 гектар, на которых расположены несколько складов общей площадью хранения 15,000 м2. На территории терминала находится склад временного хранения для осуществления таможенных операций с поступающими импортными грузами. \r\nМАНП располагает собственным парком автоконтейнеровозов, недавно увеличенным на пять единиц, для доставки товаров с терминала до складов грузополучателей.\r\nТерминал обслуживается специализированными контейнерными поездами из Новороссийска.  В стадии активного рассмотрения находятся проекты поездов из портов Санкт-Петербург/Усть-Луга, Украины и российского Дальнего Востока.	\N	\N	2013-02-12 13:33:46+04	1	t	f		entry_detail.html	f	0	0	0	t	zinnia/_entry_detail.html	First	ГКС завершает основную инвестиционную программу по увеличению мощности терминала МАНП в Москве	Ololo	Глобальный Контейнерный Сервис (GCS) добавил второй козловой контейнерный кран (RMG) на свой терминал МАНП, расположенный неподалеку от Москвы. Этот позволит увеличить количество поездов, которые могут быть отработаны, до пяти-шести в неделю. Кроме того, ввод нового крана повысил вместимость контейнерной площадки до 2500 TEU, и длину жд фронта до 3 км.\r\nНовый кран был сделан в России компанией «Техноросс», и имеет грузоподъемность 36 тонн. Кран рассчитан на обработку штабеля высотой  5+1. Внутренний пролет крана составляет 42 метра, что соответствует 12 контейнерам в ширину.\r\nМАНП располагается рядом с железнодорожной станцией Кресты в 45 км на юго-запад от МКАД, недалеко от границы с Калужской области, в районе с высокой концентрацией сборочных производств и распределительных центров многих крупных зарубежных компаний. Среди них такие известные производители и марки, как Samsung, Panasonic, LG, PSA Peugeot Citroën, Mitsubishi, Adidas, X5 и Nestlé. Некоторые из этих компаний уже используют МАНП как терминал для получения, хранения и распределения товаров в регионе Центральной России.\r\nТерминал МАНП занимает 14,6 гектар, на которых расположены несколько складов общей площадью хранения 15,000 м2. На территории терминала находится склад временного хранения для осуществления таможенных операций с поступающими импортными грузами. \r\nМАНП располагает собственным парком автоконтейнеровозов, недавно увеличенным на пять единиц, для доставки товаров с терминала до складов грузополучателей.\r\nТерминал обслуживается специализированными контейнерными поездами из Новороссийска.  В стадии активного рассмотрения находятся проекты поездов из портов Санкт-Петербург/Усть-Луга, Украины и российского Дальнего Востока.	wowowow	Глобальный Контейнерный Сервис (GCS) добавил второй козловой контейнерный кран (RMG) на свой терминал МАНП, расположенный неподалеку от Москвы. Этот позволит увеличить количество поездов, которые могут быть отработаны, до пяти-шести в неделю. Кроме того, ввод нового крана повысил вместимость контейнерной площадки до 2500 TEU, и длину жд фронта до 3 км....
-2	2013-02-21 15:14:14.237345+04	t			Rus	con	new-wave	con	\N	\N	2013-02-19 13:11:06+04	2	t	f		entry_detail.html	f	0	0	0	t	zinnia/_entry_detail.html	Rus	ГКС/Рускон запустил регулярный контейнерный поезд между портом Усть-Луга и Нижним Новгородом для General Motors Korea	con	Новый контейнерный поезд запущен ГКС/Рускон из Усть-Лужского Контейнерного Терминала (УЛКТ) в Нижний Новгород. \r\nПоезд предназначен в первую очередь для перевозок грузов компании General Motors (GM) Korea, которая в 2011 году подписала договор с автозаводом ГАЗ на сборку автомобилей Chevrolet Aveo. Одновременно ГКС предлагает возможности этого поезда также для перевозок сторонних экспедиторов и грузовладельцев, доставляющих контейнеры через Усть-Лугу.\r\nПроизводство Chevrolet Aveo началось с декабря 2012 года, планируемый объем сборки составляет до 32,000 автомобилей в год.\r\nРускон выполнил перевозку двух пробных поездов из УЛКТ в начале декабря. Всего для GM Korea в Нижний Новгород было доставлено 118 контейнеров, в том числе 54x40’ и 2x20’ контейнеров на первом поезде и 60x40’ и 2x20’ – на втором.\r\nРускон использовал для перевозки собственные платформы и недавно сформированный офис в Усть-Луге. Помимо жд перевозки, компания также осуществляла в интересах клиента необходимые портовые и транзитные формальности; морская часть перевозки выполнялась контейнерной линией Maersk Line.\r\nРегулярные перевозки комплектующих GM Korea начинаются с января. Ожидается, что их объем должен составить до 800x40’ в месяц.\r\nРускон является 100% дочкой группы ГКС и оказывает широкий спектр услуг по перевозке контейнеров, помимо услуг линейного агентирования, таможенной очистки и терминальной обработки.	con	Новый контейнерный поезд запущен ГКС/Рускон из Усть-Лужского Контейнерного Терминала (УЛКТ) в Нижний Новгород. Поезд предназначен в первую очередь для перевозок грузов компании General Motors (GM) Korea, которая в 2011 году подписала договор с автозаводом ГАЗ на сборку автомобилей Chevrolet Aveo.
+2	2013-02-24 11:21:27.821404+04	t		uploads/zinnia/ёлки.jpg	ГКС/Рускон запустил регулярный контейнерный поезд между портом Усть-Луга и Нижним Новгородом для General Motors Korea	Новый контейнерный поезд запущен ГКС/Рускон из Усть-Лужского Контейнерного Терминала (УЛКТ) в Нижний Новгород. Поезд предназначен в первую очередь для перевозок грузов компании General Motors (GM) Korea, которая в 2011 году подписала договор с автозаводом ГАЗ на сборку автомобилей Chevrolet Aveo. Одновременно ГКС предлагает возможности этого поезда также для перевозок сторонних...	new-wave	Новый контейнерный поезд запущен ГКС/Рускон из Усть-Лужского Контейнерного Терминала (УЛКТ) в Нижний Новгород. \r\nПоезд предназначен в первую очередь для перевозок грузов компании General Motors (GM) Korea, которая в 2011 году подписала договор с автозаводом ГАЗ на сборку автомобилей Chevrolet Aveo. Одновременно ГКС предлагает возможности этого поезда также для перевозок сторонних экспедиторов и грузовладельцев, доставляющих контейнеры через Усть-Лугу.\r\nПроизводство Chevrolet Aveo началось с декабря 2012 года, планируемый объем сборки составляет до 32,000 автомобилей в год.\r\nРускон выполнил перевозку двух пробных поездов из УЛКТ в начале декабря. Всего для GM Korea в Нижний Новгород было доставлено 118 контейнеров, в том числе 54x40’ и 2x20’ контейнеров на первом поезде и 60x40’ и 2x20’ – на втором.\r\nРускон использовал для перевозки собственные платформы и недавно сформированный офис в Усть-Луге. Помимо жд перевозки, компания также осуществляла в интересах клиента необходимые портовые и транзитные формальности; морская часть перевозки выполнялась контейнерной линией Maersk Line.\r\nРегулярные перевозки комплектующих GM Korea начинаются с января. Ожидается, что их объем должен составить до 800x40’ в месяц.\r\nРускон является 100% дочкой группы ГКС и оказывает широкий спектр услуг по перевозке контейнеров, помимо услуг линейного агентирования, таможенной очистки и терминальной обработки.	\N	\N	2013-02-19 13:11:06+04	2	t	f		entry_detail.html	f	0	0	0	t	zinnia/_entry_detail.html	Rus	ГКС/Рускон запустил регулярный контейнерный поезд между портом Усть-Луга и Нижним Новгородом для General Motors Korea	con	Новый контейнерный поезд запущен ГКС/Рускон из Усть-Лужского Контейнерного Терминала (УЛКТ) в Нижний Новгород. \r\nПоезд предназначен в первую очередь для перевозок грузов компании General Motors (GM) Korea, которая в 2011 году подписала договор с автозаводом ГАЗ на сборку автомобилей Chevrolet Aveo. Одновременно ГКС предлагает возможности этого поезда также для перевозок сторонних экспедиторов и грузовладельцев, доставляющих контейнеры через Усть-Лугу.\r\nПроизводство Chevrolet Aveo началось с декабря 2012 года, планируемый объем сборки составляет до 32,000 автомобилей в год.\r\nРускон выполнил перевозку двух пробных поездов из УЛКТ в начале декабря. Всего для GM Korea в Нижний Новгород было доставлено 118 контейнеров, в том числе 54x40’ и 2x20’ контейнеров на первом поезде и 60x40’ и 2x20’ – на втором.\r\nРускон использовал для перевозки собственные платформы и недавно сформированный офис в Усть-Луге. Помимо жд перевозки, компания также осуществляла в интересах клиента необходимые портовые и транзитные формальности; морская часть перевозки выполнялась контейнерной линией Maersk Line.\r\nРегулярные перевозки комплектующих GM Korea начинаются с января. Ожидается, что их объем должен составить до 800x40’ в месяц.\r\nРускон является 100% дочкой группы ГКС и оказывает широкий спектр услуг по перевозке контейнеров, помимо услуг линейного агентирования, таможенной очистки и терминальной обработки.	con	Новый контейнерный поезд запущен ГКС/Рускон из Усть-Лужского Контейнерного Терминала (УЛКТ) в Нижний Новгород. Поезд предназначен в первую очередь для перевозок грузов компании General Motors (GM) Korea, которая в 2011 году подписала договор с автозаводом ГАЗ на сборку автомобилей Chevrolet Aveo. Одновременно ГКС предлагает возможности этого поезда также для перевозок сторонних...
 \.
 
 
@@ -3048,7 +3900,7 @@ COPY zinnia_entry (status, last_update, comment_enabled, tags, image, title, exc
 
 COPY zinnia_entry_authors (id, entry_id, author_id) FROM stdin;
 15	1	1
-21	2	1
+25	2	1
 \.
 
 
@@ -3056,7 +3908,7 @@ COPY zinnia_entry_authors (id, entry_id, author_id) FROM stdin;
 -- Name: zinnia_entry_authors_id_seq; Type: SEQUENCE SET; Schema: public; Owner: django_login
 --
 
-SELECT pg_catalog.setval('zinnia_entry_authors_id_seq', 24, true);
+SELECT pg_catalog.setval('zinnia_entry_authors_id_seq', 25, true);
 
 
 --
@@ -3065,7 +3917,7 @@ SELECT pg_catalog.setval('zinnia_entry_authors_id_seq', 24, true);
 
 COPY zinnia_entry_categories (id, entry_id, category_id) FROM stdin;
 13	1	2
-19	2	2
+21	2	2
 \.
 
 
@@ -3073,7 +3925,7 @@ COPY zinnia_entry_categories (id, entry_id, category_id) FROM stdin;
 -- Name: zinnia_entry_categories_id_seq; Type: SEQUENCE SET; Schema: public; Owner: django_login
 --
 
-SELECT pg_catalog.setval('zinnia_entry_categories_id_seq', 20, true);
+SELECT pg_catalog.setval('zinnia_entry_categories_id_seq', 21, true);
 
 
 --
@@ -3104,7 +3956,7 @@ SELECT pg_catalog.setval('zinnia_entry_related_id_seq', 1, false);
 
 COPY zinnia_entry_sites (id, entry_id, site_id) FROM stdin;
 15	1	1
-21	2	1
+25	2	1
 \.
 
 
@@ -3112,7 +3964,7 @@ COPY zinnia_entry_sites (id, entry_id, site_id) FROM stdin;
 -- Name: zinnia_entry_sites_id_seq; Type: SEQUENCE SET; Schema: public; Owner: django_login
 --
 
-SELECT pg_catalog.setval('zinnia_entry_sites_id_seq', 24, true);
+SELECT pg_catalog.setval('zinnia_entry_sites_id_seq', 25, true);
 
 
 --
@@ -3388,11 +4240,51 @@ ALTER TABLE ONLY cmsplugin_calendarentriesplugin
 
 
 --
+-- Name: cmsplugin_contact_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY cmsplugin_contact
+    ADD CONSTRAINT cmsplugin_contact_pkey PRIMARY KEY (cmsplugin_ptr_id);
+
+
+--
+-- Name: cmsplugin_customcontact_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY cmsplugin_customcontact
+    ADD CONSTRAINT cmsplugin_customcontact_pkey PRIMARY KEY (cmsplugin_ptr_id);
+
+
+--
 -- Name: cmsplugin_file_pkey; Type: CONSTRAINT; Schema: public; Owner: django_login; Tablespace: 
 --
 
 ALTER TABLE ONLY cmsplugin_file
     ADD CONSTRAINT cmsplugin_file_pkey PRIMARY KEY (cmsplugin_ptr_id);
+
+
+--
+-- Name: cmsplugin_filer_image_thumbnailoption_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY cmsplugin_filer_image_thumbnailoption
+    ADD CONSTRAINT cmsplugin_filer_image_thumbnailoption_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: cmsplugin_filerfolder_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY cmsplugin_filerfolder
+    ADD CONSTRAINT cmsplugin_filerfolder_pkey PRIMARY KEY (cmsplugin_ptr_id);
+
+
+--
+-- Name: cmsplugin_filerimage_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY cmsplugin_filerimage
+    ADD CONSTRAINT cmsplugin_filerimage_pkey PRIMARY KEY (cmsplugin_ptr_id);
 
 
 --
@@ -3457,6 +4349,14 @@ ALTER TABLE ONLY cmsplugin_selectedentriesplugin
 
 ALTER TABLE ONLY cmsplugin_snippetptr
     ADD CONSTRAINT cmsplugin_snippetptr_pkey PRIMARY KEY (cmsplugin_ptr_id);
+
+
+--
+-- Name: cmsplugin_teaser_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY cmsplugin_teaser
+    ADD CONSTRAINT cmsplugin_teaser_pkey PRIMARY KEY (cmsplugin_ptr_id);
 
 
 --
@@ -3593,6 +4493,94 @@ ALTER TABLE ONLY django_session
 
 ALTER TABLE ONLY django_site
     ADD CONSTRAINT django_site_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: easy_thumbnails_source_name_39229697_uniq; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY easy_thumbnails_source
+    ADD CONSTRAINT easy_thumbnails_source_name_39229697_uniq UNIQUE (name, storage_hash);
+
+
+--
+-- Name: easy_thumbnails_source_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY easy_thumbnails_source
+    ADD CONSTRAINT easy_thumbnails_source_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: easy_thumbnails_thumbnail_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY easy_thumbnails_thumbnail
+    ADD CONSTRAINT easy_thumbnails_thumbnail_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: easy_thumbnails_thumbnail_source_id_47e6eb80_uniq; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY easy_thumbnails_thumbnail
+    ADD CONSTRAINT easy_thumbnails_thumbnail_source_id_47e6eb80_uniq UNIQUE (source_id, name, storage_hash);
+
+
+--
+-- Name: filer_clipboard_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY filer_clipboard
+    ADD CONSTRAINT filer_clipboard_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: filer_clipboarditem_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY filer_clipboarditem
+    ADD CONSTRAINT filer_clipboarditem_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: filer_file_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY filer_file
+    ADD CONSTRAINT filer_file_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: filer_folder_parent_id_4d901e49_uniq; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY filer_folder
+    ADD CONSTRAINT filer_folder_parent_id_4d901e49_uniq UNIQUE (parent_id, name);
+
+
+--
+-- Name: filer_folder_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY filer_folder
+    ADD CONSTRAINT filer_folder_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: filer_folderpermission_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY filer_folderpermission
+    ADD CONSTRAINT filer_folderpermission_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: filer_image_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY filer_image
+    ADD CONSTRAINT filer_image_pkey PRIMARY KEY (file_ptr_id);
 
 
 --
@@ -4183,6 +5171,41 @@ CREATE INDEX cms_title_slug_like ON cms_title USING btree (slug varchar_pattern_
 
 
 --
+-- Name: cmsplugin_filerfolder_folder_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX cmsplugin_filerfolder_folder_id ON cmsplugin_filerfolder USING btree (folder_id);
+
+
+--
+-- Name: cmsplugin_filerimage_file_link_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX cmsplugin_filerimage_file_link_id ON cmsplugin_filerimage USING btree (file_link_id);
+
+
+--
+-- Name: cmsplugin_filerimage_image_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX cmsplugin_filerimage_image_id ON cmsplugin_filerimage USING btree (image_id);
+
+
+--
+-- Name: cmsplugin_filerimage_page_link_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX cmsplugin_filerimage_page_link_id ON cmsplugin_filerimage USING btree (page_link_id);
+
+
+--
+-- Name: cmsplugin_filerimage_thumbnail_option_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX cmsplugin_filerimage_thumbnail_option_id ON cmsplugin_filerimage USING btree (thumbnail_option_id);
+
+
+--
 -- Name: cmsplugin_link_page_link_id; Type: INDEX; Schema: public; Owner: django_login; Tablespace: 
 --
 
@@ -4201,6 +5224,13 @@ CREATE INDEX cmsplugin_picture_page_link_id ON cmsplugin_picture USING btree (pa
 --
 
 CREATE INDEX cmsplugin_snippetptr_snippet_id ON cmsplugin_snippetptr USING btree (snippet_id);
+
+
+--
+-- Name: cmsplugin_teaser_page_link_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX cmsplugin_teaser_page_link_id ON cmsplugin_teaser USING btree (page_link_id);
 
 
 --
@@ -4327,6 +5357,146 @@ CREATE INDEX django_comments_user_id ON django_comments USING btree (user_id);
 --
 
 CREATE INDEX django_session_expire_date ON django_session USING btree (expire_date);
+
+
+--
+-- Name: easy_thumbnails_source_name; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX easy_thumbnails_source_name ON easy_thumbnails_source USING btree (name);
+
+
+--
+-- Name: easy_thumbnails_source_storage_hash; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX easy_thumbnails_source_storage_hash ON easy_thumbnails_source USING btree (storage_hash);
+
+
+--
+-- Name: easy_thumbnails_thumbnail_name; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX easy_thumbnails_thumbnail_name ON easy_thumbnails_thumbnail USING btree (name);
+
+
+--
+-- Name: easy_thumbnails_thumbnail_source_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX easy_thumbnails_thumbnail_source_id ON easy_thumbnails_thumbnail USING btree (source_id);
+
+
+--
+-- Name: easy_thumbnails_thumbnail_storage_hash; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX easy_thumbnails_thumbnail_storage_hash ON easy_thumbnails_thumbnail USING btree (storage_hash);
+
+
+--
+-- Name: filer_clipboard_user_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX filer_clipboard_user_id ON filer_clipboard USING btree (user_id);
+
+
+--
+-- Name: filer_clipboarditem_clipboard_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX filer_clipboarditem_clipboard_id ON filer_clipboarditem USING btree (clipboard_id);
+
+
+--
+-- Name: filer_clipboarditem_file_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX filer_clipboarditem_file_id ON filer_clipboarditem USING btree (file_id);
+
+
+--
+-- Name: filer_file_folder_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX filer_file_folder_id ON filer_file USING btree (folder_id);
+
+
+--
+-- Name: filer_file_owner_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX filer_file_owner_id ON filer_file USING btree (owner_id);
+
+
+--
+-- Name: filer_file_polymorphic_ctype_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX filer_file_polymorphic_ctype_id ON filer_file USING btree (polymorphic_ctype_id);
+
+
+--
+-- Name: filer_folder_level; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX filer_folder_level ON filer_folder USING btree (level);
+
+
+--
+-- Name: filer_folder_lft; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX filer_folder_lft ON filer_folder USING btree (lft);
+
+
+--
+-- Name: filer_folder_owner_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX filer_folder_owner_id ON filer_folder USING btree (owner_id);
+
+
+--
+-- Name: filer_folder_parent_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX filer_folder_parent_id ON filer_folder USING btree (parent_id);
+
+
+--
+-- Name: filer_folder_rght; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX filer_folder_rght ON filer_folder USING btree (rght);
+
+
+--
+-- Name: filer_folder_tree_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX filer_folder_tree_id ON filer_folder USING btree (tree_id);
+
+
+--
+-- Name: filer_folderpermission_folder_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX filer_folderpermission_folder_id ON filer_folderpermission USING btree (folder_id);
+
+
+--
+-- Name: filer_folderpermission_group_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX filer_folderpermission_group_id ON filer_folderpermission USING btree (group_id);
+
+
+--
+-- Name: filer_folderpermission_user_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX filer_folderpermission_user_id ON filer_folderpermission USING btree (user_id);
 
 
 --
@@ -4507,6 +5677,14 @@ ALTER TABLE ONLY cmsplugin_zinnia_latestentriesplugin_categories
 
 ALTER TABLE ONLY zinnia_entry_categories
     ADD CONSTRAINT category_id_refs_id_7e6ce045459f8216 FOREIGN KEY (category_id) REFERENCES zinnia_category(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: clipboard_id_refs_id_46496bc2; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY filer_clipboarditem
+    ADD CONSTRAINT clipboard_id_refs_id_46496bc2 FOREIGN KEY (clipboard_id) REFERENCES filer_clipboard(id) DEFERRABLE INITIALLY DEFERRED;
 
 
 --
@@ -4702,6 +5880,14 @@ ALTER TABLE ONLY cmsplugin_picture
 
 
 --
+-- Name: cmsplugin_ptr_id_refs_id_1c5135f; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY cmsplugin_customcontact
+    ADD CONSTRAINT cmsplugin_ptr_id_refs_id_1c5135f FOREIGN KEY (cmsplugin_ptr_id) REFERENCES cms_cmsplugin(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
 -- Name: cmsplugin_ptr_id_refs_id_3301bd8419e4c2ec; Type: FK CONSTRAINT; Schema: public; Owner: django_login
 --
 
@@ -4718,6 +5904,14 @@ ALTER TABLE ONLY cmsplugin_randomentriesplugin
 
 
 --
+-- Name: cmsplugin_ptr_id_refs_id_3f873c7a; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY cmsplugin_filerimage
+    ADD CONSTRAINT cmsplugin_ptr_id_refs_id_3f873c7a FOREIGN KEY (cmsplugin_ptr_id) REFERENCES cms_cmsplugin(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
 -- Name: cmsplugin_ptr_id_refs_id_4c030ec612cc9f9c; Type: FK CONSTRAINT; Schema: public; Owner: django_login
 --
 
@@ -4726,11 +5920,27 @@ ALTER TABLE ONLY cmsplugin_selectedentriesplugin
 
 
 --
+-- Name: cmsplugin_ptr_id_refs_id_4c50eb22; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY cmsplugin_filerfolder
+    ADD CONSTRAINT cmsplugin_ptr_id_refs_id_4c50eb22 FOREIGN KEY (cmsplugin_ptr_id) REFERENCES cms_cmsplugin(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
 -- Name: cmsplugin_ptr_id_refs_id_5b5bb680225ec8c8; Type: FK CONSTRAINT; Schema: public; Owner: django_login
 --
 
 ALTER TABLE ONLY cmsplugin_latestentriesplugin
     ADD CONSTRAINT cmsplugin_ptr_id_refs_id_5b5bb680225ec8c8 FOREIGN KEY (cmsplugin_ptr_id) REFERENCES cms_cmsplugin(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: cmsplugin_ptr_id_refs_id_6d2d8b7a; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY cmsplugin_contact
+    ADD CONSTRAINT cmsplugin_ptr_id_refs_id_6d2d8b7a FOREIGN KEY (cmsplugin_ptr_id) REFERENCES cms_cmsplugin(id) DEFERRABLE INITIALLY DEFERRED;
 
 
 --
@@ -4755,6 +5965,22 @@ ALTER TABLE ONLY cmsplugin_snippetptr
 
 ALTER TABLE ONLY cmsplugin_snippetptr
     ADD CONSTRAINT cmsplugin_snippetptr_snippet_id_fkey FOREIGN KEY (snippet_id) REFERENCES snippet_snippet(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: cmsplugin_teaser_cmsplugin_ptr_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY cmsplugin_teaser
+    ADD CONSTRAINT cmsplugin_teaser_cmsplugin_ptr_id_fkey FOREIGN KEY (cmsplugin_ptr_id) REFERENCES cms_cmsplugin(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: cmsplugin_teaser_page_link_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY cmsplugin_teaser
+    ADD CONSTRAINT cmsplugin_teaser_page_link_id_fkey FOREIGN KEY (page_link_id) REFERENCES cms_page(id) DEFERRABLE INITIALLY DEFERRED;
 
 
 --
@@ -4862,6 +6088,54 @@ ALTER TABLE ONLY cmsplugin_zinnia_selectedentriesplugin_entries
 
 
 --
+-- Name: file_id_refs_id_3533711; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY filer_clipboarditem
+    ADD CONSTRAINT file_id_refs_id_3533711 FOREIGN KEY (file_id) REFERENCES filer_file(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: file_link_id_refs_id_5ec3672c; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY cmsplugin_filerimage
+    ADD CONSTRAINT file_link_id_refs_id_5ec3672c FOREIGN KEY (file_link_id) REFERENCES filer_file(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: file_ptr_id_refs_id_273c421f; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY filer_image
+    ADD CONSTRAINT file_ptr_id_refs_id_273c421f FOREIGN KEY (file_ptr_id) REFERENCES filer_file(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: folder_id_refs_id_46416074; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY cmsplugin_filerfolder
+    ADD CONSTRAINT folder_id_refs_id_46416074 FOREIGN KEY (folder_id) REFERENCES filer_folder(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: folder_id_refs_id_5276dead; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY filer_file
+    ADD CONSTRAINT folder_id_refs_id_5276dead FOREIGN KEY (folder_id) REFERENCES filer_folder(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: folder_id_refs_id_565b7e06; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY filer_folderpermission
+    ADD CONSTRAINT folder_id_refs_id_565b7e06 FOREIGN KEY (folder_id) REFERENCES filer_folder(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
 -- Name: from_entry_id_refs_id_233a09ab4d833995; Type: FK CONSTRAINT; Schema: public; Owner: django_login
 --
 
@@ -4883,6 +6157,22 @@ ALTER TABLE ONLY cms_globalpagepermission_sites
 
 ALTER TABLE ONLY auth_group_permissions
     ADD CONSTRAINT group_id_refs_id_3cea63fe FOREIGN KEY (group_id) REFERENCES auth_group(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: group_id_refs_id_6e300e3b; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY filer_folderpermission
+    ADD CONSTRAINT group_id_refs_id_6e300e3b FOREIGN KEY (group_id) REFERENCES auth_group(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: image_id_refs_file_ptr_id_6f5059d6; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY cmsplugin_filerimage
+    ADD CONSTRAINT image_id_refs_file_ptr_id_6f5059d6 FOREIGN KEY (image_id) REFERENCES filer_image(file_ptr_id) DEFERRABLE INITIALLY DEFERRED;
 
 
 --
@@ -4910,6 +6200,22 @@ ALTER TABLE ONLY cmsplugin_zinnia_latestentriesplugin_tags
 
 
 --
+-- Name: owner_id_refs_id_4709f467; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY filer_folder
+    ADD CONSTRAINT owner_id_refs_id_4709f467 FOREIGN KEY (owner_id) REFERENCES auth_user(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: owner_id_refs_id_6abe8089; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY filer_file
+    ADD CONSTRAINT owner_id_refs_id_6abe8089 FOREIGN KEY (owner_id) REFERENCES auth_user(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
 -- Name: page_id_refs_id_b22baae5; Type: FK CONSTRAINT; Schema: public; Owner: django_login
 --
 
@@ -4918,11 +6224,27 @@ ALTER TABLE ONLY cms_page_placeholders
 
 
 --
+-- Name: page_link_id_refs_id_3d7fd63c; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY cmsplugin_filerimage
+    ADD CONSTRAINT page_link_id_refs_id_3d7fd63c FOREIGN KEY (page_link_id) REFERENCES cms_page(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
 -- Name: parent_id_refs_id_1fffa484ce18ab03; Type: FK CONSTRAINT; Schema: public; Owner: django_login
 --
 
 ALTER TABLE ONLY zinnia_category
     ADD CONSTRAINT parent_id_refs_id_1fffa484ce18ab03 FOREIGN KEY (parent_id) REFERENCES zinnia_category(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: parent_id_refs_id_60f1d8bd; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY filer_folder
+    ADD CONSTRAINT parent_id_refs_id_60f1d8bd FOREIGN KEY (parent_id) REFERENCES filer_folder(id) DEFERRABLE INITIALLY DEFERRED;
 
 
 --
@@ -4939,6 +6261,14 @@ ALTER TABLE ONLY cms_page
 
 ALTER TABLE ONLY cms_cmsplugin
     ADD CONSTRAINT parent_id_refs_id_e0b32a03 FOREIGN KEY (parent_id) REFERENCES cms_cmsplugin(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: polymorphic_ctype_id_refs_id_29c16935; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY filer_file
+    ADD CONSTRAINT polymorphic_ctype_id_refs_id_29c16935 FOREIGN KEY (polymorphic_ctype_id) REFERENCES django_content_type(id) DEFERRABLE INITIALLY DEFERRED;
 
 
 --
@@ -4966,6 +6296,14 @@ ALTER TABLE ONLY zinnia_entry_sites
 
 
 --
+-- Name: source_id_refs_id_5bffe8f5; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY easy_thumbnails_thumbnail
+    ADD CONSTRAINT source_id_refs_id_5bffe8f5 FOREIGN KEY (source_id) REFERENCES easy_thumbnails_source(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
 -- Name: tag_id_refs_id_77c431e0c66ec49e; Type: FK CONSTRAINT; Schema: public; Owner: django_login
 --
 
@@ -4990,11 +6328,27 @@ ALTER TABLE ONLY tagging_taggeditem
 
 
 --
+-- Name: thumbnail_option_id_refs_id_917a93; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY cmsplugin_filerimage
+    ADD CONSTRAINT thumbnail_option_id_refs_id_917a93 FOREIGN KEY (thumbnail_option_id) REFERENCES cmsplugin_filer_image_thumbnailoption(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
 -- Name: to_entry_id_refs_id_233a09ab4d833995; Type: FK CONSTRAINT; Schema: public; Owner: django_login
 --
 
 ALTER TABLE ONLY zinnia_entry_related
     ADD CONSTRAINT to_entry_id_refs_id_233a09ab4d833995 FOREIGN KEY (to_entry_id) REFERENCES zinnia_entry(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: user_id_refs_id_16137c20; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY filer_clipboard
+    ADD CONSTRAINT user_id_refs_id_16137c20 FOREIGN KEY (user_id) REFERENCES auth_user(id) DEFERRABLE INITIALLY DEFERRED;
 
 
 --
@@ -5011,6 +6365,14 @@ ALTER TABLE ONLY cmsplugin_zinnia_latestentriesplugin_authors
 
 ALTER TABLE ONLY zinnia_entry_authors
     ADD CONSTRAINT user_id_refs_id_410656e2874b02ff FOREIGN KEY (author_id) REFERENCES auth_user(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: user_id_refs_id_4ab53c64; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY filer_folderpermission
+    ADD CONSTRAINT user_id_refs_id_4ab53c64 FOREIGN KEY (user_id) REFERENCES auth_user(id) DEFERRABLE INITIALLY DEFERRED;
 
 
 --
