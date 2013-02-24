@@ -6,25 +6,21 @@
 {% block entry-image %}
 {% if object.image %}
 {% load thumbnail %}
-{% thumbnail object.image "160x120" crop="center" as im %}
+
 <div class="entry-image">
 	<div>		
 		{% if continue_reading %}
 		 <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="lightbox[{{ object.pk }}]">
-			<img src="{{ im.url }}" alt="{{ object.title }}" class="left" /> 
+			<img src="{% thumbnail object.image '160x120' crop='smart' %}" alt="{{ object.title }}" class="left" /> 
 		</a>
-		{% else %}		
-		{% thumbnail object.image "800x600" as bim %}
-		{% thumbnail object.image "330x220" crop="center" as im %}
-		<a href="{{ bim.url }}" title="{{ object.title }}" rel="lightbox[{{ object.pk }}]">
-		<img src="{{ im.url }}" alt="{{ object.title }}" class="left" />
+		{% else %}	
+		<a href="{% thumbnail object.image '800x600' %}" title="{{ object.title }}" rel="lightbox[{{ object.pk }}]">
+		<img src="{% thumbnail object.image '330x220' crop='smart' %}" alt="{{ object.title }}" class="left" />
 		</a>
-		{% endthumbnail %}
-		{% endthumbnail %}
 		{% endif %}		
 	</div>
 </div>
-{% endthumbnail %}
+
 {% endif %}
 {% endblock %}
 

@@ -429,7 +429,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .big_column h1, .wide_column h1 {
 	font-size: 28px;
-	padding: 15px 0px 20px 0px;
+	padding: 0px 0px 8px 0px;
 }
 
 .big_column h2, .wide_column h2 {
@@ -512,7 +512,7 @@ h1, h2, h3, h4, h5, h6 {
 	position: relative;
 	font-size: 18px;
 	color: #ff6600;
-	padding: 0px 0px 10px 0px;
+	padding: 0px 0px 17px 0px;
 }
 .item span.title a {
 	font-size: 18px;
@@ -690,7 +690,7 @@ a.spo:hover span {
 	font-size: 12px;
 }
 
-#footer .navigation li{
+#footer .navigation li {
 	display: inline;
 }
 
@@ -822,14 +822,12 @@ ol.numbered_list li {
 	text-decoration: none;
 }
 
-.hfeed h1 {
-	font-size: 28px;
-	padding: 15px 0px 2px 0px;
+.hfeed h1 {	
 	margin: 0;
 }
 
-.hfeed h2 {	
-	padding: 15px 0px 2px 0px;
+.hfeed h2 {
+	padding: 0px 0px 4px 0px;
 	margin: 0;
 }
 
@@ -846,33 +844,62 @@ ol.numbered_list li {
 }
 
 .big_column .entry-last-update {
-	color: #737373; 
+	color: #737373;
 	font-size: 12px;
 	padding: 0;
 	font-style: italic;
 }
 
-.entry-image img {		
+.entry-image img {
 	border: 3px solid #899bc0;
 	border-radius: 2px;
 }
 
-.entry-image {	 
+.entry-image {
 	float: left;
+	margin-top: 6px;
 }
 
 .big_column .entry-image div {
-	padding: 0 8px 0 0;		
+	padding: 0 8px 0 0;
 	/*border-radius: 2px;*/
 }
 
 .big_column .continue-reading {
 	margin: -7px 0 5px 0;
-	padding: 0;
-	line-height: 16px;	
+	padding: 0 0 5px 0;
+	line-height: 16px;
 	font-size: 12px;
 }
 
-#lang .current{
+#lang .current {
 	display: none;
+}
+
+.sub-menu .selected a {
+	color: #999;
+}
+
+span.info {
+	display: block;
+}
+
+/* gallery */
+
+.cmsplugin_filer_gallery_list {
+	margin-top: 6px;
+}
+
+.big_column .cmsplugin_filer_gallery_list ul li {
+	list-style: none;
+	display: inline;
+	border: 0;
+	padding: 2px;
+	margin: 0;
+}
+
+.cmsplugin_filer_gallery_list img {
+	background-color: #ffffff;
+	padding: 5px;
+	border: 1px #cccccc solid;
 }

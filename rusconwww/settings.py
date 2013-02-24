@@ -22,16 +22,7 @@ DEFAULT_LANGUAGE = 'ru'
 
 LANGUAGES = [('ru', u'Русский'),('en', u'English')]
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'rusconwww_db',                      # Or path to database file if using sqlite3.
-        'USER': 'django_login',                      # Not used with sqlite3.
-        'PASSWORD': 'hecrjy',                  # Not used with sqlite3.
-        'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
-    }
-}
+from local_settings import * #@UnusedWildImport
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -130,6 +121,14 @@ ZINNIA_PAGINATION = 10
 
 CMS_REDIRECTS = True
 
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    #'easy_thumbnails.processors.scale_and_crop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters',
+)
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -147,7 +146,7 @@ INSTALLED_APPS = (
     'cms.plugins.link',
     'cms.plugins.file',
     'cms.plugins.snippet',
-    'cms.plugins.googlemap',
+    'cms.plugins.googlemap',    
     'sekizai',
     'cms_helper',
     'django.contrib.comments',
@@ -157,5 +156,11 @@ INSTALLED_APPS = (
     'modeltranslation',
     'orderedmodel',
     'cmsplugin_zinnia',
-    'sorl.thumbnail',
+    #'sorl.thumbnail',
+    'cmsplugin_contact',
+    'easy_thumbnails',
+    'filer',
+    'cmsplugin_filer_folder',
+    'cmsplugin_filer_image',
+    'cms.plugins.teaser',
 )

@@ -11,6 +11,7 @@
 		<meta name="keywords" content="{% block meta-keywords %}{% page_attribute meta_keywords %}{% endblock %}"/>
 		<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}ruscon/css/style.css">
 		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}libs/digital-clock/digital-clock.css"/>
+		<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}ruscon/css/form.css">
 		{% render_block "css" %}
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script type="text/javascript" src="{{ STATIC_URL }}libs/digital-clock/digital-clock.js"></script>
@@ -56,9 +57,11 @@
 		</div>
 
 		<div class="container">
-			<div class="maincontent">
+			<div class="maincontent">	
+				<div class="line">&nbsp;</div>			
 				{% block maincontent %}
 				<div id="content" class="hfeed">
+					
         {% block content %}{% endblock %}     
       </div>
 				{% endblock maincontent %}
