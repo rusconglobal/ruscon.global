@@ -755,7 +755,7 @@ CREATE TABLE cmsplugin_contact (
 );
 
 
-ALTER TABLE public.cmsplugin_contact OWNER TO postgres;
+ALTER TABLE public.cmsplugin_contact OWNER TO django_login;
 
 --
 -- Name: cmsplugin_customcontact; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
@@ -780,7 +780,7 @@ CREATE TABLE cmsplugin_customcontact (
 );
 
 
-ALTER TABLE public.cmsplugin_customcontact OWNER TO postgres;
+ALTER TABLE public.cmsplugin_customcontact OWNER TO django_login;
 
 --
 -- Name: cmsplugin_file; Type: TABLE; Schema: public; Owner: django_login; Tablespace: 
@@ -809,7 +809,7 @@ CREATE TABLE cmsplugin_filer_image_thumbnailoption (
 );
 
 
-ALTER TABLE public.cmsplugin_filer_image_thumbnailoption OWNER TO postgres;
+ALTER TABLE public.cmsplugin_filer_image_thumbnailoption OWNER TO django_login;
 
 --
 -- Name: cmsplugin_filer_image_thumbnailoption_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -823,7 +823,7 @@ CREATE SEQUENCE cmsplugin_filer_image_thumbnailoption_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.cmsplugin_filer_image_thumbnailoption_id_seq OWNER TO postgres;
+ALTER TABLE public.cmsplugin_filer_image_thumbnailoption_id_seq OWNER TO django_login;
 
 --
 -- Name: cmsplugin_filer_image_thumbnailoption_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
@@ -844,7 +844,7 @@ CREATE TABLE cmsplugin_filerfolder (
 );
 
 
-ALTER TABLE public.cmsplugin_filerfolder OWNER TO postgres;
+ALTER TABLE public.cmsplugin_filerfolder OWNER TO django_login;
 
 --
 -- Name: cmsplugin_filerimage; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
@@ -875,7 +875,7 @@ CREATE TABLE cmsplugin_filerimage (
 );
 
 
-ALTER TABLE public.cmsplugin_filerimage OWNER TO postgres;
+ALTER TABLE public.cmsplugin_filerimage OWNER TO django_login;
 
 --
 -- Name: cmsplugin_googlemap; Type: TABLE; Schema: public; Owner: django_login; Tablespace: 
@@ -1013,7 +1013,7 @@ CREATE TABLE cmsplugin_teaser (
 );
 
 
-ALTER TABLE public.cmsplugin_teaser OWNER TO postgres;
+ALTER TABLE public.cmsplugin_teaser OWNER TO django_login;
 
 --
 -- Name: cmsplugin_text; Type: TABLE; Schema: public; Owner: django_login; Tablespace: 
@@ -1377,7 +1377,7 @@ CREATE TABLE easy_thumbnails_source (
 );
 
 
-ALTER TABLE public.easy_thumbnails_source OWNER TO postgres;
+ALTER TABLE public.easy_thumbnails_source OWNER TO django_login;
 
 --
 -- Name: easy_thumbnails_source_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -1391,7 +1391,7 @@ CREATE SEQUENCE easy_thumbnails_source_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.easy_thumbnails_source_id_seq OWNER TO postgres;
+ALTER TABLE public.easy_thumbnails_source_id_seq OWNER TO django_login;
 
 --
 -- Name: easy_thumbnails_source_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
@@ -1413,7 +1413,7 @@ CREATE TABLE easy_thumbnails_thumbnail (
 );
 
 
-ALTER TABLE public.easy_thumbnails_thumbnail OWNER TO postgres;
+ALTER TABLE public.easy_thumbnails_thumbnail OWNER TO django_login;
 
 --
 -- Name: easy_thumbnails_thumbnail_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -1427,7 +1427,7 @@ CREATE SEQUENCE easy_thumbnails_thumbnail_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.easy_thumbnails_thumbnail_id_seq OWNER TO postgres;
+ALTER TABLE public.easy_thumbnails_thumbnail_id_seq OWNER TO django_login;
 
 --
 -- Name: easy_thumbnails_thumbnail_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
@@ -1446,7 +1446,7 @@ CREATE TABLE filer_clipboard (
 );
 
 
-ALTER TABLE public.filer_clipboard OWNER TO postgres;
+ALTER TABLE public.filer_clipboard OWNER TO django_login;
 
 --
 -- Name: filer_clipboard_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -1460,7 +1460,7 @@ CREATE SEQUENCE filer_clipboard_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.filer_clipboard_id_seq OWNER TO postgres;
+ALTER TABLE public.filer_clipboard_id_seq OWNER TO django_login;
 
 --
 -- Name: filer_clipboard_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
@@ -1480,7 +1480,7 @@ CREATE TABLE filer_clipboarditem (
 );
 
 
-ALTER TABLE public.filer_clipboarditem OWNER TO postgres;
+ALTER TABLE public.filer_clipboarditem OWNER TO django_login;
 
 --
 -- Name: filer_clipboarditem_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -1494,7 +1494,7 @@ CREATE SEQUENCE filer_clipboarditem_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.filer_clipboarditem_id_seq OWNER TO postgres;
+ALTER TABLE public.filer_clipboarditem_id_seq OWNER TO django_login;
 
 --
 -- Name: filer_clipboarditem_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
@@ -1525,7 +1525,7 @@ CREATE TABLE filer_file (
 );
 
 
-ALTER TABLE public.filer_file OWNER TO postgres;
+ALTER TABLE public.filer_file OWNER TO django_login;
 
 --
 -- Name: filer_file_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -1539,7 +1539,7 @@ CREATE SEQUENCE filer_file_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.filer_file_id_seq OWNER TO postgres;
+ALTER TABLE public.filer_file_id_seq OWNER TO django_login;
 
 --
 -- Name: filer_file_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
@@ -1571,7 +1571,7 @@ CREATE TABLE filer_folder (
 );
 
 
-ALTER TABLE public.filer_folder OWNER TO postgres;
+ALTER TABLE public.filer_folder OWNER TO django_login;
 
 --
 -- Name: filer_folder_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -1585,7 +1585,7 @@ CREATE SEQUENCE filer_folder_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.filer_folder_id_seq OWNER TO postgres;
+ALTER TABLE public.filer_folder_id_seq OWNER TO django_login;
 
 --
 -- Name: filer_folder_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
@@ -1611,7 +1611,7 @@ CREATE TABLE filer_folderpermission (
 );
 
 
-ALTER TABLE public.filer_folderpermission OWNER TO postgres;
+ALTER TABLE public.filer_folderpermission OWNER TO django_login;
 
 --
 -- Name: filer_folderpermission_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -1625,7 +1625,7 @@ CREATE SEQUENCE filer_folderpermission_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.filer_folderpermission_id_seq OWNER TO postgres;
+ALTER TABLE public.filer_folderpermission_id_seq OWNER TO django_login;
 
 --
 -- Name: filer_folderpermission_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
@@ -1652,7 +1652,7 @@ CREATE TABLE filer_image (
 );
 
 
-ALTER TABLE public.filer_image OWNER TO postgres;
+ALTER TABLE public.filer_image OWNER TO django_login;
 
 --
 -- Name: menus_cachekey; Type: TABLE; Schema: public; Owner: django_login; Tablespace: 

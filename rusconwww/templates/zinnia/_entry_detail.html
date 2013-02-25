@@ -1,7 +1,11 @@
 {% extends "zinnia/_entry_detail_base.html" %}
 {% load i18n %}
-{% block entry-comments %}
-{% endblock entry-comments %}
+
+{% block entry-title %}
+    <h2 class="entry-title">{{ object.title }}</h2>
+{% endblock %}
+
+{% block entry-comments %}{% endblock entry-comments %}
 
 {% block entry-image %}
 {% if object.image %}
@@ -35,16 +39,6 @@
 {% endblock %}
 
 {% block entry-tags %}
-	{% if object.tags_list %}
-    <p class="entry-tags">
-      <strong>{% trans "Tags" %}</strong> :
-      {% for tag in object.tags_list %}
-      <a href="{% url 'zinnia_tag_detail' tag %}"
-         title="{% blocktrans %}Show all entries tagged by {{ tag }}{% endblocktrans %}"
-         rel="tag">{{ tag }}</a>      
-      {% endfor %}
-    </p>
-    {% endif %}
 {% endblock %}
 
 {% block entry-shorturl %}

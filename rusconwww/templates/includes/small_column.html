@@ -3,8 +3,10 @@
 	{% load cms_tags menu_tags sekizai_tags %}	
 	<span class="title">{% page_attribute 'page_title' page_reverce_id %}</span>
 	<img class="pic shadow radius8" src="{{ STATIC_URL }}ruscon/images/menu/{{ page_reverce_id }}.jpg" alt="{% page_attribute 'page_title' page_reverce_id %}" title="{% page_attribute 'page_title' page_reverce_id %}" />
+	{% block submenu %}
 	<ul class="sub-menu">
 	   {% show_menu_below_id page_reverce_id 0 100 100 100  %}
 	</ul>
+	{% endblock submenu %}
 </div>
 {% endif %}

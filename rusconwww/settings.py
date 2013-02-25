@@ -84,7 +84,8 @@ MIDDLEWARE_CLASSES = (
     #'django.middleware.locale.LocaleMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.user.CurrentUserMiddleware',
-    'cms.middleware.toolbar.ToolbarMiddleware',    
+    'cms.middleware.toolbar.ToolbarMiddleware',
+    'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -163,4 +164,5 @@ INSTALLED_APPS = (
     'cmsplugin_filer_folder',
     'cmsplugin_filer_image',
     'cms.plugins.teaser',
+    'django.contrib.redirects',
 )

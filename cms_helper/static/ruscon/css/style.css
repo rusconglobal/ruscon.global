@@ -512,7 +512,7 @@ h1, h2, h3, h4, h5, h6 {
 	position: relative;
 	font-size: 18px;
 	color: #ff6600;
-	padding: 0px 0px 17px 0px;
+	padding: 0px 0px 15px 0px;
 }
 .item span.title a {
 	font-size: 18px;
@@ -827,8 +827,13 @@ ol.numbered_list li {
 }
 
 .hfeed h2 {
-	padding: 0px 0px 4px 0px;
+	padding: 5px 0;
 	margin: 0;
+	color: #333;
+	font-size: 15px;	
+	background: #eee;
+	border-bottom: 1px dotted #ccc;
+	border-top: 1px dotted #ccc;
 }
 
 .left {
@@ -851,8 +856,8 @@ ol.numbered_list li {
 }
 
 .entry-image img {
-	border: 3px solid #899bc0;
-	border-radius: 2px;
+	/*border: 3px solid #899bc0;
+	border-radius: 2px;*/
 }
 
 .entry-image {
@@ -866,7 +871,7 @@ ol.numbered_list li {
 }
 
 .big_column .continue-reading {
-	margin: -7px 0 5px 0;
+	margin: -7px 0 10px 0;
 	padding: 0 0 5px 0;
 	line-height: 16px;
 	font-size: 12px;
@@ -884,6 +889,14 @@ span.info {
 	display: block;
 }
 
+.sub-menu li {
+	padding: 3px 0;
+}
+
+.sub-menu li a {
+	text-decoration: none;
+}
+
 /* gallery */
 
 .cmsplugin_filer_gallery_list {
@@ -898,8 +911,17 @@ span.info {
 	margin: 0;
 }
 
-.cmsplugin_filer_gallery_list img {
+.cmsplugin_filer_gallery_list img, .entry-image img {
 	background-color: #ffffff;
 	padding: 5px;
 	border: 1px #cccccc solid;
+	border-radius: 4px;
+}
+
+.capslock {
+	text-transform: uppercase;	
+}
+
+.spacer {
+	height: 7px;
 }

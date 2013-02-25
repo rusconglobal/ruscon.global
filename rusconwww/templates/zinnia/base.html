@@ -2,7 +2,11 @@
 {% load zinnia_tags i18n %}
 {% load url from future %}
 
-{% block meta-keywords %}{% get_tags as entry_tags %}{{ entry_tags|join:", "}}{% endblock %}
+{% block title %}{{ object.title }}{% endblock %}
+
+{% block meta-description %}{% if object.excerpt %}{{ object.excerpt|striptags }}{% else %}{{ object.content|striptags|truncatewords:100 }}{% endif %}{% endblock %}
+
+{% block meta-keywords %}{% if object.tags_list %}{{ object.tags_list|join:", " }}{% else %}{% get_tags as entry_tags %}{{ entry_tags|join:", "}}{% endif %}{% endblock %}
 
 {% block meta %}
     <meta name="generator" content="Zinnia {{ ZINNIA_VERSION }}" />
