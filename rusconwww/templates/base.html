@@ -5,6 +5,7 @@
 	{% load cms_tags sekizai_tags %}
 	{% load page_tags %}
 	{% load menu_tags %}
+	{% load url from future %} 
 	<head>
 		<title>{% block title %}{% page_attribute page_title %}{% endblock %}</title>
 		<meta name="description" content="{% block meta-description %}{% page_attribute meta_description %}{% endblock %}"/>
@@ -43,7 +44,13 @@
 				<div class="topmenu">
 					<ul>
 						{% show_menu 0 0 0 0 %}
-						<span id="lang">{% language_chooser %}</span>						
+							
+						 {% for lang in LANGUAGES %}
+        					{% ifequal lang.0 LANGUAGE_CODE %}     
+        					{% else %}
+        					<li><a href="/{{lang.0}}{{request.path}}">{{ lang.1 }}</a></li>
+        				{% endifequal %}
+    					{% endfor %}					
 					</ul>
 				</div>
 			</div>
