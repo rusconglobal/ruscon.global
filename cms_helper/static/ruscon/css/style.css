@@ -834,6 +834,7 @@ ol.numbered_list li {
 	background: #eee;
 	border-bottom: 1px dotted #ccc;
 	border-top: 1px dotted #ccc;
+	font-weight: bold;
 }
 
 .left {
@@ -924,4 +925,10 @@ span.info {
 
 .spacer {
 	height: 7px;
+}
+
+.big_column .paginator li{
+	list-style: none;
+	display: inline;
+	margin: 0px 7px 0px 0px;	
 }

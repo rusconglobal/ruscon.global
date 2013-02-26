@@ -165,4 +165,5 @@ INSTALLED_APPS = (
     'cmsplugin_filer_image',
     'cms.plugins.teaser',
     'django.contrib.redirects',
+    'transferapp',
 )
