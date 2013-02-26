@@ -8,6 +8,8 @@ from cmsplugin_contact.cms_plugins import ContactPlugin
 from models import CustomContact
 from forms import CustomContactForm
 from cmsplugin_filer_folder.cms_plugins import FilerFolderPlugin
+from cmsplugin_zinnia.cms_plugins import CMSQueryEntriesPlugin
+from zinnia.models.entry import Entry
 
 class CustomContactPlugin(ContactPlugin):
     name = _("Custom Contact Form")
@@ -59,4 +61,18 @@ class FilerGalleryPlugin(FilerFolderPlugin):
     
 plugin_pool.register_plugin(FilerGalleryPlugin)
 
+class CMSCategoryEntriesPlugin(CMSQueryEntriesPlugin):
+    name = _('Category entries')
+    def render(self, context, instance, placeholder):
+        """Update the context with plugin's data"""
+        entries = Entry.published.filter(categories__id__in=[instance.query]) #@UndefinedVariable
+        if instance.number_of_entries:
+            entries = entries[:instance.number_of_entries]
+
+        context.update({'entries': entries,
+                        'object': instance,
+                        'placeholder': placeholder})
+        return context
+
+plugin_pool.register_plugin(CMSCategoryEntriesPlugin)
     
