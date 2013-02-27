@@ -20,7 +20,7 @@ MANAGERS = ADMINS
 
 DEFAULT_LANGUAGE = 'ru'
 
-LANGUAGES = [('ru', u'Русский'),('en', u'English')]
+LANGUAGES = [('ru', u'Русский'), ('en', u'English')]
 
 from local_settings import * #@UnusedWildImport
 
@@ -119,6 +119,8 @@ CACHES = {
 }
 
 ZINNIA_PAGINATION = 10
+CMSPLUGIN_ZINNIA_TEMPLATES = [('includes/news_style.html', 'News style')]
+
 
 CMS_REDIRECTS = True
 

@@ -1,7 +1,9 @@
 {% extends "includes/small_column.html" %}
 {% load cms_tags menu_tags sekizai_tags %}
 {% block submenu %}
-	<p>
-	   {% show_menu_below_id page_reverce_id 0 100 100 100 "includes/menu.html" %}
-	</p>
+	<div class="sub-menu">
+		<p>
+	   	{% show_menu_below_id page_reverce_id 0 100 100 100 "includes/menu.html" %}
+	   </p>
+	</div>
 {% endblock submenu %}

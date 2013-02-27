@@ -44,12 +44,12 @@
 				<div class="topmenu">
 					<ul>
 						{% show_menu 0 0 0 0 %}
-							
+						
+						 
 						 {% for lang in LANGUAGES %}
-        					{% ifequal lang.0 LANGUAGE_CODE %}     
-        					{% else %}
-        					<li><a href="/{{lang.0}}{{request.path}}">{{ lang.1 }}</a></li>
-        				{% endifequal %}
+        					{% ifnotequal lang.0 LANGUAGE_CODE %}
+        					<li><a href="/{{lang.0}}{{request.path}}">{{ lang.1 }}</a></li>      					      
+        				{% endifnotequal %}
     					{% endfor %}					
 					</ul>
 				</div>

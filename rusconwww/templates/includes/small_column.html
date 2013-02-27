@@ -1,7 +1,8 @@
 {% if page_reverce_id %}
 <div class="item">
-	{% load cms_tags menu_tags sekizai_tags %}	
-	<span class="title">{% page_attribute 'page_title' page_reverce_id %}</span>
+	{% load cms_tags menu_tags sekizai_tags %}
+	
+	<span class="title capslock"><a href="{% page_url page_reverce_id %}">{% page_attribute 'page_title' page_reverce_id %}</a></span>
 	<img class="pic shadow radius8" src="{{ STATIC_URL }}ruscon/images/menu/{{ page_reverce_id }}.jpg" alt="{% page_attribute 'page_title' page_reverce_id %}" title="{% page_attribute 'page_title' page_reverce_id %}" />
 	{% block submenu %}
 	<ul class="sub-menu">
