@@ -1,7 +1,12 @@
 # -*- coding: utf-8 -*-
 from django import template
-from cms_helper.models import ClockTown
+from cms_helper.models import ClockTown, MenuImage
 import datetime
+from cms.models.pagemodel import Page
+from sitetree.models import TreeItem
+from django.template import loader
+from django.template.context import Context
+from sitetree.sitetreeapp import SiteTree
 
 register = template.Library()
 
@@ -13,7 +18,7 @@ def clocks(limit):
     
 @register.filter()
 def get_page_reverce_id(value):        
-    mapper = {2:'company',3:'company'}    
+    mapper = {2:'company',3:'company', 4:'logistic', 5: 'logistic', 6: 'logistic', 7: 'logistic', 8: 'finance', 9: 'carier'}    
     try:    
         return mapper[value]
     except KeyError:
@@ -28,3 +33,28 @@ def get_page_reverce_id_form_entry(value):
 @register.simple_tag
 def get_copyright():
     return u'© 1997—%s' % datetime.datetime.now().year
+
+@register.filter()
+def get_root_page_reverse_id(value):
+    page = Page.objects.get(reverse_id=value)
+    return page.get_root().reverse_id
+
+@register.simple_tag()
+def get_menuitem(alias, template_name):
+    t = loader.get_template(template_name)
+    item = TreeItem.objects.get(alias=alias)  
+    return t.render(Context({
+        'menu_item': item,        
+        'parent_item': item.parent
+    }))
+    
+@register.simple_tag
+def get_image_by_menu(item_id):    
+    menu_image = MenuImage.objects.get(menu_item_id=item_id)    
+    return menu_image.image.url    
+
+@register.filter()
+def human_lang(lang):
+    mapper = {'en': u'English', 'ru': u'По-русски'}
+    return mapper[lang]
+

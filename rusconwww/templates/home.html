@@ -26,29 +26,24 @@
 
 {% include 'includes/teaser_menu.html' with page_reverce_id='logistic' %}
 
-{% include 'includes/teaser_menu.html' with page_reverce_id='customs' %}
-
 
 {% with page_reverce_id='press-releases' %}
 	<div class="item">			
-	<span class="title capslock"><a href="{% page_url page_reverce_id %}">{% page_attribute 'page_title' page_reverce_id %}</a></span>
-	<img class="pic shadow radius8" src="{{ STATIC_URL }}ruscon/images/menu/{{ page_reverce_id }}.jpg" alt="{% page_attribute 'page_title' page_reverce_id %}" title="{% page_attribute 'page_title' page_reverce_id %}" />
+		{% get_menuitem page_reverce_id "includes/menu_item.html" %}
 		{% placeholder "press-releases" %}	
 	</div>
 {% endwith %}
 
-
-
 {% with page_reverce_id='news' %}
-	<div class="item">			
-	<span class="title capslock"><a href="{% page_url page_reverce_id %}">{% page_attribute 'page_title' page_reverce_id %}</a></span>
-	<img class="pic shadow radius8" src="{{ STATIC_URL }}ruscon/images/menu/{{ page_reverce_id }}.jpg" alt="{% page_attribute 'page_title' page_reverce_id %}" title="{% page_attribute 'page_title' page_reverce_id %}" />
+	<div class="item">		
+		{% get_menuitem page_reverce_id "includes/menu_item.html" %}
 		{% placeholder "news" %}	
 	</div>
 {% endwith %}
 
-
 {% include 'includes/teaser_menu.html' with page_reverce_id='customs' %}
+
+{% include 'includes/teaser_menu.html' with page_reverce_id='perishable_goods' %}
 
 
 {% endblock maincontent %}

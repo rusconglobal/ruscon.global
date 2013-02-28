@@ -10,6 +10,7 @@ from forms import CustomContactForm
 from cmsplugin_filer_folder.cms_plugins import FilerFolderPlugin
 from cmsplugin_zinnia.cms_plugins import CMSQueryEntriesPlugin
 from zinnia.models.entry import Entry
+from rusconwww.local_settings import DEFAULT_FROM_EMAIL
 
 class CustomContactPlugin(ContactPlugin):
     name = _("Custom Contact Form")
@@ -33,7 +34,7 @@ class CustomContactPlugin(ContactPlugin):
             render_to_string(self.email_template, {
                 'data': form.cleaned_data,
             }),
-            site_email,
+            DEFAULT_FROM_EMAIL,
             [site_email],
             headers = {
                 'Reply-To': form.cleaned_data['email']

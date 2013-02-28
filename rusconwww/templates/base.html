@@ -3,8 +3,7 @@
 	{% load i18n %}
 	{% load url from future %}
 	{% load cms_tags sekizai_tags %}
-	{% load page_tags %}
-	{% load menu_tags %}
+	{% load page_tags %}	
 	{% load url from future %} 
 	<head>
 		<title>{% block title %}{% page_attribute page_title %}{% endblock %}</title>
@@ -43,12 +42,14 @@
 			<div class="container">
 				<div class="topmenu">
 					<ul>
-						{% show_menu 0 0 0 0 %}
+						
+						{% load sitetree %}
+						{% sitetree_menu from "mainmenu" include "trunk" template "includes/top_menu.html" %}
 						
 						 
 						 {% for lang in LANGUAGES %}
         					{% ifnotequal lang.0 LANGUAGE_CODE %}
-        					<li><a href="/{{lang.0}}{{request.path}}">{{ lang.1 }}</a></li>      					      
+        					<li><a href="/{{lang.0}}{{request.path}}">{{ lang.0|human_lang }}</a></li>      					      
         				{% endifnotequal %}
     					{% endfor %}					
 					</ul>
@@ -87,7 +88,7 @@
 				<p>
 				{% get_copyright %}	{% show_placeholder "get-copyright" "global_placeholder" %}
 					<br />				
-					{% show_menu 0 0 0 0 "includes/menu.html" %}		
+					{% sitetree_menu from "mainmenu" include "trunk" template "includes/menu_line.html" %}		
 				</p>
 				<div id="address">
 					<p>						

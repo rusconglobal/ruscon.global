@@ -1,12 +1,15 @@
+{% load page_tags %}
 {% if page_reverce_id %}
 <div class="item">
-	{% load cms_tags menu_tags sekizai_tags %}
-	
-	<span class="title capslock"><a href="{% page_url page_reverce_id %}">{% page_attribute 'page_title' page_reverce_id %}</a></span>
-	<img class="pic shadow radius8" src="{{ STATIC_URL }}ruscon/images/menu/{{ page_reverce_id }}.jpg" alt="{% page_attribute 'page_title' page_reverce_id %}" title="{% page_attribute 'page_title' page_reverce_id %}" />
+	{% load cms_tags sekizai_tags %}
+	{% load sitetree %}
+		
+	{% get_menuitem page_reverce_id "includes/menu_item.html" %}
+		
 	{% block submenu %}
 	<ul class="sub-menu">
-	   {% show_menu_below_id page_reverce_id 0 100 100 100  %}
+	
+	{% sitetree_menu from 'mainmenu' include page_reverce_id template "includes/top_menu.html" %}
 	</ul>
 	{% endblock submenu %}
 </div>

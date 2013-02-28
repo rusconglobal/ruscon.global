@@ -822,6 +822,16 @@ ol.numbered_list li {
 	text-decoration: none;
 }
 
+.big_column ul li {
+	color: #555555;
+	list-style: disc;
+	line-height: 22px;	
+}
+
+.big_column ul {
+	padding-left : 20px;
+}
+
 .hfeed h1 {
 	margin: 0;
 }
@@ -887,7 +897,7 @@ ol.numbered_list li {
 }
 
 div.sub-menu {
-	height: 45px;
+	height: 62px;
 }
 
 span.info {
@@ -945,4 +955,8 @@ span.info {
 
 img.left {
 	padding: 5px;		
+}
+
+a.current_item , a.current_branch {
+	color: #666;	
 }
