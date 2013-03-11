@@ -11,6 +11,7 @@ from django.utils.html import strip_tags
 from zinnia.managers import PUBLISHED
 from sitetree.admin import TreeItemAdmin, TreeAdmin, override_item_admin
 from sitetree.models import Tree, TreeItem
+from django.utils.translation import ugettext_lazy as _
 
 class ModelTranslationMedia(object):    
     class Media:
@@ -25,6 +26,24 @@ class ModelTranslationMedia(object):
         } 
 
 class ZinniaEntryTranslatedAdmin(zinnia_admin.EntryAdmin, TranslationAdmin, ModelTranslationMedia):
+    fieldsets = ((_('Content'), {'fields': ('title', 'excerpt', 'content',
+                                            'image', 'status')}),
+                 (_('Options'), {'fields': ('featured', 
+                                            'related', 'authors',
+                                            'creation_date',
+                                            'start_publication',
+                                            'end_publication'),
+                                 'classes': ('collapse', 'collapse-closed')}),
+                 (_('Privacy'), {'fields': ('password', 'login_required',),
+                                 'classes': ('collapse', 'collapse-closed')}),
+                 (_('Discussions'), {'fields': ('comment_enabled',
+                                                'pingback_enabled',
+                                                'trackback_enabled'),
+                                     'classes': ('collapse',
+                                                 'collapse-closed')}),
+                 (_('Publication'), {'fields': ('categories', 'tags',
+                                                'sites', 'slug')}))
+
     list_display = ('title',)
     def formfield_for_dbfield(self, db_field, **kwargs):
         field = super(ZinniaEntryTranslatedAdmin, self).formfield_for_dbfield(db_field, **kwargs)

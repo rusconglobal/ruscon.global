@@ -169,5 +169,5 @@ INSTALLED_APPS = (
     #'django.contrib.redirects',
     'transferapp',
     'sitetree',
-    'cms_helper.cms_plugins',
+    'cms_helper.cms_plugins',    
 )

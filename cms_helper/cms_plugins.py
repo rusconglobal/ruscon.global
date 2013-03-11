@@ -11,6 +11,7 @@ from cmsplugin_filer_folder.cms_plugins import FilerFolderPlugin
 from cmsplugin_zinnia.cms_plugins import CMSQueryEntriesPlugin
 from zinnia.models.entry import Entry
 from rusconwww.local_settings import DEFAULT_FROM_EMAIL
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 class CustomContactPlugin(ContactPlugin):
     name = _("Custom Contact Form")
@@ -69,8 +70,24 @@ class CMSCategoryEntriesPlugin(CMSQueryEntriesPlugin):
         entries = Entry.published.filter(categories__id__in=[instance.query]) #@UndefinedVariable
         if instance.number_of_entries:
             entries = entries[:instance.number_of_entries]
-
-        context.update({'entries': entries,
+        
+        paginator = Paginator(entries, 10)  
+        self.request = context['request']          
+        page = self.request.GET.get('page')
+        try:
+            objects = paginator.page(page)
+        except PageNotAnInteger:        
+            objects = paginator.page(1)
+        except EmptyPage:        
+            objects = paginator.page(paginator.num_pages)        
+        context.update({
+                'paginator': paginator,
+                'page_obj': objects,
+                'is_paginated': objects.has_other_pages(),
+                'entries': objects.object_list
+            })  
+        return context  
+        context.update({
                         'object': instance,
                         'placeholder': placeholder})
         return context
