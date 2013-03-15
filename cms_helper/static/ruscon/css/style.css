@@ -650,6 +650,10 @@ a.spo:hover span {
 	background-image: url('../images/cn.gif');
 }
 
+.footer_menu ul.adresses li.ua, .footer_menu_ ul.adresses li.ua {
+	background-image: url('../images/ua.png');
+}
+
 .footer_menu ul.adresses li strong, .footer_menu_ ul.adresses li strong {
 	color: #999;
 	font-size: 12px;
