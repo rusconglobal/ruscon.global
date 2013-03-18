@@ -123,6 +123,7 @@ CMSPLUGIN_ZINNIA_TEMPLATES = [('includes/news_style.html', 'News style')]
 
 
 CMS_REDIRECTS = True
+CMS_CACHE_PREFIX = 'ruscon'
 
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
