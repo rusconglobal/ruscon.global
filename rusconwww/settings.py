@@ -115,12 +115,13 @@ CACHES = {
     'default': dict(
         BACKEND = 'django.core.cache.backends.memcached.MemcachedCache',
         LOCATION = ['127.0.0.1:11211'],
+	CACHE_MIDDLEWARE_KEY_PREFIX = 'rusconcache',
+	KEY_PREFIX = 'rusconcashe',
     )
 }
 
 ZINNIA_PAGINATION = 10
 CMSPLUGIN_ZINNIA_TEMPLATES = [('includes/news_style.html', 'News style')]
-
 
 CMS_REDIRECTS = True
 CMS_CACHE_PREFIX = 'ruscon'
