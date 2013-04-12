@@ -59,9 +59,7 @@
   </script>
 {% endaddtoblock %}
 
-<div class="plugin_googlemap">
-  {% if object.get_title %}<h2>{{ object.get_title }}</h2>{% endif %}
-
+<div class="plugin_googlemap">  
   <div id="google-map-{{ object.pk }}" class="google-map-container"
        style="width: {{ object.width }}; height: {{ object.height }};"></div>
 
