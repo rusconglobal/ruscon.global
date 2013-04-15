@@ -172,4 +172,5 @@ INSTALLED_APPS = (
     'transferapp',
     'sitetree',
     'cms_helper.cms_plugins',    
+    'geo_office',
 )

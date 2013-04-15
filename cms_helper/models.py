@@ -23,5 +23,8 @@ class MenuImage(models.Model):
     title = models.CharField(max_length=100)
     alt = models.CharField(max_length=100)
     image = FilerImageField()    
+
+
     
+
     
