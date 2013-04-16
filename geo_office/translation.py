@@ -9,10 +9,13 @@ class OfficeTranslationOptions(TranslationOptions):
  
 class ContactTypeTranslationOptions(TranslationOptions):
     fields = ('contact_type', 'contact_short_type', )
+
+class OfficeTypeTranslationOptions(TranslationOptions):
+    fields = ('name', 'head_title_template', 'office_title_template') 
  
 translator.register(Country, NameTranslationOptions)
 translator.register(Town, NameTranslationOptions)
-translator.register(OfficeType, NameTranslationOptions)
+translator.register(OfficeType, OfficeTypeTranslationOptions)
 translator.register(Office, OfficeTranslationOptions)
 translator.register(ContactType, ContactTypeTranslationOptions)
 
