@@ -964,3 +964,7 @@ img.left {
 a.current_item , a.current_branch {
 	color: #666;	
 }
+
+.google-map-container {
+	border: 1px solid #ccc;
+}
