@@ -829,11 +829,11 @@ ol.numbered_list li {
 .big_column ul li {
 	color: #555555;
 	list-style: disc;
-	line-height: 22px;	
+	line-height: 22px;
 }
 
 .big_column ul {
-	padding-left : 20px;
+	padding-left: 20px;
 }
 
 .hfeed h1 {
@@ -958,13 +958,14 @@ span.info {
 }
 
 img.left {
-	padding: 5px;		
+	padding: 5px;
 }
 
-a.current_item , a.current_branch {
-	color: #666;	
+a.current_item, a.current_branch {
+	color: #666;
 }
 
 .google-map-container {
 	border: 1px solid #ccc;
+	margin-top: 5px;
 }
