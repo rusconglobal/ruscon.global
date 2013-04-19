@@ -6,7 +6,7 @@ register = template.Library()
 def to_comma_sep(iterval):
     result = []
     for contact in iterval.all():
-        result.append('<strong>%s</strong>: %s' % (contact.contact_type, contact.contact))
+        result.append(u'<strong>%s</strong>: %s' % (contact.contact_type, contact.contact))
     if result:
-        return ' <br /> '.join(result)
-    return u''
+        return u' <br /> '.join(result)
+    return u'-'
