@@ -31,7 +31,7 @@ class Office(models.Model):
     post_index = models.CharField(max_length=10)
     latitude = models.DecimalField(max_digits=8, decimal_places=6, null=True, blank=True)
     longitude = models.DecimalField(max_digits=8, decimal_places=6, null=True, blank=True)
-    seo_title = models.CharField(max_length=255, null=True, blank=True)        
+    seo_title = models.CharField(max_length=255, default=u'Transportation logistics in')        
     @property
     def prime_phone(self):
         contacts = self.contacts.all()
