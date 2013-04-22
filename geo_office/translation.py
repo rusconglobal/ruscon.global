@@ -5,7 +5,7 @@ class NameTranslationOptions(TranslationOptions):
     fields = ('name',) 
  
 class OfficeTranslationOptions(TranslationOptions):
-    fields = ('head', 'address', )
+    fields = ('head', 'address', 'seo_title')
  
 class ContactTypeTranslationOptions(TranslationOptions):
     fields = ('contact_type', 'contact_short_type', )

@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import ugettext_lazy as _
 from filer.fields.image import FilerImageField
 from orderedmodel.models import OrderedModel
 from cms.models.pluginmodel import CMSPlugin
@@ -22,14 +23,15 @@ class OfficeType(models.Model):
     def __unicode__(self):
         return self.name
                             
-class Office(models.Model):
+class Office(models.Model):    
     office_type = models.ForeignKey(OfficeType)
     town = models.ForeignKey(Town)
     head = models.CharField(max_length=255)
     address = models.TextField()
     post_index = models.CharField(max_length=10)
     latitude = models.DecimalField(max_digits=8, decimal_places=6, null=True, blank=True)
-    longitude = models.DecimalField(max_digits=8, decimal_places=6, null=True, blank=True)        
+    longitude = models.DecimalField(max_digits=8, decimal_places=6, null=True, blank=True)
+    seo_title = models.CharField(max_length=255, null=True, blank=True)        
     @property
     def prime_phone(self):
         contacts = self.contacts.all()
