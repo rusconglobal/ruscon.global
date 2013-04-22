@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
 from filer.fields.image import FilerImageField
 from orderedmodel.models import OrderedModel
 from cms.models.pluginmodel import CMSPlugin
