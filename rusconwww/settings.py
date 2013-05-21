@@ -99,10 +99,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 CMS_TEMPLATES = (
-    ('base.html', 'Base Template'),
-    ('home.html', 'Home Template'),
     ('page.html', 'Page Template'),
-    ('onecol.html', 'One Column Template'),
+    ('base.html', 'Base Template'),
+    ('home.html', 'Home Template'),   
     ('global_placeholder.html', 'Global Placeholder'),
 )
 
@@ -175,4 +174,5 @@ INSTALLED_APPS = (
     'cms_helper.cms_plugins',    
     'geo_office',
     'ctracer',
+    'ctracer.cms_plugins',
 )
