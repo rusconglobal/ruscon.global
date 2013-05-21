@@ -969,3 +969,11 @@ a.current_item, a.current_branch {
 	border: 1px solid #ccc;
 	margin-top: 5px;
 }
+
+.sub-desc {
+	margin: 0 0 10px 20px;
+}
+
+.big_column .errorlist li {
+	color: #FF4E00;	
+}

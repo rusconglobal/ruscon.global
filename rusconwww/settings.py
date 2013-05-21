@@ -102,6 +102,7 @@ CMS_TEMPLATES = (
     ('base.html', 'Base Template'),
     ('home.html', 'Home Template'),
     ('page.html', 'Page Template'),
+    ('onecol.html', 'One Column Template'),
     ('global_placeholder.html', 'Global Placeholder'),
 )
 
@@ -173,4 +174,5 @@ INSTALLED_APPS = (
     'sitetree',
     'cms_helper.cms_plugins',    
     'geo_office',
+    'ctracer',
 )

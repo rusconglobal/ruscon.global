@@ -20,7 +20,8 @@
 {% block maincontent %}
 <div class="small_column">
 {% load page_tags %}
-{% include 'includes/small_column.html' with page_reverce_id=current_page.get_root.reverse_id %}	 	
+{% include 'includes/small_column.html' with page_reverce_id=current_page.get_root.reverse_id %}
+<div class="sub-desc">{% placeholder "small-column" %}</div>	 	
 </div>
 <div class="big_column">        
 {% block entry-content %}

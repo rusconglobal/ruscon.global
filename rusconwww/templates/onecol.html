@@ -1,0 +1,10 @@
+{% extends "page.html" %}
+{% load cms_tags sekizai_tags %}
+{% block maincontent %}
+<div class="one_column">        
+{% block entry-content %}
+<h1>{% placeholder "custom-title" or %}{% page_attribute page_title %}{% endplaceholder %}</h1>
+  {% placeholder "page-content" %}
+{% endblock %}
+</div>
+{% endblock maincontent %}
