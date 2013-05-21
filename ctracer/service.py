@@ -4,7 +4,7 @@ from django.core.cache import cache
 import cPickle as pickle
 
 class WsdlTracer(object):
-    URL = 'http://srvr8/UAT_82/ws/gpstrack?wsdl'
+    URL = 'http://srvr8.first/UAT_82/ws/gpstrack?wsdl'
     CACHE_TIME = 300
     _cache_key = None    
     def __init__(self, container_num):
