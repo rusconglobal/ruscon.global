@@ -953,7 +953,7 @@ span.info {
 
 .news-block {
 	width: 100%;
-	height: 330px;
+	height: 270px;
 	overflow: auto;
 }
 
@@ -976,4 +976,35 @@ a.current_item, a.current_branch {
 
 .big_column .errorlist li {
 	color: #FF4E00;	
+}
+
+#press-release {
+	width: 300px;
+}
+
+#press-release ul li{
+	/*border-top: 3px solid white;*/
+	
+}
+
+#press-release ul li div {
+	padding: 5px;
+}
+
+#press-release ul li div a {
+	text-decoration: none;	
+}
+
+.label {
+	display: inline;
+	padding: .25em .6em;
+	font-size: 75%;
+	font-weight: 500;
+	line-height: 1;
+	color: #ffffff;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	background-color: #5bc0de;
+	border-radius: .25em;
 }

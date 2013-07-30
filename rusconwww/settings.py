@@ -121,7 +121,7 @@ CACHES = {
 }
 
 ZINNIA_PAGINATION = 10
-CMSPLUGIN_ZINNIA_TEMPLATES = [('includes/news_style.html', 'News style')]
+CMSPLUGIN_ZINNIA_TEMPLATES = [('includes/news_style.html', 'News style'), ('includes/press.html', 'Press')]
 
 CMS_REDIRECTS = True
 CMS_CACHE_PREFIX = 'ruscon'

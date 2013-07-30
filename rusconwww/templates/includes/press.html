@@ -1,0 +1,21 @@
+{% load i18n %}
+<div id="press-release">
+<ul>
+  {% for object in entries %}
+  <li>
+  	<div>
+    <span class="label">{{ object.creation_date|date:"SHORT_DATE_FORMAT"  }}</span> <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">{{ object.title }}</a>
+    </div>    
+  </li>
+  {% empty %}
+  <p>
+    {% trans "No entries yet." %}
+  </p>
+  {% endfor %}
+</ul>
+</div>
+
+{% if is_paginated %}
+	{% load zinnia_tags %}
+	{% zinnia_pagination page_obj %}
+{% endif %}

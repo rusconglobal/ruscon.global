@@ -15,11 +15,11 @@
 <div class="entry-image">
 	<div>		
 		{% if continue_reading %}
-		 <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="lightbox[{{ object.pk }}]">
+		<a href="{{ object.get_absolute_url }}" title="{{ object.title }}">
 			<img src="{% thumbnail object.image '160x120' crop='smart' %}" alt="{{ object.title }}" class="left" /> 
 		</a>
 		{% else %}	
-		<a href="{% thumbnail object.image '800x600' %}" title="{{ object.title }}" rel="lightbox[{{ object.pk }}]">
+		<a class="entry-image-link" href="{% thumbnail object.image '800x600' %}" title="{{ object.title }}">
 		<img src="{% thumbnail object.image '330x220' crop='smart' %}" alt="{{ object.title }}" class="left" />
 		</a>
 		{% endif %}		
