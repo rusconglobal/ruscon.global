@@ -102,6 +102,7 @@ CMS_TEMPLATES = (
     ('page.html', 'Page Template'),
     ('base.html', 'Base Template'),
     ('home.html', 'Home Template'),   
+    ('gallery.html', 'Gallery Template'),
     ('global_placeholder.html', 'Global Placeholder'),
 )
 

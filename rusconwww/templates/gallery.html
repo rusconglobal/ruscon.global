@@ -1,0 +1,7 @@
+{% extends "page.html" %}
+{% load cms_tags sekizai_tags %}
+
+{% block entry-content %}
+<h1>{% placeholder "custom-title" or %}{% page_attribute page_title %}{% endplaceholder %}</h1>
+  <div id="gallery-list">{% placeholder "page-content" %}</div>
+{% endblock %}

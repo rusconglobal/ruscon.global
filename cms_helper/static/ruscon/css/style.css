@@ -930,7 +930,7 @@ span.info {
 	margin: 0;
 }
 
-.cmsplugin_filer_gallery_list img, .entry-image img {
+.cmsplugin_filer_gallery_list img, .entry-image img, #gallery-list img {
 	background-color: #ffffff;
 	padding: 5px;
 	border: 1px #cccccc solid;
@@ -1007,4 +1007,8 @@ a.current_item, a.current_branch {
 	vertical-align: middle;
 	background-color: #5bc0de;
 	border-radius: .25em;
+}
+
+#gallery-list img {
+	
 }
