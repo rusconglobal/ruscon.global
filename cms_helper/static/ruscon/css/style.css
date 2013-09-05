@@ -1009,6 +1009,8 @@ a.current_item, a.current_branch {
 	border-radius: .25em;
 }
 
-#gallery-list img {
-	
+#gallery-list .info {
+	width: 255px;
+	text-align: center;
+	margin: 0 0 20px 0;
 }
