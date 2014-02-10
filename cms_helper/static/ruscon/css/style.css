@@ -963,6 +963,7 @@ img.left {
 
 a.current_item, a.current_branch {
 	color: #666;
+	font-weight: bold;
 }
 
 .google-map-container {
