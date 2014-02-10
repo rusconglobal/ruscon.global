@@ -18,7 +18,7 @@ def clocks(limit):
     
 @register.filter()
 def get_page_reverce_id(value):        
-    mapper = {2:'company',3:'company', 4:'logistic', 5: 'logistic', 6: 'logistic', 7: 'logistic', 8: 'logistic', 9: 'carier'}    
+    mapper = {2:'company',3:'company', 4:'logistic', 5: 'logistic', 6:'logistic', 7:'logistic', 8:'logistic', 9:'carier'}    
     try:    
         return mapper[value]
     except KeyError:
