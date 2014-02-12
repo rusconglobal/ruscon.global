@@ -12,6 +12,7 @@ from cmsplugin_zinnia.cms_plugins import CMSQueryEntriesPlugin
 from zinnia.models.entry import Entry
 from rusconwww.local_settings import DEFAULT_FROM_EMAIL
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from cms_helper.templatetags.page_tags import get_page_reverce_id_form_entry
 
 class CustomContactPlugin(ContactPlugin):
     name = _("Custom Contact Form")
@@ -93,4 +94,30 @@ class CMSCategoryEntriesPlugin(CMSQueryEntriesPlugin):
         return context
 
 plugin_pool.register_plugin(CMSCategoryEntriesPlugin)
+
+from sitetree.sitetreeapp import register_dynamic_trees, compose_dynamic_tree
+from sitetree.utils import tree, item
+
+ 
+items_cat = {}
+entries = Entry.published.all() #@UndefinedVariable
+for entry in entries:
+    node = item(entry.title, entry.get_absolute_url(), url_as_pattern=False)
+    node.title_ru = entry.title_ru
+    cats = entry.categories.all()[:1]
+    if not cats:
+        continue      
+    cat = entry.categories.all()[:1][0].slug
+    if not cat in items_cat:
+        items_cat[cat] = []
+    items_cat[cat].append(node)  
+
+for key, value in items_cat.iteritems():    
+    register_dynamic_trees((   
+        compose_dynamic_tree((
+            tree('dynamic', title='dynamic', items=value),
+        ), target_tree_alias='mainmenu',  parent_tree_item_alias=key),
+    ))  
+
+
     

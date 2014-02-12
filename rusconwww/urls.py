@@ -13,10 +13,10 @@ urlpatterns = patterns('',
 urlpatterns += staticfiles_urlpatterns()
 
 
-#urlpatterns += patterns('',
-#    url(r'^weblog/', include('zinnia.urls')),
+urlpatterns += patterns('',
+    url(r'^blog/', include('zinnia.urls')),
 #    url(r'^comments/', include('django.contrib.comments.urls')),
-#)
+)
 
 
 urlpatterns += patterns('',

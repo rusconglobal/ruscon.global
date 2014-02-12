@@ -6,7 +6,6 @@ from cms.models.pagemodel import Page
 from sitetree.models import TreeItem
 from django.template import loader
 from django.template.context import Context
-from sitetree.sitetreeapp import SiteTree
 
 register = template.Library()
 
