@@ -4,6 +4,25 @@
 
 
 {% block widepromo %}
+
+<div class="widepromo_sm">
+	<div class="container">
+		<div class="ship_sm">
+			<img border="0" width="162" height="100" src="{{ STATIC_URL }}ruscon/images/ship_sm.png" />			
+		</div>
+		<div class="prom">
+			<p class="tit">
+				{% placeholder "bigpromo-title" %}
+			</p>
+			<p class="tex">
+				{% placeholder "bigpromo-text" %}
+			</p>
+		</div>
+	</div>
+</div>
+{% endblock widepromo %}
+
+<!--
 <div class="widepromo">
 	<div class="container">
 		<div class="ship">
@@ -19,7 +38,7 @@
 		</div>
 	</div>
 </div>
-{% endblock widepromo %}
+-->
 
 {% block maincontent %}
 

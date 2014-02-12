@@ -1039,3 +1039,19 @@ a.current_item, a.current_branch {
 .breadcrumbs li {
 	display: inline;
 }
+
+/*Изменения для узкой шапки на главной*/
+.widepromo_sm .prom p.tit {
+	font-size: 28px;
+	color: #fff;
+	text-shadow: 0px 1px 0px #8594a8;
+	padding: 10px 0px 0px 180px;	
+}
+
+.widepromo_sm .prom p.tex {
+	font-size: 13px;
+	color: #fff;
+	text-shadow: 0px 1px 1px #8594a8;
+	padding: 7px 0px 0px 180px;
+}
+/*Конец изменения для узкой шапки на главной*/
