@@ -6,6 +6,5 @@ encoding//ctracer/service.py=utf-8
 encoding//ctracer/tests.py=utf-8
 encoding//geo_office/templatetags/office_tags.py=utf-8
 encoding//orderedmodel/admin.py=utf-8
+encoding//rusconwww/management/commands/__init__.py=utf-8
 encoding//rusconwww/settings.py=utf-8
-encoding//transferapp/management/commands/__init__.py=utf-8
-encoding//transferapp/management/commands/migratedata.py=utf-8
