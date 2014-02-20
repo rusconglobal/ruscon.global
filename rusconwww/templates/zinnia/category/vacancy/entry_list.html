@@ -1,0 +1,14 @@
+{% extends "zinnia/category/entry_list.html" %}
+{% load cms_tags %}
+
+{% block content-loop %}
+<div class="spacer"></div>
+	{% for object in object_list %}
+	{% include object.content_template with object_content=object.excerpt|truncatewords_html:50|safe continue_reading=1 %}
+	{% empty %}
+	<p class="info">
+		{% show_placeholder "vacancy" "global_placeholder" %}		
+	</p>
+	{% endfor %}
+
+{% endblock %}
