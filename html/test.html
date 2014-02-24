@@ -1,7 +1,0 @@
-<li />$env:PARSER_VERSION
-<hr />
-^if(-f "/cgi-bin/nconvert"){
-<li />found!
-$f[^file::exec[/../cgi-bin/nconvert;;-help]]
-<li />$f.text
-}

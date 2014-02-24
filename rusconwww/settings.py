@@ -116,8 +116,8 @@ CACHES = {
     'default': dict(
         BACKEND = 'django.core.cache.backends.memcached.MemcachedCache',
         LOCATION = ['127.0.0.1:11211'],
-	CACHE_MIDDLEWARE_KEY_PREFIX = 'ruscontesting',
-	KEY_PREFIX = 'ruscontesting',
+	CACHE_MIDDLEWARE_KEY_PREFIX = CMS_CACHE_PREFIX,
+	KEY_PREFIX = CMS_CACHE_PREFIX,
     )
 }
 
@@ -125,7 +125,7 @@ ZINNIA_PAGINATION = 10
 CMSPLUGIN_ZINNIA_TEMPLATES = [('includes/news_style.html', 'News style'), ('includes/press.html', 'Press')]
 
 CMS_REDIRECTS = True
-CMS_CACHE_PREFIX = 'ruscon'
+
 
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
