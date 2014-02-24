@@ -116,8 +116,8 @@ CACHES = {
     'default': dict(
         BACKEND = 'django.core.cache.backends.memcached.MemcachedCache',
         LOCATION = ['127.0.0.1:11211'],
-	CACHE_MIDDLEWARE_KEY_PREFIX = 'rusconcache',
-	KEY_PREFIX = 'rusconcashe',
+	CACHE_MIDDLEWARE_KEY_PREFIX = 'ruscontesting',
+	KEY_PREFIX = 'ruscontesting',
     )
 }
 
@@ -162,7 +162,6 @@ INSTALLED_APPS = (
     'modeltranslation',
     'orderedmodel',
     'cmsplugin_zinnia',
-    #'sorl.thumbnail',
     'cmsplugin_contact',
     'easy_thumbnails',
     'filer',
@@ -170,8 +169,7 @@ INSTALLED_APPS = (
     'cmsplugin_filer_image',
     'cms.plugins.teaser',
     #'django.contrib.redirects',
-    'sitetree',
-    'transferapp',    
+    'sitetree',        
     'cms_helper.cms_plugins',    
     'geo_office',
     'ctracer',

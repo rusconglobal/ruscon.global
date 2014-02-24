@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//cms_helper/management/commands/__init__.py=utf-8
 encoding//cms_helper/migrations/0001_initial.py=utf-8
 encoding//cms_helper/templatetags/page_tags.py=utf-8
 encoding//ctracer/forms.py=utf-8
@@ -7,5 +8,3 @@ encoding//ctracer/tests.py=utf-8
 encoding//geo_office/templatetags/office_tags.py=utf-8
 encoding//orderedmodel/admin.py=utf-8
 encoding//rusconwww/settings.py=utf-8
-encoding//transferapp/management/commands/__init__.py=utf-8
-encoding//transferapp/management/commands/migratedata.py=utf-8
