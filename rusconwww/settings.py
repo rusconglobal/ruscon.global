@@ -123,6 +123,7 @@ CACHES = {
 
 ZINNIA_PAGINATION = 10
 CMSPLUGIN_ZINNIA_TEMPLATES = [('includes/news_style.html', 'News style'), ('includes/press.html', 'Press')]
+#ZINNIA_ENTRY_BASE_MODEL = 'cmsplugin_zinnia.placeholder.EntryPlaceholder'
 
 CMS_REDIRECTS = True
 
@@ -168,6 +169,7 @@ INSTALLED_APPS = (
     'cmsplugin_filer_folder',
     'cmsplugin_filer_image',
     'cms.plugins.teaser',
+    'cms.plugins.video',
     #'django.contrib.redirects',
     'sitetree',        
     'cms_helper.cms_plugins',    

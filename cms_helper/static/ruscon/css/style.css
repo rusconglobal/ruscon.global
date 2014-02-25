@@ -1057,10 +1057,26 @@ a.current_item, a.current_branch {
 /*Конец изменения для узкой шапки на главной*/
 
 /*Баннер вверху вместо часов*/
-#header-banner {
-	margin-left: 210px;
-	width: 770px;
-	height: 100px;
-	border: 1px solid navy;
+#header-banner {	
+	/*width: 770px;*/
+	/*height: 100px;*/
+	/*border: 1px solid navy;*/
+	padding: 2px 0;
+}
+
+#header-banner .title a {
+	font-size: 18px;
+	color: #ff4e00;
+	/*font-weight: bold;*/
+	text-decoration: none;
+}
+
+#header-banner .title a:hover {	
+	text-decoration: underline;
+	color: #2d608d;
+}
+
+#logo {
+	margin: 0;
 }
 /*Конец баннер вверху вместо часов*/
