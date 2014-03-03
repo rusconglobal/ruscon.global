@@ -33,7 +33,11 @@ class Office(models.Model):
     seo_title = models.CharField(max_length=255, default=u'Transportation logistics in')        
     @property
     def prime_phone(self):
-        contacts = self.contacts.all()
+        contacts = self.contacts.filter(contact_type=OfficeType.PHONE)
+        return contacts[:1].get()
+    @property
+    def prime_email(self):
+        contacts = self.contacts.filter(contact_type=OfficeType.EMAIL)
         return contacts[:1].get()    
     @property
     def prime_contacts(self):
@@ -51,6 +55,8 @@ class Office(models.Model):
         return self.office_type.office_title_template % self.town
 
 class ContactType(models.Model):
+    PHONE = 1
+    EMAIL = 3
     contact_type =  models.CharField(max_length=50)
     contact_short_type =  models.CharField(max_length=10)
     def __unicode__(self):
