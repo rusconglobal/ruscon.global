@@ -1,6 +1,12 @@
  {% load i18n %}
 <p>{{office.seo_title }} <span title="{{ office.town.country }}">{{ office.town }}</span></p>
-<p>{{ office.prime_phone }}<br>
-{{ office.prime_email }}
+<p>
+{% if office.prime_email %}	
+{{ office.prime_phone }}
+{% endif %}
+<br>
+{% if office.prime_email %}	
+<a href="mailto:{{ office.prime_email }}">{{ office.prime_email }}</a>
+{% endif %}
 </p>
 
