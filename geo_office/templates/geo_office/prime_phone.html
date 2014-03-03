@@ -1,12 +1,12 @@
  {% load i18n %}
 <p>{{office.seo_title }} <span title="{{ office.town.country }}">{{ office.town }}</span></p>
 <p>
-{% if office.prime_email %}	
+{% if office.prime_phone %}	
 {{ office.prime_phone }}
 {% endif %}
 <br>
 {% if office.prime_email %}	
-<span class="breadcrumbs"><a href="mailto:{{ office.prime_email.contact }}">{{ office.prime_email.contact }}</a></span>
+<span class="mailto"><a href="mailto:{{ office.prime_email.contact }}">{{ office.prime_email.contact }}</a></span>
 {% endif %}
 </p>
 

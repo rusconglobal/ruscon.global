@@ -1080,3 +1080,13 @@ a.current_item, a.current_branch {
 	margin: 0 25px 0 0;
 }
 /*Конец баннер вверху вместо часов*/
+
+.mailto a{
+	color: white;	
+	text-decoration: none;	
+	border-bottom: 1px dotted white;
+}
+
+.mailto a:hover {	
+	border-bottom: 1px solid white;
+}
