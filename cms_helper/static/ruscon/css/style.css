@@ -1079,6 +1079,15 @@ a.current_item, a.current_branch {
 #logo {
 	margin: 0 25px 0 0;
 }
+
+#header-banner .extra {
+	background-color: #0066cc;
+	color: white;
+	padding: 5px;
+	border-radius: 4px;
+	margin-top: 5px;
+}
+
 /*Конец баннер вверху вместо часов*/
 
 .mailto a{
