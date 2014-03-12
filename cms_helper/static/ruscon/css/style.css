@@ -1081,11 +1081,14 @@ a.current_item, a.current_branch {
 }
 
 #header-banner .extra {
+	margin-top: 5px;
+}
+
+#header-banner .extra span {
 	background-color: #0066cc;
 	color: white;
 	padding: 5px;
-	border-radius: 4px;
-	margin-top: 5px;
+	border-radius: 4px;	
 }
 
 /*Конец баннер вверху вместо часов*/
