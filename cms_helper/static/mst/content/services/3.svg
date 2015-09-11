@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 169 88" enable-background="new 0 0 169 88" xml:space="preserve">
+<g>
+	<g>
+		<polygon fill="#fff" points="33,70 33,66 27,66 27,14 88,14 88,32 92,32 92,14 108,14 108,12 27,12 23,12 7,12 7,14 23,14 
+			23,66 17,66 17,70 0,70 0,88 169,88 169,70 		"/>
+		<rect x="77" y="34" fill="#fff" width="22" height="16"/>
+		<rect x="65" y="52" fill="#fff" width="22" height="16"/>
+		<rect x="41" y="52" fill="#fff" width="22" height="16"/>
+	</g>
+	<path fill="#fff" d="M46,24v16h22V24H46z M50,38h-2V26h2V38z M54,38h-2V26h2V38z M58,38h-2V26h2V38z M62,38h-2V26h2V38z M66,38
+		h-2V26h2V38z"/>
+	<path fill="#fff" d="M101,34v16h22V34H101z M105,48h-2V36h2V48z M109,48h-2V36h2V48z M113,48h-2V36h2V48z M117,48h-2V36h2V48z
+		 M121,48h-2V36h2V48z"/>
+	<path fill="#fff" d="M89,52v16h22V52H89z M93,66h-2V54h2V66z M97,66h-2V54h2V66z M101,66h-2V54h2V66z M105,66h-2V54h2V66z
+		 M109,66h-2V54h2V66z"/>
+	<path fill="#fff" d="M113,52v16h22V52H113z M117,66h-2V54h2V66z M121,66h-2V54h2V66z M125,66h-2V54h2V66z M129,66h-2V54h2V66z
+		 M133,66h-2V54h2V66z"/>
+	<polygon opacity="0.5" fill="#fff" points="16.2,12 37.5,0 57,11.2 76.7,0 98.6,12 96.6,12.2 76.7,1.2 57,12 37.4,1.1 17.9,12 	
+		"/>
+	<rect x="37" y="1" opacity="0.5" fill="#fff" width="1" height="11"/>
+	<rect x="76" y="1" opacity="0.5" fill="#fff" width="1" height="11"/>
+	<rect x="56" y="14" opacity="0.5" fill="#fff" width="2" height="7"/>
+	<rect x="46" y="21" opacity="0.5" fill="#fff" width="22" height="2"/>
+</g>
+</svg>

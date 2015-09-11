@@ -1,0 +1,619 @@
+.odometer {
+    overflow: hidden;
+}
+@media screen and (min-width: 900px) {
+    .owl-item {
+        overflow: hidden;
+    }
+}
+@keyframes backSize {
+    0% {
+        background-position: 30% 50%;
+    }
+    100% {
+        background-position: 50% 50%;
+    }
+}
+@-webkit-keyframes backSize {
+    0% {
+        background-position: 30% 50%;
+    }
+    100% {
+        background-position: 50% 50%;
+    }
+}
+@-webkit-keyframes showPageBtnBottom {
+    0%,75% {
+        opacity: 0;
+        -webkit-transform: translate(0px,30px);
+                transform: translate(0px,30px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate(0px,0px);
+                transform: translate(0px,0px);
+    }
+}
+@keyframes showPageBtnBottom {
+    0%,75% {
+        opacity: 0;
+        -webkit-transform: translate(0px,30px);
+                transform: translate(0px,30px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate(0px,0px);
+                transform: translate(0px,0px);
+    }
+}
+
+ @-webkit-keyframes showOfficesBottoms {
+    0%,75% {
+        opacity: 0;
+        -webkit-transform: translate(0px,30px);
+                transform: translate(0px,30px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate(0px,0px);
+                transform: translate(0px,0px);
+    }
+}
+@keyframes showOfficesBottoms {
+    0%,75% {
+        opacity: 0;
+        -webkit-transform: translate(0px,30px);
+                transform: translate(0px,30px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate(0px,0px);
+                transform: translate(0px,0px);
+    }
+}
+
+@-webkit-keyframes animateMap {
+    0%,45% {
+        -webkit-transform: translate(0px,0px);
+                transform: translate(0px,0px);
+    }
+    100% {
+        -webkit-transform: translate(100%,0px);
+                transform: translate(100%,0px);
+    }
+}
+@keyframes animateMap {
+    0%,45% {
+        -webkit-transform: translate(0px,0px);
+                transform: translate(0px,0px);
+    }
+    100% {
+        -webkit-transform: translate(100%,0px);
+                transform: translate(100%,0px);
+    }
+}
+@-webkit-keyframes animateMapWidth {
+    0%,55% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+@keyframes animateMapWidth {
+    0%,55% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+@-webkit-keyframes animateMapOpacity {
+    0%,65% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes animateMapOpacity {
+    0%,65% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes animateTransportTitle {
+    0%,45% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes animateTransportTitle {
+    0%,45% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes animateTransportInfo {
+    0%,75% {
+        opacity: 0;
+        -webkit-transform: translate(0px,-10px);
+                transform: translate(0px,-10px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate(0px, 0px);
+                transform: translate(0px, 0px);
+    }
+}
+
+@keyframes animateTransportInfo {
+    0%,75% {
+        opacity: 0;
+        -webkit-transform: translate(0px,-10px);
+                transform: translate(0px,-10px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate(0px, 0px);
+                transform: translate(0px, 0px);
+    }
+}
+
+@-webkit-keyframes animateTransportBigFigures {
+    0%,65% {
+        opacity: 0;
+        -webkit-transform: translate(-25px,0px);
+                transform: translate(-25px,0px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate(0px,0px);
+                transform: translate(0px,0px);
+    }
+}
+
+@keyframes animateTransportBigFigures {
+    0%,65% {
+        opacity: 0;
+        -webkit-transform: translate(-25px,0px);
+                transform: translate(-25px,0px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate(0px,0px);
+                transform: translate(0px,0px);
+    }
+}
+@-webkit-keyframes animateTransportDiagram {
+    0%,65% {
+        opacity: 0;
+    }
+    90% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes animateTransportDiagram {
+    0%,65% {
+        opacity: 0;
+    }
+    90% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes animateFreightEl {
+    0%,60% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes animateFreightEl {
+    0%,60% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes animateFreightElImage {
+    0% {
+        right:100%;
+    }
+    60% {
+        right:15px;
+    }
+}
+
+@keyframes animateFreightElImage {
+    0% {
+        right:100%;
+    }
+    60% {
+        right:15px;
+    }
+}
+
+@-webkit-keyframes showWarehouseMap {
+    0%,50% {
+        opacity: 0;
+        width:0%;
+    }
+    90% {
+        width:100%;
+    }
+    100% {
+        width:100%;
+        opacity: 1;
+    }
+}
+
+@keyframes showWarehouseMap {
+    0%,50% {
+        opacity: 0;
+        width:0%;
+    }
+    90% {
+        width:100%;
+    }
+    100% {
+        width:100%;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes showWarehouseTopBottom {
+    0%,70% {
+        -webkit-transform: translate(0,-10px);
+                transform: translate(0,-10px);
+    }
+    100% {
+        -webkit-transform: translate(0,0px);
+                transform: translate(0,0px);
+    }
+}
+
+@keyframes showWarehouseTopBottom {
+    0%,70% {
+        -webkit-transform: translate(0,-10px);
+                transform: translate(0,-10px);
+    }
+    100% {
+        -webkit-transform: translate(0,0px);
+                transform: translate(0,0px);
+    }
+}
+
+@-webkit-keyframes showWarehouseOpacity {
+    0%,70% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes showWarehouseOpacity {
+    0%,70% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes showWarehouseItem {
+    0%,60% {
+        opacity:0;
+        -webkit-transform: translate(-15px,0px);
+                transform: translate(-15px,0px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate(0px,0px);
+                transform: translate(0px,0px);
+    }
+}
+
+@keyframes showWarehouseItem {
+    0%,60% {
+        opacity:0;
+        -webkit-transform: translate(-15px,0px);
+                transform: translate(-15px,0px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate(0px,0px);
+                transform: translate(0px,0px);
+    }
+}
+@-webkit-keyframes showTeamTopBottom {
+    0%,50% {
+        -webkit-transform: translate(0,-20px);
+                transform: translate(0,-20px);
+    }
+    100% {
+        -webkit-transform: translate(0,0px);
+                transform: translate(0,0px);
+    }
+}
+
+
+
+@keyframes showTeamTopBottom {
+    0%,50% {
+        -webkit-transform: translate(0,-20px);
+                transform: translate(0,-20px);
+    }
+    100% {
+        -webkit-transform: translate(0,0px);
+                transform: translate(0,0px);
+    }
+}
+
+
+@-webkit-keyframes showTeamWidth {
+    0%,50% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+
+@keyframes showTeamWidth {
+    0%,50% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@-webkit-keyframes showTeamMapOpacity {
+    0%,80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes showTeamMapOpacity {
+    0%,80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes showTeamOpacity {
+    0%,50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes showTeamOpacity {
+    0%,50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+        /* Анимация первого слайда */
+        /*.page.active {
+            -webkit-animation: backSize 2.5s cubic-bezier(0.99, 0.96, 0.57, 1) 0s;
+                    animation: backSize 2.5s cubic-bezier(0.99, 0.96, 0.57, 1) 0s;
+        }*/
+        .page.active .page_btn-bottom {
+            -webkit-animation: showPageBtnBottom 2.3s ease-in-out 0s;
+                    animation: showPageBtnBottom 2.3s ease-in-out 0s
+        }        
+        /*==================================================*/
+
+        /*Анимация второго слайда */
+
+        .page.active .fp-tableCell {
+            overflow: hidden;
+        }
+        .page.active .page-offices-bottom {
+            -webkit-animation: showOfficesBottoms 4.5s ease-in-out 0s;
+                    animation: showOfficesBottoms 4.5s ease-in-out 0s
+        }
+        .page.active .map {
+            background-position: center left;
+            background-size:  auto 90%;
+            -webkit-animation: animateMapOpacity 2.5s ease-in-out 0s, animateMapWidth 3s ease-in-out 0s;
+                    animation: animateMapOpacity 2.5s ease-in-out 0s, animateMapWidth 3s ease-in-out 0s;
+        }
+        @media screen and (max-width: 1300px), screen and (min-width:1024px) and (max-height:800px) {
+            .page.active .map {
+                background-size:  auto 88%;
+            }
+        }
+        .page.active .coordinates {
+            -webkit-animation: animateMapOpacity 4.5s ease-in-out 0s;
+                    animation: animateMapOpacity 4.5s ease-in-out 0s;
+        }
+        .page .is-animated-map {
+            position: absolute;
+            background-color: #001d3b;
+            height: 465px;
+            width:100%;
+            top:200px;
+            -webkit-transform: translate(-100%,0px);
+                -ms-transform: translate(-100%,0px);
+                    transform: translate(-100%,0px);
+        }
+        .page.active .is-animated-map {
+            -webkit-animation: animateMap 2.5s ease-in-out 0s;
+                    animation: animateMap 2.5s ease-in-out 0s;
+        }
+
+        /*==================================================*/
+
+        /* Анимация 3 слайда */
+        .page.active .transport-title {
+            -webkit-animation: animateTransportTitle 2.5s ease-in-out 0s;
+                    animation: animateTransportTitle 2.5s ease-in-out 0s;
+        }
+        .page.active .transport-big-figures {
+            -webkit-animation: animateTransportInfo 2.5s ease-in-out 0s;
+                    animation: animateTransportInfo 2.5s ease-in-out 0s;
+        }
+        .page.active .transport-info {
+            -webkit-animation: animateTransportInfo 3.0s ease-in-out 0s;
+                    animation: animateTransportInfo 3.0s ease-in-out 0s;
+        }
+        .page.active .transport-info-img {
+            -webkit-animation: animateTransportBigFigures 3.5s ease-in-out 0s;
+                    animation: animateTransportBigFigures 3.5s ease-in-out 0s;
+        }
+        .page.active .transport-diagram {
+            overflow: hidden;
+            -webkit-animation: animateTransportDiagram 4.5s ease-in-out 0s;
+                    animation: animateTransportDiagram 4.5s ease-in-out 0s;
+        }
+
+
+        /*==================================================*/
+
+        /* Анимация 4 слайда */
+        .page.active .freight {
+            -webkit-animation: animateFreightEl 2.5s ease-in-out 0s;
+                    animation: animateFreightEl 2.5s ease-in-out 0s;
+        }
+        .page.active .freight-el.is_active .freight-big-numb {
+            -webkit-animation: animateFreightEl 2.5s ease-in-out 0s;
+                    animation: animateFreightEl 2.5s ease-in-out 0s;
+        }
+        .page.active .freight-el.is_active .freight-small-numb {
+            -webkit-animation: animateFreightEl 2.8s ease-in-out 0s;
+                    animation: animateFreightEl 2.8s ease-in-out 0s;
+        }
+        .page.active .freight-el.is_active .freight-small-text {
+            -webkit-animation: animateFreightEl 3.0s ease-in-out 0s;
+                    animation: animateFreightEl 3.0s ease-in-out 0s;
+        }
+
+        .page.active .freight-el.is_active .freight-desc {
+            -webkit-animation: animateFreightEl 3.6s ease-in-out 0s;
+                    animation: animateFreightEl 3.6s ease-in-out 0s;
+        }
+
+        .page.active .freight-el.is_active .freight-border {
+            -webkit-animation: animateFreightEl 3.3s ease-in-out 0s;
+                    animation: animateFreightEl 3.3s ease-in-out 0s;
+        }
+
+        .page.active .freight-el.is_active .freight-img {
+            -webkit-animation: animateFreightElImage 4.0s ease-in-out 0s;
+                    animation: animateFreightElImage 4.0s ease-in-out 0s;
+        }
+
+        .page.active .page-freight_btn-bottom {
+            -webkit-animation: showPageBtnBottom 3.3s ease-in-out 0s;
+                    animation: showPageBtnBottom 3.3s ease-in-out 0s
+        }
+
+
+        /*==================================================*/
+
+        /* Анимация 5 слайда */
+
+        .page.active .warehouses-block {
+            visibility: hidden;
+        }
+        .page.active .warehouses-block.is-start-animate {
+            visibility: visible;
+        }
+        .page.active .warehouses-block.is-start-animate {
+            -webkit-animation: showWarehouseItem 1.3s ease-in-out 0s;
+                    animation: showWarehouseItem 1.3s ease-in-out 0s
+        }
+        .page.active .warehouses-block.is-start-animate .warehouses-map {
+            background-position: 20px 100%;
+            -webkit-animation: showWarehouseMap 2s ease-in-out 0s;
+                    animation: showWarehouseMap 2s ease-in-out 0s
+        }
+        .page.active .warehouses-block.is-start-animate .warehouses-map-el {
+            -webkit-animation: showWarehouseOpacity 2.5s ease-in-out 0s;
+                    animation: showWarehouseOpacity 2.5s ease-in-out 0s
+        }
+        .page.active .warehouses-block.is-start-animate .warehouses-addres {
+            -webkit-animation: showWarehouseOpacity 2.8s ease-in-out 0s;
+                    animation: showWarehouseOpacity 2.8s ease-in-out 0s
+        }
+        .page.active .warehouses-block.is-start-animate .warehouses-block-900:last-of-type {
+            overflow: hidden;
+            -webkit-animation: showWarehouseOpacity 3.8s ease-in-out 0s, showWarehouseTopBottom 3.8s ease-in-out 0s;
+                    animation: showWarehouseOpacity 3.8s ease-in-out 0s, showWarehouseTopBottom 3.8s ease-in-out 0s
+        }
+        .page-warehouses-bottom {
+            -webkit-animation: showPageBtnBottom 4.8s ease-in-out 0s;
+                    animation: showPageBtnBottom 4.8s ease-in-out 0s
+        }
+
+        /*==================================================*/
+
+        /* Анимация 6 слайда */
+
+        .page.active .team-block-left900 {
+            -webkit-animation: showTeamOpacity 2.3s ease-in-out 0s;
+                    animation: showTeamOpacity 2.3s ease-in-out 0s
+        }
+        .page.active .team-block-map {
+            background-position: 0px 0px;
+            overflow: hidden;
+            -webkit-animation: showTeamWidth 3s ease-in-out 0s,showTeamOpacity 3.5s ease-in-out 0s;
+                    animation: showTeamWidth 3s ease-in-out 0s,showTeamOpacity 3.5s ease-in-out 0s
+        }
+        .page.active .team-block-map-el:nth-of-type(1) {
+            -webkit-animation: showTeamMapOpacity 3.5s ease-in-out 0s;
+                    animation: showTeamMapOpacity 3.5s ease-in-out 0s
+        }
+        .page.active .team-block-map-el:nth-of-type(2) {
+            -webkit-animation: showTeamMapOpacity 4s ease-in-out 0s;
+                    animation: showTeamMapOpacity 4s ease-in-out 0s
+        }
+        .page.active .team-block-map-el:nth-of-type(3) {
+            -webkit-animation: showTeamMapOpacity 4.5s ease-in-out 0s;
+                    animation: showTeamMapOpacity 4.5s ease-in-out 0s
+        }
+        .page.active .team-block-map-el:nth-of-type(4) {
+            -webkit-animation: showTeamMapOpacity 5s ease-in-out 0s;
+                    animation: showTeamMapOpacity 5s ease-in-out 0s
+        }
+        .page.active .team-detail {
+            -webkit-animation: showTeamOpacity 3.0s ease-in-out 0s,showTeamTopBottom 3.0s ease-in-out 0s;
+                    animation: showTeamOpacity 3.0s ease-in-out 0s,showTeamTopBottom 3.0s ease-in-out 0s
+        }
+        .page.active .team-block-diagram {
+            -webkit-animation: showTeamOpacity 6.0s ease-in-out 0s,showTeamTopBottom 6.0s ease-in-out 0s;
+                    animation: showTeamOpacity 6.0s ease-in-out 0s,showTeamTopBottom 6.0s ease-in-out 0s
+        }
+}

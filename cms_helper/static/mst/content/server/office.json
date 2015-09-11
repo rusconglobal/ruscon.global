@@ -1,0 +1,164 @@
+{
+	"items":[
+		{
+			"country":"Россия",
+			"city":"Новороссийск",
+			"class":"",
+			"address":"OOO Рускон<br> п. Кирилловка, 2-я ж.д. петля, 353900 Новороссийск",
+			"leader":"Колюх Николай Иосифович",
+			"phone":"+7 (8617) 678-000",
+			"fax":"+7 (8617) 678-066",
+			"request":"request@ruscon.gcs-group.ru",
+			"offers":"info@ruscon.gcs-group.ru ",
+			"image":"",
+			"map":{
+				"lat":"44.7154014",
+				"lng":"37.7619669"
+				},
+			"position":{
+				"top":"74%",
+				"left":"3%"
+			}
+		},
+		{
+			"country":"Россия",
+			"city":"Санкт-Петербург",
+			"class":"",
+			"address":"OOO Рускон<br> ул. Бумажная, 18, 190068 Санкт-Петербург",
+			"leader":"Булах Кирилл Владимирович",
+			"phone":"+7 (812) 335-00-20",
+			"fax":"+7 (812) 335-00-21",
+			"request":"request@ruscon.gcs-group.ru",
+			"offers":"info@ruscon.gcs-group.ru ",
+			"image":"",
+			"map":{
+				"lat":"59.9342802",
+				"lng":"30.3350986"
+			},
+			"position":{
+				"top":"32%",
+				"left":"11%"
+			}
+		},
+		{
+			"country":"Россия",
+			"city":"Москва",
+			"class":"",
+			"address":"Головной офис  OOO Рускон<br> ул. Донская, 15, 119049 Москва",
+			"leader":"Гусарова Марина Евгеньевна",
+			"phone":"+7 (495) 740-16-60",
+			"fax":"+7 (495) 744-02-62",
+			"request":"request@ruscon.gcs-group.ru",
+			"offers":"info@ruscon.gcs-group.ru ",
+			"image":"",
+			"map":{
+				"lat":"55.755826",
+				"lng":"37.6173"
+			},
+			"position":{
+				"top":"47%",
+				"left":"15%"
+			}
+		},
+		{
+			"country":"Казахстан",
+			"city":"Алматы",
+			"class":"",
+			"address":"OOO Рускон<br> Проспект Абая 151/115, БЦ \"Алатау\", офис 810",
+			"leader":"Дуанакулова Гульвира Пернебековна",
+			"phone":"+7 (727) 2665645",
+			"fax":"+7 (727) 2662864",
+			"request":"request@ruscon.gcs-group.ru",
+			"offers":"info@ruscon.gcs-group.ru ",
+			"image":"",
+			"map":{
+				"lat":"43.2220146",
+				"lng":"76.8512485"
+			},
+			"position":{
+				"top":"88%",
+				"left":"29%"
+			}
+		},
+		{
+			"country":"Китай",
+			"city":"Шанхай, Пудун",
+			"class":"",
+			"address":"OOO Рускон<br>East LuJiaZui Rd 161, of 2312, 200120",
+			"leader":"Козубов Игорь Петрович",
+			"phone":"+86 (21) 587-66-741",
+			"fax":"+86 (136) 017-85-570",
+			"request":"request@ruscon.gcs-group.ru",
+			"offers":"info@ruscon.gcs-group.ru ",
+			"image":"",
+			"map":{
+				"lat":"31.144344",
+				"lng":"121.808273"
+			},
+			"position":{
+				"top":"96%",
+				"left":"68%"
+			}
+		},
+		{
+			"country":"Россия",
+			"city":"Калининград",
+			"class":"",
+			"address":"OOO Рускон<br>ул. Генерал-лейтенанта Озерова, д. 17 Б, офис 10-15, 236022",
+			"leader":"Пухов Сергей Александрович",
+			"phone":"+7 (401) 269-21-17",
+			"fax":"+7 (401) 269-21-17",
+			"request":"request@ruscon.gcs-group.ru",
+			"offers":"info@ruscon.gcs-group.ru ",
+			"image":"",
+			"map":{
+				"lat":"54.7104264",
+				"lng":"20.4522144"
+			},
+			"position":{
+				"top":"26%",
+				"left":"5%"
+			}
+		},
+		{
+			"country":"Россия",
+			"city":"Ростов-на-Дону",
+			"class":"",
+			"address":"OOO Рускон<br>Ленинский район, ул. Социалистическая, 10, 344007",
+			"leader":"Климченко Александр Георгиевич",
+			"phone":"+7 (906) 180-07-05",
+			"fax":"+7 (906) 180-07-05",
+			"request":"request@ruscon.gcs-group.ru",
+			"offers":"info@ruscon.gcs-group.ru ",
+			"image":"",
+			"map":{
+				"lat":"47.2357137",
+				"lng":"39.701505"
+			},
+			"position":{
+				"top":"57%",
+				"left":"4%"
+			}
+		},
+		{
+			"country":"Россия",
+			"city":"Находка",
+			"class":"coordinates-text-left",
+			"address":"OOO Рускон<br>ул. Внутрипортовая, д.22, оф. 12, мкр. Врангель, 692941",
+			"leader":"Полеся Елена Владимировна",
+			"phone":"+7 (4236) 665004",
+			"fax":"+7 (4236) 665004",
+			"request":"request@ruscon.gcs-group.ru",
+			"offers":"info@ruscon.gcs-group.ru ",
+			"image":"",
+			"map":{
+				"lat":"42.8222753",
+				"lng":"132.8834039"
+			},
+			"position":{
+				"top":"93%",
+				"left":"89%"
+			}
+		}
+	]
+}
