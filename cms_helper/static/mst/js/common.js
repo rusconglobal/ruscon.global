@@ -14,7 +14,7 @@ $(document).ready(function () {
      */
     $.ajax({
         async:false,
-        url: "/content/server/office.json",
+        url: "/static/mst/content/server/office.json",
         dataType:"json",
         success:function(data){
             window.officeInfo = data;
