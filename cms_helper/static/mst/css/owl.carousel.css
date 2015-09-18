@@ -69,3 +69,12 @@
   -ms-transform: translate3d(0,0,0);
 }
 
+.owl-carousel .image-caption {
+	background: rgba(0, 0, 0, 0.74) none repeat scroll 0% 0%;		
+	position: relative;
+	margin-top: -50px;
+	padding-left: 10px;
+	line-height: 50px;
+	font-weight: 700;
+	color: rgba(255, 255, 255, 0.74);
+}

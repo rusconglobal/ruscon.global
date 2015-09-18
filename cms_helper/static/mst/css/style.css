@@ -4825,3 +4825,16 @@ textarea.is-error {
         border-top: 1px solid rgba(69, 76, 117, 0.42);
     }
 }
+
+.toast-success {
+	background-color: #26a69a;
+}
+
+.toast-error {
+	background-color: #E57373;
+}
+
+#menu a.current_branch {
+	background-color: #DFECFF;;
+	color: rgba(50, 60, 66, 0.9);
+}

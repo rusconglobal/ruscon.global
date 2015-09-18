@@ -2,11 +2,19 @@
 <div id="press-release">
 <ul>
   {% for object in entries %}
-  <li>
-  	<div>
-    <span class="label">{{ object.creation_date|date:"SHORT_DATE_FORMAT"  }}</span> <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">{{ object.title }}</a>
-    </div>    
-  </li>
+	 <div class="news-block">
+	  	<div class="news-day">
+		    {{ object.creation_date|date:"d"  }}
+		</div>
+		<div class="news-detail">
+		    <div class="news-date">
+		        {{ object.creation_date|date:"m.Y"  }}
+		    </div>
+		    <div class="news-title">
+		        <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">{{ object.title }}</a>
+		    </div>
+		</div>
+	</div>
   {% empty %}
   <p>
     {% trans "No entries yet." %}

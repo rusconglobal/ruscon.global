@@ -97,8 +97,8 @@ plugin_pool.register_plugin(CMSCategoryEntriesPlugin)
 
 from sitetree.sitetreeapp import register_dynamic_trees, compose_dynamic_tree
 from sitetree.utils import tree, item
-
  
+  
 items_cat = {}
 entries = Entry.published.all() #@UndefinedVariable
 for entry in entries:
@@ -111,7 +111,7 @@ for entry in entries:
     if not cat in items_cat:
         items_cat[cat] = []
     items_cat[cat].append(node)  
-
+ 
 for key, value in items_cat.iteritems():    
     register_dynamic_trees((   
         compose_dynamic_tree((

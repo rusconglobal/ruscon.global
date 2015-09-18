@@ -56,4 +56,3 @@ def get_image_by_menu(item_id):
 def human_lang(lang):
     mapper = {'en': u'English', 'ru': u'По-русски'}
     return mapper[lang]
-

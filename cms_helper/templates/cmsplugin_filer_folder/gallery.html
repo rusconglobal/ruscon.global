@@ -1,18 +1,6 @@
 {% load i18n thumbnail sekizai_tags %}
+{% load page_tags %}
 {% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}cmsplugin_filer_folder/css/slideshow.css" media="screen, projection" />{% endaddtoblock "css" %}
-{% addtoblock "js" %}<script type="text/javascript" src="{{ STATIC_URL }}cmsplugin_filer_folder/js/jquery.cycle.lite-1.0.js"></script>{% endaddtoblock "js" %}
-{% addtoblock "js" %}
-<script type="text/javascript">
-//<![CDATA[
-jQuery(document).ready(function ($) {
-    $('.cmsplugin_filer_folder_slidshow').cycle({
-        fx: 'fade'
-    });
-});
-//]]>
-</script>
-{% endaddtoblock %}
-
 
 {% if object.view_option == "list" %}
     <div class="cmsplugin_filer_gallery_list" id="folder_{{ instance.id }}">
@@ -28,11 +16,14 @@ jQuery(document).ready(function ($) {
         {% endif %}
     </div>
 {% else %}
-    <!-- start: slideshow -->
-    <div class="cmsplugin_filer_folder_slidshow" id="folder_{{ object.id }}">
+    <!-- start: slideshow -->    
+    <ul class="carusel">
         {% for image in folder_images %}
-            <img src="{% thumbnail image.file 200x200 crop="True" upscale="True" %}">
+            <li>
+            	<img src="{% thumbnail image.file 800x600 crop="True" upscale="True" %}">
+            	<div class="image-caption">{{ image.name }}</div>            	
+            </li>            
         {% endfor %}
-    </div>
+    </ul>
     <!-- end: gallery -->
 {% endif %}

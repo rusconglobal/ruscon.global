@@ -18,6 +18,10 @@ urlpatterns += patterns('',
 #    url(r'^comments/', include('django.contrib.comments.urls')),
 )
 
+urlpatterns += patterns('',
+    url(r'^helper/', include('cms_helper.urls')),
+
+)
 
 urlpatterns += patterns('',
     url(r'^admin/', include(admin.site.urls)),

@@ -108,3 +108,32 @@ $(document).ready(function() {
         $('.pagination-page').find('.pagination-page-hover').hide();
     });
 });    
+
+
+
+$(document).ready(function () {
+	$("#write-to-us").submit(function() {
+		
+	    var url = "/helper/writetous/";
+	    $.ajax({
+	           type: "POST",
+	           url: url,
+	           data: $("#write-to-us").serialize(),
+	           success: function(data)
+	           {
+	        	   if (data.result == 1) {
+	        		   Materialize.toast('Ваше сообщение успешно отправлено!', 3000, 'toast-success', function(){  $(".popup-bg").click(); });
+	        	   } 
+	        	   else {
+	        		   Materialize.toast('Сообщение не отправлено, данные указаны некорректно!', 3000, 'toast-error');
+	        	   }	        	   
+	           },
+	           error: function(data)
+	           {
+	        	   Materialize.toast('Произошла ошибка при отправке сообщения!', 3000, 'toast-error');
+	           }        
+	         });
+
+	    return false; 
+	});
+});

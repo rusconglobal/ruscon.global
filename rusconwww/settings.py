@@ -5,6 +5,8 @@ gettext = lambda s: s
 
 PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
 
+# THUMBNAIL_DEBUG = True
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -143,7 +145,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
-    'django.contrib.staticfiles',    
+    'django.contrib.staticfiles',        
     'cms',
     'menus',
     'mptt',
@@ -170,7 +172,7 @@ INSTALLED_APPS = (
     'cmsplugin_filer_image',
     'cms.plugins.teaser',
     'cms.plugins.video',
-    #'django.contrib.redirects',
+    #'django.contrib.redirects',    
     'sitetree',        
     'cms_helper.cms_plugins',    
     'geo_office',

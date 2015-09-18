@@ -71,7 +71,7 @@ body {
     text-align: left;
     float: left;
     margin-left: 43px;
-    padding-bottom: 24px;
+    padding-bottom: 24px;    
 }
 .content article p:first-of-type {
     color: #1c1c1c;
@@ -101,7 +101,7 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.16);
     border-radius: 2px;
     float: left;
-    height: 252px;
+    /* height: 252px;*/
     margin-left: 2px;
     text-align: left;
     width: 289px;
@@ -123,12 +123,15 @@ body {
     line-height: 47px;
     text-align: left;
     letter-spacing: -0.8px;
+    text-transform: uppercase;
 }
 .content aside div.url a:hover {
     color: rgba(0, 0, 0, 0.40);
 }
 .content aside div.url a.active {
     color: rgba(212, 212, 212, 0.56);
+     /*color: #DC1700;
+    font-weight: 700; */
 }
 
 .footer-contact {
@@ -262,4 +265,30 @@ body {
     .content article {
         font-size:16px;
     }
+}
+
+.entry-image-link img {
+	margin: 15px 15px 0 0;
+	    background-color: #ffffff;
+	    padding: 5px;
+	    border: 1px solid rgba(0, 0, 0, 0.16);	    
+}
+
+.paginator {
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.paginator li {
+    list-style: none;
+    display: inline;
+    margin: 0px 7px 0px 0px;
+}
+
+.breadcrumbs li {
+	list-style: none;
+    display: inline;
+}
+
+.breadcrumbs {
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
 }

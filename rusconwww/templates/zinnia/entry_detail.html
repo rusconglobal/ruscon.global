@@ -1,18 +1,23 @@
 {% extends "zinnia/base.html" %}
+{% load page_tags %}
 {% load sitetree %} 
-{% block content %}      
+{% block article %}   
+	{% block entry-content %}
+	  {% include object.content_template with object_content=object.html_content|safe %}
+	{% endblock %}
+{% endblock article %}
+
+{% block aside %} 
+	{% sitetree_menu from 'mainmenu' include object|get_page_reverce_id_form_entry template "includes/aside_menu.html" %}	
+{% endblock aside %}
+
+{% block asidepopup %} 
+	{% sitetree_menu from 'mainmenu' include object|get_page_reverce_id_form_entry template "includes/aside_menu.html" %}	
+{% endblock asidepopup %}
 
 <div class="small_column">
-{% load page_tags %}
 {% include 'includes/small_column.html' with page_reverce_id=object|get_page_reverce_id_form_entry %}	
 </div>
-
-<div class="big_column">        
-{% block entry-content %}
-  {% include object.content_template with object_content=object.html_content|safe %}
-{% endblock %}
-</div>
-{% endblock %}
 
 {% block widepromo %}
 <div class="widepromo_sm">

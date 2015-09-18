@@ -1,0 +1,6 @@
+{% load sitetree %}
+{% for item in sitetree_items %}
+<div class="url">
+	<a href="{% sitetree_url for item %}" {% if item.hint %}title="{{ item.hint }}"{% endif %} {% if item.is_current or item.in_current_branch %}class="{{ item.is_current|yesno:"active ," }}{{ item.in_current_branch|yesno:"active current_branch," }}"{% endif %}>{{ item.title_resolved }}</a>
+</div>
+{% endfor %}
