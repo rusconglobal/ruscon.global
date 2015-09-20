@@ -106,6 +106,7 @@ CMS_TEMPLATES = (
     ('home.html', 'Home Template'),   
     ('gallery.html', 'Gallery Template'),
     ('global_placeholder.html', 'Global Placeholder'),
+    ('contact.html', 'Contact'),
 )
 
 ROOT_URLCONF = 'rusconwww.urls'

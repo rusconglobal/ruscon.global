@@ -7,5 +7,6 @@ encoding//ctracer/forms.py=utf-8
 encoding//ctracer/service.py=utf-8
 encoding//ctracer/tests.py=utf-8
 encoding//geo_office/templatetags/office_tags.py=utf-8
+encoding//geo_office/views.py=utf-8
 encoding//orderedmodel/admin.py=utf-8
 encoding//rusconwww/settings.py=utf-8

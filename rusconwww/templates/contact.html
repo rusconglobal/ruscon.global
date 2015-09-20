@@ -1,0 +1,63 @@
+{% extends "base.html" %}  
+{% load cms_tags sekizai_tags %}
+{% load page_tags %}
+{% load i18n %}
+{% load page_tags %}	
+{% load url from future %}
+{% load sitetree %}  
+{% block custom_css %}{% endblock custom_css %}  
+{% block body %} 
+    
+    	<div class="google-map" id="google-map">
+        </div>
+        
+        <div class="page_slider-contact">
+
+            <div class="page_slider-wrapper">
+                <div class="page section page-contact not_valign">
+                    <div class="page-wrapper page-wrapper-contact">
+                        <div class="scroll_page">
+                            <div class="city" id="map_city">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-contact">
+            {% block footer %}{{ block.super }}{% endblock %}
+        </div>
+
+        <!-- Modal Structure -->
+        <div id="google-map1" class="modal modal-fixed-footer">
+            <div class="google-map1-plash"><div class="modal-action modal-close google-map1-plash-close"></div></div>
+            <div id="modal-google-map" class="modal-google-map">
+            </div>
+        </div>
+        
+{% endblock body %}
+
+{% block custom_js %}   
+    	<script src="{{ STATIC_URL }}mst/js/jquery-2.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.7/vendors/jquery.slimscroll.min.js"></script>
+        <script src="{{ STATIC_URL }}mst/js/jquery.fullPage.js"></script>
+        <script src="{{ STATIC_URL }}mst/js/materialize.min.js"></script>
+        <script src="{{ STATIC_URL }}mst/js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="{{ STATIC_URL }}mst/js/jquery.mousewheel.min.js"></script>
+        <script src="{{ STATIC_URL }}mst/js/owl.carousel.min.js"></script>
+        <script src="{{ STATIC_URL }}mst/js/odometer.min.js"></script>
+        <script src="{{ STATIC_URL }}mst/js/page_slider.js"></script>
+        <script src="{{ STATIC_URL }}mst/js/sameHeight.js"></script>
+        <script src="{{ STATIC_URL }}mst/js/language.js"></script>
+        <script src="{{ STATIC_URL }}mst/js/carousel-initialization.js"></script>
+        <script src="{{ STATIC_URL }}mst/js/map.js"></script>
+        <script src="{{ STATIC_URL }}mst/js/circles.min.js"></script>
+        <script src="{{ STATIC_URL }}mst/js/animations.js"></script>
+        <script src="{{ STATIC_URL }}mst/js/common.js"></script>
+        <script src="{{ STATIC_URL }}mst/js/hover-map.js"></script>
+        <script src="{{ STATIC_URL }}mst/js/freight-drop.js"></script>
+        <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script src="{{ STATIC_URL }}mst/js/google-map.js"></script>    
+{% endblock custom_js %}

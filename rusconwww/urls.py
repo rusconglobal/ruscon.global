@@ -24,6 +24,11 @@ urlpatterns += patterns('',
 )
 
 urlpatterns += patterns('',
+    url(r'^geo/', include('geo_office.urls')),
+
+)
+
+urlpatterns += patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('cms.urls')), # <--------- include the django cms urls via i18n_patterns
 )

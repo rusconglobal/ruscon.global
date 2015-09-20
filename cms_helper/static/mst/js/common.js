@@ -14,7 +14,7 @@ $(document).ready(function () {
      */
     $.ajax({
         async:false,
-        url: "/static/mst/content/server/office.json",
+        url: "/geo/offices/",
         dataType:"json",
         success:function(data){
             window.officeInfo = data;
@@ -33,7 +33,7 @@ $(document).ready(function () {
                                             </div>\
                                             <div class="offices-leadership">\
                                                 <div class="offices-table-title">\
-                                                    Руководитель\
+                                                    #LEADER_TITLE#\
                                                 </div>\
                                                 <div class="offices-table-desc">\
                                                     #LEADER#\
@@ -93,7 +93,7 @@ $(document).ready(function () {
                                             </div>\
                                             <div class="offices-leadership">\
                                                 <div class="offices-table-title">\
-                                                    Руководитель\
+                                                    #LEADER_TITLE#\
                                                 </div>\
                                                 <div class="offices-table-desc">\
                                                     #LEADER#\
@@ -176,7 +176,7 @@ $(document).ready(function () {
                                     <div class="city-block">\
                                         <div class="city-desc">\
                                             <div class="city-desc-left">\
-                                                Руководитель\
+                                                #LEADER_TITLE#\
                                             </div>\
                                             <div class="city-desc-right">\
                                                 #LEADER#\
@@ -223,16 +223,16 @@ $(document).ready(function () {
                 contactCompileHtml = '';
             $.each(data.items,function(key,value){
                 mobileCompileHtml += templates.mobile.replaceArray(
-                    ['#CITY#','#ADDRESS#','#LEADER#','#PHONE#','#FAX#','#EMAIL#','#OFFERS#'],
-                    [value.city,value.address,value.leader,value.phone,value.fax,value.request,value.offers]
+                    ['#CITY#','#ADDRESS#','#LEADER#','#LEADER_TITLE#','#PHONE#','#FAX#','#EMAIL#','#OFFERS#'],
+                    [value.city,value.address,value.leader,value.leader_title,value.phone,value.fax,value.request,value.offers]
                 );
                 tableCompliceHtml += templates.office.replaceArray(
-                    ['#CLASS#','#KEY#','#CITY#','#ADDRESS#','#LEADER#','#PHONE#','#FAX#','#EMAIL#','#OFFERS#'],
-                    [(key == 0) ? 'is_active' : '',key,value.city,value.address,value.leader,value.phone,value.fax,value.request,value.offers]
+                    ['#CLASS#','#KEY#','#CITY#','#ADDRESS#','#LEADER#','#LEADER_TITLE#','#PHONE#','#FAX#','#EMAIL#','#OFFERS#'],
+                    [(key == 0) ? 'is_active' : '',key,value.city,value.address,value.leader,value.leader_title,value.phone,value.fax,value.request,value.offers]
                 );
                 contactCompileHtml += templates.contact.replaceArray(
-                    ['#CLASS#','#KEY#','#CITY#','#ADDRESS#','#LEADER#','#PHONE#','#FAX#','#EMAIL#','#OFFERS#'],
-                    [(key == 0) ? 'is_active' : '',key,value.city,value.address,value.leader,value.phone,value.fax,value.request,value.offers]
+                    ['#CLASS#','#KEY#','#CITY#','#ADDRESS#','#LEADER#','#LEADER_TITLE#','#PHONE#','#FAX#','#EMAIL#','#OFFERS#'],
+                    [(key == 0) ? 'is_active' : '',key,value.city,value.address,value.leader,value.leader_title,value.phone,value.fax,value.request,value.offers]
                 );
                 pinCompileHtml += templates.pin.replaceArray(
                     ['#CITY#','#COUNTRY#','#CLASS#','#KEY#','#IMAGE#','#TOP#','#LEFT#'],

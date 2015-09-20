@@ -32,7 +32,7 @@ function initialize(nameBlock,index) {
 
         var myLatlng = new google.maps.LatLng(value.map.lat,value.map.lng);
         var image = {
-            url : 'img/google-map.png',
+            url : '/static/mst/img/google-map.png',
             size: new google.maps.Size(61,61),
             origin:new google.maps.Point(0,0),
             anchor: new google.maps.Point(30,30)

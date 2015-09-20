@@ -28,12 +28,20 @@ class Office(models.Model):
     head = models.CharField(max_length=255)
     address = models.TextField()
     post_index = models.CharField(max_length=10)
-    latitude = models.DecimalField(max_digits=8, decimal_places=6, null=True, blank=True)
-    longitude = models.DecimalField(max_digits=8, decimal_places=6, null=True, blank=True)
-    seo_title = models.CharField(max_length=255, default=u'Transportation logistics in')        
+    latitude = models.DecimalField(max_digits=10, decimal_places=6, null=True, blank=True)
+    longitude = models.DecimalField(max_digits=10, decimal_places=6, null=True, blank=True)
+    seo_title = models.CharField(max_length=255, default=u'Transportation logistics in')
+    top = models.IntegerField(null=True, blank=True)        
+    left = models.IntegerField(null=True, blank=True)
+    order = models.IntegerField(null=True, blank=True)
+    css_class = models.CharField(max_length=255, null=True, blank=True)
     @property
     def prime_phone(self):
         return self.get_prime_contact(ContactType.PHONE)       
+
+    @property
+    def prime_fax(self):
+        return self.get_prime_contact(ContactType.FAX)    
         
     @property
     def prime_email(self):
@@ -43,7 +51,7 @@ class Office(models.Model):
         contacts = self.contacts.filter(contact_type_id=contact_type_id)
         contact = contacts[:1]
         if contact:
-            return contacts[:1].get()
+            return contacts[:1].get().contact
             
     @property
     def prime_contacts(self):
@@ -58,11 +66,14 @@ class Office(models.Model):
         return u'<strong>%s</strong>: %s' % (self.office_type.head_title_template, self.head)      
     @property
     def office_title(self):
-        return self.office_type.office_title_template % self.town
+        return self.office_type.office_title_template % self.town    
+    class Meta:
+        ordering = ['order']
 
 class ContactType(models.Model):
     PHONE = 1
     EMAIL = 3
+    FAX = 2
     contact_type =  models.CharField(max_length=50)
     contact_short_type =  models.CharField(max_length=10)
     def __unicode__(self):
