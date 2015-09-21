@@ -15,6 +15,7 @@ $(document).ready(function () {
     $.ajax({
         async:false,
         url: "/geo/offices/",
+        //url: "/static/mst/content/server/office.json",
         dataType:"json",
         success:function(data){
             window.officeInfo = data;

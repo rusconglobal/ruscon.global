@@ -21,9 +21,11 @@ def get_offices(request):
         office_dict['request'] = "request@ruscon.gcs-group.ru"
         office_dict['offers'] = "info@ruscon.gcs-group.ru"
         
+        office_dict['image'] = ""
+        
         office_dict['address'] = "%s<br>%s" % (office.office_title, office.address)
         
-        office_dict['class'] = office.css_class
+        office_dict['class'] = office.css_class or ""
                 
         office_dict['position'] = {
                 "top":"%s%%" % office.top,
@@ -37,5 +39,5 @@ def get_offices(request):
         
         items.append(office_dict)         
                 
-    return HttpResponse(json.dumps({'items': items}), content_type="application/json")
+    return HttpResponse(json.dumps({'items': items},indent=4), content_type="application/json")
     

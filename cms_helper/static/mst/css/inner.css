@@ -292,3 +292,11 @@ body {
 .breadcrumbs {
 	border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+article #page-content .article-text ul {
+	padding: 0 3em;
+}
+
+article #page-content .article-text ul li {
+	list-style: circle;
+}
