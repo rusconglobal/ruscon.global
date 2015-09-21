@@ -16,7 +16,7 @@ framework.
 import os
 import sys
 
-sys.path.insert(0, '/opt/src/rusconwww')
+sys.path.insert(0, '/opt/src/testing/rusconwww')
 
 os.environ["DJANGO_SETTINGS_MODULE"] =  "rusconwww.settings"
 
