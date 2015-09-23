@@ -139,6 +139,13 @@ THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.filters',
 )
 
+HAYSTACK_SITECONF = 'rusconwww.search_sites'
+HAYSTACK_SEARCH_ENGINE = 'whoosh'
+# HAYSTACK_SEARCH_ENGINE = 'xapian'
+HAYSTACK_WHOOSH_PATH =  os.path.join(os.path.dirname(__file__), 'whoosh_index')
+# HAYSTACK_XAPIAN_PATH = os.path.join(os.path.dirname(__file__), 'xapain_index')
+HAYSTACK_INCLUDE_SPELLING = True
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -146,17 +153,19 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
-    'django.contrib.staticfiles',        
+    'django.contrib.staticfiles',
+    'haystack',       
     'cms',
     'menus',
     'mptt',
-    'south',
+    'south',    
     'cms.plugins.text',
     'cms.plugins.picture',
     'cms.plugins.link',
     'cms.plugins.file',
     'cms.plugins.snippet',
     'cms.plugins.googlemap',    
+    'cms_search',
     'sekizai',
     'cms_helper',
     'django.contrib.comments',
@@ -178,5 +187,5 @@ INSTALLED_APPS = (
     'cms_helper.cms_plugins',    
     'geo_office',
     'ctracer',
-    'ctracer.cms_plugins',
+    'ctracer.cms_plugins',    
 )

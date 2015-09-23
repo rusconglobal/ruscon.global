@@ -112,8 +112,43 @@ $(document).ready(function() {
 
 
 $(document).ready(function () {
-	$("#write-to-us").submit(function() {
+	
+	
+	$("#search form").submit(function() {
 		
+		var url = "/helper/search/";
+	    $.ajax({
+	           type: "GET",
+	           url: url,
+	           data: $("#search form").serialize(),
+	           success: function(data)
+	           {	        	   
+		        	 var result = "";
+		        	 if (data.pages.length > 0) {      		   
+		        		   result += "<ul>";
+		        		   data.pages.forEach(function(item, i, arr) {
+		        			   result += "<li><a href='" + item.url + "'>"  + item.title + "</a></li>";
+		        		  });
+		        		  result += "</ul>";
+		        	  }      	 
+		        	         	   
+	        	   $('#modal1 .modal-content p').html(result);
+	        	   $('#modal1').openModal();
+	           },
+	           error: function(data)
+	           {
+	        	   Materialize.toast('При отправке запроса произошла ошибка.', 3000, 'toast-error');
+	           }        
+	         });
+		
+		
+		
+		
+		return false;
+	});
+	
+	
+	$("#write-to-us").submit(function() {		
 	    var url = "/helper/writetous/";
 	    $.ajax({
 	           type: "POST",

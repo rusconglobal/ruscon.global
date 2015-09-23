@@ -5,6 +5,10 @@ from cmsplugin_contact.models import BaseContact
 from sitetree.models import TreeItem
 from filer.fields.image import FilerImageField
 
+from cms_search.cms_app import HaystackSearchApphook  # @UnresolvedImport
+from cms.apphook_pool import apphook_pool
+apphook_pool.register(HaystackSearchApphook)
+
 class ClockTown(orderedmodel.OrderedModel):
     town = models.CharField(_('Town'), unique=True, db_index=True, max_length=255)
     hour_shift = models.IntegerField(_('Hour shift'))         

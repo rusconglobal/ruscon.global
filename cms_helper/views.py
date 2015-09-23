@@ -3,6 +3,9 @@ import json
 from django.http import HttpResponse
 from cms_helper.forms import WriteToUs
 from django.core.mail.message import EmailMessage
+from zinnia.models.entry import Entry
+from modeltranslation.utils import get_language
+from modeltranslation.settings import DEFAULT_LANGUAGE
 
 def write_to_us(request):
     result = 0  
@@ -26,3 +29,16 @@ def write_to_us(request):
             msg.send()
             result = 1                
     return HttpResponse(json.dumps({'result': result}), content_type="application/json")
+
+
+def search(request):     
+    pages = []
+    pattern = request.GET.get('q')
+    if not pattern:
+        return HttpResponse(json.dumps({}, indent=4), content_type="application/json")     
+    from haystack.query import SearchQuerySet    
+    cms_pages = SearchQuerySet().filter_or(title=pattern).filter_or(content=pattern)
+    for p in cms_pages:
+        pages.append({'url': p.url, 'title': p.title})     
+    return HttpResponse(json.dumps({'pages': pages}, indent=4), content_type="application/json")
+    

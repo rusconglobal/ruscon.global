@@ -1,0 +1,2 @@
+{{ object.title_ru }}
+{{ object.content_ru }}

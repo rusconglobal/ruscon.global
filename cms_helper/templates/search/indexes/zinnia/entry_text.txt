@@ -1,0 +1,2 @@
+{{ object.get_index_title }}
+{{ object.get_index_content }}
