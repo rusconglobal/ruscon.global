@@ -38,7 +38,14 @@ def search(request):
         return HttpResponse(json.dumps({}, indent=4), content_type="application/json")     
     from haystack.query import SearchQuerySet    
     cms_pages = SearchQuerySet().filter_or(title=pattern).filter_or(content=pattern)
+    if not len(cms_pages):
+        cms_pages = SearchQuerySet().filter_or(title=pattern).filter_or(content="%s*" % pattern)
+    
+    urls = set()    
     for p in cms_pages:
+        if p.url in urls:
+            continue 
+        urls.add(p.url)                
         pages.append({'url': p.url, 'title': p.title})     
     return HttpResponse(json.dumps({'pages': pages}, indent=4), content_type="application/json")
     
