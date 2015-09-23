@@ -115,7 +115,6 @@ $(document).ready(function () {
 	
 	
 	$("#search form").submit(function() {
-		
 		var url = "/helper/search/";
 	    $.ajax({
 	           type: "GET",
@@ -130,9 +129,8 @@ $(document).ready(function () {
 		        			   result += "<li><a href='" + item.url + "'>"  + item.title + "</a></li>";
 		        		  });
 		        		  result += "</ul>";
-		        	  }      	 
-		        	         	   
-	        	   $('#modal1 .modal-content p').html(result);
+		        		  $('#modal1 .modal-content p').html(result);
+		        	  }     	 
 	        	   $('#modal1').openModal();
 	           },
 	           error: function(data)
@@ -140,9 +138,6 @@ $(document).ready(function () {
 	        	   Materialize.toast('При отправке запроса произошла ошибка.', 3000, 'toast-error');
 	           }        
 	         });
-		
-		
-		
 		
 		return false;
 	});

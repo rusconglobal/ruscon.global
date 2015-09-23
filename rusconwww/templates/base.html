@@ -91,7 +91,7 @@
 		        <div id="popupAdd-write_to_us" class="scroll_page">
 		            <div class="popupAdd-wrapper">		            	
 		                <div class="popupAdd-title">
-		                    Написать нам
+		                    {% trans "Contact us" %}
 		                </div>
 		                <form id="write-to-us">
 		                	{% csrf_token %}
@@ -156,11 +156,11 @@
   <!-- Modal Structure -->
   <div id="modal1" class="modal modal-fixed-footer">
     <div class="modal-content">
-      <h4>Результаты поиска</h4>
-      <p>A bunch of text</p>
+      <h4>{% trans "Search results" %}</h4>
+      <p>{% trans "On your query results are not found" %}</p>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-blue btn-flat ">Agree</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-blue btn-flat ">{% trans "Close" %}</a>
     </div>
   </div>
 		    <div id="phone">
