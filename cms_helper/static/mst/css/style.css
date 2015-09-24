@@ -665,7 +665,7 @@ li.language {
     float: left;
     z-index: 102;
     overflow: hidden;
-    padding: 60px 0 0 0;
+    padding: 60px 0 0 0;    
 }
 #language .language-btn {
     position: absolute;
@@ -706,7 +706,10 @@ li.language {
 }
 @media screen and (max-width: 950px) {
     #language {
-        border-left: 1px solid rgba(0, 0, 0, 0.08);
+        border-left: 1px solid rgba(0, 0, 0, 0.08);        
+    }
+    #language a {
+    	background-color: #1D3E9F;
     }
 }
 @media screen and (max-width: 550px) {
@@ -4835,6 +4838,28 @@ textarea.is-error {
 }
 
 #menu a.current_branch {
-	background-color: #DFECFF;;
+	background-color: #DFECFF;
 	color: rgba(50, 60, 66, 0.9);
+}
+
+#language a {	
+	font: 600 12px/59px "Roboto New";
+	text-transform: uppercase;
+	color: #DFECFF;
+	padding-left: 15px;
+	font-weight: 700;
+	text-align: center;	
+	-webkit-transition: background ease-out 0.2s;
+    -moz-transition: background ease-out 0.2s;
+    -o-transition: background ease-out 0.2s;
+    transition: background ease-out 0.2s;    
+}
+
+#language a:hover {	
+	color: #323C42;	
+	background-color: #DFECFF;
+	-webkit-transition: background ease-out 0.2s;
+    -moz-transition: background ease-out 0.2s;
+    -o-transition: background ease-out 0.2s;
+    transition: background ease-out 0.2s;
 }

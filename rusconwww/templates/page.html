@@ -13,7 +13,7 @@
     
     <div class="popUpMenu">
         <div class="popUpMenuBody">
-           <div class="menuHeader">О компании <img src="{{ STATIC_URL }}mst/img/category.svg"></div>
+           <div class="menuHeader">{% get_menuitem current_page.get_root.reverse_id "includes/menu_item.html" %} <img src="{{ STATIC_URL }}mst/img/category.svg"></div>
             <aside>
             {% block asidepopup %}            
             	{% sitetree_menu from 'mainmenu' include "this-ancestor-children" template "includes/aside_menu.html" %}
@@ -24,7 +24,7 @@
 
     <div class="backgroundImg"></div>
     <div class="content">    	 
-        <aside>
+        <aside> 
         {% block aside %}            
 			{% sitetree_menu from 'mainmenu' include "this-ancestor-children" template "includes/aside_menu.html" %}
 		{% endblock aside %}       

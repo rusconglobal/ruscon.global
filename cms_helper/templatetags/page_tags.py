@@ -41,11 +41,15 @@ def get_root_page_reverse_id(value):
 @register.simple_tag()
 def get_menuitem(alias, template_name):
     t = loader.get_template(template_name)
-    item = TreeItem.objects.get(alias=alias)  
-    return t.render(Context({
-        'menu_item': item,        
-        'parent_item': item.parent
-    }))
+    try:
+        item = TreeItem.objects.get(alias=alias)  
+        return t.render(Context({
+            'menu_item': item,        
+            'parent_item': item.parent
+        }))
+    except TreeItem.DoesNotExist:
+        return ""
+        
     
 @register.simple_tag
 def get_image_by_menu(item_id):    
@@ -54,5 +58,5 @@ def get_image_by_menu(item_id):
 
 @register.filter()
 def human_lang(lang):
-    mapper = {'en': u'English', 'ru': u'По-русски'}
+    mapper = {'en': u'Eng', 'ru': u'Рус'}
     return mapper[lang]

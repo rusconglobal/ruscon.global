@@ -1,8 +1,2 @@
 {% load page_tags %}
-<span class="title capslock"><a href="{{ menu_item.url }}">{{ menu_item.title }}</a></span>
-<img class="pic shadow radius8" src="{% get_image_by_menu menu_item.id %}" alt="{{ menu_item.title }}" title="{{ menu_item.title }}" />
-
-
-<div class="url">
-	<a href="{{ menu_item.url }}" {% if menu_item.hint %}title="{{ menu_item.hint }}"{% endif %} {% if menu_item.is_current or menu_item.in_current_branch %}class="{{ menu_item.is_current|yesno:"active ," }}{{ menu_item.in_current_branch|yesno:"current_branch," }}"{% endif %}>{{ menu_item.title }}</a>
-</div>
+{{ menu_item.title }}
