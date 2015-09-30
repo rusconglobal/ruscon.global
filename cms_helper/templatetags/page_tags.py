@@ -60,3 +60,5 @@ def get_image_by_menu(item_id):
 def human_lang(lang):
     mapper = {'en': u'Eng', 'ru': u'Рус'}
     return mapper[lang]
+
+8242

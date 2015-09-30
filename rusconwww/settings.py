@@ -187,5 +187,6 @@ INSTALLED_APPS = (
     'cms_helper.cms_plugins',    
     'geo_office',
     'ctracer',
-    'ctracer.cms_plugins',    
+    'ctracer.cms_plugins',
+    'social_share',    
 )

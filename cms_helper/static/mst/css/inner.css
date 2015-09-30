@@ -300,3 +300,9 @@ article #page-content .article-text ul {
 article #page-content .article-text ul li {
 	list-style: circle;
 }
+
+#social-share-btns .social-share-btn {
+	vertical-align: top;
+	line-height: 10px;
+	padding-right: 15px;
+}

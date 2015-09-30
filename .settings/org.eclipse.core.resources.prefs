@@ -10,3 +10,4 @@ encoding//geo_office/templatetags/office_tags.py=utf-8
 encoding//geo_office/views.py=utf-8
 encoding//orderedmodel/admin.py=utf-8
 encoding//rusconwww/settings.py=utf-8
+encoding//social_share/templatetags/social_share.py=utf-8

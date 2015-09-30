@@ -12,12 +12,12 @@
 	<div class="page_slider-pagination">
 	    <a href="#page__1" class="pagination-page is_active" date-page-id="0">
 	        <div class="pagination-page-hover">
-	            Ключевые услуги
+	            {% trans "Key services" %}
 	        </div>
 	    </a>
 	    <a href="#page__3" class="pagination-page" date-page-id="1">
 	        <div class="pagination-page-hover">
-	            Транспортные средства
+	            {% trans "Transport facilities" %}
 	        </div>
 	    </a>
 	    <a href="#page__5" class="pagination-page" date-page-id="2">
@@ -59,10 +59,10 @@
                     <div class="valign-wrapper">
                         <div class="valign">
                             <div class="page-title animateShow-i1 page-title-transport">
-                                Эксперт контейнерных перевозок
+                                {% trans "Container shipping experts" %}                                
                             </div>
                             <div class="page-title-desc">
-                                Ключевые услуги
+                                {% trans "Key services" %}
                             </div>
                             <div class="table-services sameHeight">
                                 <div class="services sameHeight-block">
@@ -71,9 +71,9 @@
                                     </div>
                                     <div class="services-text">
                                         <div class="services-text-title">
-                                            <a href="{% page_url "shipping" %}">Морские перевозки</a>
+                                            <a href="{% page_url "shipping" %}">{% trans "Ocean freight" %}</a>
                                         </div>
-                                        Доставка грузов в контейнерах морем в любую точку мира по наилучшим ценам.
+                                        {% trans "Delivery of containers by sea across the world and at the best price." %}                                       
                                     </div>
                                 </div>
                                 <div class="services sameHeight-block">
@@ -82,9 +82,9 @@
                                     </div>
                                     <div class="services-text">
                                         <div class="services-text-title">
-                                            <a href="{% page_url "multimodal" %}">Мультимодальные перевозки</a>
+                                            <a href="{% page_url "multimodal" %}">{% trans "Multimodal transport" %}</a>
                                         </div>
-                                        Перевозка контейнеров до двери по России и ближнему зарубежью собственными автотранспортом и поездами.
+                                        {% trans "Door delivery of containers to destinations in Russia and CIS by own trucks and trains." %}                                        
                                     </div>
                                 </div>
                                 <div class="services sameHeight-block">
@@ -93,9 +93,9 @@
                                     </div>
                                     <div class="services-text">
                                         <div class="services-text-title">
-                                            <a href="{% page_url "portsterminals" %}">Порты и Терминалы</a>
+                                            <a href="{% page_url "portsterminals" %}">{% trans "Port and terminals" %}</a>
                                         </div>
-                                        Экспедирование и перевалка грузов на контейнерных терминалах в портах и внутри страны.
+                                        {% trans "Handling and forwarding at container terminals in seaports and inland." %}                                        
                                     </div>
                                 </div>
                                 <div class="services sameHeight-block">
@@ -104,9 +104,9 @@
                                     </div>
                                     <div class="services-text">
                                         <div class="services-text-title">
-                                            <a href="{% page_url "customs" %}">Таможня</a>
+                                            <a href="{% page_url "customs" %}">{% trans "Customs" %}</a>
                                         </div>
-                                        Таможенное оформление, хранение и дистрибуция внешнеторговых грузов.
+										{% trans "Customs brokerage, bonded storage, transit and distribution of goods." %}
                                     </div>
                                 </div>
                             </div>
@@ -114,7 +114,7 @@
                     </div>
                 </div>
                 <div class="page_btn-bottom">
-                    <a href="/forclients/ctracker">Отследить груз</a>
+                    <a href="/forclients/ctracker">{% trans "Cargo tracking" %}</a>
                 </div>
             </div>
         </div>
@@ -124,10 +124,10 @@
                     <div class="valign-wrapper">
                         <div class="valign">
                     <div class="page-title page-title-transport">
-                        Транспортные средства
+                        {% trans "Transport facilities" %}
                     </div>
                     <div class="page-title-desc">
-                        Собственный железнодорожный и автомобильный транспорт
+                        {% trans "Own trucks and flat-car wagons" %}
                     </div>
                     <div class="transport-carousel-big sameHeight">
                         <div class="left-transport">
@@ -135,16 +135,16 @@
                                 <div class="transport-border clearfix">
                                     <div class="transport-title">
                                         <span class="text-red">
-                                            Фиттинговые
+                                           {% trans "Flat-car" %} 
                                         </span>
-                                        жд платформы
+                                       {% trans "wagons" %}                                       
                                     </div>
                                     <div class="transport-big-figures sameHeight-block odometer is-js-animate" data-digit="753">
                                         0
                                     </div>
                                      <div class="transport-info-block">
                                         <div class="transport-info">
-                                            отправки в составе контейнерных поездов по России и странам ближнего зарубежья
+                                           {% trans "operated in block-trains across Russia and CIS" %}
                                         </div>
                                         <div class="transport-info-img clearfix">
                                             <img src="{{ STATIC_URL }}mst/content/services/5.svg" height="72" alt="" />
@@ -161,13 +161,13 @@
                                 </div>
                                 <div class="transport-diagram-info">
                                     <div class="transport-diagram-title">
-                                        I квартал
+                                        I {% trans "quarter" %}
                                         <div class="transport-diagram-title-date">
                                             2015
                                         </div>
                                     </div>
                                     <div class="transport-diagram-desc">
-                                        отправлено контейнерных поездов
+                                        {% trans "disptached block-trains" %}
                                     </div>
                                 </div>
                             </div>
@@ -175,9 +175,9 @@
                         <div class="left-transport left-transport-1024">
                             <div class="transport-title">
                                 <span class="text-red">
-                                    Фиттинговые 
+                                   {% trans "Flat-car" %}  
                                 </span>
-                                жд платформы
+                                {% trans "wagons" %}
                             </div>
                             <div class="transport-diagram sameHeight-block transport-diagram-1024">
                                 <div class="transport-diagram-img">
@@ -188,13 +188,13 @@
                                 </div>
                                 <div class="transport-diagram-info">
                                     <div class="transport-diagram-title">
-                                        I квартал
+                                        I {% trans "quarter" %}
                                         <div class="transport-diagram-title-date">
                                             2015
                                         </div>
                                     </div>
                                     <div class="transport-diagram-desc">
-                                        отправлено контейнерных поездов
+                                        {% trans "disptached block-trains" %}
                                     </div>
                                 </div>
                             </div>
@@ -203,14 +203,14 @@
                             <div class="transport-right">
                                 <div class="transport-border clearfix">
                                     <div class="transport-title">
-                                        <span class="text-red">авто</span>контейнеровозы
+                                        <span class="text-red">{% trans "container" %}</span>{% trans "trucks" %}
                                     </div>
                                     <div class="transport-big-figures sameHeight-block odometer is-js-animate" data-digit="102">
                                         0
                                     </div>
                                     <div class="transport-info-block">
                                         <div class="transport-info">
-                                           автоперевозки внешнеторговых грузов из основных портов страны
+                                           {% trans "haulage of goods via main gateways of Russia and CIS" %}
                                         </div>
                                         <div class="transport-info-img clearfix">
                                             <img src="{{ STATIC_URL }}mst/content/services/2.svg" height="72" alt="" />
@@ -227,13 +227,13 @@
                                 </div>
                                 <div class="transport-diagram-info">
                                     <div class="transport-diagram-title">
-                                        II квартал
+                                        I {% trans "quarter" %}
                                         <div class="transport-diagram-title-date">
                                             2015
                                         </div>
                                     </div>
                                     <div class="transport-diagram-desc">
-                                        перевезено контейнеров автотранспортом
+                                        {% trans "containers delivered by our trucks" %}
                                     </div>
                                 </div>
                             </div>
@@ -241,9 +241,9 @@
                         <div class="left-transport left-transport-1024">
                             <div class="transport-title">
                                 <span class="text-red">
-                                    авто 
+                                   {% trans "container" %} 
                                 </span>
-                                контейнеровозы
+                                {% trans "trucks" %}
                             </div>
                             <div class="transport-diagram sameHeight-block transport-diagram-1024">
                                 <div class="transport-diagram-img">
@@ -254,13 +254,13 @@
                                 </div>
                                 <div class="transport-diagram-info">
                                     <div class="transport-diagram-title">
-                                        II квартал
+                                        I {% trans "quarter" %}
                                         <div class="transport-diagram-title-date">
                                             2015
                                         </div>
                                     </div>
                                     <div class="transport-diagram-desc">
-                                        перевезено контейнеров автотранспортом
+                                        {% trans "containers delivered by our trucks" %}
                                     </div>
                                 </div>
                             </div>
@@ -276,20 +276,17 @@
                 <div class="scroll_page scroll_page-warehouses">
                     <div class="valign-wrapper">
                         <div class="valign">
-
                     <div class="page-title page-title-warehouses">
-                        Терминалы и склады
+                        {% trans "Terminals and warehouses" %}
                     </div>
                     <div class="page-title-desc">
-                        Терминальные комплексы в портах и внутри страны
+                        {% trans "Terminal facilities in ports and inland" %}
                     </div>
                     <div class="warehouses-carousel sameHeight">
                         <div class="warehouses-block is-js-animate" data-delay="0">
                             <div class="warehouses-block-900">
-                                <div class="warehouses-addres warehouses-addres-top">
-                                    <a href="#">
-                                        Россия, 142160, г. Москва, д. Львово
-                                    </a>
+                                <div class="warehouses-addres warehouses-addres-top">                                    
+                                        {% trans "Lvovo, Moscow 142160, Russia" %}                                    
                                 </div>
                                 <div class="clearfix">
                                     <div class="warehouses-numb">
@@ -302,15 +299,15 @@
                                             000
                                         </div>
                                         <div class="warehouses-numb-text">
-                                            TEU/год
+                                            TEU/{% trans "year" %}
                                         </div>
                                     </div>
-                                    <div class="warehouses-map">
+                                    <div class="warehouses-map">                                    	
                                         <div class="warehouses-map-el" style="top: 40%; left: 20%;">
                                             <div class="warehouses-map-el-dot">
                                             </div>
                                             <div class="warehouses-map-el-text">
-                                                Москва
+                                                {% trans "Moscow" %}
                                             </div>
                                             <div class="warehouses-map-el-img">
                                                 <img src="{{ STATIC_URL }}mst/content/man.jpg" alt="" />
@@ -318,19 +315,17 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="warehouses-addres warehouses-addres-bottom sameHeight-block">
-                                    <a href="#">
-                                        Россия, 142160, г. Москва, д. Львово
-                                    </a>
+                                <div class="warehouses-addres warehouses-addres-bottom sameHeight-block">                                    
+                                        {% trans "Lvovo, Moscow 142160, Russia" %}                                    
                                 </div>
                             </div>
                             <div class="warehouses-block-900">
                                 <div class="warehouses-table">
                                     <div class="warehouses-table-el">
-                                        <span class="text-red">Терминал</span> МАНП
+                                        <span class="text-red">{% trans "Terminal" %}</span> {% trans "MANP" %}
                                     </div>
                                     <div class="warehouses-table-el">
-                                        <span class="warehouses-table-el-dot"></span> 14,6 ГА
+                                        <span class="warehouses-table-el-dot"></span> 14,6 {% trans "ha" %}
                                     </div>
                                     <div class="warehouses-table-el">
                                         <span class="warehouses-table-el-dot"></span> 2500 TEU
@@ -338,12 +333,12 @@
                                 </div>
                                 <div class="page-warehouses-bottom in-block">
                                     <div class="page-warehouses-bottom-el">
-                                        <span class="warehouses-table-el-dot"></span>
-                                        Площадь терминала
+                                        <span class="warehouses-table-el-dot"></span>                                    
+                                        {% trans "Terminal area" %}
                                     </div>
                                     <div class="page-warehouses-bottom-el">
                                         <span class="warehouses-table-el-dot"></span>
-                                        Емкость единовременного хранения
+                                        {% trans "Intake capacity" %}
                                     </div>
                                 </div>
                             </div>
@@ -352,7 +347,7 @@
                             <div class="warehouses-block-900">
                                 <div class="warehouses-addres warehouses-addres-top">
                                     <a href="#">
-                                        Россия, 353900, Новороссийск, п. Кирилловка, 2-я жд петля
+                                        {% trans "2nd railway loop, Kirillovka, Novorossiysk, 353900, Russia" %}
                                     </a>
                                 </div>
                                 <div class="clearfix">
@@ -366,7 +361,7 @@
                                             000
                                         </div>
                                         <div class="warehouses-numb-text">
-                                            TEU/год
+                                            TEU/{% trans "year" %}
                                         </div>
                                     </div>
                                     <div class="warehouses-map">
@@ -374,27 +369,27 @@
                                             <div class="warehouses-map-el-dot">
                                             </div>
                                             <div class="warehouses-map-el-text">
-                                                Новороссийск
+                                                {% trans "Novorossiysk" %}
                                             </div>
-                                            <div class="warehouses-map-el-img">
-                                                <img src="{{ STATIC_URL }}mst/content/terminal.jpg" alt="" />
+                                            <div class="warehouses-map-el-img">                                            	
+                                                <img src="{{ STATIC_URL }}mst/content/terminal.jpg" alt="" />                                                
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="warehouses-addres warehouses-addres-bottom sameHeight-block">
-                                    <a href="#">
-                                        Россия, 353900, Новороссийск, п. Кирилловка, 2-я жд петля
+                                	<a href="#">
+                                        {% trans "2nd railway loop, Kirillovka, Novorossiysk, 353900, Russia" %}
                                     </a>
                                 </div>
                             </div>
                             <div class="warehouses-block-900">
                                 <div class="warehouses-table">
                                     <div class="warehouses-table-el">
-                                        <span class="text-red">Терминал</span> РУСКОН
+                                        <span class="text-red">{% trans "Terminal" %}</span> {% trans "RUSCON" %}
                                     </div>
                                     <div class="warehouses-table-el">
-                                        <span class="warehouses-table-el-dot"></span> 9,9 ГА
+                                        <span class="warehouses-table-el-dot"></span> 9,9 {% trans "ha" %}
                                     </div>
                                     <div class="warehouses-table-el">
                                         <span class="warehouses-table-el-dot"></span> 4338 TEU
@@ -403,11 +398,11 @@
                                 <div class="page-warehouses-bottom in-block">
                                     <div class="page-warehouses-bottom-el">
                                         <span class="warehouses-table-el-dot"></span>
-                                        Площадь терминала
+                                        {% trans "Terminal area" %}
                                     </div>
                                     <div class="page-warehouses-bottom-el">
                                         <span class="warehouses-table-el-dot"></span>
-                                        Емкость единовременного хранения
+                                        {% trans "Intake capacity" %}
                                     </div>
                                 </div>
                             </div>
@@ -415,9 +410,7 @@
                         <div class="warehouses-block is-js-animate" data-delay="4000">
                             <div class="warehouses-block-900">
                                 <div class="warehouses-addres warehouses-addres-top">
-                                    <a href="#">
-                                        Россия, 142000, мкр. Северный, г. Домодедово, ул. Логистическая 1/7б
-                                    </a>
+                                        {% trans "1/7b Logisticheskaya str., Domodedovo, Severny district, Moscow 142000, Russia" %}
                                 </div>
                                 <div class="clearfix">
                                     <div class="warehouses-numb">
@@ -430,7 +423,7 @@
                                             000
                                         </div>
                                         <div class="warehouses-numb-text">
-                                            ПАЛ<br>/год
+                                            {% trans "pallets" %}<br>/{% trans "year" %}
                                         </div>
                                     </div>
                                     <div class="warehouses-map">
@@ -438,7 +431,7 @@
                                             <div class="warehouses-map-el-dot">
                                             </div>
                                             <div class="warehouses-map-el-text">
-                                                Домодедово
+                                                {% trans "Domodedovo" %}
                                             </div>
                                             <div class="warehouses-map-el-img">
                                                 <img src="{{ STATIC_URL }}mst/content/otkl.jpg" alt="" />
@@ -446,32 +439,30 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="warehouses-addres warehouses-addres-bottom sameHeight-block">
-                                    <a href="#">
-                                        Россия, 142000, мкр. Северный, г. Домодедово, ул. Логистическая 1/7б
-                                    </a>
+                                <div class="warehouses-addres warehouses-addres-bottom sameHeight-block">                                    
+                                        {% trans "1/7b Logisticheskaya str., Domodedovo, Severny district, Moscow 142000, Russia" %}                                
                                 </div>
                             </div>
                             <div class="warehouses-block-900">
                                 <div class="warehouses-table">
                                     <div class="warehouses-table-el">
-                                        <span class="text-red">Терминал</span> ОТЛК
+                                        <span class="text-red">{% trans "Terminal" %}</span> {% trans "OTLC" %}
                                     </div>
                                     <div class="warehouses-table-el">
-                                        <span class="warehouses-table-el-dot"></span> 3,2 ГА
+                                        <span class="warehouses-table-el-dot"></span> 3,2 {% trans "ha" %}
                                     </div>
                                     <div class="warehouses-table-el">
-                                        <span class="warehouses-table-el-dot"></span> 3979 ПАЛЛЕТ
+                                        <span class="warehouses-table-el-dot"></span> 3979 {% trans "pallets" %}
                                     </div>
                                 </div>
                                 <div class="page-warehouses-bottom in-block">
                                     <div class="page-warehouses-bottom-el">
                                         <span class="warehouses-table-el-dot"></span>
-                                        Площадь терминала
+                                        {% trans "Terminal area" %}
                                     </div>
                                     <div class="page-warehouses-bottom-el">
                                         <span class="warehouses-table-el-dot"></span>
-                                        Емкость единовременного хранения
+                                        {% trans "Intake capacity" %}
                                     </div>
                                 </div>
                             </div>
@@ -483,11 +474,11 @@
                 <div class="page-warehouses-bottom">
                     <div class="page-warehouses-bottom-el">
                         <span class="warehouses-table-el-dot"></span>
-                        Площадь терминала
+                        {% trans "Terminal area" %}
                     </div>
                     <div class="page-warehouses-bottom-el">
                         <span class="warehouses-table-el-dot"></span>
-                        Емкость единовременного хранения
+                        {% trans "Intake capacity" %}
                     </div>
                 </div>
             </div>
@@ -1175,96 +1166,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="news-bottom-panel">
-                    <div class="news-bottom-cop">
-                        © 1997—2015 «Рускон» — контейнерные перевозки 
-                    </div>
-                    <div class="btn-bottom-news btn-fb">
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" xml:space="preserve">
-                            <g>
-                                <path d="M296.296,512H200.36V256h-64v-88.225l64-0.029l-0.104-51.976C200.256,43.794,219.773,0,304.556,0h70.588v88.242h-44.115
-                                    c-33.016,0-34.604,12.328-34.604,35.342l-0.131,44.162h79.346l-9.354,88.225L296.36,256L296.296,512z"/>
-                            </g>
-                        </svg>
-                    </div>
-                    <div class="btn-bottom-news btn-tw">
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" xml:space="preserve">
-                            <g>
-                                <path d="M612,116.258c-22.525,9.981-46.694,16.75-72.088,19.772c25.929-15.527,45.777-40.155,55.184-69.411
-                                    c-24.322,14.379-51.169,24.82-79.775,30.48c-22.907-24.437-55.49-39.658-91.63-39.658c-69.334,0-125.551,56.217-125.551,125.513
-                                    c0,9.828,1.109,19.427,3.251,28.606C197.065,206.32,104.556,156.337,42.641,80.386c-10.823,18.51-16.98,40.078-16.98,63.101
-                                    c0,43.559,22.181,81.993,55.835,104.479c-20.575-0.688-39.926-6.348-56.867-15.756v1.568c0,60.806,43.291,111.554,100.693,123.104
-                                    c-10.517,2.83-21.607,4.398-33.08,4.398c-8.107,0-15.947-0.803-23.634-2.333c15.985,49.907,62.336,86.199,117.253,87.194
-                                    c-42.947,33.654-97.099,53.655-155.916,53.655c-10.134,0-20.116-0.612-29.944-1.721c55.567,35.681,121.536,56.485,192.438,56.485
-                                    c230.948,0,357.188-191.291,357.188-357.188l-0.421-16.253C573.872,163.526,595.211,141.422,612,116.258z"/>
-                            </g>
-                        </svg>
-                    </div>
-                    <div class="btn-bottom-news btn-vk">
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 363.301 363.301" xml:space="preserve">
-                            <g>
-                                <path d="M347.506,240.442c-7.91-9.495-16.899-18.005-25.592-26.235c-3.091-2.927-6.287-5.953-9.368-8.962
-                                c-8.845-8.648-9.167-11.897-2.164-21.72c4.845-6.771,9.982-13.551,14.95-20.108c4.506-5.949,9.166-12.101,13.632-18.273l0.917-1.269
-                                c8.536-11.811,17.364-24.024,22.062-38.757c1.22-3.887,2.501-9.607-0.428-14.39c-2.927-4.779-8.605-6.237-12.622-6.918
-                                c-1.987-0.337-3.96-0.383-5.791-0.383l-55.901-0.04l-0.462-0.004c-8.452,0-14.148,3.983-17.412,12.178
-                                c-3.116,7.83-6.539,16.168-10.445,24.096c-7.773,15.787-17.645,33.97-31.93,49.135l-0.604,0.645
-                                c-1.687,1.813-3.598,3.866-4.995,3.866c-0.214,0-0.447-0.041-0.711-0.124c-2.959-1.153-4.945-8.316-4.855-11.648
-                                c0.001-0.046,0.002-0.092,0.002-0.138l-0.039-64.61c0-0.224-0.016-0.446-0.045-0.668c-1.422-10.503-4.572-17.041-16.474-19.372
-                                c-0.316-0.063-0.639-0.094-0.961-0.094h-58.126c-9.47,0-14.688,3.849-19.593,9.61c-1.324,1.54-4.08,4.746-2.714,8.635
-                                c1.386,3.947,5.885,4.791,7.35,5.065c7.272,1.384,11.371,5.832,12.532,13.604c2.027,13.496,2.276,27.901,0.784,45.334
-                                c-0.416,4.845-1.239,8.587-2.595,11.784c-0.315,0.746-1.432,3.181-2.571,3.182c-0.362,0-1.409-0.142-3.316-1.456
-                                c-4.509-3.089-7.808-7.497-11.654-12.942c-13.084-18.491-24.065-38.861-33.575-62.288c-3.527-8.624-10.114-13.452-18.556-13.594
-                                c-9.276-0.141-17.686-0.209-25.707-0.209c-8.764,0-16.889,0.081-24.823,0.246C8.914,83.74,4.216,85.776,1.744,89.676
-                                c-2.476,3.903-2.315,9.03,0.479,15.236c22.366,49.723,42.645,85.876,65.755,117.228c16.193,21.938,32.435,37.123,51.109,47.784
-                                c19.674,11.255,41.722,16.727,67.402,16.727c2.911,0,5.921-0.071,8.956-0.213c14.922-0.727,20.458-6.128,21.158-20.657
-                                c0.333-7.425,1.145-15.212,4.795-21.853c2.304-4.184,4.452-4.184,5.158-4.184c1.36,0,3.046,0.626,4.857,1.799
-                                c3.248,2.12,6.033,4.96,8.316,7.441c2.149,2.357,4.274,4.738,6.401,7.12c4.59,5.141,9.336,10.456,14.294,15.497
-                                c10.852,11.041,22.807,15.897,36.538,14.843h51.252c0.109,0,0.219-0.004,0.328-0.011c5.107-0.337,9.53-3.17,12.135-7.772
-                                c3.227-5.701,3.162-12.974-0.174-19.46C356.718,251.867,351.808,245.601,347.506,240.442z"/>
-                            </g>
-                        </svg>
-                    </div>
-                    <div class="btn-bottom-news btn-od">
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="95.481px" height="95.481px" viewBox="0 0 95.481 95.481" xml:space="preserve">
-                            <g>
-                                <path d="M43.041,67.254c-7.402-0.772-14.076-2.595-19.79-7.064c-0.709-0.556-1.441-1.092-2.088-1.713
-                                    c-2.501-2.402-2.753-5.153-0.774-7.988c1.693-2.426,4.535-3.075,7.489-1.682c0.572,0.27,1.117,0.607,1.639,0.969
-                                    c10.649,7.317,25.278,7.519,35.967,0.329c1.059-0.812,2.191-1.474,3.503-1.812c2.551-0.655,4.93,0.282,6.299,2.514
-                                    c1.564,2.549,1.544,5.037-0.383,7.016c-2.956,3.034-6.511,5.229-10.461,6.761c-3.735,1.448-7.826,2.177-11.875,2.661
-                                    c0.611,0.665,0.899,0.992,1.281,1.376c5.498,5.524,11.02,11.025,16.5,16.566c1.867,1.888,2.257,4.229,1.229,6.425
-                                    c-1.124,2.4-3.64,3.979-6.107,3.81c-1.563-0.108-2.782-0.886-3.865-1.977c-4.149-4.175-8.376-8.273-12.441-12.527
-                                    c-1.183-1.237-1.752-1.003-2.796,0.071c-4.174,4.297-8.416,8.528-12.683,12.735c-1.916,1.889-4.196,2.229-6.418,1.15
-                                    c-2.362-1.145-3.865-3.556-3.749-5.979c0.08-1.639,0.886-2.891,2.011-4.014c5.441-5.433,10.867-10.88,16.295-16.322
-                                    C42.183,68.197,42.518,67.813,43.041,67.254z"/>
-                                <path d="M47.55,48.329c-13.205-0.045-24.033-10.992-23.956-24.218C23.67,10.739,34.505-0.037,47.84,0
-                                    c13.362,0.036,24.087,10.967,24.02,24.478C71.792,37.677,60.889,48.375,47.55,48.329z M59.551,24.143
-                                    c-0.023-6.567-5.253-11.795-11.807-11.801c-6.609-0.007-11.886,5.316-11.835,11.943c0.049,6.542,5.324,11.733,11.896,11.709
-                                    C54.357,35.971,59.573,30.709,59.551,24.143z"/>
-                            </g>
-                        </svg>
-                    </div>
-                    <div class="btn-bottom-news btn-gp">
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 89.609 89.609" xml:space="preserve">
-                            <g>
-                                <path d="M4.754,22.748c0,7.468,2.494,12.859,7.412,16.027c4.025,2.594,8.701,2.981,11.129,2.981
-                                    c0.59,0,1.062-0.022,1.393-0.044c0,0-0.771,5.016,2.949,9.981l-0.168-0.002C21.023,51.693,0,53.039,0,70.322
-                                    c0,17.585,19.309,18.478,23.182,18.478c0.303,0,0.48-0.006,0.48-0.006c0.043,0,0.32,0.011,0.791,0.011
-                                    c2.486,0,8.912-0.312,14.879-3.213C47.072,81.833,51,75.299,51,66.167c0-8.825-5.982-14.077-10.35-17.916
-                                    c-2.666-2.338-4.969-4.358-4.969-6.322c0-2.001,1.682-3.505,3.809-5.41c3.445-3.081,6.691-7.466,6.691-15.755
-                                    c0-7.287-0.945-12.178-6.766-15.281c0.607-0.311,2.752-0.537,3.814-0.684C46.385,4.368,51,3.879,51,1.303V0.805H28.006
-                                    C27.775,0.811,4.754,1.664,4.754,22.748z M41.871,67.812c0.439,7.033-5.576,12.222-14.607,12.879
-                                    c-9.174,0.67-16.727-3.46-17.166-10.483c-0.213-3.374,1.271-6.684,4.176-9.316c2.947-2.669,6.992-4.314,11.393-4.639
-                                    c0.52-0.033,1.035-0.054,1.549-0.054C35.705,56.199,41.455,61.188,41.871,67.812z M35.867,17.936
-                                    c2.256,7.934-1.15,16.229-6.578,17.759c-0.623,0.175-1.27,0.265-1.922,0.265c-4.973,0-9.9-5.031-11.725-11.96
-                                    c-1.02-3.894-0.938-7.296,0.232-10.568c1.15-3.219,3.215-5.393,5.814-6.124c0.625-0.177,1.273-0.267,1.924-0.267
-                                    C29.617,7.04,33.477,9.53,35.867,17.936z M74.609,35.215v-15h-9.5v15h-15v9.5h15v15h9.5v-15h15v-9.5H74.609z"/>
-                            </g>
-                        </svg>
-                    </div>
-                    <div class="news-bottom-dev">
-                        Разработка сайта <a href="#">MST digital agency</a>
-                    </div>
-                </div>
+                {% block footer %}{{ block.super }}{% endblock footer %}
             </div>
         </div>
     </div>
@@ -1272,10 +1174,10 @@
 
 <div class="footer">
     <div class="news-bottom-cop">
-        © 1997—2015 «Рускон» — контейнерные перевозки 
+       {% get_copyright %}	{% show_placeholder "get-copyright" "global_placeholder" %} 
     </div>
     <div class="news-bottom-dev">
-        Разработка сайта <a href="#">MST digital agency</a>
+        Designed by MST digital agency
     </div>
 </div>
 {% endblock body %}

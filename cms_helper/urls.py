@@ -8,3 +8,13 @@ urlpatterns = patterns('',
 urlpatterns = patterns('',   
     url(r'^search/$', search , name='search'),    
 )
+
+from django.views.i18n import javascript_catalog
+
+js_info_dict = {
+    'packages': ('cms_helper',),
+}
+
+urlpatterns = [
+    url(r'^jsi18n/$', javascript_catalog, js_info_dict),
+]    

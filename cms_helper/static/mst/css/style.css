@@ -2405,7 +2405,7 @@ li.language {
 }
 .warehouses-map-el {
     position: absolute;
-    cursor: pointer;
+    /*cursor: pointer;*/
     height: 10px;
 }
 .warehouses-map-el-dot {
@@ -2840,6 +2840,10 @@ li.language {
 .btn-tw svg {
     height: 17px;
     margin: 21px 0 0 0;
+}
+.btn-in svg {
+    height: 32px;
+    margin: 20px 0 0 8px;
 }
 .btn-vk svg {
     height: 20px;
@@ -4862,4 +4866,8 @@ textarea.is-error {
     -moz-transition: background ease-out 0.2s;
     -o-transition: background ease-out 0.2s;
     transition: background ease-out 0.2s;
+}
+
+.news-bottom-cop section {
+	display: inline-block;
 }

@@ -48,4 +48,4 @@ def search(request):
         urls.add(p.url)                
         pages.append({'url': p.url, 'title': p.title})     
     return HttpResponse(json.dumps({'pages': pages}, indent=4), content_type="application/json")
-    
+
