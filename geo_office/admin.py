@@ -3,6 +3,7 @@ from geo_office.models import OfficeContact, Office, Country, Town, OfficeType,\
     ContactType
 from modeltranslation.admin import TranslationAdmin
 
+
 class ModelTranslationMedia(object):    
     class Media:
         js = (

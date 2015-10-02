@@ -7,7 +7,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
-        <meta name="description" content="RUSCON Международные контейнерные перевозки" />
+        <meta name="description" content="{% block meta-description %}{% page_attribute meta_description %}{% endblock %}" />
         <title>{% block title %}{% page_attribute page_title %}{% endblock %}</title>        
         <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}mst/css/materialize.min.css"  media="screen,projection" />
         <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}mst/css/style.css"  media="screen,projection" />        
@@ -19,9 +19,9 @@
         {% block custom_css %}{% endblock custom_css %}        
         {% render_block "css" %}
         <link rel="icon" href="favicon.ico" />
-        <meta property="og:title" content="RUSCON Международные контейнерные перевозки" />
-        <meta property="og:description" content="Компания «Рускон» сегодня – это профессиональная логистика ваших товаров." />
-        <meta property="og:image" content="{{ STATIC_URL }}mst/img/logo-big.png" />
+        <meta property="og:title" content="{% block og-title %}{% page_attribute page_title %}{% endblock %}" />
+        <meta property="og:description" content="{% block og-description %}{% page_attribute meta_description %}{% endblock %}" />
+        <meta property="og:image" content="{% block og-image %}{{ STATIC_URL }}mst/img/logo-big.png{% endblock %}" />
     </head>
     <body>
     	{% block popups %}

@@ -22,12 +22,12 @@
 	    </a>
 	    <a href="#page__5" class="pagination-page" date-page-id="2">
 	        <div class="pagination-page-hover">
-	            Терминалы и склады
+	            {% trans "Terminals and warehouses" %}
 	        </div>
 	    </a>
 	    <a href="#page__2" class="pagination-page" date-page-id="3">
 	        <div class="pagination-page-hover">
-	            Офисы и преставительства
+	            {% trans "Offices and affiliations" %}
 	        </div>
 	    </a>
 	    <a href="#page__4" class="pagination-page" date-page-id="4">
@@ -139,7 +139,7 @@
                                         </span>
                                        {% trans "wagons" %}                                       
                                     </div>
-                                    <div class="transport-big-figures sameHeight-block odometer is-js-animate" data-digit="753">
+                                    <div class="transport-big-figures sameHeight-block odometer is-js-animate" data-digit="{% get_param 'flat-car-wagons' %}">
                                         0
                                     </div>
                                      <div class="transport-info-block">
@@ -155,15 +155,15 @@
                             <div class="transport-diagram">
                                 <div class="transport-diagram-img">
                                     <div class="circle is-js-animate" id="circles-1"></div>
-                                    <div class="transport-diagram-img-numb odometer is-js-animate" data-digit="66" data-delay="2500">
+                                    <div class="transport-diagram-img-numb odometer is-js-animate" data-digit="{% get_param 'dispatched-trains' %}" data-delay="2500">
                                         0
                                     </div>
                                 </div>
                                 <div class="transport-diagram-info">
                                     <div class="transport-diagram-title">
-                                        I {% trans "quarter" %}
+                                        {% get_param 'transport-facilities-period' %}
                                         <div class="transport-diagram-title-date">
-                                            2015
+                                             {% get_param 'transport-facilities-year' %}
                                         </div>
                                     </div>
                                     <div class="transport-diagram-desc">
@@ -182,15 +182,15 @@
                             <div class="transport-diagram sameHeight-block transport-diagram-1024">
                                 <div class="transport-diagram-img">
                                     <div class="circle is-js-animate" id="circles-2"></div>
-                                    <div class="transport-diagram-img-numb odometer is-js-animate" data-digit="66" data-delay="2500">
+                                    <div class="transport-diagram-img-numb odometer is-js-animate" data-digit="{% get_param 'dispatched-trains' %}" data-delay="2500">
                                         0
                                     </div>
                                 </div>
                                 <div class="transport-diagram-info">
                                     <div class="transport-diagram-title">
-                                        I {% trans "quarter" %}
+                                        {% get_param 'transport-facilities-period' %}
                                         <div class="transport-diagram-title-date">
-                                            2015
+                                            {% get_param 'transport-facilities-year' %}
                                         </div>
                                     </div>
                                     <div class="transport-diagram-desc">
@@ -205,7 +205,7 @@
                                     <div class="transport-title">
                                         <span class="text-red">{% trans "container" %}</span>{% trans "trucks" %}
                                     </div>
-                                    <div class="transport-big-figures sameHeight-block odometer is-js-animate" data-digit="102">
+                                    <div class="transport-big-figures sameHeight-block odometer is-js-animate" data-digit="{% get_param 'container-trans-trucks' %}">
                                         0
                                     </div>
                                     <div class="transport-info-block">
@@ -221,15 +221,15 @@
                             <div class="transport-diagram transport-diagram-right">
                                 <div class="transport-diagram-img">
                                     <div class="circle is-js-animate" id="circles-3"></div>
-                                    <div class="transport-diagram-img-numb odometer is-js-animate" data-digit="8242" data-delay="2500">
+                                    <div class="transport-diagram-img-numb odometer is-js-animate" data-digit="{% get_param 'dispatched-trucks' %}" data-delay="2500">
                                         0
                                     </div>
                                 </div>
                                 <div class="transport-diagram-info">
                                     <div class="transport-diagram-title">
-                                        I {% trans "quarter" %}
+                                        {% get_param 'transport-facilities-period' %}
                                         <div class="transport-diagram-title-date">
-                                            2015
+                                            {% get_param 'transport-facilities-year' %}
                                         </div>
                                     </div>
                                     <div class="transport-diagram-desc">
@@ -248,15 +248,15 @@
                             <div class="transport-diagram sameHeight-block transport-diagram-1024">
                                 <div class="transport-diagram-img">
                                     <div class="circle is-js-animate" id="circles-4"></div>
-                                    <div class="transport-diagram-img-numb odometer is-js-animate" data-digit="8242" data-delay="2500">
+                                    <div class="transport-diagram-img-numb odometer is-js-animate" data-digit="{% get_param 'dispatched-trucks' %}" data-delay="2500">
                                         0
                                     </div>
                                 </div>
                                 <div class="transport-diagram-info">
                                     <div class="transport-diagram-title">
-                                        I {% trans "quarter" %}
+                                        {% get_param 'transport-facilities-period' %}
                                         <div class="transport-diagram-title-date">
-                                            2015
+                                            {% get_param 'transport-facilities-year' %}
                                         </div>
                                     </div>
                                     <div class="transport-diagram-desc">
@@ -489,83 +489,18 @@
                     <div class="valign-wrapper">
                         <div class="valign">
                     <div class="page-title page-title-offices">
-                        Офисы и представительства
+                        {% trans "Offices and affiliations" %}
                     </div>
                     <div class="page-title-desc">
-                        Адреса и контакты
+                        {% trans "Contact details" %}
                     </div>
-
-                    <div class="mob-carousel-offices" id="mobile_carusel">
-                        <div class="offices-block-mobile">
-                            <div class="offices-block-left">
-                                <div class="valign-wrapper offices-address">
-                                    <div class="valign">
-                                        <div class="offices-title">
-                                            Москва
-                                        </div>
-                                        <div class="offices-desc">
-                                            <a href="#">Филиал ООО Рускон<br>
-                                            г. Москва, ул. Донская, 15, 119049 Москва</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="offices-leadership">
-                                    <div class="offices-table-title">
-                                        Руководитель
-                                    </div>
-                                    <div class="offices-table-desc">
-                                        Гусарова Марина Евгеньевна
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="offices-block-right">
-                                <div class="offices-table">
-                                    <div class="offices-table-title">
-                                        Телефон:
-                                    </div>
-                                    <div class="offices-table-desc">
-                                        +7(495) 740-16-60
-                                    </div>
-                                </div>
-                                <div class="offices-table">
-                                    <div class="offices-table-title">
-                                        Факс:
-                                    </div>
-                                    <div class="offices-table-desc">
-                                        +7(495) 740-16-60
-                                    </div>
-                                </div>
-                                <div class="offices-table">
-                                    <div class="offices-table-title">
-                                        Запросы:
-                                    </div>
-                                    <div class="offices-table-desc">
-                                        <a href="mailto:request@ruscon.gcs-group.ru">
-                                            request@ruscon.gcs-group.ru
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="offices-table">
-                                    <div class="offices-table-title">
-                                        Предложения:
-                                    </div>
-                                    <div class="offices-table-desc">
-                                        <a href="mailto:info@ruscon.gcs-group.ru">
-                                            info@ruscon.gcs-group.ru
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
 
                     <div class="offices-all">
                         <div class="offices-el">
-                            <span class="text-red">12</span> офисов и филиалов
+                            <span class="text-red">12</span> {% trans "offices and branches" %}
                         </div>
                         <div class="offices-el">
-                            <span class="text-red">20+</span> суб-агентов
+                            <span class="text-red">20+</span> {% trans "sub-agents" %}
                         </div>
                     </div>
                     <div class="map" id="map_load_info">
@@ -586,32 +521,31 @@
                 <div class="scroll_page scroll_page-freight ">
                     <div class="valign-wrapper">
                         <div class="valign">
-
                     <div class="page-title">
-                        Объемы перевозок
+                        {% trans "Cargo turnover" %}
                     </div>
                     <div class="page-title-desc">
-                        Контейнерооборот и доля рынка по регионам
+                        {% trans "Turnover volume and market share by region" %}
                     </div>
                     <div class="freight clearfix">
                         <div class="freight-left">
                             <div class="freight-date">
-                                1 кв. 2015 года
+                                {% get_param 'freight-date' %}
                             </div>
                             <div class="freight-carusel">
                                 <div class="freight-el is_first is_active">
                                     <div class="freight-title">
-                                        Новороссийск <span class="text-red">23%</span><span class="text-blue">Доля рынка </span>
+                                        {% trans "Novorossiysk" %} <span class="text-red">{% get_param 'novo-market-share' %}</span><span class="text-blue">{% trans "Market share" %} </span>
                                         <div class="freight-date">
-                                            1 кв. 2015 года
+                                            {% get_param 'freight-date' %}
                                         </div>
                                     </div>
                                     <div class="freight-text">
                                         <div class="clearfix">
-                                            <div class="freight-big-numb odometer is-js-animate" data-delay="500" data-digit="22">
+                                            <div class="freight-big-numb odometer is-js-animate" data-delay="500" data-digit="{% get_param_part 'novo-teu' 1 %}">
                                                 11
                                             </div>
-                                            <div class="freight-small-numb odometer is-js-animate" data-delay="500" data-digit="989">
+                                            <div class="freight-small-numb odometer is-js-animate" data-delay="500" data-digit="{% get_param_part 'novo-teu' 2 %}">
                                                 111
                                             </div>
                                             <div class="freight-small-text">
@@ -653,23 +587,23 @@
                                             </div>
                                         </div>
                                         <div class="freight-desc">
-                                            Рускон – ведущий логистический оператор в сфере контейнерных перевозок на Юге России.
+                                            {% trans "Leader of container transportation in South Russian ports." %}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="freight-el">
                                     <div class="freight-title">
-                                        Санкт-Петербург <span class="text-red">4%</span><span class="text-blue">Доля рынка </span>
+                                        {% trans "St.Petersburg" %} <span class="text-red">{% get_param 'sbp-market-share' %}</span><span class="text-blue">{% trans "Market share" %} </span>
                                         <div class="freight-date">
-                                            1 кв. 2015 года
+                                            {% get_param 'freight-date' %}
                                         </div>
                                     </div>
                                     <div class="freight-text">
                                         <div class="clearfix">
-                                            <div class="freight-big-numb odometer is-js-animate" data-delay="500" data-digit="7">
+                                            <div class="freight-big-numb odometer is-js-animate" data-delay="500" data-digit="{% get_param_part 'spb-teu' 1 %}">
                                                 3
                                             </div>
-                                            <div class="freight-small-numb odometer is-js-animate" data-delay="500" data-digit="635">
+                                            <div class="freight-small-numb odometer is-js-animate" data-delay="500" data-digit="{% get_param_part 'spb-teu' 2 %}">
                                                 111
                                             </div>
                                             <div class="freight-small-text">
@@ -711,23 +645,23 @@
                                             </div>
                                         </div>
                                         <div class="freight-desc">
-                                            Крупнейший экспедитор контейнерных грузов на Северо-Западе РФ.
+                                            {% trans "The major forwarder of containerised goods in North-West Russia." %}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="freight-el">
                                     <div class="freight-title">
-                                        Дальний восток РФ <span class="text-red">1%</span><span class="text-blue">Доля рынка </span>
+                                        {% trans "Russian Pacific" %} <span class="text-red">{% get_param 'fareast-market-share' %}</span><span class="text-blue">{% trans "Market share" %} </span>
                                         <div class="freight-date">
-                                            1 кв. 2015 года
+                                            {% get_param 'freight-date' %}
                                         </div>
                                     </div>
                                     <div class="freight-text">
                                         <div class="clearfix">
-                                            <div class="freight-big-numb odometer is-js-animate" data-digit="1">
+                                            <div class="freight-big-numb odometer is-js-animate" data-digit="{% get_param_part 'fareast-teu' 1 %}">
                                                 0
                                             </div>
-                                            <div class="freight-small-numb odometer is-js-animate" data-digit="523">
+                                            <div class="freight-small-numb odometer is-js-animate" data-digit="{% get_param_part 'fareast-teu' 2 %}">
                                                 0
                                             </div>
                                             <div class="freight-small-text">
@@ -769,7 +703,7 @@
                                             </div>
                                         </div>
                                         <div class="freight-desc">
-                                            Ведущий транспортный оператор контейнерных перевозок через порты Дальнего Востока РФ.
+                                            {% trans "Advanced intermodal provider of container transportation via Trans-Siberian." %}
                                         </div>
                                     </div>
                                 </div>
@@ -777,7 +711,7 @@
                         </div>
                         <div class="freight-right">
                             <div class="freight-date">
-                                Груженых TEU
+                                {% trans "Full" %} TEU
                             </div>
                             <div class="freight-graph clearfix">
                                 <div class="freight-graph-value freight-graph-value-1">150 K</div>
@@ -786,188 +720,24 @@
                                 <div class="freight-graph-value freight-graph-value-4">90 K</div>
                                 <div class="freight-graph-value freight-graph-value-5">70 K</div>
                                 <div class="freight-graph-el">
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div class="is-active"></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
+	                                {% for i in "x"|rjust:"44" %}                                	
+	                                	<div {% ifequal forloop.counter0 38 %}class="is-active"{% endifequal %}></div>                             		
+									{% endfor %}                                    
                                 </div>
                                 <div class="freight-graph-el">
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div class="is-active is-tree"></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
+                                    {% for i in "x"|rjust:"44" %}                                	
+                                		<div {% ifequal forloop.counter0 31 %}class="is-active is-tree"{% endifequal %}></div>                             		
+									{% endfor %}
                                 </div>
                                 <div class="freight-graph-el">
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div class="is-active"></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
+                                    {% for i in "x"|rjust:"44" %}                                	
+	                                	<div {% ifequal forloop.counter0 22 %}class="is-active"{% endifequal %}></div>                             		
+									{% endfor %}
                                 </div>
                                 <div class="freight-graph-el">
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div class="is-active is-tree"></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
+                                    {% for i in "x"|rjust:"44" %}                                	
+                                		<div {% ifequal forloop.counter0 14 %}class="is-active is-tree"{% endifequal %}></div>                             		
+									{% endfor %}
                                 </div>
                             </div>
                             <div class="freight-graph-title clearfix">
@@ -990,7 +760,7 @@
                 </div>
                 </div>
                 <div class="page-freight_btn-bottom">
-                    <a href="/media/gcs_ruscon_profile.pdf">Скачать презентацию компании</a>
+                    <a href="/media/gcs_ruscon_profile.pdf"> {% trans "Download presentation" %}</a>
                 </div>
             </div>
         </div>
@@ -1142,7 +912,7 @@
                     </div>
                 </div>
                 <div class="page-team-bottom">
-                    <a href="#">
+                    <a href="/blog/categories/vacancy/">
                         Перейти к списку вакансий
                     </a>
                 </div>

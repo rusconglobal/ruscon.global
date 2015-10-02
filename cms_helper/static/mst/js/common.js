@@ -44,7 +44,7 @@ $(document).ready(function () {
                                         <div class="offices-block-right">\
                                             <div class="offices-table">\
                                                 <div class="offices-table-title">\
-                                                    Телефон:\
+                                                    #PHONE_TITLE#:\
                                                 </div>\
                                                 <div class="offices-table-desc">\
                                                     #PHONE#\
@@ -52,7 +52,7 @@ $(document).ready(function () {
                                             </div>\
                                             <div class="offices-table">\
                                                 <div class="offices-table-title">\
-                                                    Факс:\
+                                                    #FAX_TITLE#:\
                                                 </div>\
                                                 <div class="offices-table-desc">\
                                                     #FAX#\
@@ -60,7 +60,7 @@ $(document).ready(function () {
                                             </div>\
                                             <div class="offices-table">\
                                                 <div class="offices-table-title">\
-                                                    Запросы:\
+                                                    #EMAIL_TITLE#:\
                                                 </div>\
                                                 <div class="offices-table-desc">\
                                                     <a href="#EMAIL#">\
@@ -70,7 +70,7 @@ $(document).ready(function () {
                                             </div>\
                                             <div class="offices-table">\
                                                 <div class="offices-table-title">\
-                                                    Предложения:\
+                                                    #OFFERS_TITLE#:\
                                                 </div>\
                                                 <div class="offices-table-desc">\
                                                     <a href="#OFFERS#">\
@@ -104,7 +104,7 @@ $(document).ready(function () {
                                         <div class="offices-block-right">\
                                             <div class="offices-table">\
                                                 <div class="offices-table-title">\
-                                                    Телефон:\
+                                                    #PHONE_TITLE#:\
                                                 </div>\
                                                 <div class="offices-table-desc">\
                                                     #PHONE#\
@@ -112,7 +112,7 @@ $(document).ready(function () {
                                             </div>\
                                             <div class="offices-table">\
                                                 <div class="offices-table-title">\
-                                                    Факс:\
+                                                    #FAX_TITLE#:\
                                                 </div>\
                                                 <div class="offices-table-desc">\
                                                     #FAX#\
@@ -120,7 +120,7 @@ $(document).ready(function () {
                                             </div>\
                                             <div class="offices-table">\
                                                 <div class="offices-table-title">\
-                                                    Запросы:\
+                                                    #EMAIL_TITLE#:\
                                                 </div>\
                                                 <div class="offices-table-desc">\
                                                     <a href="#EMAIL#">\
@@ -130,7 +130,7 @@ $(document).ready(function () {
                                             </div>\
                                             <div class="offices-table">\
                                                 <div class="offices-table-title">\
-                                                    Предложения:\
+                                                    #OFFERS_TITLE#:\
                                                 </div>\
                                                 <div class="offices-table-desc">\
                                                     <a href="#OFFERS#">\
@@ -185,7 +185,7 @@ $(document).ready(function () {
                                         </div>\
                                         <div class="city-desc">\
                                             <div class="city-desc-left">\
-                                                Телефон:\
+                                                #PHONE_TITLE#:\
                                             </div>\
                                             <div class="city-desc-right">\
                                                 #PHONE#\
@@ -193,7 +193,7 @@ $(document).ready(function () {
                                         </div>\
                                         <div class="city-desc">\
                                             <div class="city-desc-left">\
-                                                Факс:\
+                                                #FAX_TITLE#:\
                                             </div>\
                                             <div class="city-desc-right">\
                                                 #FAX#\
@@ -201,7 +201,7 @@ $(document).ready(function () {
                                         </div>\
                                         <div class="city-desc">\
                                             <div class="city-desc-left">\
-                                                Запросы:\
+                                                #EMAIL_TITLE#:\
                                             </div>\
                                             <div class="city-desc-right">\
                                                 <a href="mailto:#EMAIL#">#EMAIL#</a>\
@@ -209,7 +209,7 @@ $(document).ready(function () {
                                         </div>\
                                         <div class="city-desc">\
                                             <div class="city-desc-left">\
-                                                Предложения:\
+                                                #OFFERS_TITLE#:\
                                             </div>\
                                             <div class="city-desc-right">\
                                                 <a href="mailto:#OFFERS#">#OFFERS#</a>\
@@ -224,16 +224,16 @@ $(document).ready(function () {
                 contactCompileHtml = '';
             $.each(data.items,function(key,value){
                 mobileCompileHtml += templates.mobile.replaceArray(
-                    ['#CITY#','#ADDRESS#','#LEADER#','#LEADER_TITLE#','#PHONE#','#FAX#','#EMAIL#','#OFFERS#'],
-                    [value.city,value.address,value.leader,value.leader_title,value.phone,value.fax,value.request,value.offers]
+                    ['#CITY#','#ADDRESS#','#LEADER#','#LEADER_TITLE#','#PHONE#','#PHONE_TITLE#','#FAX#','#FAX_TITLE#','#EMAIL#','#EMAIL_TITLE#','#OFFERS#','#OFFERS_TITLE#'],
+                    [value.city,value.address,value.leader,value.leader_title,value.phone,value.phone_title,value.fax,value.fax_title,value.request,value.request_title,value.offers,value.offers_title]
                 );
                 tableCompliceHtml += templates.office.replaceArray(
-                    ['#CLASS#','#KEY#','#CITY#','#ADDRESS#','#LEADER#','#LEADER_TITLE#','#PHONE#','#FAX#','#EMAIL#','#OFFERS#'],
-                    [(key == 0) ? 'is_active' : '',key,value.city,value.address,value.leader,value.leader_title,value.phone,value.fax,value.request,value.offers]
+                    ['#CLASS#','#KEY#','#CITY#','#ADDRESS#','#LEADER#','#LEADER_TITLE#','#PHONE#','#PHONE_TITLE#','#FAX#','#FAX_TITLE#','#EMAIL#','#EMAIL_TITLE#','#OFFERS#','#OFFERS_TITLE#'],
+                    [(key == 0) ? 'is_active' : '',key,value.city,value.address,value.leader,value.leader_title,value.phone,value.phone_title,value.fax,value.fax_title,value.request,value.request_title,value.offers,value.offers_title]
                 );
                 contactCompileHtml += templates.contact.replaceArray(
-                    ['#CLASS#','#KEY#','#CITY#','#ADDRESS#','#LEADER#','#LEADER_TITLE#','#PHONE#','#FAX#','#EMAIL#','#OFFERS#'],
-                    [(key == 0) ? 'is_active' : '',key,value.city,value.address,value.leader,value.leader_title,value.phone,value.fax,value.request,value.offers]
+                    ['#CLASS#','#KEY#','#CITY#','#ADDRESS#','#LEADER#','#LEADER_TITLE#','#PHONE#','#PHONE_TITLE#','#FAX#','#FAX_TITLE#','#EMAIL#','#EMAIL_TITLE#','#OFFERS#','#OFFERS_TITLE#'],
+                    [(key == 0) ? 'is_active' : '',key,value.city,value.address,value.leader,value.leader_title,value.phone,value.phone_title,value.fax,value.fax_title,value.request,value.request_title,value.offers,value.offers_title]
                 );
                 pinCompileHtml += templates.pin.replaceArray(
                     ['#CITY#','#COUNTRY#','#CLASS#','#KEY#','#IMAGE#','#TOP#','#LEFT#'],

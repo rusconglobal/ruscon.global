@@ -2,7 +2,7 @@ from django.contrib import admin
 from zinnia import models as zinnia_models
 from zinnia import admin as zinnia_admin
 from modeltranslation.admin import TranslationAdmin
-from cms_helper.models import ClockTown, MenuImage
+from cms_helper.models import ClockTown, MenuImage, Params
 from orderedmodel.admin import OrderedModelAdmin
 from zinnia.models.author import Author
 from django.utils import timezone
@@ -74,13 +74,16 @@ class ZinniaCategoryTranslatedAdmin(zinnia_admin.CategoryAdmin, TranslationAdmin
 
 class ClockTownTranslatedAdmin(TranslationAdmin, ModelTranslationMedia, OrderedModelAdmin):
     list_display = ('town', 'reorder')
+
+class TransAdmin(TranslationAdmin, ModelTranslationMedia):
+    list_display = ('key','value', 'hint')  
   
 admin.site.unregister(zinnia_models.Entry)
 admin.site.unregister(zinnia_models.Category)
 admin.site.register(zinnia_models.Entry, ZinniaEntryTranslatedAdmin)
 admin.site.register(zinnia_models.Category, ZinniaCategoryTranslatedAdmin)
 admin.site.register(ClockTown, ClockTownTranslatedAdmin)
-
+admin.site.register(Params,TransAdmin)
 
 class TreeItemTranslatedAdmin(TreeItemAdmin, TranslationAdmin, ModelTranslationMedia):
     pass

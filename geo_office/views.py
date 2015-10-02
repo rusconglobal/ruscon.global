@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from django.utils.translation import ugettext_lazy as _
 import json
 from django.http import HttpResponse
 from geo_office.models import Office
@@ -20,6 +21,11 @@ def get_offices(request):
         
         office_dict['request'] = "request@ruscon.gcs-group.ru"
         office_dict['offers'] = "info@ruscon.gcs-group.ru"
+        
+        office_dict['phone_title'] = u"%s" % _('Phone')
+        office_dict['fax_title'] = u"%s" % _('Fax')
+        office_dict['request_title'] = u"%s" % _('Request')
+        office_dict['offers_title'] = u"%s" % _('Offers')
         
         office_dict['image'] = ""
         

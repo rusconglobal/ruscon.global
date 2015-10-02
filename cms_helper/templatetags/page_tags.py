@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django import template
-from cms_helper.models import ClockTown, MenuImage
+from cms_helper.models import ClockTown, MenuImage, Params
 import datetime
 from cms.models.pagemodel import Page
 from sitetree.models import TreeItem
@@ -55,6 +55,29 @@ def get_menuitem(alias, template_name):
 def get_image_by_menu(item_id):    
     menu_image = MenuImage.objects.get(menu_item_id=item_id)    
     return menu_image.image.url    
+
+
+@register.simple_tag
+def get_param(key):
+    try:    
+        p = Params.objects.get(key=key)
+        return p.value
+    except Params.DoesNotExist:
+        return None 
+
+
+@register.simple_tag
+def get_param_part(key, part):
+    param = get_param(key)
+    if param is None:
+        return     
+    if part == 1:
+        return param[:-3]
+    if part == 2:
+        return param[-3:]
+    return param
+             
+
 
 @register.filter()
 def human_lang(lang):
