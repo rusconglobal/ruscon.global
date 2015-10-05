@@ -33,19 +33,19 @@ msgstr "Скачать презентацию"
 
 #: templates/base.html:113
 msgid "Your name"
-msgstr ""
+msgstr "Ваше Имя"
 
 #: templates/base.html:119
 msgid "Phone"
-msgstr ""
+msgstr "Телефон"
 
 #: templates/base.html:125
 msgid "Message"
-msgstr ""
+msgstr "Сообщение"
 
 #: templates/base.html:129
 msgid "Send"
-msgstr ""
+msgstr "Отправить"
 
 #: templates/base.html:171
 msgid "Search results"
