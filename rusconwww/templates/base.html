@@ -59,7 +59,7 @@
 		                    </svg>
 		                </a>
 		                <div class="popup-additionalBlock-btn-hover">
-		                    Отследить груз
+		                    {% trans "Cargo tracking" %}
 		                </div>
 		            </div>
 		            {% endif %}
@@ -68,25 +68,37 @@
 		                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 21 30" enable-background="new 0 0 21 30" xml:space="preserve"><g><path d="M0 4v26h2h17h2V6V4H2H0z M2 28v-3h17v3H2z M19 6v17H2V6H19z"/><rect width="21" height="2"/></g></svg>
 		                </a>
 		                <div class="popup-additionalBlock-btn-hover">		                	
-		                    Скачать презентацию
+		                    {% trans "Download presentation" %}
 		                </div>
 		            </div>
 		            {% block custom_popups %}{% endblock custom_popups %}		            
 		        </div>
 		    </div>
 		    <div class="popup-additionalBlock-content">
-		        <div id="popupAdd-presentation" class="scroll_page">
+		        <div id="popupAdd-presentation" class="scroll_page">		        				
 		            <div class="popupAdd-presentation-left">
 		                <div class="popupAdd-wrapper">
 		                    <div class="popupAdd-title">
-		                        Скачать презентацию
+		                         {% get_param 'left-presentation-title' %}
 		                    </div>
-		                    <a href="/media/gcs_ruscon_profile.pdf" class="popupAdd-presentation-btn">Презентация наших услуг</a>
+		                    <a href="{% get_param 'left-presentation-link' %}" class="popupAdd-presentation-btn">{% get_param 'left-presentation-link-title' %}</a>
 		                    <div class="popupAdd-presentation-text">
-		                        ООО Трансконтейнер и ООО Рускон, обе компании входящие в группу ГКС, активно наращивают перевалку грузопотока экспортных проектных грузов.
+		                        {% get_param 'left-presentation-desc' %}
 		                    </div>
 		                </div>
 		            </div>
+		            
+		            <div class="popupAdd-presentation-left">
+		                <div class="popupAdd-wrapper">
+		                    <div class="popupAdd-title">
+		                        {% get_param 'right-presentation-title' %}
+		                    </div>		                    
+		                    <a href="{% get_param 'right-presentation-link' %}" class="popupAdd-presentation-btn-3d">{% get_param 'right-presentation-link-title' %}</a>
+		                    <div class="popupAdd-presentation-text">
+		                        {% get_param 'right-presentation-desc' %}
+		                    </div>
+		                </div>
+		            </div>		            		            
 		        </div>
 		        <div id="popupAdd-write_to_us" class="scroll_page">
 		            <div class="popupAdd-wrapper">		            	
@@ -98,23 +110,23 @@
 			                <div class="clearfix">
 			                    <div class="write_to_us-input">
 			                        <div class="inputField">
-			                            <input type="text" required placeholder="Ваше Имя" name="name" id="id_name" />
+			                            <input type="text" required placeholder="{% trans "Your name" %}Ваше Имя" name="name" id="id_name" />
 			                        </div>
 			                        <div class="inputField">
 			                            <input type="email" required placeholder="Email" name="email" id="id_email" />
 			                        </div>
 			                        <div class="inputField">
-			                            <input type="tel" required placeholder="Телефон" name="phone" id="id_phone" />
+			                            <input type="tel" required placeholder="{% trans "Phone" %}Телефон" name="phone" id="id_phone" />
 			                            <div class="phone-info"></div>
 			                        </div>
 			                    </div>
 			                    <div class="write_to_us-textarea">
 			                        <div class="inputField">
-			                            <textarea required placeholder="Сообщение" name="message" id="id_message"></textarea>
+			                            <textarea required placeholder="{% trans "Message" %}Сообщение" name="message" id="id_message"></textarea>
 			                        </div>
 			                    </div>
 			                </div>			                
-			                <button class="btn-blue btn-blue-write_to_us" type="submit">Отправить</button>
+			                <button class="btn-blue btn-blue-write_to_us" type="submit">{% trans "Send" %}</button>
 		                <form>		                
 		                <div id="toast-container"></div>
 		            </div>

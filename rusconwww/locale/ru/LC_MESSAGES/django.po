@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-02 15:25+0300\n"
+"POT-Creation-Date: 2015-10-05 16:28+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,19 +19,43 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: templates/base.html:38 templates/base.html.py:94
+#: templates/base.html:38 templates/base.html.py:106
 msgid "Contact us"
 msgstr "Написать нам"
 
-#: templates/base.html:159
+#: templates/base.html:62 templates/home.html:117
+msgid "Cargo tracking"
+msgstr "Отследить груз"
+
+#: templates/base.html:71 templates/home.html:763
+msgid "Download presentation"
+msgstr "Скачать презентацию"
+
+#: templates/base.html:113
+msgid "Your name"
+msgstr ""
+
+#: templates/base.html:119
+msgid "Phone"
+msgstr ""
+
+#: templates/base.html:125
+msgid "Message"
+msgstr ""
+
+#: templates/base.html:129
+msgid "Send"
+msgstr ""
+
+#: templates/base.html:171
 msgid "Search results"
 msgstr "Результаты поиска"
 
-#: templates/base.html:160
+#: templates/base.html:172
 msgid "On your query results are not found"
 msgstr "По вашему запросу результатов не обнаружено"
 
-#: templates/base.html:163
+#: templates/base.html:175
 msgid "Close"
 msgstr "Закрыть"
 
@@ -93,10 +117,6 @@ msgstr "Таможня"
 #: templates/home.html:109
 msgid "Customs brokerage, bonded storage, transit and distribution of goods."
 msgstr "Таможенное оформление, хранение и дистрибуция внешнеторговых грузов."
-
-#: templates/home.html:117
-msgid "Cargo tracking"
-msgstr "Отследить груз"
 
 #: templates/home.html:130
 msgid "Own trucks and flat-car wagons"
@@ -230,7 +250,9 @@ msgstr "Доля рынка"
 
 #: templates/home.html:590
 msgid "Leader of container transportation in South Russian ports."
-msgstr "Рускон – ведущий логистический оператор в сфере контейнерных перевозок на Юге России."
+msgstr ""
+"Рускон – ведущий логистический оператор в сфере контейнерных перевозок на "
+"Юге России."
 
 #: templates/home.html:596
 msgid "St.Petersburg"
@@ -247,15 +269,61 @@ msgstr "Дальний восток РФ"
 #: templates/home.html:706
 msgid ""
 "Advanced intermodal provider of container transportation via Trans-Siberian."
-msgstr "Ведущий транспортный оператор контейнерных перевозок через порты Дальнего Востока РФ."
+msgstr ""
+"Ведущий транспортный оператор контейнерных перевозок через порты Дальнего "
+"Востока РФ."
 
 #: templates/home.html:714
 msgid "Full"
 msgstr "Груженых"
 
-#: templates/home.html:763
-msgid "Download presentation"
-msgstr "Скачать презентацию компании"
+#: templates/home.html:774
+msgid "Our team"
+msgstr "Наша команда"
+
+#: templates/home.html:777
+msgid "Russia and CIS"
+msgstr "Россия и ближнее зарубежье"
+
+#: templates/home.html:786
+msgid "Employees"
+msgstr "Сотрудников"
+
+#: templates/home.html:786
+msgid "in Russia and CIS"
+msgstr "в РФ и СНГ"
+
+#: templates/home.html:804
+msgid "One of the major employers in transportation segment of Russia."
+msgstr "Один из ведущих работодателей РФ в сфере транспортной логистики."
+
+#: templates/home.html:809
+msgid "Learn more about our Company and Management team"
+msgstr "Узнать больше о компании и руководстве"
+
+#: templates/home.html:896
+msgid "South"
+msgstr "Юг РФ"
+
+#: templates/home.html:899
+msgid "Centre"
+msgstr "Центр РФ"
+
+#: templates/home.html:902
+msgid "North-West"
+msgstr "Северо-Запад РФ"
+
+#: templates/home.html:905
+msgid "Asia and Pacific"
+msgstr "Дальний Восток РФ и Средняя Азия"
+
+#: templates/home.html:916
+msgid "List of vacancies"
+msgstr "Перейти к списку вакансий"
+
+#: templates/home.html:928
+msgid "News and publications"
+msgstr "Новости и публикации"
 
 #: templates/admin/index.html:18
 #, python-format

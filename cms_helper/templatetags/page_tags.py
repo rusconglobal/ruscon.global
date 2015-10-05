@@ -63,7 +63,7 @@ def get_param(key):
         p = Params.objects.get(key=key)
         return p.value
     except Params.DoesNotExist:
-        return None 
+        return "" 
 
 
 @register.simple_tag
@@ -84,4 +84,4 @@ def human_lang(lang):
     mapper = {'en': u'Eng', 'ru': u'Рус'}
     return mapper[lang]
 
-8242
+

@@ -32,17 +32,17 @@
 	    </a>
 	    <a href="#page__4" class="pagination-page" date-page-id="4">
 	        <div class="pagination-page-hover">
-	            Объемы перевозок
+	            {% trans "Cargo turnover" %}
 	        </div>
 	    </a>
 	    <a href="#page__6" class="pagination-page" date-page-id="5">
 	        <div class="pagination-page-hover">
-	            Наша команда
+	            {% trans "Our team" %}
 	        </div>
 	    </a>
 	    <a href="#page__7" class="pagination-page" date-page-id="6">
 	        <div class="pagination-page-hover">
-	            Новости и публикации
+	            {% trans "News and publications" %}
 	        </div>
 	    </a>
 	</div>
@@ -346,7 +346,7 @@
                         <div class="warehouses-block is-js-animate" data-delay="2000">
                             <div class="warehouses-block-900">
                                 <div class="warehouses-addres warehouses-addres-top">
-                                    <a href="/media/terminals/ruscon/3d/">
+                                    <a href="{% get_param 'right-presentation-link' %}">
                                         {% trans "2nd railway loop, Kirillovka, Novorossiysk, 353900, Russia" %}
                                     </a>
                                 </div>
@@ -771,10 +771,10 @@
                         <div class="valign">
 
                     <div class="page-title">
-                        Наша команда
+                         {% trans "Our team" %}
                     </div>
                     <div class="page-title-desc">
-                        Россия и ближнее зарубежье
+                        {% trans "Russia and CIS" %}
                     </div>
                     <div class="team-wrapper">
                         <div class="team-block">
@@ -783,7 +783,7 @@
                                     <span class="odometer is-js-animate team-sum-1" data-digit="1">1</span><span class="odometer is-js-animate team-sum-3" data-digit="1">1</span><span class="odometer is-js-animate team-sum-0" data-digit="0">0</span><span class="odometer is-js-animate team-sum-0" data-digit="0">0</span>
                                 </div>
                                 <div class="team-sum-text">
-                                    <span class="text-red">Сотрудников</span> в РФ и СНГ
+                                    <span class="text-red">{% trans "Employees" %}</span>{% trans "in Russia and CIS" %}
                                 </div>
                             </div>
                             <div class="team-detail">
@@ -801,12 +801,12 @@
                                         </svg>
                                     </div>
                                     <div class="team-detail-block-text">
-                                        Один из ведущих работодателей РФ в сфере транспортной логистики.
+                                        {% trans "One of the major employers in transportation segment of Russia." %}
                                     </div>
                                 </div>
                                 <div class="team-detail-block">
                                     <div class="team-detail-block-link">
-                                        <a href="#">Узнать больше о компании и руководстве</a>
+                                        <a href="/headship/">{% trans "Learn more about our Company and Management team" %}</a>
                                     </div>
                                 </div>
                             </div>
@@ -893,16 +893,16 @@
                                 </div>
                                 <div class="team-block-diagram-info">
                                     <div class="team-block-diagram-info-el">
-                                        <div class="diagram-el-dot diagram-el-dot-ffffff"></div> Юг РФ <div class="right">729</div>
+                                        <div class="diagram-el-dot diagram-el-dot-ffffff"></div>{% trans "South" %} <div class="right">729</div>
                                     </div>
                                     <div class="team-block-diagram-info-el">
-                                        <div class="diagram-el-dot diagram-el-dot-ee3338"></div> Центр РФ <div class="right">256</div>
+                                        <div class="diagram-el-dot diagram-el-dot-ee3338"></div>{% trans "Centre" %} <div class="right">256</div>
                                     </div>
                                     <div class="team-block-diagram-info-el">
-                                        <div class="diagram-el-dot diagram-el-dot-7386cb"></div> Северо-Запад РФ <div class="right">100</div>
+                                        <div class="diagram-el-dot diagram-el-dot-7386cb"></div>{% trans "North-West" %} <div class="right">100</div>
                                     </div>
                                     <div class="team-block-diagram-info-el" style="font-size:15px;">
-                                        <div class="diagram-el-dot diagram-el-dot-50597d"></div> Дальний Восток РФ и Средняя Азия<div class="right">006</div>
+                                        <div class="diagram-el-dot diagram-el-dot-50597d"></div>{% trans "Asia and Pacific" %} <div class="right">006</div>
                                     </div>
                                 </div>
                             </div>
@@ -913,7 +913,7 @@
                 </div>
                 <div class="page-team-bottom">
                     <a href="/blog/categories/vacancy/">
-                        Перейти к списку вакансий
+                        {% trans "List of vacancies" %}
                     </a>
                 </div>
             </div>
@@ -925,7 +925,7 @@
                         <div class="valign">
                             
                     <div class="page-title page-title-warehouses">
-                        Новости и публикации
+                        {% trans "News and publications" %}
                     </div>
                     <div class="page-title-desc">
                         
