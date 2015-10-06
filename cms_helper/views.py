@@ -15,8 +15,9 @@ def write_to_us(request):
         if form.is_valid():
             headers = {'Reply-To': form.cleaned_data['email']}
             subject = u'Обращение через контактную форму сайта'
-            from_email = 'fax@ruscon.gcs-group.ru'                                   
-            to_email = Params.objects.get(key='write_to_us_email')
+            from_email = 'fax@ruscon.gcs-group.ru'
+            email_param = Params.objects.get(key='write_to_us_email')                                                
+            to_email = [x.strip() for x in email_param.value.split(',')]
             lines = []
             lines.append(u"<strong>Через контактную форму сайта Рускон получено обращение</strong>")
             lines.append(u"Имя: <strong>%(name)s</strong>")            
@@ -25,7 +26,7 @@ def write_to_us(request):
             lines.append(u"<blockquote>%(message)s</blockquote>")
             body = u"<br>".join(lines)             
             body = body % form.cleaned_data
-            msg = EmailMessage(subject, body, from_email, [to_email], headers=headers)
+            msg = EmailMessage(subject, body, from_email, to_email, headers=headers)
             msg.content_subtype = "html"
             msg.send()
             result = 1                
