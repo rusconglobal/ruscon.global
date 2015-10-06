@@ -5,6 +5,6 @@ urlpatterns = patterns('',
     url(r'^writetous/$', write_to_us , name='write-to-us'),    
 )
 
-urlpatterns = patterns('',   
+urlpatterns += patterns('',   
     url(r'^search/$', search , name='search'),    
 )
