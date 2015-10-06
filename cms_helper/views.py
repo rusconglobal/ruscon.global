@@ -6,6 +6,7 @@ from django.core.mail.message import EmailMessage
 from zinnia.models.entry import Entry
 from modeltranslation.utils import get_language
 from modeltranslation.settings import DEFAULT_LANGUAGE
+from cms_helper.models import Params
 
 def write_to_us(request):
     result = 0  
@@ -14,8 +15,8 @@ def write_to_us(request):
         if form.is_valid():
             headers = {'Reply-To': form.cleaned_data['email']}
             subject = u'Обращение через контактную форму сайта'
-            from_email = 'fax@ruscon.gcs-group.ru'           
-            to_email = 'it-support2@ruscon.gcs-group.ru'
+            from_email = 'fax@ruscon.gcs-group.ru'                                   
+            to_email = Params.objects.get(key='write_to_us_email')
             lines = []
             lines.append(u"<strong>Через контактную форму сайта Рускон получено обращение</strong>")
             lines.append(u"Имя: <strong>%(name)s</strong>")            
