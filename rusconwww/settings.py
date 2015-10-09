@@ -186,6 +186,7 @@ INSTALLED_APPS = (
     'sitetree',        
     'cms_helper.cms_plugins',    
     'geo_office',
+    'headship',
     'ctracer',
     'ctracer.cms_plugins',
     'social_share',    

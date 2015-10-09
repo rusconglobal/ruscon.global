@@ -77,6 +77,7 @@ class ClockTownTranslatedAdmin(TranslationAdmin, ModelTranslationMedia, OrderedM
 
 class TransAdmin(TranslationAdmin, ModelTranslationMedia):
     list_display = ('key','value', 'hint')  
+   
   
 admin.site.unregister(zinnia_models.Entry)
 admin.site.unregister(zinnia_models.Category)
@@ -84,6 +85,7 @@ admin.site.register(zinnia_models.Entry, ZinniaEntryTranslatedAdmin)
 admin.site.register(zinnia_models.Category, ZinniaCategoryTranslatedAdmin)
 admin.site.register(ClockTown, ClockTownTranslatedAdmin)
 admin.site.register(Params,TransAdmin)
+
 
 class TreeItemTranslatedAdmin(TreeItemAdmin, TranslationAdmin, ModelTranslationMedia):
     pass

@@ -19,7 +19,7 @@ class SiteTreeTranslationOptions(TranslationOptions):
  
 class ParamsTranslationOptions(TranslationOptions):
     fields = ('value',) 
- 
+
  
 translator.register(zinnia_models.Entry, ZinniaEntryTranslationOptions)
 translator.register(zinnia_models.Category, ZinniaCategoryTranslationOptions)

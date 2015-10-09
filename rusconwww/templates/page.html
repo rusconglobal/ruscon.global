@@ -8,6 +8,7 @@
   
 {% block custom_css %}
 <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}mst/css/inner.css" media="screen,projection" />
+<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}libs/lightbox/magnific-popup.css" />
 {% endblock custom_css %}  
 {% block body %} 
     
@@ -60,4 +61,5 @@
     <script src="{{ STATIC_URL }}mst/js/language.js"></script>
     <script src="{{ STATIC_URL }}mst/js/carousel-inner-initialization.js"></script>
     <script src="{{ STATIC_URL }}mst/js/popUpMenu-inner-initialization.js"></script>
+    <script src="{{ STATIC_URL }}libs/lightbox/jquery.magnific-popup.js"></script>
 {% endblock custom_js %}
