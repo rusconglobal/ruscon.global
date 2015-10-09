@@ -6,11 +6,16 @@
 	
   <div class="card">
     
-    <img class="left" alt="{{ head.name }}" src="{% thumbnail head.image '200x220' crop='top' %}">
+    <img class="left" alt="{{ head }}" src="{% thumbnail head.image '200x220' crop='top' %}">
         
     <div class="headship-content">
-	      <h4>{{ head.first_name }} {{ head.last_name }}</h4>	      
-	      <p>{{ head.post }}</p>
+    <qua>
+    <blockquote>
+	      <h4>{{ head.last_name }} </h4>
+	      {{ head.first_name }} {{ head.patronymic }}
+	</blockquote>	      
+	      <small>{{ head.post }}</small>
+	      <br />
 	      <b>{{ head.email|hide_email }}</b>
     </div>    
   </div>	

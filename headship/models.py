@@ -16,4 +16,4 @@ class Headship(models.Model):
     image = FilerImageField(blank=True, null=True)
     active = models.BooleanField(_('Active'), default=False)
     def __unicode__(self):
-        return u'%s %s' % (self.first_name, self.last_name)
+        return u'%s %s %s' % (self.first_name, self.patronymic ,self.last_name)
