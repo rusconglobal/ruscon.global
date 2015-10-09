@@ -6,6 +6,8 @@ from cms.models.pagemodel import Page
 from sitetree.models import TreeItem
 from django.template import loader
 from django.template.context import Context
+import random
+from django.utils.safestring import mark_safe
 
 register = template.Library()
 
@@ -85,3 +87,30 @@ def human_lang(lang):
     return mapper[lang]
 
 
+def encode_string(value):
+    """
+    Encode a string into it's equivalent html entity.
+    
+    The tag will randomly choose to represent the character as a hex digit or
+    decimal digit.
+    """    
+    e_string = "" 
+    for a in value:
+        t = random.randint(0,1)
+        if t:
+            en = "&#x%x;" % ord(a)
+        else:
+            en = "&#%d;" % ord(a)
+        e_string += en 
+    return e_string
+
+
+@register.filter()
+def hide_email(email):    
+    name = email
+    mailto_link = u'<a href="mai\'+\'lto:%s">%s</a>' % (encode_string(email), encode_string(name))
+
+    value = '<script type="text/javascript">// <![CDATA['+"\n \
+           \tdocument.write('%s')\n \
+           \t// ]]></script>\n" % (mailto_link)
+    return mark_safe(value)
