@@ -15,5 +15,8 @@ class Headship(models.Model):
     phone = models.CharField(_('Phone'), max_length=100, blank=True, null=True)
     image = FilerImageField(blank=True, null=True)
     active = models.BooleanField(_('Active'), default=False)
+    sort_order = models.IntegerField(_('Sort'), default=0) 
     def __unicode__(self):
         return u'%s %s %s' % (self.first_name, self.patronymic ,self.last_name)
+    class Meta:
+        ordering = ['sort_order']
