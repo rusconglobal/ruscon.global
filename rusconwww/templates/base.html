@@ -25,6 +25,7 @@
         <meta property="og:image" content="{% block og-image %}{{ STATIC_URL }}mst/img/logo-big.png{% endblock %}" />
     </head>
     <body>
+    	<!--[if lte IE 9]><script>document.write('<div id="old-browser">{% trans "Your web browser is out of date, please update." %}</div>')</script><![endif]-->    	    	
     	{% block popups %}
 		<div class="popup-bg">
 		</div>

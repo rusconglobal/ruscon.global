@@ -4906,3 +4906,19 @@ textarea.is-error {
 .news-bottom-cop section {
 	display: inline-block;
 }
+
+#old-browser {
+	left: 50%;
+	background: rgb(220, 23, 0) none repeat scroll 0% 0%;
+	z-index: 10000;
+	font-size: 22px;
+	color: #FFF;
+	overflow: hidden;
+	top: 80px;
+	position: fixed;
+	width: 700px;
+	text-align: center;
+	box-shadow: 3px 3px 3px 0px #000;
+	padding: 10px;
+	margin-left: -355px;
+}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-05 16:28+0300\n"
+"POT-Creation-Date: 2015-10-12 15:08+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,43 +19,47 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: templates/base.html:38 templates/base.html.py:106
+#: templates/base.html:28
+msgid "Your web browser is out of date, please update."
+msgstr "Ваш веб-браузер устарел, пожалуйста обновитесь."
+
+#: templates/base.html:40 templates/base.html.py:108
 msgid "Contact us"
 msgstr "Написать нам"
 
-#: templates/base.html:62 templates/home.html:117
+#: templates/base.html:64 templates/home.html:117
 msgid "Cargo tracking"
 msgstr "Отследить груз"
 
-#: templates/base.html:71 templates/home.html:763
+#: templates/base.html:73 templates/home.html:763
 msgid "Download presentation"
 msgstr "Скачать презентацию"
 
-#: templates/base.html:113
+#: templates/base.html:115
 msgid "Your name"
 msgstr "Ваше Имя"
 
-#: templates/base.html:119
+#: templates/base.html:121
 msgid "Phone"
 msgstr "Телефон"
 
-#: templates/base.html:125
+#: templates/base.html:127
 msgid "Message"
 msgstr "Сообщение"
 
-#: templates/base.html:129
+#: templates/base.html:131
 msgid "Send"
 msgstr "Отправить"
 
-#: templates/base.html:171
+#: templates/base.html:173
 msgid "Search results"
 msgstr "Результаты поиска"
 
-#: templates/base.html:172
+#: templates/base.html:174
 msgid "On your query results are not found"
 msgstr "По вашему запросу результатов не обнаружено"
 
-#: templates/base.html:175
+#: templates/base.html:177
 msgid "Close"
 msgstr "Закрыть"
 
@@ -74,6 +78,18 @@ msgstr "Терминалы и склады"
 #: templates/home.html:30 templates/home.html.py:492
 msgid "Offices and affiliations"
 msgstr "Офисы и преставительства"
+
+#: templates/home.html:35 templates/home.html.py:525
+msgid "Cargo turnover"
+msgstr "Объемы перевозок"
+
+#: templates/home.html:40 templates/home.html.py:774
+msgid "Our team"
+msgstr "Наша команда"
+
+#: templates/home.html:45 templates/home.html.py:928
+msgid "News and publications"
+msgstr "Новости и публикации"
 
 #: templates/home.html:62
 msgid "Container shipping experts"
@@ -236,10 +252,6 @@ msgstr "офисов и филиалов"
 msgid "sub-agents"
 msgstr "суб-агентов"
 
-#: templates/home.html:525
-msgid "Cargo turnover"
-msgstr "Объемы перевозок"
-
 #: templates/home.html:528
 msgid "Turnover volume and market share by region"
 msgstr "Контейнерооборот и доля рынка по регионам"
@@ -276,10 +288,6 @@ msgstr ""
 #: templates/home.html:714
 msgid "Full"
 msgstr "Груженых"
-
-#: templates/home.html:774
-msgid "Our team"
-msgstr "Наша команда"
 
 #: templates/home.html:777
 msgid "Russia and CIS"
@@ -320,10 +328,6 @@ msgstr "Дальний Восток РФ и Средняя Азия"
 #: templates/home.html:916
 msgid "List of vacancies"
 msgstr "Перейти к списку вакансий"
-
-#: templates/home.html:928
-msgid "News and publications"
-msgstr "Новости и публикации"
 
 #: templates/admin/index.html:18
 #, python-format
