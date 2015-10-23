@@ -77,7 +77,7 @@ msgstr "Терминалы и склады"
 
 #: templates/home.html:30 templates/home.html.py:492
 msgid "Offices and affiliations"
-msgstr "Офисы и преставительства"
+msgstr "Офисы и представительства"
 
 #: templates/home.html:35 templates/home.html.py:525
 msgid "Cargo turnover"

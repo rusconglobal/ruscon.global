@@ -1,6 +1,7 @@
 eclipse.preferences.version=1
 encoding//cms_helper/management/commands/__init__.py=utf-8
 encoding//cms_helper/migrations/0001_initial.py=utf-8
+encoding//cms_helper/models.py=utf-8
 encoding//cms_helper/templatetags/page_tags.py=utf-8
 encoding//cms_helper/views.py=utf-8
 encoding//ctracer/forms.py=utf-8
