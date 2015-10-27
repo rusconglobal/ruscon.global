@@ -9,11 +9,12 @@ $(document).ready(function () {
         },
         afterInit: function () {
             this.$elem.next().find("td.pagenavigation").html(this.currentItem + 1 + " / " + this.$owlItems.length);
-            this.$elem.next().find("td.buttonLeft").click(function () {
-                $(".carusel").trigger('owl.prev');
+            var that = this.$elem;
+            this.$elem.next().find("td.buttonLeft").click({that: that},function (event) {            	
+            	event.data.that.trigger('owl.prev');
             });
-            this.$elem.next().find("td.buttonRight").click(function () {
-                $(".carusel").trigger('owl.next');
+            this.$elem.next().find("td.buttonRight").click({that: that},function (event) {
+            	event.data.that.trigger('owl.next');
             });
         },
         afterMove: function () {
