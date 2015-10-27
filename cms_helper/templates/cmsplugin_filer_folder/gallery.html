@@ -21,7 +21,9 @@
         {% for image in folder_images %}
             <li>
             	<img src="{% thumbnail image.file 800x600 crop="True" upscale="True" %}">
-            	<div class="image-caption">{{ image.name }}</div>            	
+            	{% if image.description %}
+            		<div class="image-caption">{{ image.description }}</div>
+            	{% endif %}            	
             </li>            
         {% endfor %}
     </ul>
