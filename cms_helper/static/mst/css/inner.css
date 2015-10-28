@@ -111,6 +111,7 @@ body {
     line-height: 52px;
     margin-left: 25px;
     width: 253px;
+    white-space: nowrap;
 }
 .content aside div.url:not(:last-child) {
     border-bottom: 1px solid rgba(212, 212, 212, 0.56);
