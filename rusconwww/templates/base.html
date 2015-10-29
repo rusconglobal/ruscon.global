@@ -18,8 +18,7 @@
         <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}mst/css/odometer-theme-minimal.css" />
         <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}libs/lightbox/magnific-popup.css" />       
         {% block custom_css %}{% endblock custom_css %}        
-        {% render_block "css" %}
-        <link rel="icon" href="favicon.ico" />
+        {% render_block "css" %}        
         <meta property="og:title" content="{% block og-title %}{% page_attribute page_title %}{% endblock %}" />
         <meta property="og:description" content="{% block og-description %}{% page_attribute meta_description %}{% endblock %}" />
         <meta property="og:image" content="{% block og-image %}{{ STATIC_URL }}mst/img/logo-big.png{% endblock %}" />
