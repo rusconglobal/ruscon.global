@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-12 15:08+0300\n"
+"POT-Creation-Date: 2015-10-29 09:25+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,7 +31,7 @@ msgstr "Написать нам"
 msgid "Cargo tracking"
 msgstr "Отследить груз"
 
-#: templates/base.html:73 templates/home.html:763
+#: templates/base.html:73 templates/home.html:767
 msgid "Download presentation"
 msgstr "Скачать презентацию"
 
@@ -79,15 +79,15 @@ msgstr "Терминалы и склады"
 msgid "Offices and affiliations"
 msgstr "Офисы и представительства"
 
-#: templates/home.html:35 templates/home.html.py:525
+#: templates/home.html:35 templates/home.html.py:529
 msgid "Cargo turnover"
 msgstr "Объемы перевозок"
 
-#: templates/home.html:40 templates/home.html.py:774
+#: templates/home.html:40 templates/home.html.py:778
 msgid "Our team"
 msgstr "Наша команда"
 
-#: templates/home.html:45 templates/home.html.py:928
+#: templates/home.html:45 templates/home.html.py:932
 msgid "News and publications"
 msgstr "Новости и публикации"
 
@@ -211,10 +211,10 @@ msgid "Intake capacity"
 msgstr "Емкость единовременного хранения"
 
 #: templates/home.html:350 templates/home.html.py:382
-msgid "2nd railway loop, Kirillovka, Novorossiysk, 353900, Russia"
-msgstr "Россия, 353900, Новороссийск, п. Кирилловка, 2-я жд петля"
+msgid "2nd railway loop, Kirillovka, Novorossiysk, 353909, Russia"
+msgstr "Россия, 353909, Новороссийск, c. Кирилловка, 2-я жд петля"
 
-#: templates/home.html:372 templates/home.html.py:538
+#: templates/home.html:372 templates/home.html.py:542
 msgid "Novorossiysk"
 msgstr "Новороссийск"
 
@@ -244,88 +244,88 @@ msgstr "ОТЛК"
 msgid "Contact details"
 msgstr "Адреса и контакты"
 
-#: templates/home.html:500
+#: templates/home.html:504
 msgid "offices and branches"
 msgstr "офисов и филиалов"
 
-#: templates/home.html:503
+#: templates/home.html:507
 msgid "sub-agents"
 msgstr "суб-агентов"
 
-#: templates/home.html:528
+#: templates/home.html:532
 msgid "Turnover volume and market share by region"
 msgstr "Контейнерооборот и доля рынка по регионам"
 
-#: templates/home.html:538 templates/home.html.py:596 templates/home.html:654
+#: templates/home.html:542 templates/home.html.py:600 templates/home.html:658
 msgid "Market share"
 msgstr "Доля рынка"
 
-#: templates/home.html:590
+#: templates/home.html:594
 msgid "Leader of container transportation in South Russian ports."
 msgstr ""
 "Рускон – ведущий логистический оператор в сфере контейнерных перевозок на "
 "Юге России."
 
-#: templates/home.html:596
+#: templates/home.html:600
 msgid "St.Petersburg"
 msgstr "Санкт-Петербург"
 
-#: templates/home.html:648
+#: templates/home.html:652
 msgid "The major forwarder of containerised goods in North-West Russia."
 msgstr "Крупнейший экспедитор контейнерных грузов на Северо-Западе РФ."
 
-#: templates/home.html:654
+#: templates/home.html:658
 msgid "Russian Pacific"
 msgstr "Дальний восток РФ"
 
-#: templates/home.html:706
+#: templates/home.html:710
 msgid ""
 "Advanced intermodal provider of container transportation via Trans-Siberian."
 msgstr ""
 "Ведущий транспортный оператор контейнерных перевозок через порты Дальнего "
 "Востока РФ."
 
-#: templates/home.html:714
+#: templates/home.html:718
 msgid "Full"
 msgstr "Груженых"
 
-#: templates/home.html:777
+#: templates/home.html:781
 msgid "Russia and CIS"
 msgstr "Россия и ближнее зарубежье"
 
-#: templates/home.html:786
+#: templates/home.html:790
 msgid "Employees"
 msgstr "Сотрудников"
 
-#: templates/home.html:786
+#: templates/home.html:790
 msgid "in Russia and CIS"
 msgstr "в РФ и СНГ"
 
-#: templates/home.html:804
+#: templates/home.html:808
 msgid "One of the major employers in transportation segment of Russia."
 msgstr "Один из ведущих работодателей РФ в сфере транспортной логистики."
 
-#: templates/home.html:809
+#: templates/home.html:813
 msgid "Learn more about our Company and Management team"
 msgstr "Узнать больше о компании и руководстве"
 
-#: templates/home.html:896
+#: templates/home.html:900
 msgid "South"
 msgstr "Юг РФ"
 
-#: templates/home.html:899
+#: templates/home.html:903
 msgid "Centre"
 msgstr "Центр РФ"
 
-#: templates/home.html:902
+#: templates/home.html:906
 msgid "North-West"
 msgstr "Северо-Запад РФ"
 
-#: templates/home.html:905
+#: templates/home.html:909
 msgid "Asia and Pacific"
 msgstr "Дальний Восток РФ и Средняя Азия"
 
-#: templates/home.html:916
+#: templates/home.html:920
 msgid "List of vacancies"
 msgstr "Перейти к списку вакансий"
 
@@ -480,6 +480,9 @@ msgstr ""
 #, python-format
 msgid "Author archives: %(author)s"
 msgstr ""
+
+#~ msgid "2nd railway loop, Kirillovka, Novorossiysk, 353900, Russia"
+#~ msgstr "Россия, 353900, Новороссийск, п. Кирилловка, 2-я жд петля"
 
 #~ msgid "quarter"
 #~ msgstr "квартал"
