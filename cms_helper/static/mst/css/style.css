@@ -446,12 +446,10 @@ body {
     }
     #btn-phone {
         display: block;
-        width: 51px;
-        height: 50px;
-        background: url(../img/icon/phone.svg) center no-repeat;
-        cursor: pointer;
-        border-left: 1px solid #d3d2d6;
-        float: right;
+		width: 170px;
+		background: transparent url("../img/icon/phone.svg") no-repeat scroll left 14px;
+		padding-left: 20px;
+		line-height: 50px;
     }
     #menu.is_active ul {
         top: 107px;
@@ -2423,7 +2421,7 @@ li.language {
 .warehouses-map-el-img {
     position: relative;
     top: 0;
-    left: 155px;
+    left: -100px;
     -moz-transform: translate3d(0px, -50%, 0px);
     -webkit-transform: translate3d(0px, -50%, 0px);
     -o-transform: translate3d(0px, -50%, 0px);
