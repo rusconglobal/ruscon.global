@@ -5,8 +5,10 @@ from django.http import HttpResponse
 from geo_office.models import Office
 from django.core.cache import cache
 
-def get_offices(request):    
-    offices_json = cache.get('offices_json')
+def get_offices(request): 
+    language_code = request.LANGUAGE_CODE 
+    cache_key = "offices_json_%s" % language_code  
+    offices_json = cache.get(cache_key)
     if not offices_json:  
         offices = Office.objects.all().order_by('order')    
         items = []
@@ -48,7 +50,7 @@ def get_offices(request):
             
             items.append(office_dict)
             offices_json = json.dumps({'items': items},indent=4)
-            cache.set('offices_json', offices_json, 600)         
+            cache.set(cache_key, offices_json, 600)         
             
     return HttpResponse(offices_json, content_type="application/json")
     
