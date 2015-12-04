@@ -547,10 +547,10 @@
                                     <div class="freight-text">
                                         <div class="clearfix">
                                             <div class="freight-big-numb odometer is-js-animate" data-delay="500" data-digit="{% get_param_part 'novo-teu' 1 %}">
-                                                11
+                                                {% get_param_part 'novo-teu' 1 %}
                                             </div>
-                                            <div class="freight-small-numb odometer is-js-animate" data-delay="500" data-digit="{% get_param_part 'novo-teu' 2 %}">
-                                                111
+                                            <div class="freight-small-numb" data-delay="500" data-digit="{% get_param_part 'novo-teu' 2 %}">
+                                                {% get_param_part 'novo-teu' 2 %}
                                             </div>
                                             <div class="freight-small-text">
                                                 TEU
@@ -605,10 +605,10 @@
                                     <div class="freight-text">
                                         <div class="clearfix">
                                             <div class="freight-big-numb odometer is-js-animate" data-delay="500" data-digit="{% get_param_part 'spb-teu' 1 %}">
-                                                3
+                                                {% get_param_part 'spb-teu' 1 %}
                                             </div>
-                                            <div class="freight-small-numb odometer is-js-animate" data-delay="500" data-digit="{% get_param_part 'spb-teu' 2 %}">
-                                                111
+                                            <div class="freight-small-numb" data-delay="500" data-digit="{% get_param_part 'spb-teu' 2 %}">
+                                                {% get_param_part 'spb-teu' 2 %}
                                             </div>
                                             <div class="freight-small-text">
                                                 TEU
@@ -663,10 +663,10 @@
                                     <div class="freight-text">
                                         <div class="clearfix">
                                             <div class="freight-big-numb odometer is-js-animate" data-digit="{% get_param_part 'fareast-teu' 1 %}">
-                                                0
+                                                {% get_param_part 'fareast-teu' 1 %}
                                             </div>
-                                            <div class="freight-small-numb odometer is-js-animate" data-digit="{% get_param_part 'fareast-teu' 2 %}">
-                                                0
+                                            <div class="freight-small-numb" data-digit="{% get_param_part 'fareast-teu' 2 %}">
+                                                {% get_param_part 'fareast-teu' 2 %}
                                             </div>
                                             <div class="freight-small-text">
                                                 TEU
