@@ -12,7 +12,11 @@ from cmsplugin_zinnia.cms_plugins import CMSQueryEntriesPlugin
 from zinnia.models.entry import Entry
 from rusconwww.local_settings import DEFAULT_FROM_EMAIL
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-from cms_helper.templatetags.page_tags import get_page_reverce_id_form_entry
+from cms.plugin_base import CMSPluginBase
+from cms.plugins.text.models import Text
+from templatetags.page_tags import hide_email
+import re
+from django.core.validators import validate_email
 
 class CustomContactPlugin(ContactPlugin):
     name = _("Custom Contact Form")
@@ -94,6 +98,35 @@ class CMSCategoryEntriesPlugin(CMSQueryEntriesPlugin):
         return context
 
 plugin_pool.register_plugin(CMSCategoryEntriesPlugin)
+
+class PlainTextPlugin(CMSPluginBase):
+        model = Text
+        name = _("PlainText")
+        form = None
+        render_template = "cms/plugins/text.html"
+        def render(self, context, instance, placeholder):            
+            words = instance.body.split()
+            body = []
+            for word in words:
+                try:
+                    validate_email(word)        
+                    word = hide_email(word)
+                except:
+                    pass                              
+                body.append(word)
+            context.update({
+                    'body': " ".join(body),
+                    'placeholder': placeholder,
+                    'object': instance
+            })
+            return context
+        
+        def save_model(self, request, obj, form, change):
+                obj.clean_plugins()
+                super(PlainTextPlugin, self).save_model(request, obj,
+        form, change)
+
+plugin_pool.register_plugin(PlainTextPlugin)
 
 from sitetree.sitetreeapp import register_dynamic_trees, compose_dynamic_tree
 from sitetree.utils import tree, item

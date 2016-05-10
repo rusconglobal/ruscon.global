@@ -44,16 +44,7 @@
 			{{ object.creation_date|date:"SHORT_DATE_FORMAT" }}
 		</blockquote>
 		{% endifequal %}				
-		{{ object.excerpt|truncatewords_html:50|safe }}
-				
-{#	<div class="entry-image">#}
-{#		<div>	#}
-			
-{#			<img src="{% thumbnail object.image '300x200' crop='smart' %}" alt="{{ object.title }}" class="left" />#}
-			
-{#		</div>#}
-{#	</div>#}
-	
+		{{ object.excerpt|truncatewords_html:50|safe }}	
 	{% empty %}
 	<p class="info">
 		<a href="{% url 'admin:zinnia_entry_add' %}">{% trans "No entries yet." %}</a>

@@ -107,6 +107,7 @@ CMS_TEMPLATES = (
     ('gallery.html', 'Gallery Template'),
     ('global_placeholder.html', 'Global Placeholder'),
     ('contact.html', 'Contact'),
+    ('vacancy.html', 'Vacancy'),
 )
 
 ROOT_URLCONF = 'rusconwww.urls'
@@ -129,7 +130,6 @@ CMSPLUGIN_ZINNIA_TEMPLATES = [('includes/news_style.html', 'News style'), ('incl
 #ZINNIA_ENTRY_BASE_MODEL = 'cmsplugin_zinnia.placeholder.EntryPlaceholder'
 
 CMS_REDIRECTS = True
-
 
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
