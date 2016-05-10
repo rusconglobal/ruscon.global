@@ -1,0 +1,16 @@
+{% extends "page.html" %}
+{% load cms_tags sekizai_tags %}
+{% load page_tags %}
+{% load i18n %}
+{% load sitetree %}
+
+{% block article %} 
+	 <h1>{% placeholder "custom-title" or %}{% page_attribute title %}{% endplaceholder %}</h1>
+	 <div class="line"></div>
+	 <br> 
+	 {% placeholder "vacancy-contact" %}
+	 <section id="page-content">
+	 	{% placeholder "page-content" %}
+	 </section>
+	 {% sitetree_breadcrumbs from "mainmenu" template "includes/breadcrumbs.html" %}	            
+{% endblock article %}
