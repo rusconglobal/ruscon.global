@@ -21,8 +21,7 @@ class BaseService():
         
 class WsdlTracer(BaseService):    
     CACHE_TIME = 300
-    _cache_key = None 
-    @property
+    _cache_key = None
     def cache_key(self, container_num):
         if not self._cache_key:
             self._cache_key = ''.join(container_num.split())
@@ -49,7 +48,7 @@ class WsdlTracer(BaseService):
                                  'lon' : d.Longtitude,                                 
                                  })
                 clear_data['data'] = crds          
-            cache.set(self.cache_key, pickle.dumps(clear_data), self.CACHE_TIME)
+            cache.set(self.cache_key(container_num), pickle.dumps(clear_data), self.CACHE_TIME)
         return clear_data or None        
                 
     def populate_data(self, clear_data):       
