@@ -1,0 +1,60 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-09 09:34+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: cms_plugins.py:12
+msgid "Tracer"
+msgstr "Трейсер"
+
+#: cms_plugins.py:46
+msgid "ContPics"
+msgstr "ФотоКонтейнеров"
+
+#: forms.py:14 templates/ctracer/conpics.html:38
+msgid ""
+"Container number, consists of four letters and seven digits, for example "
+"ABCD 1234567"
+msgstr ""
+" Номер контейнера, состоит из четырех букв и семи цифр, например ABCD 1234567"
+
+#: templates/ctracer/conpics.html:6
+msgid "Search results"
+msgstr "Результаты поиска"
+
+#: templates/ctracer/conpics.html:26
+msgid "There are no pictures yet"
+msgstr "Фото по контейнеру на данный момент отсутствуют"
+
+#: templates/ctracer/conpics.html:28
+msgid "Enter container number to get pictures"
+msgstr "Введите номер контейнера, чтобы вывести фото"
+
+#: templates/ctracer/conpics.html:48
+msgid "Voyage date, for example 25.05.2010, filled only for history"
+msgstr ""
+"Дата рейса, например 25.05.2010, заполнять только для получения истории"
+
+#: templates/ctracer/conpics.html:57
+msgid "Clear cache"
+msgstr "Очистить кэш"
+
+#: templates/ctracer/conpics.html:64
+msgid "Search"
+msgstr "Поиск"

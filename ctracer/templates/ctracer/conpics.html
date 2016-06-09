@@ -1,0 +1,70 @@
+{% load thumbnail %}
+{% load sekizai_tags %}
+{% load i18n %}
+
+<br>
+
+
+<div class="row">
+	<form action="" method="post" class="col s11">
+	{% csrf_token %} 
+		<span class="error">{{ form.non_field_errors }}</span>					
+		<div class="row">	
+        	<div class="input-field col s11">
+				{{ form.container_num }}
+				<label for="{{ form.container_num.id_for_label }}">
+				{% trans "Container number, consists of four letters and seven digits, for example ABCD 1234567" %}
+				</label>		
+				<span class="error">{{ form.container_num.errors }}</span>		
+			</div>		
+		</div>
+			
+		<div class="row">	
+			<div class="input-field col s11">
+				{{ form.voyage_date }}					
+				<label for="{{ form.voyage_date.id_for_label }}">
+				{% trans "Voyage date, for example 25.05.2010, filled only for history" %}
+				</label>
+				<span class="error">{{ form.voyage_date.errors }}</span>		
+			</div>
+		</div>
+				
+		<div class="row">	
+			<div class="input-field col s11">
+				{{ form.clear_cache }}				
+				<label for="{{ form.clear_cache.id_for_label }}">{% trans "Clear cache" %}</label>
+				<span class="error">{{ form.clear_cache.errors }}</span>						
+			</div>
+		</div>	
+				
+		<div class="row">	
+			<div class="input-field col s11">
+				<input class="btn-blue right" type="submit" value="{% trans 'Search' %}" />						
+			</div>
+		</div>	
+	</form>
+</div>
+
+{% if data  %}
+	<h4>{% trans "Search results" %}</h4>
+	<div class="row">
+	{% for p in data.files.all %}			
+		{% thumbnail p.file "400x400" as thumb %}
+      
+        <div class="col s6">
+          <div class="card">
+            <div class="card-image">
+            <a href="{{ p.file.url }}"><img src="{{ thumb.url }}"></a>
+              <span class="card-title">{{ search_query }}</span>
+            </div>                        
+            <div class="card-action">
+              	<a download="{{ p.filename }}" href="{{ p.file.url }}">{{ p.filename }}</a>
+            </div>
+          </div>
+        </div>      
+				
+	{% endfor %}
+	</div>
+	{% elif search_query and not form.errors  %}	
+	<h4>{% trans "There are no pictures yet" %}</h4>		
+{% endif %}
