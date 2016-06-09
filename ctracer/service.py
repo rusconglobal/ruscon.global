@@ -28,7 +28,7 @@ class WsdlTracer(BaseService):
         return self._cache_key        
             
     def get_wsdl_data(self, container_num):               
-        cache_conts = cache.get(self.cache_key, container_num)           
+        cache_conts = cache.get(self.cache_key(container_num), container_num)           
         clear_data = {}                       
         if cache_conts:
             clear_data = pickle.loads(cache_conts)
