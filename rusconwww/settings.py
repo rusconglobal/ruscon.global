@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
+import sys
 
 gettext = lambda s: s
 
@@ -7,7 +8,7 @@ PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
 
 # THUMBNAIL_DEBUG = True
 
-DEBUG = True
+DEBUG = (sys.argv[1] == 'runserver')
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
