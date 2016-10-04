@@ -14,8 +14,10 @@ class EntryRU(Entry):
         proxy = True
  
 class EntryEN(Entry):
+    @property
     def get_index_title(self):
         return self.title_en
+    @property
     def get_index_content(self):
         return self.content_en
     class Meta:
