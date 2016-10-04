@@ -5,18 +5,18 @@ from django.utils.translation import get_language, activate
  
 class EntryRU(Entry):    
     def get_index_title(self):
-        return self.title_ru    
+        return self.title    
     def get_index_content(self):
-        return self.content_ru
+        return self.content
     class Meta:
         proxy = True
  
  
 class EntryEN(Entry):    
     def get_index_title(self):
-        return self.title_en    
+        return self.title    
     def get_index_content(self):
-        return self.content_en
+        return self.content
     class Meta:
         proxy = True
   
