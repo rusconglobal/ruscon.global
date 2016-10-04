@@ -17,6 +17,7 @@ from cms.plugins.text.models import Text
 from templatetags.page_tags import hide_email
 import re
 from django.core.validators import validate_email
+from cms.exceptions import PluginAlreadyRegistered
 
 class CustomContactPlugin(ContactPlugin):
     name = _("Custom Contact Form")
@@ -60,13 +61,11 @@ class CustomContactPlugin(ContactPlugin):
         })
     )
     
-plugin_pool.register_plugin(CustomContactPlugin)
 
 class FilerGalleryPlugin(FilerFolderPlugin):
     name = _("Gallery")
     render_template = "cmsplugin_filer_folder/gallery.html"
-    
-plugin_pool.register_plugin(FilerGalleryPlugin)
+
 
 class CMSCategoryEntriesPlugin(CMSQueryEntriesPlugin):
     name = _('Category entries')
@@ -97,7 +96,6 @@ class CMSCategoryEntriesPlugin(CMSQueryEntriesPlugin):
                         'placeholder': placeholder})
         return context
 
-plugin_pool.register_plugin(CMSCategoryEntriesPlugin)
 
 class PlainTextPlugin(CMSPluginBase):
         model = Text
@@ -126,7 +124,13 @@ class PlainTextPlugin(CMSPluginBase):
                 super(PlainTextPlugin, self).save_model(request, obj,
         form, change)
 
-plugin_pool.register_plugin(PlainTextPlugin)
+try:
+    plugin_pool.register_plugin(CustomContactPlugin)    
+    plugin_pool.register_plugin(FilerGalleryPlugin)
+    plugin_pool.register_plugin(CMSCategoryEntriesPlugin)
+    plugin_pool.register_plugin(PlainTextPlugin)
+except PluginAlreadyRegistered:
+    pass
 
 from sitetree.sitetreeapp import register_dynamic_trees, compose_dynamic_tree
 from sitetree.utils import tree, item
