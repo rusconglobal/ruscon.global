@@ -8,8 +8,8 @@ PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
 
 # THUMBNAIL_DEBUG = True
 
-#DEBUG = (len(sys.argv) > 1 and sys.argv[1] == 'runserver')
-DEBUG = True
+DEBUG = (len(sys.argv) > 1 and sys.argv[1] == 'runserver')
+
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
