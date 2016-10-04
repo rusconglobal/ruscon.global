@@ -13,6 +13,7 @@ class EntryRU(Entry):
     class Meta:
         proxy = True
  
+ 
 class EntryEN(Entry):
     @property
     def get_index_title(self):
@@ -22,6 +23,7 @@ class EntryEN(Entry):
         return self.content_en
     class Meta:
         proxy = True
+  
  
 class EntryIndex(SearchIndex): 
     categories = [2,]   
