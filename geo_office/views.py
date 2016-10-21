@@ -24,8 +24,8 @@ def get_offices(request):
             office_dict['fax'] = "%s" % office.prime_fax
             
             
-            office_dict['request'] = "request@ruscon.gcs-group.ru"
-            office_dict['offers'] = "info@ruscon.gcs-group.ru"
+            office_dict['request'] = "request@ruscon.global"
+            office_dict['offers'] = "info@ruscon.global"
             
             office_dict['phone_title'] = u"%s" % _('Phone')
             office_dict['fax_title'] = u"%s" % _('Fax')
