@@ -30,7 +30,7 @@ urlpatterns += patterns('',
     url(r'^', include('cms.urls')), # <--------- include the django cms urls via i18n_patterns
 )
 
-
+handler404 = 'django.views.defaults.page_not_found'
 
 
 if settings.DEBUG:
