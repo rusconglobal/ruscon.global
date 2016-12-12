@@ -13,10 +13,6 @@ urlpatterns = patterns('',
 urlpatterns += staticfiles_urlpatterns()
 
 
-#urlpatterns += patterns('',
-#    url(r'^blog/', include('zinnia.urls')),
-#    url(r'^comments/', include('django.contrib.comments.urls')),
-#)
 
 urlpatterns += patterns('',
     url(r'^helper/', include('cms_helper.urls')),
@@ -29,9 +25,13 @@ urlpatterns += patterns('',
 )
 
 urlpatterns += patterns('',
+    url(r'^blog/', include('zinnia.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('cms.urls')), # <--------- include the django cms urls via i18n_patterns
 )
+
+
+
 
 if settings.DEBUG:
     urlpatterns = patterns('',
