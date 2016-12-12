@@ -1,0 +1,63 @@
+{% extends "base.html" %}  
+{% load cms_tags sekizai_tags %}
+{% load page_tags %}
+{% load i18n %}
+{% load page_tags %}	
+{% load url from future %}
+{% load sitetree %}
+  
+{% block custom_css %}
+<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}mst/css/inner.css" media="screen,projection" />
+{% endblock custom_css %}  
+{% block body %} 
+    
+    <div class="popUpMenu">
+        <div class="popUpMenuBody">
+           <div class="menuHeader">{% get_menuitem current_page.get_root.reverse_id "includes/menu_item.html" %} <img src="{{ STATIC_URL }}mst/img/category.svg"></div>
+            <aside>
+            {% block asidepopup %}            
+            	{% sitetree_menu from 'mainmenu' include "this-ancestor-children" template "includes/aside_menu.html" %}
+            {% endblock asidepopup %}
+            </aside>
+        </div>
+    </div>
+
+    <div class="backgroundImg"></div>
+    <div class="content">    	 
+        <aside> 
+        {% block aside %}            
+			{% sitetree_menu from 'mainmenu' include "this-ancestor-children" template "includes/aside_menu.html" %}
+		{% endblock aside %}       
+        </aside>        
+        <article>
+        	{% block article %} 
+	            <h1>Error 404: Page not found</h1>
+	            <div class="line"></div>
+	            <section id="page-content">
+	            	К сожалению запрашиваемая Вами страница не найдена. 
+	            </section>	            	            
+            {% endblock article %}           
+        </article>
+        <div style="clear:both"></div>
+    </div>
+
+    </div>
+    <div class="footer-contact">
+    	{% block footer %}{{ block.super }}{% endblock %}        
+    </div>
+        
+{% endblock body %}
+
+{% block custom_js %}
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.7/vendors/jquery.slimscroll.min.js"></script>
+    <script src="{{ STATIC_URL }}mst/js/jquery.fullPage.js"></script>        
+    <script src="{{ STATIC_URL }}mst/js/materialize.min.js"></script>
+    <script src="{{ STATIC_URL }}mst/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="{{ STATIC_URL }}mst/js/jquery.mousewheel.min.js"></script>
+    <script src="{{ STATIC_URL }}mst/js/owl.carousel.min.js"></script>
+    <script src="{{ STATIC_URL }}mst/js/language.js"></script>
+    <script src="{{ STATIC_URL }}mst/js/carousel-inner-initialization.js"></script>
+    <script src="{{ STATIC_URL }}mst/js/popUpMenu-inner-initialization.js"></script>
+    <script src="{{ STATIC_URL }}libs/lightbox/jquery.magnific-popup.js"></script>
+{% endblock custom_js %}
