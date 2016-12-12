@@ -6,7 +6,6 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 admin.autodiscover()
 
-handler404 = 'django.views.defaults.page_not_found'
 
 urlpatterns = patterns('',
     url(r'^jsi18n/(?P<packages>\S+?)/$', 'django.views.i18n.javascript_catalog'),
@@ -27,7 +26,7 @@ urlpatterns += patterns('',
 )
 
 urlpatterns += patterns('',
-    url(r'^blog/', include('zinnia.urls')),
+    url(r'^blog/', include('zinnia.urls.entries')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('cms.urls')), # <--------- include the django cms urls via i18n_patterns
 )
