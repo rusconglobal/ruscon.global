@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-29 09:25+0300\n"
+"POT-Creation-Date: 2017-04-05 16:45+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,47 +19,47 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: templates/base.html:28
+#: templates/base.html:27
 msgid "Your web browser is out of date, please update."
 msgstr "Ваш веб-браузер устарел, пожалуйста обновитесь."
 
-#: templates/base.html:40 templates/base.html.py:108
+#: templates/base.html:39 templates/base.html.py:107
 msgid "Contact us"
 msgstr "Написать нам"
 
-#: templates/base.html:64 templates/home.html:117
+#: templates/base.html:63 templates/home.html:117
 msgid "Cargo tracking"
 msgstr "Отследить груз"
 
-#: templates/base.html:73 templates/home.html:767
+#: templates/base.html:72 templates/home.html:829
 msgid "Download presentation"
 msgstr "Скачать презентацию"
 
-#: templates/base.html:115
+#: templates/base.html:114
 msgid "Your name"
 msgstr "Ваше Имя"
 
-#: templates/base.html:121
+#: templates/base.html:120
 msgid "Phone"
 msgstr "Телефон"
 
-#: templates/base.html:127
+#: templates/base.html:126
 msgid "Message"
 msgstr "Сообщение"
 
-#: templates/base.html:131
+#: templates/base.html:130
 msgid "Send"
 msgstr "Отправить"
 
-#: templates/base.html:173
+#: templates/base.html:172
 msgid "Search results"
 msgstr "Результаты поиска"
 
-#: templates/base.html:174
+#: templates/base.html:173
 msgid "On your query results are not found"
 msgstr "По вашему запросу результатов не обнаружено"
 
-#: templates/base.html:177
+#: templates/base.html:176
 msgid "Close"
 msgstr "Закрыть"
 
@@ -75,19 +75,19 @@ msgstr "Транспортные средства"
 msgid "Terminals and warehouses"
 msgstr "Терминалы и склады"
 
-#: templates/home.html:30 templates/home.html.py:492
+#: templates/home.html:30 templates/home.html.py:554
 msgid "Offices and affiliations"
 msgstr "Офисы и представительства"
 
-#: templates/home.html:35 templates/home.html.py:529
+#: templates/home.html:35 templates/home.html.py:591
 msgid "Cargo turnover"
 msgstr "Объемы перевозок"
 
-#: templates/home.html:40 templates/home.html.py:778
+#: templates/home.html:40 templates/home.html.py:840
 msgid "Our team"
 msgstr "Наша команда"
 
-#: templates/home.html:45 templates/home.html.py:932
+#: templates/home.html:45 templates/home.html.py:992
 msgid "News and publications"
 msgstr "Новости и публикации"
 
@@ -181,6 +181,7 @@ msgid "Lvovo, Moscow 142160, Russia"
 msgstr "Россия, 142160, г. Москва, д. Львово"
 
 #: templates/home.html:302 templates/home.html.py:364 templates/home.html:426
+#: templates/home.html.py:487
 msgid "year"
 msgstr "год"
 
@@ -189,6 +190,7 @@ msgid "Moscow"
 msgstr "Москва"
 
 #: templates/home.html:325 templates/home.html.py:389 templates/home.html:449
+#: templates/home.html.py:510
 msgid "Terminal"
 msgstr "Терминал"
 
@@ -197,16 +199,17 @@ msgid "MANP"
 msgstr "МАНП"
 
 #: templates/home.html:328 templates/home.html.py:392 templates/home.html:452
+#: templates/home.html.py:513
 msgid "ha"
 msgstr "ГА"
 
 #: templates/home.html:337 templates/home.html.py:401 templates/home.html:461
-#: templates/home.html.py:477
+#: templates/home.html.py:522 templates/home.html:539
 msgid "Terminal area"
 msgstr "Площадь терминала"
 
 #: templates/home.html:341 templates/home.html.py:405 templates/home.html:465
-#: templates/home.html.py:481
+#: templates/home.html.py:526 templates/home.html:543
 msgid "Intake capacity"
 msgstr "Емкость единовременного хранения"
 
@@ -214,7 +217,7 @@ msgstr "Емкость единовременного хранения"
 msgid "2nd railway loop, Kirillovka, Novorossiysk, 353909, Russia"
 msgstr "Россия, 353909, Новороссийск, c. Кирилловка, 2-я жд петля"
 
-#: templates/home.html:372 templates/home.html.py:542
+#: templates/home.html:372 templates/home.html.py:604
 msgid "Novorossiysk"
 msgstr "Новороссийск"
 
@@ -228,7 +231,8 @@ msgid ""
 "Russia"
 msgstr "Россия, 142000, мкр. Северный, г. Домодедово, ул. Логистическая 1/7б"
 
-#: templates/home.html:426 templates/home.html.py:455
+#: templates/home.html:426 templates/home.html.py:455 templates/home.html:487
+#: templates/home.html.py:516
 msgid "pallets"
 msgstr "ПАЛ"
 
@@ -240,92 +244,105 @@ msgstr "Домодедово"
 msgid "OTLC"
 msgstr "ОТЛК"
 
+#: templates/home.html:474 templates/home.html.py:504
+msgid ""
+"Build.5, 19, v.Novoselki, Chekhovskiy district, Moscow region, 142326, Russia"
+msgstr "Россия, 142326, Московская область, с. Новосёлки, владение 19, строение 5"
+
 #: templates/home.html:495
+msgid "Chekhov"
+msgstr "Чехов"
+
+#: templates/home.html:510
+msgid "SLG"
+msgstr "SLG"
+
+#: templates/home.html:557
 msgid "Contact details"
 msgstr "Адреса и контакты"
 
-#: templates/home.html:504
+#: templates/home.html:566
 msgid "offices and branches"
 msgstr "офисов и филиалов"
 
-#: templates/home.html:507
+#: templates/home.html:569
 msgid "sub-agents"
 msgstr "суб-агентов"
 
-#: templates/home.html:532
+#: templates/home.html:594
 msgid "Turnover volume and market share by region"
 msgstr "Контейнерооборот и доля рынка по регионам"
 
-#: templates/home.html:542 templates/home.html.py:600 templates/home.html:658
+#: templates/home.html:604 templates/home.html.py:662 templates/home.html:720
 msgid "Market share"
 msgstr "Доля рынка"
 
-#: templates/home.html:594
+#: templates/home.html:656
 msgid "Leader of container transportation in South Russian ports."
 msgstr ""
 "Рускон – ведущий логистический оператор в сфере контейнерных перевозок на "
 "Юге России."
 
-#: templates/home.html:600
+#: templates/home.html:662
 msgid "St.Petersburg"
 msgstr "Санкт-Петербург"
 
-#: templates/home.html:652
+#: templates/home.html:714
 msgid "The major forwarder of containerised goods in North-West Russia."
 msgstr "Крупнейший экспедитор контейнерных грузов на Северо-Западе РФ."
 
-#: templates/home.html:658
+#: templates/home.html:720
 msgid "Russian Pacific"
 msgstr "Дальний восток РФ"
 
-#: templates/home.html:710
+#: templates/home.html:772
 msgid ""
 "Advanced intermodal provider of container transportation via Trans-Siberian."
 msgstr ""
 "Ведущий транспортный оператор контейнерных перевозок через порты Дальнего "
 "Востока РФ."
 
-#: templates/home.html:718
+#: templates/home.html:780
 msgid "Full"
 msgstr "Груженых"
 
-#: templates/home.html:781
+#: templates/home.html:843
 msgid "Russia and CIS"
 msgstr "Россия и ближнее зарубежье"
 
-#: templates/home.html:790
+#: templates/home.html:852
 msgid "Employees"
 msgstr "Сотрудников"
 
-#: templates/home.html:790
+#: templates/home.html:852
 msgid "in Russia and CIS"
 msgstr "в РФ и СНГ"
 
-#: templates/home.html:808
+#: templates/home.html:870
 msgid "One of the major employers in transportation segment of Russia."
 msgstr "Один из ведущих работодателей РФ в сфере транспортной логистики."
 
-#: templates/home.html:813
+#: templates/home.html:875
 msgid "Learn more about our Company and Management team"
 msgstr "Узнать больше о компании и руководстве"
 
-#: templates/home.html:900
+#: templates/home.html:962
 msgid "South"
 msgstr "Юг РФ"
 
-#: templates/home.html:903
+#: templates/home.html:965
 msgid "Centre"
 msgstr "Центр РФ"
 
-#: templates/home.html:906
+#: templates/home.html:968
 msgid "North-West"
 msgstr "Северо-Запад РФ"
 
-#: templates/home.html:909
+#: templates/home.html:971
 msgid "Asia and Pacific"
 msgstr "Дальний Восток РФ и Средняя Азия"
 
-#: templates/home.html:920
+#: templates/home.html:981
 msgid "List of vacancies"
 msgstr "Перейти к списку вакансий"
 
@@ -380,7 +397,7 @@ msgid "more"
 msgstr ""
 
 #: templates/includes/news_style.html:10 templates/includes/press.html:20
-#: templates/zinnia/category/entry_list.html:59
+#: templates/zinnia/category/entry_list.html:50
 msgid "No entries yet."
 msgstr ""
 
