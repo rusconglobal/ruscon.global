@@ -4296,7 +4296,7 @@ li.language {
     padding: 52px 0 5px 0;
 }
 .popupAdd-presentation-btn {
-    width: 278px;
+    /* width: 278px; */
     height: 48px;
     color: #5c5c5c;
     font: 300 17px/46px 'Roboto Condensed New';
