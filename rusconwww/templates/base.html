@@ -10,7 +10,7 @@
         <meta name="description" content="{% block meta-description %}{% page_attribute meta_description %}{% endblock %}" />
         <title>{% block title %}{% page_attribute page_title %}{% endblock %}</title>        
         <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}mst/css/materialize.min.css"  media="screen,projection" />
-        <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}mst/css/style.css?v=4"  media="screen,projection" />        
+        <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}mst/css/style.css?v=5"  media="screen,projection" />        
         <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}mst/css/jquery.mCustomScrollbar.min.css" />
         <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}mst/css/owl.carousel.css" />
         <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}mst/css/owl.theme.css" />
@@ -77,15 +77,16 @@
 		    </div>
 		    <div class="popup-additionalBlock-content">
 		        <div id="popupAdd-presentation" class="scroll_page">		        				
+		            
 		            <div class="popupAdd-presentation-left">
 		                <div class="popupAdd-wrapper">
 		                    <div class="popupAdd-title">
 		                         {% get_param 'left-presentation-title' %}
 		                    </div>
 		                    <a href="{% get_param 'left-presentation-link' %}" class="popupAdd-presentation-btn">{% get_param 'left-presentation-link-title' %}</a>
-		                    <div class="popupAdd-presentation-text">
-		                        {% get_param 'left-presentation-desc' %}
-		                    </div>
+		                    <a href="{% get_param 'left-presentation2-link' %}" class="popupAdd-presentation-btn popupAdd-presentation-btn-image">{% get_param 'left-presentation-link2-title' %}</a>
+		                    <a href="{% get_param 'left-presentation3-link' %}" class="popupAdd-presentation-btn popupAdd-presentation-btn-image">{% get_param 'left-presentation-link3-title' %}</a>
+		                    <a href="{% get_param 'left-presentation4-link' %}" class="popupAdd-presentation-btn popupAdd-presentation-btn-image">{% get_param 'left-presentation-link4-title' %}</a>
 		                </div>
 		            </div>
 		            
@@ -94,7 +95,7 @@
 		                    <div class="popupAdd-title">
 		                        {% get_param 'right-presentation-title' %}
 		                    </div>		                    
-		                    <a href="{% get_param 'right-presentation-link' %}" class="popupAdd-presentation-btn-3d">{% get_param 'right-presentation-link-title' %}</a>
+		                    <a href="{% get_param 'right-presentation-link' %}" class="popupAdd-presentation-btn popupAdd-presentation-btn-flash">{% get_param 'right-presentation-link-title' %}</a>
 		                    <div class="popupAdd-presentation-text">
 		                        {% get_param 'right-presentation-desc' %}
 		                    </div>
