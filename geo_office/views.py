@@ -10,7 +10,7 @@ def get_offices(request):
     cache_key = "offices_json_%s" % language_code  
     offices_json = cache.get(cache_key)
     if not offices_json:  
-        offices = Office.objects.all().order_by('order')    
+        offices = Office.objects.filter(is_active=True).order_by('order')    
         items = []
         for office in offices:
             office_dict = {}

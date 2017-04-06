@@ -35,6 +35,7 @@ class Office(models.Model):
     left = models.IntegerField(null=True, blank=True)
     order = models.IntegerField(null=True, blank=True)
     css_class = models.CharField(max_length=255, null=True, blank=True)
+    is_active = models.BooleanField(default=True)
     @property
     def prime_phone(self):
         return self.get_prime_contact(ContactType.PHONE)       
