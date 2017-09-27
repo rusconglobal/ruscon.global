@@ -784,12 +784,8 @@
                                 <div class="freight-graph-value freight-graph-value-2">210 K</div>
                                 <div class="freight-graph-value freight-graph-value-3">140 K</div>
                                 <div class="freight-graph-value freight-graph-value-4">70 K</div>
-                                <div class="freight-graph-value freight-graph-value-5">0</div>                                
-                                <div class="freight-graph-el">
-                                    {% for i in "x"|rjust:"44" %}                                	
-                                		<div {% ifequal forloop.counter0 12 %}class="is-active is-tree"{% endifequal %}></div>                             		
-									{% endfor %}
-                                </div>
+                                <div class="freight-graph-value freight-graph-value-5">0</div>                              
+                                
                                 <div class="freight-graph-el">
                                     {% for i in "x"|rjust:"44" %}                                	
 	                                	<div {% ifequal forloop.counter0 7 %}class="is-active"{% endifequal %}></div>                             		
@@ -804,12 +800,15 @@
 	                                {% for i in "x"|rjust:"44" %}                                	
 	                                	<div {% ifequal forloop.counter0 5 %}class="is-active"{% endifequal %}></div>                             		
 									{% endfor %}                                    
+                                </div>                                
+                                <div class="freight-graph-el">
+                                    {% for i in "x"|rjust:"44" %}                                	
+                                		<div {% ifequal forloop.counter0 16 %}class="is-active is-tree"{% endifequal %}></div>                             		
+									{% endfor %}
                                 </div>
+                                
                             </div>
-                            <div class="freight-graph-title clearfix">                                
-                                <div class="freight-graph-title-el">
-                                    2013
-                                </div>
+                            <div class="freight-graph-title clearfix">                              
                                 <div class="freight-graph-title-el">
                                     2014
                                 </div>
@@ -818,6 +817,9 @@
                                 </div>
                                 <div class="freight-graph-title-el">
                                     2016
+                                </div>
+                                <div class="freight-graph-title-el">
+                                    ½ 2017
                                 </div>
                             </div>
                         </div>
