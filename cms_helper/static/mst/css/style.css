@@ -296,7 +296,7 @@ body {
 /* MENU */
 #menu {
     padding: 0 0 0 175px;
-    width: 65%;
+    width: 70%;
     height: 59px;
     background: #ffffff;
     background: -moz-linear-gradient(top, #ffffff 0%, #f9f9f9 50%, #f3f3f3 100%);
@@ -325,7 +325,8 @@ body {
 #menu ul li {
     display: block;
     float: left;
-    width: 14.2857143%;
+    /* width: 14.2857143%; */
+    width: 12.5%;
     height: 59px;
     border-right: 1px solid #d3d2d6;
     text-align: center;
@@ -471,7 +472,7 @@ body {
 
 /* SEARCH */
 #search {
-    width: 35%;
+    width: 30%;
     height: 59px;
     padding: 0 240px 0 0;
     background: #ffffff;
@@ -4912,4 +4913,15 @@ textarea.is-error {
 	box-shadow: 3px 3px 3px 0px #000;
 	padding: 10px;
 	margin-left: -355px;
+}
+
+.selected-li {
+	background-color: #f4ffda; 
+	animation: colorchange 2s;
+}
+
+@keyframes colorchange {
+	0% {background: #f4ffda;}
+    50%   {background: #d5ff71;}
+    100% {background: #f4ffda;}    
 }
