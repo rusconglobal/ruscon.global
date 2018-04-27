@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-05 16:45+0300\n"
+"POT-Creation-Date: 2018-04-27 17:37+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,47 +19,47 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: templates/base.html:27
+#: templates/base.html:28
 msgid "Your web browser is out of date, please update."
 msgstr "Ваш веб-браузер устарел, пожалуйста обновитесь."
 
-#: templates/base.html:39 templates/base.html.py:107
+#: templates/base.html:40 templates/base.html.py:109
 msgid "Contact us"
 msgstr "Написать нам"
 
-#: templates/base.html:63 templates/home.html:117
+#: templates/base.html:64 templates/home.html:117
 msgid "Cargo tracking"
 msgstr "Отследить груз"
 
-#: templates/base.html:72 templates/home.html:829
+#: templates/base.html:73 templates/home.html:831
 msgid "Download presentation"
 msgstr "Скачать презентацию"
 
-#: templates/base.html:114
+#: templates/base.html:116
 msgid "Your name"
 msgstr "Ваше Имя"
 
-#: templates/base.html:120
+#: templates/base.html:122
 msgid "Phone"
 msgstr "Телефон"
 
-#: templates/base.html:126
+#: templates/base.html:128
 msgid "Message"
 msgstr "Сообщение"
 
-#: templates/base.html:130
+#: templates/base.html:132
 msgid "Send"
 msgstr "Отправить"
 
-#: templates/base.html:172
+#: templates/base.html:179
 msgid "Search results"
 msgstr "Результаты поиска"
 
-#: templates/base.html:173
+#: templates/base.html:180
 msgid "On your query results are not found"
 msgstr "По вашему запросу результатов не обнаружено"
 
-#: templates/base.html:176
+#: templates/base.html:183
 msgid "Close"
 msgstr "Закрыть"
 
@@ -83,11 +83,11 @@ msgstr "Офисы и представительства"
 msgid "Cargo turnover"
 msgstr "Объемы перевозок"
 
-#: templates/home.html:40 templates/home.html.py:840
+#: templates/home.html:40 templates/home.html.py:842
 msgid "Our team"
 msgstr "Наша команда"
 
-#: templates/home.html:45 templates/home.html.py:992
+#: templates/home.html:45 templates/home.html.py:994
 msgid "News and publications"
 msgstr "Новости и публикации"
 
@@ -168,7 +168,11 @@ msgstr "контейнеровозы"
 msgid "haulage of goods via main gateways of Russia and CIS"
 msgstr "автоперевозки внешнеторговых грузов из основных портов страны"
 
-#: templates/home.html:236 templates/home.html.py:263
+#: templates/home.html:236
+msgid "TEU delivered by our trucks"
+msgstr "перевезено TEU автотранспортом"
+
+#: templates/home.html:263
 msgid "containers delivered by our trucks"
 msgstr "перевезено контейнеров автотранспортом"
 
@@ -247,7 +251,8 @@ msgstr "ОТЛК"
 #: templates/home.html:474 templates/home.html.py:504
 msgid ""
 "Build.5, 19, v.Novoselki, Chekhovskiy district, Moscow region, 142326, Russia"
-msgstr "Россия, 142326, Московская область, с. Новосёлки, владение 19, строение 5"
+msgstr ""
+"Россия, 142326, Московская область, с. Новосёлки, владение 19, строение 5"
 
 #: templates/home.html:495
 msgid "Chekhov"
@@ -306,43 +311,43 @@ msgstr ""
 msgid "Full"
 msgstr "Груженых"
 
-#: templates/home.html:843
+#: templates/home.html:845
 msgid "Russia and CIS"
 msgstr "Россия и ближнее зарубежье"
 
-#: templates/home.html:852
+#: templates/home.html:854
 msgid "Employees"
 msgstr "Сотрудников"
 
-#: templates/home.html:852
+#: templates/home.html:854
 msgid "in Russia and CIS"
 msgstr "в РФ и СНГ"
 
-#: templates/home.html:870
+#: templates/home.html:872
 msgid "One of the major employers in transportation segment of Russia."
 msgstr "Один из ведущих работодателей РФ в сфере транспортной логистики."
 
-#: templates/home.html:875
+#: templates/home.html:877
 msgid "Learn more about our Company and Management team"
 msgstr "Узнать больше о компании и руководстве"
 
-#: templates/home.html:962
+#: templates/home.html:964
 msgid "South"
 msgstr "Юг РФ"
 
-#: templates/home.html:965
+#: templates/home.html:967
 msgid "Centre"
 msgstr "Центр РФ"
 
-#: templates/home.html:968
+#: templates/home.html:970
 msgid "North-West"
 msgstr "Северо-Запад РФ"
 
-#: templates/home.html:971
+#: templates/home.html:973
 msgid "Asia and Pacific"
 msgstr "Дальний Восток РФ и Средняя Азия"
 
-#: templates/home.html:981
+#: templates/home.html:983
 msgid "List of vacancies"
 msgstr "Перейти к списку вакансий"
 
