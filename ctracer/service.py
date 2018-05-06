@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from suds.client import Client
+from suds.cache import NoCache
 from django.core.cache import cache
 import cPickle as pickle
 import datetime
@@ -7,16 +8,27 @@ from django.core.files.base import ContentFile
 import base64
 from ctracer.models import MovingChain, FileStore
 from __builtin__ import hasattr, setattr
+from suds.transport.https import HttpAuthenticated
 
 
-class BaseService():
+class BaseService(object):
+    username = None
+    password = None
+    url = None
     def __init__(self, settings):
         self.set_client(settings)
             
     def set_client(self, settings):
         for key in settings.iterkeys():             
-            setattr(self, key, settings.get(key))
-        self._client = Client(self.url, username=self.username, password=self.password, cache=None)
+            setattr(self, key, settings.get(key))   
+        base64string = base64.encodestring(
+            '%s:%s' % (self.username, self.password)).replace('\n', '')
+        authenticationHeader = {
+            "SOAPAction" : "ActionName",
+            "Authorization" : "Basic %s" % base64string
+        } 
+        t = HttpAuthenticated(username=self.username, password=self.password)
+        self._client = Client(self.url, headers=authenticationHeader, transport=t, cache=NoCache(), timeout=500)
         
         
 class WsdlTracer(BaseService):    
