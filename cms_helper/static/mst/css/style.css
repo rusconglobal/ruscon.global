@@ -4118,7 +4118,7 @@ li.language {
     animation: hideAdditionBlock 1s!important; /* IE 10+, Fx 29+ */
 }
 .popup-additionalBlock.is_active {
-    height: 378px;
+    height: 450px;
     margin: 0 0 0 -57px;
     right: 0;
     -moz-transform: translate3d(0,-50%, 0px);
@@ -4366,7 +4366,7 @@ li.language {
         width: 552px;
     }
     .popup-additionalBlock.is_active {
-        height: 404px;
+        height: 450px;
     }
     .popup-additionalBlock {
         height: 156px;
