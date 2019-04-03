@@ -61,4 +61,24 @@
     <script src="{{ STATIC_URL }}mst/js/carousel-inner-initialization.js"></script>
     <script src="{{ STATIC_URL }}mst/js/popUpMenu-inner-initialization.js"></script>
     <script src="{{ STATIC_URL }}libs/lightbox/jquery.magnific-popup.js"></script>
+    
+    <script>
+  
+  
+  
+  $(document).ready(function(){	  
+	    $('.custom-modal-trigger').click(function(event) {	    	
+	    	if (event.target.nodeName == 'A' && event.target != this) {
+	    		return;
+	    	}
+	    	var target = $(this).data('target');
+	    	$(target).openModal();
+	    	console.log(target);
+	    });	    
+	  });
+  
+  </script>
+    
 {% endblock custom_js %}
+
+  

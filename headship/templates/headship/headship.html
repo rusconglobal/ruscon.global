@@ -4,12 +4,13 @@
 <section id="headship-list">
 {% for head in heads %}
 	
-  <div class="card">
+  	
+  <div class="card {{ head.extraclass }}" data-target="#modal-{{ head.pk }}">
     
     <img class="left" alt="{{ head }}" src="{% thumbnail head.image '200x220' crop='top' %}">
         
     <div class="headship-content">
-    <qua>
+    
     <blockquote>
 	      <h4>{{ head.last_name }} </h4>
 	      {{ head.first_name }} {{ head.patronymic }}
@@ -18,6 +19,38 @@
 	      <br />
 	      <b>{{ head.email|hide_email }}</b>
     </div>    
-  </div>	
+  </div>
+  
+  
+  <!-- Modal Structure -->
+  <div id="modal-{{ head.pk }}" class="modal card">
+    <div class="modal-content">
+    
+    	<div class="left" style="padding-right: 30px;">
+          <img alt="{{ head }}" src="{% thumbnail head.image '200x220' crop='top' %}">          
+        </div>
+      
+      <div class="headship-content">    
+      <h4>{{ head.last_name }} {{ head.first_name }} {{ head.patronymic }}</h4>
+      <blockquote> 
+	      {{ head.post }}    
+	      {% if head.subpost %}
+	    	<br>{{ head.subpost }}
+		  {% endif %}        
+      </blockquote>      
+      <p>
+      {% autoescape off %}{{ head.biopic }}{% endautoescape %}
+      </p>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Закрыть</a>
+    </div>
+  </div>
+  	
 {% endfor %}
 </section>
+
+  
+
+  

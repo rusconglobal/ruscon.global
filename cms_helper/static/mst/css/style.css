@@ -4926,3 +4926,13 @@ textarea.is-error {
     50%   {background: #d5ff71;}
     100% {background: #f4ffda;}    
 }
+
+.custom-modal-trigger {
+	background-color: white;
+	cursor: pointer;		
+}
+
+.custom-modal-trigger:hover{
+	background-color: #f4ffda;
+	animation: colorchange 0.5s;	 
+}
