@@ -23,14 +23,14 @@
   
   
   <!-- Modal Structure -->
-  <div id="modal-{{ head.pk }}" class="modal card">
+  <div id="modal-{{ head.pk }}" class="modal card modal-fixed-footer">
     <div class="modal-content">
     
-    	<div class="left" style="padding-right: 30px;">
+    	<div class="left" style="padding-right: 25px;">
           <img alt="{{ head }}" src="{% thumbnail head.image '200x220' crop='top' %}">          
         </div>
       
-      <div class="headship-content">    
+      <div class="headship-content" style="font-size:16px">    
       <h4>{{ head.last_name }} {{ head.first_name }} {{ head.patronymic }}</h4>
       <blockquote> 
 	      {{ head.post }}    
