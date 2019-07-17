@@ -51,8 +51,8 @@ function initialize(nameBlock,index) {
 
 }
 window.marker = [];
-function mapCreate() {
-    google.maps.event.addDomListener(window, 'load', initialize("google-map"));
+function mapCreate() {	
+    initialize("google-map");
     $('.modal-trigger').leanModal({
          ready: function() {google.maps.event.addDomListener(window, 'load', initialize("modal-google-map",$('#map_city > .is_active').attr('data-id'))); }
     });
