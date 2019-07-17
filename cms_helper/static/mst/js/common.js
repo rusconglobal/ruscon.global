@@ -13,7 +13,7 @@ $(document).ready(function () {
      * Включаем событие централизованного отслеживания изменения экрана.
      */
     $.ajax({
-        async:false,
+        async:true,
         url: "/geo/offices/",
         //url: "/static/mst/content/server/office.json",
         dataType:"json",
