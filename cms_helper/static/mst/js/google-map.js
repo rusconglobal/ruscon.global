@@ -56,9 +56,7 @@ function mapCreate() {
     $('.modal-trigger').leanModal({
          ready: function() {google.maps.event.addDomListener(window, 'load', initialize("modal-google-map",$('#map_city > .is_active').attr('data-id'))); }
     });
+    $(window).bind('change_state', function () {
+        initialize("google-map");
+    });
 }
-
-$(window).on('load',mapCreate);
-$(window).bind('change_state', function () {
-    initialize("google-map");
-});
