@@ -51,18 +51,14 @@ function initialize(nameBlock,index) {
 
 }
 window.marker = [];
-function mapCreate() {	
-	
-	initialize("google-map");
-	
-	
-    //google.maps.event.addDomListener(window, 'load', initialize("google-map"));
-//    $('.modal-trigger').leanModal({
-//         ready: function() {google.maps.event.addDomListener(window, 'load', initialize("modal-google-map",$('#map_city > .is_active').attr('data-id'))); }
-//    });
-//    $(window).bind('change_state', function () {
-//        initialize("google-map");
-//    });
+function mapCreate() {
+    google.maps.event.addDomListener(window, 'load', initialize("google-map"));
+    $('.modal-trigger').leanModal({
+         ready: function() {google.maps.event.addDomListener(window, 'load', initialize("modal-google-map",$('#map_city > .is_active').attr('data-id'))); }
+    });
 }
 
-mapCreate();
+$(window).on('load',mapCreate);
+$(window).bind('change_state', function () {
+    initialize("google-map");
+});
