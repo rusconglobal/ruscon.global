@@ -248,7 +248,7 @@ $(document).ready(function () {
     });
     window.Carusel = new OwlCarousel();
     window.PageSlider = new PageSlider();
-    window.Map = new AnimationMap();
+    window.AnMap = new AnimationMap();
     window.slide = {
         3: new AnimationSlide3(),
         4: new AnimationSlide4(),
@@ -312,13 +312,13 @@ $(window).bind('change_state', function () {
         return;
     PageSlider.control(window.state); /* Работаем с Page Slider */
     Carusel.control(window.state); /* Убивает карусель  > 1300 */
-    Map.control(window.state);
+    AnMap.control(window.state);
     $.each(window.slide, function (key, value) {
         value.control(window.state);
     });
     setTimeout(function () {
         Carusel.update();
-        Map.update();
+        AnMap.update();
         $.each(window.slide, function (key, value) {
             value.update();
         });
