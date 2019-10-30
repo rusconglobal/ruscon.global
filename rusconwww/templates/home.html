@@ -786,12 +786,7 @@
                                 <div class="freight-graph-value freight-graph-value-4">80 K</div>
                                 <div class="freight-graph-value freight-graph-value-5">0</div>                              
                                 
-                                
-                                <div class="freight-graph-el">
-                                    {% for i in "x"|rjust:"44" %}                                	
-                                		<div {% ifequal forloop.counter0 11 %}class="is-active is-tree"{% endifequal %}></div>                             		
-									{% endfor %}
-                                </div>
+                                                                
                                 <div class="freight-graph-el">
 	                                {% for i in "x"|rjust:"44" %}                                	
 	                                	<div {% ifequal forloop.counter0 10 %}class="is-active"{% endifequal %}></div>                             		
@@ -799,20 +794,22 @@
                                 </div>                                
                                 <div class="freight-graph-el">
                                     {% for i in "x"|rjust:"44" %}                                	
+                                		<div {% ifequal forloop.counter0 6 %}class="is-active is-tree"{% endifequal %}></div>                             		
+									{% endfor %}
+                                </div>
+                                <div class="freight-graph-el">
+                                    {% for i in "x"|rjust:"44" %}                                	
                                 		<div {% ifequal forloop.counter0 5 %}class="is-active is-tree"{% endifequal %}></div>                             		
 									{% endfor %}
                                 </div>
                                 <div class="freight-graph-el">
                                     {% for i in "x"|rjust:"44" %}                                	
-	                                	<div {% ifequal forloop.counter0 18 %}class="is-active"{% endifequal %}></div>                             		
+	                                	<div {% ifequal forloop.counter0 25 %}class="is-active"{% endifequal %}></div>                             		
 									{% endfor %}
                                 </div>
                                 
                             </div>
                             <div class="freight-graph-title clearfix">                              
-                                <div class="freight-graph-title-el">
-                                    2015
-                                </div>
                                 <div class="freight-graph-title-el">
                                     2016
                                 </div>
@@ -820,7 +817,10 @@
                                     2017
                                 </div>
                                 <div class="freight-graph-title-el">
-                                    &#190; 2018
+                                    2018
+                                </div>
+                                <div class="freight-graph-title-el">
+                                    &#189; 2019
                                 </div>
                             </div>
                         </div>
