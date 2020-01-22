@@ -144,7 +144,7 @@ msgstr "Собственный железнодорожный и автомоб�
 
 #: templates/home.html:138 templates/home.html.py:178
 msgid "Flat-car"
-msgstr "Фиттинговые"
+msgstr "Фитинговые"
 
 #: templates/home.html:140 templates/home.html.py:180
 msgid "wagons"
