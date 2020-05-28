@@ -1,4 +1,5 @@
-$('.collapse2').click(function() {
+$('.collapse2').click(function(event) {
+	event.preventDefault();
 	collapse2(this, 800);
 })
 
