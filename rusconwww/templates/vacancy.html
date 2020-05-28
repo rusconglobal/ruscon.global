@@ -14,3 +14,8 @@
 	 </section>
 	 {% sitetree_breadcrumbs from "mainmenu" template "includes/breadcrumbs.html" %}	            
 {% endblock article %}
+
+{% block custom_js %}	
+ 	{{ block.super }}
+    <script src="{{ STATIC_URL }}ruscon/js/page.js"></script>    
+{% endblock custom_js %}
