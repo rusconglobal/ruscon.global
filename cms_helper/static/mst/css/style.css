@@ -274,7 +274,8 @@ body {
 #logo a {
     display: block;
     height: 100%;
-    background: url(../img/logo.png) center no-repeat;
+    background: url(../img/Logo_Ruscon_EN_white.png) center no-repeat;
+    background-size: 107px;
 }
 @media screen and (max-width: 1300px) {
     #logo {
