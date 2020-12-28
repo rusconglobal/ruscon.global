@@ -152,6 +152,10 @@
 		        {% load sitetree %}
 				{% sitetree_menu from "mainmenu" include "trunk" template "includes/top_menu.html" %}
 				
+				<li class="">				
+					<a href="{% get_param 'global-presentation-link' %}">{% get_param 'global-presentation-link-title' %}</a>
+				</li>
+
 				<li class="selected-li">				
 					<a href="#popupAdd-write_to_us" id="btn-menu-write">{% trans "Write to us" %}</a>
 				</li>
