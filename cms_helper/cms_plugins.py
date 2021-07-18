@@ -136,28 +136,28 @@ from sitetree.sitetreeapp import register_dynamic_trees, compose_dynamic_tree
 from sitetree.utils import tree, item
  
   
-items_cat = {}
-entries = Entry.published.all() #@UndefinedVariable
-for entry in entries:
-    try:
-        node = item(entry.title, entry.get_absolute_url(), url_as_pattern=False)
-        node.title_ru = entry.title_ru
-        cats = entry.categories.all()[:1]
-        if not cats:
-            continue      
-        cat = entry.categories.all()[:1][0].slug
-        if not cat in items_cat:
-            items_cat[cat] = []
-        items_cat[cat].append(node)
-    except:
-        pass  
+# items_cat = {}
+# entries = Entry.published.all() #@UndefinedVariable
+# for entry in entries:
+#     try:
+#         node = item(entry.title, entry.get_absolute_url(), url_as_pattern=False)
+#         node.title_ru = entry.title_ru
+#         cats = entry.categories.all()[:1]
+#         if not cats:
+#             continue      
+#         cat = entry.categories.all()[:1][0].slug
+#         if not cat in items_cat:
+#             items_cat[cat] = []
+#         items_cat[cat].append(node)
+#     except:
+#         pass  
  
-for key, value in items_cat.iteritems():    
-    register_dynamic_trees((   
-        compose_dynamic_tree((
-            tree('dynamic', title='dynamic', items=value),
-        ), target_tree_alias='mainmenu',  parent_tree_item_alias=key),
-    ))  
+# for key, value in items_cat.iteritems():    
+#     register_dynamic_trees((   
+#         compose_dynamic_tree((
+#             tree('dynamic', title='dynamic', items=value),
+#         ), target_tree_alias='mainmenu',  parent_tree_item_alias=key),
+#     ))  
 
 
     
