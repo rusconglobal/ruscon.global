@@ -23,35 +23,35 @@ msgstr ""
 
 #: templates/base.html:41 templates/base.html.py:111
 msgid "Contact us"
-msgstr ""
+msgstr "给我们写信"
 
 #: templates/base.html:65 templates/home.html:117
 msgid "Cargo tracking"
-msgstr ""
+msgstr "追踪货物"
 
 #: templates/base.html:74 templates/home.html:832
 msgid "Download presentation"
-msgstr ""
+msgstr "下载PPT"
 
 #: templates/base.html:118
 msgid "Your name"
-msgstr ""
+msgstr "您的名字"
 
 #: templates/base.html:124
 msgid "Phone"
-msgstr ""
+msgstr "电话"
 
 #: templates/base.html:130
 msgid "Message"
-msgstr ""
+msgstr "消息内容"
 
 #: templates/base.html:134
 msgid "Send"
-msgstr ""
+msgstr "发送"
 
 #: templates/base.html:160
 msgid "Write to us"
-msgstr ""
+msgstr "写信给我们"
 
 #: templates/base.html:185
 msgid "Search results"
@@ -67,105 +67,105 @@ msgstr ""
 
 #: templates/home.html:15 templates/home.html.py:65
 msgid "Key services"
-msgstr ""
+msgstr "主要服务"
 
 #: templates/home.html:20 templates/home.html.py:127
 msgid "Transport facilities"
-msgstr ""
+msgstr "运输工具"
 
 #: templates/home.html:25 templates/home.html.py:280
 msgid "Terminals and warehouses"
-msgstr ""
+msgstr "码头货运站和堆场"
 
 #: templates/home.html:30 templates/home.html.py:554
 msgid "Offices and affiliations"
-msgstr ""
+msgstr "办事处和代表处"
 
 #: templates/home.html:35 templates/home.html.py:591
 msgid "Cargo turnover"
-msgstr ""
+msgstr "运输量"
 
 #: templates/home.html:40 templates/home.html.py:843
 msgid "Our team"
-msgstr ""
+msgstr "我们的团队"
 
 #: templates/home.html:45 templates/home.html.py:995
 msgid "News and publications"
-msgstr ""
+msgstr "新闻和广告"
 
 #: templates/home.html:62
 msgid "Container shipping experts"
-msgstr ""
+msgstr "集装箱运输专家"
 
 #: templates/home.html:74
 msgid "Ocean freight"
-msgstr ""
+msgstr "海运"
 
 #: templates/home.html:76
 msgid "Delivery of containers by sea across the world and at the best price."
-msgstr ""
+msgstr "以最优惠的价格运送世界任何地方的集装箱货物"
 
 #: templates/home.html:85
 msgid "Multimodal transport"
-msgstr ""
+msgstr "多式联运"
 
 #: templates/home.html:87
 msgid ""
 "Door delivery of containers to destinations in Russia and CIS by own trucks "
 "and trains."
-msgstr ""
+msgstr "俄罗斯和近邻国家由我们自己的车辆和火车集装箱到门服务"
 
 #: templates/home.html:96
 msgid "Port and terminals"
-msgstr ""
+msgstr "港口和码头"
 
 #: templates/home.html:98
 msgid "Handling and forwarding at container terminals in seaports and inland."
-msgstr ""
+msgstr "港口和国内集装箱码头的货物运输和转运"
 
 #: templates/home.html:107
 msgid "Customs"
-msgstr ""
+msgstr "海关"
 
 #: templates/home.html:109
 msgid "Customs brokerage, bonded storage, transit and distribution of goods."
-msgstr ""
+msgstr "外贸货物的通关、储存和经销"
 
 #: templates/home.html:130
 msgid "Own trucks and flat-car wagons"
-msgstr ""
+msgstr "自己的铁路和公路运输工具"
 
 #: templates/home.html:138 templates/home.html.py:178
 msgid "Flat-car"
-msgstr ""
+msgstr "集装箱专用的铁路车板"
 
 #: templates/home.html:140 templates/home.html.py:180
 msgid "wagons"
-msgstr ""
+msgstr "车皮"
 
 #: templates/home.html:147
 msgid "operated in block-trains across Russia and CIS"
-msgstr ""
+msgstr "由铁路集装箱班列组成的俄罗斯和近邻国家发运了"
 
 #: templates/home.html:170 templates/home.html.py:197
 msgid "disptached block-trains"
-msgstr ""
+msgstr "已发班列"
 
 #: templates/home.html:206 templates/home.html.py:244
 msgid "container"
-msgstr ""
+msgstr "集装箱"
 
 #: templates/home.html:206 templates/home.html.py:246
 msgid "trucks"
-msgstr ""
+msgstr "卡车"
 
 #: templates/home.html:213
 msgid "haulage of goods via main gateways of Russia and CIS"
-msgstr ""
+msgstr "从该国主要港口汽运外贸货物"
 
 #: templates/home.html:236
 msgid "TEU delivered by our trucks"
-msgstr ""
+msgstr "已发集装箱"
 
 #: templates/home.html:263
 msgid "containers delivered by our trucks"
@@ -173,25 +173,25 @@ msgstr ""
 
 #: templates/home.html:283
 msgid "Terminal facilities in ports and inland"
-msgstr ""
+msgstr "港口和国内堆场"
 
 #: templates/home.html:289 templates/home.html.py:319
 msgid "Lvovo, Moscow 142160, Russia"
-msgstr ""
+msgstr "俄罗斯，142160，莫斯科，利沃夫"
 
 #: templates/home.html:302 templates/home.html.py:364 templates/home.html:426
 #: templates/home.html.py:487
 msgid "year"
-msgstr ""
+msgstr "年"
 
 #: templates/home.html:310
 msgid "Moscow"
-msgstr ""
+msgstr "莫斯科"
 
 #: templates/home.html:325 templates/home.html.py:389 templates/home.html:449
 #: templates/home.html.py:510
 msgid "Terminal"
-msgstr ""
+msgstr "堆场"
 
 #: templates/home.html:325
 msgid "MANP"
@@ -200,25 +200,25 @@ msgstr ""
 #: templates/home.html:328 templates/home.html.py:392 templates/home.html:452
 #: templates/home.html.py:513
 msgid "ha"
-msgstr ""
+msgstr "公顷"
 
 #: templates/home.html:337 templates/home.html.py:401 templates/home.html:461
 #: templates/home.html.py:522 templates/home.html:539
 msgid "Terminal area"
-msgstr ""
+msgstr "堆场面积"
 
 #: templates/home.html:341 templates/home.html.py:405 templates/home.html:465
 #: templates/home.html.py:526 templates/home.html:543
 msgid "Intake capacity"
-msgstr ""
+msgstr "堆存容量"
 
 #: templates/home.html:350 templates/home.html.py:382
 msgid "2nd railway loop, Kirillovka, Novorossiysk, 353909, Russia"
-msgstr ""
+msgstr "俄罗斯, 353909, 新罗西斯克,  基里尔洛夫村，铁路第2圈"
 
 #: templates/home.html:372 templates/home.html.py:604
 msgid "Novorossiysk"
-msgstr ""
+msgstr "新罗西斯克"
 
 #: templates/home.html:389
 msgid "RUSCON"
@@ -228,16 +228,16 @@ msgstr ""
 msgid ""
 "1/7b Logisticheskaya str., Domodedovo, Severny district, Moscow 142000, "
 "Russia"
-msgstr ""
+msgstr "俄罗斯，142000, 北方小区域，多莫杰多沃市，逻辑斯提街1/7b"
 
 #: templates/home.html:426 templates/home.html.py:455 templates/home.html:487
 #: templates/home.html.py:516
 msgid "pallets"
-msgstr ""
+msgstr "托盘"
 
 #: templates/home.html:434
 msgid "Domodedovo"
-msgstr ""
+msgstr "多莫杰多沃"
 
 #: templates/home.html:449
 msgid "OTLC"
@@ -246,11 +246,11 @@ msgstr ""
 #: templates/home.html:474 templates/home.html.py:504
 msgid ""
 "Build.5, 19, v.Novoselki, Chekhovskiy district, Moscow region, 142326, Russia"
-msgstr ""
+msgstr "俄罗斯，142326，莫斯科州，诺沃西欧勒村，拥有19，结构5"
 
 #: templates/home.html:495
 msgid "Chekhov"
-msgstr ""
+msgstr "契袔夫"
 
 #: templates/home.html:510
 msgid "SLG"
@@ -258,88 +258,88 @@ msgstr ""
 
 #: templates/home.html:557
 msgid "Contact details"
-msgstr ""
+msgstr "地址和联系方式"
 
 #: templates/home.html:566
 msgid "offices and branches"
-msgstr ""
+msgstr "办事处和分公司"
 
 #: templates/home.html:569
 msgid "sub-agents"
-msgstr ""
+msgstr "分代理"
 
 #: templates/home.html:594
 msgid "Turnover volume and market share by region"
-msgstr ""
+msgstr "按区域分列的集装箱营业额和市场份额"
 
 #: templates/home.html:604 templates/home.html.py:662 templates/home.html:720
 msgid "Market share"
-msgstr ""
+msgstr "市场份额"
 
 #: templates/home.html:656
 msgid "Leader of container transportation in South Russian ports."
-msgstr ""
+msgstr "卢斯科是俄罗斯南部集装箱运输领域领先的物流运营商"
 
 #: templates/home.html:662
 msgid "St.Petersburg"
-msgstr ""
+msgstr "圣彼得堡"
 
 #: templates/home.html:714
 msgid "The major forwarder of containerised goods in North-West Russia."
-msgstr ""
+msgstr "俄罗斯联邦西北部最大的集装箱货运代理"
 
 #: templates/home.html:720
 msgid "Russian Pacific"
-msgstr ""
+msgstr "俄罗斯联邦远东 "
 
 #: templates/home.html:772
 msgid ""
 "Advanced intermodal provider of container transportation via Trans-Siberian."
-msgstr ""
+msgstr "俄罗斯远东港口集装箱运输的领先运输运营商"
 
 #: templates/home.html:780
 msgid "Full"
-msgstr ""
+msgstr "装载的"
 
 #: templates/home.html:846
 msgid "Russia and CIS"
-msgstr ""
+msgstr "俄罗斯和近邻国家"
 
 #: templates/home.html:855
 msgid "Employees"
-msgstr ""
+msgstr "员工"
 
 #: templates/home.html:855
 msgid "in Russia and CIS"
-msgstr ""
+msgstr "俄罗斯和独联体"
 
 #: templates/home.html:873
 msgid "One of the major employers in transportation segment of Russia."
-msgstr ""
+msgstr "俄罗斯联邦在运输物流领域的主要雇主之一"
 
 #: templates/home.html:878
 msgid "Learn more about our Company and Management team"
-msgstr ""
+msgstr "了解有关公司和管理的更多信息"
 
 #: templates/home.html:965
 msgid "South"
-msgstr ""
+msgstr "俄罗斯联邦南部"
 
 #: templates/home.html:968
 msgid "Centre"
-msgstr ""
+msgstr "俄罗斯联邦中心"
 
 #: templates/home.html:971
 msgid "North-West"
-msgstr ""
+msgstr "俄罗斯联邦西北部"
 
 #: templates/home.html:974
 msgid "Asia and Pacific"
-msgstr ""
+msgstr "俄罗斯联邦远东和中亚"
 
 #: templates/home.html:984
 msgid "List of vacancies"
-msgstr ""
+msgstr "招聘列表"
 
 #: templates/admin/index.html:18
 #, python-format
@@ -389,7 +389,7 @@ msgstr ""
 
 #: templates/cms/plugins/teaser.html:11
 msgid "more"
-msgstr ""
+msgstr "更多"
 
 #: templates/includes/news_style.html:10 templates/includes/press.html:20
 #: templates/zinnia/category/entry_list.html:50
