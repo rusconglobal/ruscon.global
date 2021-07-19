@@ -193,7 +193,7 @@
 		        <a href="tel:88007755715">8 (800) 775-57-15</a>
 		    </div>
 		    <div id="language">
-		    {% for lang in LANGUAGES_BASIC %}
+		    {% for lang in LANGUAGES %}
 				{% ifnotequal lang.0 LANGUAGE_CODE %}					
 				<a title="{{ lang.1 }}" href="/{{lang.0}}{{request.path}}" class="valign-wrapper {% ifnotequal lang.0 LANGUAGE_CODE %}is_active"{% endifnotequal %}>
 		        	{{ lang.0|human_lang }}
