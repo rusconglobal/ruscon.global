@@ -26,7 +26,9 @@ MANAGERS = ADMINS
 
 DEFAULT_LANGUAGE = 'ru'
 
-LANGUAGES = [('ru', u'Русский'), ('en', u'English')]
+LANGUAGES = [('ru', u'Русский'), ('en', u'English'), ('zh-cn', u'简体中文')]
+
+LANGUAGES_BASIC = [('ru', u'Русский'), ('en', u'English')]
 
 from local_settings import * #@UnusedWildImport
 
