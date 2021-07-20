@@ -192,15 +192,16 @@
 		    <div id="phone">
 		        <a href="tel:88007755715">8 (800) 775-57-15</a>
 		    </div>
+			{% for lang in LANGUAGES %}
 		    <div id="language">
-		    {% for lang in LANGUAGES %}
+		    
 				{% ifnotequal lang.0 LANGUAGE_CODE %}					
 				<a title="{{ lang.1 }}" href="/{{lang.0}}{{request.path}}" class="valign-wrapper {% ifnotequal lang.0 LANGUAGE_CODE %}is_active"{% endifnotequal %}>
 		        	{{ lang.0|human_lang }}
 		    	</a>      					      
-			{% endifnotequal %}
-			{% endfor %}
+			{% endifnotequal %}			
 		    </div>
+			{% endfor %}
 		</div>				
 		{% endblock popups %}
 		{% block body %}   
