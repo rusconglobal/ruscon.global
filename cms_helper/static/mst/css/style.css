@@ -4937,3 +4937,7 @@ textarea.is-error {
 	background-color: #f4ffda;
 	animation: colorchange 0.5s;	 
 }
+
+.lang2 {
+    left: 43px;
+}
