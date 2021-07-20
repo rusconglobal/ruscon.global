@@ -83,7 +83,7 @@ def get_param_part(key, part):
 
 @register.filter()
 def human_lang(lang):
-    mapper = {'en': u'Eng', 'ru': u'Рус', 'zh-cn': u'简体中文'}
+    mapper = {'en': u'Eng', 'ru': u'Рус', 'zh-cn': u'Zh'}
     return mapper[lang]
 
 
