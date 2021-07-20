@@ -26,12 +26,13 @@ MANAGERS = ADMINS
 
 DEFAULT_LANGUAGE = 'ru'
 
-#LANGUAGES = [('ru', u'Русский'), ('en', u'English'), ('zh-cn', u'CN')]
+# LANGUAGES = [('ru', u'Русский'), ('en', u'English')]
+LANGUAGES = [('ru', u'Русский'), ('en', u'English'), ('zh-cn', u'CN')]
 CMS_LANGUAGES = (('ru', u'Русский'), ('en', u'English'), ('zh-cn', u'CN'))
 
 CMS_HIDE_UNTRANSLATED = False
 
-LANGUAGES = [('ru', u'Русский'), ('en', u'English')]
+
 
 from local_settings import * #@UnusedWildImport
 
