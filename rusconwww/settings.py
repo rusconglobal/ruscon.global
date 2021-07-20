@@ -26,7 +26,10 @@ MANAGERS = ADMINS
 
 DEFAULT_LANGUAGE = 'ru'
 
-# LANGUAGES = [('ru', u'Русский'), ('en', u'English'), ('zh-cn', u'简体中文')]
+#LANGUAGES = [('ru', u'Русский'), ('en', u'English'), ('zh-cn', u'CN')]
+CMS_LANGUAGES = (('ru', u'Русский'), ('en', u'English'), ('zh-cn', u'CN'))
+
+CMS_HIDE_UNTRANSLATED = False
 
 LANGUAGES = [('ru', u'Русский'), ('en', u'English')]
 
