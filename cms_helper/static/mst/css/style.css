@@ -623,7 +623,7 @@ li.language {
     background: linear-gradient(to bottom, #1d3e9f 0%, #19389b 50%, #173496 100%);
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#1d3e9f', endColorstr='#173496', GradientType=0);
     text-align: center;
-    padding: 0 93px 0 0;
+    padding: 0 58px 0 0;
     z-index: 101;
 }
 #phone a {
@@ -667,7 +667,7 @@ li.language {
     position: absolute;
     top: 0;
     right: 0;
-    width: 92px;
+    width: 57px;
     height: 59px;
     border-left: 1px solid rgba(255, 255, 255, 0.08);
     float: left;
@@ -4936,8 +4936,4 @@ textarea.is-error {
 .custom-modal-trigger:hover{
 	background-color: #f4ffda;
 	animation: colorchange 0.5s;	 
-}
-
-.lang2 {
-    left: 43px;
 }
