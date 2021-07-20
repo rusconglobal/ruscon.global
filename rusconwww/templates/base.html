@@ -195,9 +195,11 @@
 		    <div id="language">
 		    {% for lang in LANGUAGES %}
 				{% ifnotequal lang.0 LANGUAGE_CODE %}					
+				{% ifnotequal lang.0 'zh-cn' %}					
 				<a title="{{ lang.1 }}" href="/{{lang.0}}{{request.path}}" class="valign-wrapper lang{{ lang.0 }} {% ifnotequal lang.0 LANGUAGE_CODE %}is_active"{% endifnotequal %}>
 		        	{{ lang.0|human_lang }}
 		    	</a>      					      
+			{% endifnotequal %}
 			{% endifnotequal %}
 			{% endfor %}
 		    </div>
