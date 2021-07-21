@@ -12,7 +12,7 @@
         <meta name="google-site-verification" content="lYKu4TykRjPSbtnfs8pLw73WfCh8KWdHwtnWyeNpmIs" />
         <title>{% block title %}{% page_attribute page_title %}{% endblock %}</title>        
         <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}mst/css/materialize.min.css"  media="screen,projection" />
-        <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}mst/css/style.css?v=17"  media="screen,projection" />        
+        <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}mst/css/style.css?v=19"  media="screen,projection" />        
         <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}mst/css/jquery.mCustomScrollbar.min.css" />
         <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}mst/css/owl.carousel.css" />
         <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}mst/css/owl.theme.css" />
@@ -193,9 +193,9 @@
 		        <a href="tel:88007755715">8 (800) 775-57-15</a>
 		    </div>
 		    <div id="language">
-		    {% for lang in LANGUAGES|slice:":2" %}
+		    {% for lang in LANGUAGES %}
 				{% ifnotequal lang.0 LANGUAGE_CODE %}									
-				<a title="{{ lang.1 }}" href="/{{lang.0}}{{request.path}}" class="valign-wrapper lang{{ lang.0 }} {% ifnotequal lang.0 LANGUAGE_CODE %}is_active"{% endifnotequal %}>
+				<a title="{{ lang.1 }}" href="/{{lang.0}}{{request.path}}" class="valign-wrapper {% ifnotequal lang.0 LANGUAGE_CODE %}is_active"{% endifnotequal %}>
 		        	{{ lang.0|human_lang }}
 		    	</a>      					      			
 			{% endifnotequal %}

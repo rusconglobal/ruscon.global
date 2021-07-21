@@ -623,7 +623,8 @@ li.language {
     background: linear-gradient(to bottom, #1d3e9f 0%, #19389b 50%, #173496 100%);
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#1d3e9f', endColorstr='#173496', GradientType=0);
     text-align: center;
-    padding: 0 58px 0 0;
+    /* CHINA 58 */
+    padding: 0 68px 0 0;
     z-index: 101;
 }
 #phone a {
@@ -667,7 +668,8 @@ li.language {
     position: absolute;
     top: 0;
     right: 0;
-    width: 57px;
+    /* CHINA 57 */
+    width: 67px;
     height: 59px;
     border-left: 1px solid rgba(255, 255, 255, 0.08);
     float: left;
@@ -701,12 +703,14 @@ li.language {
 }
 #language a {
     height: 59px;
+    /* CHINA */
+    padding-left: 6px;
 }
 #language a.is_active {
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: 101;
+    z-index: 101;    
 }
 #language a img {
     display: block;
@@ -4879,7 +4883,8 @@ textarea.is-error {
 	font: 600 12px/59px "Roboto New";
 	text-transform: uppercase;
 	color: #DFECFF;
-	padding-left: 15px;
+    /* CHINA */
+	/* padding-left: 15px; */
 	font-weight: 700;
 	text-align: center;	
 	-webkit-transition: background ease-out 0.2s;
@@ -4937,3 +4942,13 @@ textarea.is-error {
 	background-color: #f4ffda;
 	animation: colorchange 0.5s;	 
 }
+
+#language :nth-child(1) {
+    left: 2px;
+}
+
+#language :nth-child(2) {
+    left: 31px;
+}
+
+
