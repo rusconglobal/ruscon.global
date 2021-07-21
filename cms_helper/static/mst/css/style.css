@@ -704,12 +704,12 @@ li.language {
 #language a {
     height: 59px;
     /* CHINA */
-    padding-left: 6px;
+    padding-left: 9px;
 }
 #language a.is_active {
     position: absolute;
     top: 0;
-    width: 100%;
+    width: 50%;
     z-index: 101;    
 }
 #language a img {
@@ -4944,11 +4944,11 @@ textarea.is-error {
 }
 
 #language :nth-child(1) {
-    left: 2px;
+    left: 3px;
 }
 
 #language :nth-child(2) {
-    left: 31px;
+    left: 30px;
 }
 
 
