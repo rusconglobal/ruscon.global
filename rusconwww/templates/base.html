@@ -211,12 +211,9 @@
                 </div>
                 {% load social_share %}
                 
-				{% post_to_facebook object_or_url %}
-                {% post_to_twitter object.title object_or_url %}
-                {% post_to_linkedin object_or_url %}
-                {% post_to_vk object_or_url %}
-                {% post_to_ok object_or_url %}
-                {% post_to_gplus object_or_url %}
+				{% facebook "https://www.facebook.com/rusconltd" %}                
+                {% linkedin "https://www.linkedin.com/groups/6703275/" %}
+				{% instagram "https://www.instagram.com/ruscon_group" %}                
                                 
                 <div class="news-bottom-dev">
                     Designed by <a href="http://mstagency.ru/">MST digital agency</a>

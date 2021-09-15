@@ -147,3 +147,24 @@ def post_to_gplus(context, obj_or_url=None, link_text='Post to Google+'):
     context = post_to_gplus_url(context, obj_or_url)
     context['link_text'] = link_text
     return context
+
+
+@register.inclusion_tag('django_social_share/templatetags/post_to_linkedin.html', takes_context=True)
+def linkedin(context, url, link_text='Linkedin'):    
+    context['linkedin_url'] = url
+    context['link_text'] = link_text
+    return context
+
+
+@register.inclusion_tag('django_social_share/templatetags/post_to_facebook.html', takes_context=True)
+def facebook(context, url, link_text='Facebook'):    
+    context['facebook_url'] = url
+    context['facebook_text'] = link_text
+    return context    
+
+
+@register.inclusion_tag('django_social_share/templatetags/post_to_instagram.html', takes_context=True)
+def instagram(context, url, link_text='Instagram'):    
+    context['instagram_url'] = url
+    context['instagram_text'] = link_text
+    return context    
