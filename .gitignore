@@ -8,3 +8,9 @@ local_settings.py
 rusconwww/media/*
 rusconwww/static/*
 rusconwww/wsgi.py
+
+pyvenv.cfg
+
+/bin/
+/lib/
+/local/
