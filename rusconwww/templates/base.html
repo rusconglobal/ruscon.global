@@ -19,6 +19,8 @@
         <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}mst/css/owl.transitions.css" />
         <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}mst/css/odometer-theme-minimal.css" />
         <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}libs/lightbox/magnific-popup.css" />       
+		<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}ruscon/css/global.css" />
+
         {% block custom_css %}{% endblock custom_css %}        
         {% render_block "css" %}        
         <meta property="og:title" content="{% block og-title %}{% page_attribute page_title %}{% endblock %}" />
@@ -146,7 +148,7 @@
 		    <div id="menu">
 		        <div id="btn-menu"></div>
 		        <div id="btn-search"></div>
-		        <div id="btn-phone"><a href="tel:88007755715">8 (800) 775-57-15</a></div>
+		        <div id="btn-phone"><a class="tooltipped" data-position="bottom" data-tooltip="88007755715<br>." href="tel:88007755715">8 (800) 775-57-15</a></div>
 		        
 		        <ul>
 		        {% load sitetree %}
@@ -264,7 +266,8 @@
             </div>
 		{% endblock footer %}       
         {% endblock body %}
-        {% block custom_js %}{% endblock custom_js %}    
+        {% block custom_js %}{% endblock custom_js %}    		
+		<script src="{{ STATIC_URL }}ruscon/js/global.js"></script> 
 		{% render_block "js" %}
     </body>
 </html>
