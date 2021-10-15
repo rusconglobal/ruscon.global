@@ -148,7 +148,14 @@
 		    <div id="menu">
 		        <div id="btn-menu"></div>
 		        <div id="btn-search"></div>
-		        <div id="btn-phone"><a class="tooltipped" data-position="bottom" data-tooltip="88007755715<br>." href="tel:88007755715">8 (800) 775-57-15</a></div>
+		        <div id="btn-phone"><a class="tooltipped" data-position="bottom" data-tooltip="
+					{% trans 'Moscow' %} <span class='blue-text'>#</span> <b>1</b><br>
+					{% trans 'Novorossiysk' %} <span class='blue-text'>#</span> <b>2</b><br>
+					{% trans 'St. Petersburg' %} <span class='blue-text'>#</span> <b>3</b><br>
+					{% trans 'Ekaterinburg' %} <span class='blue-text'>#</span> <b>4</b><br>
+					{% trans 'Nakhodka' %} <span class='blue-text'>#</span> <b>6</b><br>
+					{% trans 'Almaty' %} <span class='blue-text'>#</span> <b>7</b>
+					" href="tel:88007755715">8 (800) 775-57-15</a></div>
 		        
 		        <ul>
 		        {% load sitetree %}

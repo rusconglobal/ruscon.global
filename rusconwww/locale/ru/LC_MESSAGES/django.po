@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-16 11:44+0300\n"
+"POT-Creation-Date: 2021-10-15 01:53-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,51 +19,76 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: templates/base.html:29
+#: templates/base.html:31
 msgid "Your web browser is out of date, please update."
 msgstr "Ваш веб-браузер устарел, пожалуйста обновитесь."
 
-#: templates/base.html:41 templates/base.html.py:110
+#: templates/base.html:43 templates/base.html.py:113
 msgid "Contact us"
 msgstr "Написать нам"
 
-#: templates/base.html:65 templates/home.html:117
+#: templates/base.html:67 templates/home.html:117
 msgid "Cargo tracking"
 msgstr "Отследить груз"
 
-#: templates/base.html:74 templates/home.html:832
+#: templates/base.html:76 templates/home.html:832
 msgid "Download presentation"
 msgstr "Скачать презентацию"
 
-#: templates/base.html:117
+#: templates/base.html:120
 msgid "Your name"
 msgstr "Ваше Имя"
 
-#: templates/base.html:123
+#: templates/base.html:126
 msgid "Phone"
 msgstr "Телефон"
 
-#: templates/base.html:129
+#: templates/base.html:132
 msgid "Message"
 msgstr "Сообщение"
 
-#: templates/base.html:133
+#: templates/base.html:136
 msgid "Send"
 msgstr "Отправить"
 
-#: templates/base.html:155
+#: templates/base.html:152 templates/base.html.py:203 templates/home.html:310
+msgid "Moscow"
+msgstr "Москва"
+
+#: templates/base.html:153 templates/base.html.py:204 templates/home.html:372
+#: templates/home.html.py:604
+msgid "Novorossiysk"
+msgstr "Новороссийск"
+
+#: templates/base.html:154 templates/base.html.py:205
+msgid "St. Petersburg"
+msgstr "Санкт-Петербург"
+
+#: templates/base.html:155 templates/base.html.py:206
+msgid "Ekaterinburg"
+msgstr "Екатеринбург"
+
+#: templates/base.html:156 templates/base.html.py:207
+msgid "Nakhodka"
+msgstr "Находка"
+
+#: templates/base.html:157 templates/base.html.py:208
+msgid "Almaty"
+msgstr "Алматы"
+
+#: templates/base.html:169
 msgid "Write to us"
 msgstr "Написать нам"
 
-#: templates/base.html:180
+#: templates/base.html:194
 msgid "Search results"
 msgstr "Результаты поиска"
 
-#: templates/base.html:181
+#: templates/base.html:195
 msgid "On your query results are not found"
 msgstr "По вашему запросу результатов не обнаружено"
 
-#: templates/base.html:184
+#: templates/base.html:198
 msgid "Close"
 msgstr "Закрыть"
 
@@ -193,10 +218,6 @@ msgstr "Россия, 142160, г. Москва, д. Львово"
 msgid "year"
 msgstr "год"
 
-#: templates/home.html:310
-msgid "Moscow"
-msgstr "Москва"
-
 #: templates/home.html:325 templates/home.html.py:389 templates/home.html:449
 #: templates/home.html.py:510
 msgid "Terminal"
@@ -224,10 +245,6 @@ msgstr "Емкость единовременного хранения"
 #: templates/home.html:350 templates/home.html.py:382
 msgid "2nd railway loop, Kirillovka, Novorossiysk, 353909, Russia"
 msgstr "Россия, 353909, Новороссийск, c. Кирилловка, 2-я жд петля"
-
-#: templates/home.html:372 templates/home.html.py:604
-msgid "Novorossiysk"
-msgstr "Новороссийск"
 
 #: templates/home.html:389
 msgid "RUSCON"
