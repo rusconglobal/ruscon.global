@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-15 01:53-0500\n"
+"POT-Creation-Date: 2021-10-15 04:15-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,44 +51,64 @@ msgstr "Сообщение"
 msgid "Send"
 msgstr "Отправить"
 
-#: templates/base.html:152 templates/base.html.py:203 templates/home.html:310
+#: templates/base.html:152 templates/base.html.py:208 templates/home.html:310
 msgid "Moscow"
 msgstr "Москва"
 
-#: templates/base.html:153 templates/base.html.py:204 templates/home.html:372
+#: templates/base.html:153 templates/base.html.py:209 templates/home.html:372
 #: templates/home.html.py:604
 msgid "Novorossiysk"
 msgstr "Новороссийск"
 
-#: templates/base.html:154 templates/base.html.py:205
+#: templates/base.html:154 templates/base.html.py:210
 msgid "St. Petersburg"
 msgstr "Санкт-Петербург"
 
-#: templates/base.html:155 templates/base.html.py:206
-msgid "Ekaterinburg"
-msgstr "Екатеринбург"
-
-#: templates/base.html:156 templates/base.html.py:207
-msgid "Nakhodka"
-msgstr "Находка"
-
-#: templates/base.html:157 templates/base.html.py:208
+#: templates/base.html:155 templates/base.html.py:211
 msgid "Almaty"
 msgstr "Алматы"
 
-#: templates/base.html:169
+#: templates/base.html:156 templates/base.html.py:212
+msgid "Shanghai"
+msgstr "Шанхай"
+
+#: templates/base.html:157 templates/base.html.py:213
+msgid "Nakhodka"
+msgstr "Находка"
+
+#: templates/base.html:158 templates/base.html.py:214
+msgid "Ekaterinburg"
+msgstr "Екатеринбург"
+
+#: templates/base.html:159 templates/base.html.py:215
+msgid "Novosibirsk"
+msgstr "Новороссийск"
+
+#: templates/base.html:160 templates/base.html.py:216
+msgid "Irkutsk"
+msgstr "Иркутск"
+
+#: templates/base.html:161 templates/base.html.py:217
+msgid "Krasnoyarsk"
+msgstr "Красноярск"
+
+#: templates/base.html:162 templates/base.html.py:218
+msgid "Rotterdam"
+msgstr "Роттердам"
+
+#: templates/base.html:174
 msgid "Write to us"
 msgstr "Написать нам"
 
-#: templates/base.html:194
+#: templates/base.html:199
 msgid "Search results"
 msgstr "Результаты поиска"
 
-#: templates/base.html:195
+#: templates/base.html:200
 msgid "On your query results are not found"
 msgstr "По вашему запросу результатов не обнаружено"
 
-#: templates/base.html:198
+#: templates/base.html:203
 msgid "Close"
 msgstr "Закрыть"
 
