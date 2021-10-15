@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-01 13:06+0300\n"
+"POT-Creation-Date: 2021-10-15 02:22-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,18 +23,21 @@ msgstr ""
 msgid "Offices"
 msgstr "Офисы"
 
-#: views.py:25
+#: views.py:30
 msgid "Phone"
 msgstr "Телефон"
 
-#: views.py:26
-msgid "Fax"
-msgstr "Факс"
+#: views.py:31
+msgid "Dial number"
+msgstr "Номер дозвона"
 
-#: views.py:27
+#: views.py:32
 msgid "Request"
 msgstr "Запросы"
 
-#: views.py:28
+#: views.py:33
 msgid "Offers"
 msgstr "Предложения"
+
+#~ msgid "Fax"
+#~ msgstr "Факс"

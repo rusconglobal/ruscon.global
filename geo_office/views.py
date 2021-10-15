@@ -28,7 +28,7 @@ def get_offices(request):
             office_dict['offers'] = "info@ruscon.global"
             
             office_dict['phone_title'] = u"%s" % _('Phone')
-            office_dict['fax_title'] = u"%s" % _('Fax')
+            office_dict['fax_title'] = u"%s" % _('Dial number')
             office_dict['request_title'] = u"%s" % _('Request')
             office_dict['offers_title'] = u"%s" % _('Offers')
             
