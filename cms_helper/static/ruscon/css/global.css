@@ -2,10 +2,10 @@
     text-align: left;
     font-weight: 100;
     line-height: 2rem;
-    border-left: 1px dashed #173496;
+    border-left: 1px dashed #10297a;
 }
 
 .material-tooltip .backdrop{
     background-color: #173496;
-    height: 0;
+    height: 100%;
 }
