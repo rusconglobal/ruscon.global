@@ -16,3 +16,4 @@ pyvenv.cfg
 /local/
 /include/
 /django/
+/logs

@@ -8,10 +8,24 @@ from modeltranslation.utils import get_language
 from modeltranslation.settings import DEFAULT_LANGUAGE
 from cms_helper.models import Params
 from rusconwww.local_settings import DEFAULT_FROM_EMAIL
+import os
+import datetime
+
+def write_logs(formData):
+    if not os.path.isdir("logs/mail"):
+        os.makedirs("logs/mail")
+    now = datetime.datetime.now()
+    now.strftime("%d-%m-%Y %H:%M")
+
+    my_file = open("./logs/mail/form_policy_logs.txt", "a+")
+    my_file.write("\n%s%s%s\n" % (now.strftime("%d-%m-%Y %H:%M"),' ', formData))
+    my_file.close()
 
 def write_to_us(request):
     result = 0  
     if request.method == 'POST':
+        if request.POST.get('agree') and request.POST['agree'] != 'on':
+            return HttpResponse(json.dumps({'result': result}), content_type="application/json")
         form = WriteToUs(request.POST)
         if form.is_valid():
             headers = {'Reply-To': form.cleaned_data['email']}
@@ -30,6 +44,8 @@ def write_to_us(request):
             msg = EmailMessage(subject, body, from_email, to_email, headers=headers)
             msg.content_subtype = "html"
             msg.send()
+            if request.POST.get('formPolicy'):
+                write_logs(form.cleaned_data)
             result = 1                
     return HttpResponse(json.dumps({'result': result}), content_type="application/json")
 

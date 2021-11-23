@@ -113,7 +113,7 @@ $(document).ready(function() {
 
 
 $(document).ready(function () {
-	
+
 	
 	$("#search form").submit(function() {
 		var url = "/helper/search/";
@@ -142,9 +142,9 @@ $(document).ready(function () {
 		
 		return false;
 	});
-	
-	
-	$("#write-to-us").submit(function() {		
+
+
+	$("#write-to-us").submit(function() {
 	    var url = "/helper/writetous/";
 	    $.ajax({
 	           type: "POST",
