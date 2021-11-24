@@ -12,16 +12,24 @@
     margin: 8px 0 0 auto;
     float: none;
 }
+.anonim{
+    margin-bottom: 10px;
+}
 .visibl {
     opacity: 0.7;
     pointer-events: none;
     /*display: block;*/
 }
+.blocking {
+    opacity: 0.7;
+    pointer-events: none;
+    background-color: #DDDDDD;
+}
 .compl-message {
     position: absolute;
     left: 50%;
     top: 90%;
-    background-color: aqua;
+    background-color: #26a69a;
     padding: 10px 20px;
 }
 .error-message {

@@ -48,13 +48,18 @@
 								{% csrf_token %}
 								<div class="clearfix">
 									<div class="write_to_us-input">
-										<div class="inputField">
+										<div class="inputField anon-name">
 											<input type="text" required placeholder="{% trans "Your name" %}" name="name" id="id_name" />
 										</div>
-										<div class="inputField">
+										<div class="form-send__checkbox anonim">
+										<input type="checkbox" name="anonim" id="id_anonim"/>
+										<label class="anonim-label" for="id_anonim">
+										</label>
+									</div>
+										<div class="inputField anon-email">
 											<input type="email" required placeholder="Email" name="email" id="id_email" />
 										</div>
-										<div class="inputField">
+										<div class="inputField anon-phone">
 											<input type="tel" class="phone-form" required placeholder="{% trans "Phone" %}" name="phone" id="id_phone" />
 										</div>
 									</div>
@@ -107,10 +112,13 @@
 		$('.form-send-policy').remove()
 	}
 	if ((pathname === '/ru/about/anti-corruption/')) {
+		$('.anonim-label').text('Анонимно');
 		$('.id_label').text('Я даю свое согласие на обработку своих персональных данных в соответствии со статьей 9 Федерального закона от 27.07.2006 г. №152–ФЗ «О персональных данных» и принимаю условия Соглашения о конфиденциальности')
 	} else if ((pathname === '/en/about/anti-corruption/')) {
+		$('.anonim-label').text('Anonymously');
 		$('.id_label').text("I give my consent to the processing of my personal data in accordance with Article 9 of the Federal Law of July 27, 2006 No. 152-ФЗ «On Personal Data» and accept the terms of the Confidentiality Agreement");
 	} else {
+		$('.anonim-label').text('匿名的');
 		$('.id_label').text("我同意根据 2006 年 7 月 27 日联邦法第 9 条第 152-ФЗ“关于个人数据”的规定处理我的个人数据，并接受保密协议的条款 ");
 	}
 

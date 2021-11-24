@@ -11,7 +11,30 @@ $(document).ready(function () {
 	{
 		$form.find(':input').not(':button, :submit, :reset, :hidden, :checkbox, :radio').val('');
 		$form.find(':checkbox, :radio').prop('checked', false);
+		$(".anon-name").removeClass("blocking");
+		$(".anon-email").removeClass("blocking");
+		$(".anon-phone").removeClass('blocking');
 	}
+	$("#id_anonim").click(function() {
+		var checked_status = this.checked;
+		console.log(checked_status);
+		if (checked_status === true) {
+			console.log(111111);
+			$(".anon-name").find(':input').val('Anonim');
+			$(".anon-name").addClass('blocking');
+			$(".anon-email").find(':input').val('Anonim@anonim.ru');
+			$(".anon-email").addClass('blocking');
+			$(".anon-phone").find(':input').val('+7(999)999-99-99');
+			$(".anon-phone").addClass('blocking');
+		} else {
+			$(".anon-name").find(':input').val('');
+			$(".anon-name").removeClass("blocking");
+			$(".anon-email").find(':input').val('');
+			$(".anon-email").removeClass("blocking");
+			$(".anon-phone").find(':input').val('');
+			$(".anon-phone").removeClass('blocking');
+		}
+	});
 	$("#id_agree").click(function() {
 		var checked_status = this.checked;
 		if (checked_status === true) {
