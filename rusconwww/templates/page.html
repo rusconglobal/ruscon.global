@@ -7,6 +7,7 @@
 {% load sitetree %}
 
 {% block custom_css %}
+<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}mst/css/styleForm.css" />
 <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}mst/css/inner.css" media="screen,projection" />
 {% endblock custom_css %}
 {% block body %}
@@ -36,44 +37,43 @@
 	            <section id="page-content">
 	            	{% placeholder "page-content" %}
 	            </section>
-                    <div class="popupAdd-wrapper form-send-policy">
-		                <div class="popupAdd-title">
-		                    {% trans "Contact us" %}
-		                </div>
-						<span class="js-success"></span>
-		                <form id="send-form">
-		                	{% csrf_token %}
-			                <div class="clearfix">
-			                    <div class="write_to_us-input">
-			                        <div class="inputField">
-			                            <input type="text" required placeholder="{% trans "Your name" %}" name="name" id="id_name" />
-			                        </div>
-			                        <div class="inputField">
-			                            <input type="email" required placeholder="Email" name="email" id="id_email" />
-			                        </div>
-			                        <div class="inputField">
-			                            <input type="tel" required placeholder="{% trans "Phone" %}" name="phone" id="id_phone" />
-			                            <div class="phone-info"></div>
-			                        </div>
-			                    </div>
-			                    <div class="write_to_us-textarea">
-			                        <div class="inputField">
-			                            <textarea required placeholder="{% trans "Message" %}" name="message" id="id_message"></textarea>
-			                        </div>
-			                    </div>
-								<div class="form-send__checkbox">
-									<input type="checkbox" name="agree" id="id_agree"/>
-									<label for="id_agree">Я даю свое согласие на обработку своих персональных данных в соответствии
-                                        со статьей 9 Федерального закона от 27.07.2006 г. №152–ФЗ «О персональных данных» и принимаю
-                                        условия Соглашения о конфиденциальности
-                                    </label>
+
+
+						<div class="popupAdd-wrapper form-send-policy">
+							<div class="popupAdd-title">
+								{% trans "Contact us" %}
+							</div>
+							<span class="js-success"></span>
+							<form id="send-form">
+								{% csrf_token %}
+								<div class="clearfix">
+									<div class="write_to_us-input">
+										<div class="inputField">
+											<input type="text" required placeholder="{% trans "Your name" %}" name="name" id="id_name" />
+										</div>
+										<div class="inputField">
+											<input type="email" required placeholder="Email" name="email" id="id_email" />
+										</div>
+										<div class="inputField">
+											<input type="tel" class="phone-form" required placeholder="{% trans "Phone" %}" name="phone" id="id_phone" />
+										</div>
+									</div>
+									<div class="write_to_us-textarea">
+										<div class="inputField">
+											<textarea required placeholder="{% trans "Message" %}" name="message" id="id_message"></textarea>
+										</div>
+									</div>
+									<div class="form-send__checkbox">
+										<input type="checkbox" name="agree" id="id_agree"/>
+										<label class="id_label" for="id_agree">
+										</label>
+									</div>
 								</div>
-			                </div>
-			                <button class="btn-blue btn-blue-write_to_us form-send__button" type="submit">{% trans "Send" %}</button>
-		                <form>
-		                <div id="toast-container"></div>
-                    </div>
-	            {% sitetree_breadcrumbs from "mainmenu" template "includes/breadcrumbs.html" %}
+								<button class="btn-blue btn-blue-write_to_us form-send__button visibl" type="submit">{% trans "Send" %}</button>
+							<form>
+							<div id="toast-container"></div>
+						</div>
+				{%  sitetree_breadcrumbs from "mainmenu" template "includes/breadcrumbs.html" %}
             {% endblock article %}
         </article>
         <div style="clear:both"></div>
@@ -88,6 +88,7 @@
 
 {% block custom_js %}
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.7/vendors/jquery.slimscroll.min.js"></script>
     <script src="{{ STATIC_URL }}mst/js/jquery.fullPage.js"></script>
     <script src="{{ STATIC_URL }}mst/js/materialize.min.js?v=1"></script>
@@ -101,10 +102,23 @@
     <script src="{{ STATIC_URL }}mst/js/formSend.js"></script>
 
     <script>
-
-
+	pathname = window.location.pathname
+	if ((pathname !== '/ru/about/anti-corruption/') && (pathname !== '/en/about/anti-corruption/') && (pathname !== '/zh-cn/about/anti-corruption/')) {
+		$('.form-send-policy').remove()
+	}
+	if ((pathname === '/ru/about/anti-corruption/')) {
+		$('.id_label').text('Я даю свое согласие на обработку своих персональных данных в соответствии со статьей 9 Федерального закона от 27.07.2006 г. №152–ФЗ «О персональных данных» и принимаю условия Соглашения о конфиденциальности')
+	} else if ((pathname === '/en/about/anti-corruption/')) {
+		$('.id_label').text("I give my consent to the processing of my personal data in accordance with Article 9 of the Federal Law of July 27, 2006 No. 152-ФЗ «On Personal Data» and accept the terms of the Confidentiality Agreement");
+	} else {
+		$('.id_label').text("我同意根据 2006 年 7 月 27 日联邦法第 9 条第 152-ФЗ“关于个人数据”的规定处理我的个人数据，并接受保密协议的条款 ");
+	}
 
   $(document).ready(function(){
+	  // console.log(window.location.pathname);
+	  $(function() {
+  		 $('.phone-form').mask('+7(000)000-00-00');
+	  });
 	    $('.custom-modal-trigger').click(function(event) {
 	    	if (event.target.nodeName == 'A' && event.target != this) {
 	    		return;

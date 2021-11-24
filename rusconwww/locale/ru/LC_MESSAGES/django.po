@@ -19,6 +19,10 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
+
+msgid "I give my consent to the processing of my personal data in accordance with Article 9 of the Federal Law of July 27, 2006 No. 152-ФЗ «On Personal Data» and accept the terms of the Confidentiality Agreement"
+msgstr "Я даю свое согласие на обработку своих персональных данных в соответствии со статьей 9 Федерального закона от 27.07.2006 г. №152–ФЗ «О персональных данных» и принимаю условия Соглашения о конфиденциальности"
+
 #: templates/base.html:31
 msgid "Your web browser is out of date, please update."
 msgstr "Ваш веб-браузер устарел, пожалуйста обновитесь."
@@ -42,6 +46,8 @@ msgstr "Ваше Имя"
 #: templates/base.html:126
 msgid "Phone"
 msgstr "Телефон"
+
+
 
 #: templates/base.html:132
 msgid "Message"

@@ -1,0 +1,37 @@
+.form-send-policy .inputField{
+    /*background-color: #00b0ff;*/
+    margin-bottom: 10px;
+}
+.form-send-policy .write_to_us-input{
+    width: 100%;
+}
+.form-send-policy .write_to_us-textarea{
+    width: 100%;
+}
+.form-send-policy .btn-blue-write_to_us {
+    margin: 8px 0 0 auto;
+    float: none;
+}
+.visibl {
+    opacity: 0.7;
+    pointer-events: none;
+    /*display: block;*/
+}
+.compl-message {
+    position: absolute;
+    left: 50%;
+    top: 132%;
+    background-color: aqua;
+    border-radius: 43%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.error-message {
+    position: absolute;
+    left: 50%;
+    top: 132%;
+    background-color: #ef6c00;
+    border-radius: 43%;
+    padding-left: 10px;
+    padding-right: 10px;
+}

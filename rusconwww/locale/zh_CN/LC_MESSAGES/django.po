@@ -17,6 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+msgid "I give my consent to the processing of my personal data in accordance with Article 9 of the Federal Law of July 27, 2006 No. 152-ФЗ «On Personal Data» and accept the terms of the Confidentiality Agreement"
+msgstr "我同意根据 2006 年 7 月 27 日联邦法第 9 条第 152-ФЗ“关于个人数据”的规定处理我的个人数据，并接受保密协议的条款 "
+
+
 #: templates/base.html:29
 msgid "Your web browser is out of date, please update."
 msgstr ""

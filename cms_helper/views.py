@@ -16,9 +16,11 @@ def write_logs(formData):
         os.makedirs("logs/mail")
     now = datetime.datetime.now()
     now.strftime("%d-%m-%Y %H:%M")
-
+    print(formData['name'])
+    str_data = "%s%s%s%s%s%s%s%s" % ('Phone:', formData['phone'], ' Name: ', formData['name'], ' Email: ', formData['email'], ' Message: ', formData['message'])
+    print(str_data)
     my_file = open("./logs/mail/form_policy_logs.txt", "a+")
-    my_file.write("\n%s%s%s\n" % (now.strftime("%d-%m-%Y %H:%M"),' ', formData))
+    my_file.write("\n%s%s%s\n" % (now.strftime("%d-%m-%Y %H:%M"),' ', str_data.encode('utf-8')))
     my_file.close()
 
 def write_to_us(request):
