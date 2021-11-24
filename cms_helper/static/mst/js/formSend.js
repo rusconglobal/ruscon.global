@@ -46,12 +46,12 @@ $(document).ready(function () {
 				   $('.js-success').text('Сообщение не отправлено, данные указаны некорректно!');
 				   $('.js-success').addClass('.error-message')
 			   }
-			  // delMessage();
+			  delMessage();
 		   },
 		   error: function(data) {
 			   $('.js-success').text('Сообщение не отправлено, данные указаны некорректно!');
 			   $('.js-success').addClass('.error-message');
-			   // delMessage();
+			   delMessage();
 			   //Materialize.toast('Произошла ошибка при отправке сообщения!', 3000, 'toast-error');
 		   }
 	 	});
