@@ -17,9 +17,7 @@ $(document).ready(function () {
 	}
 	$("#id_anonim").click(function() {
 		var checked_status = this.checked;
-		console.log(checked_status);
 		if (checked_status === true) {
-			console.log(111111);
 			$(".anon-name").find(':input').val('Anonim');
 			$(".anon-name").addClass('blocking');
 			$(".anon-email").find(':input').val('Anonim@anonim.ru');
@@ -45,7 +43,7 @@ $(document).ready(function () {
 	});
 
     $("#send-form").submit(function() {
-	    var url = "/helper/writetous/";
+	    var url = "/helper/writetouspolitics/";
 		const formDataArray = $("#send-form").serializeArray();
 		var data = `${$("#send-form").serialize()}&formPolicy=Y`;
 

@@ -13,3 +13,9 @@ class WriteToUs(Form):
     email = forms.CharField()
     phone = forms.CharField()
     message = forms.CharField()
+
+class WriteToUsPolitics(Form):
+    name = forms.CharField()
+    email = forms.CharField()
+    phone = forms.CharField()
+    message = forms.CharField()

@@ -47,7 +47,6 @@ class CustomContactPlugin(ContactPlugin):
                 'Reply-To': form.cleaned_data['email']
             },)
         email_message.send(fail_silently=False)
-    
     fieldsets = (
         (None, {
                 'fields': ('site_email', 'name_label', 'email_label',  'phone_label', 'town_label', 
