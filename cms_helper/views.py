@@ -34,7 +34,8 @@ def write_to_us_politics(request):
         if form.is_valid():
             subject = u'Анонимная обратная связь с сайта ruscon.global'
             from_email = DEFAULT_FROM_EMAIL
-            to_email = ['info@ruscon.global']
+            email_param = Params.objects.get(key='write_to_us_politics_email')
+            to_email = [x.strip() for x in email_param.value.split(',')]
             lines = []
             lines.append(u"<strong>Через контактную форму сайта Рускон получено обращение</strong>")
             lines.append(u"Имя: <strong>%(name)s</strong>")
