@@ -32,6 +32,7 @@ def write_to_us_politics(request):
             return HttpResponse(json.dumps({'result': result}), content_type="application/json")
         form = WriteToUs(request.POST)
         if form.is_valid():
+            headers = {'Reply-To': form.cleaned_data['email']}
             subject = u'Анонимная обратная связь с сайта ruscon.global'
             from_email = DEFAULT_FROM_EMAIL
             email_param = Params.objects.get(key='write_to_us_politics_email')
@@ -43,8 +44,10 @@ def write_to_us_politics(request):
             lines.append(u"Сообщение:")
             lines.append(u"<blockquote>%(message)s</blockquote>")
             body = u"<br>".join(lines)
-            message = body % form.cleaned_data
-            send_mail(subject, message, from_email, to_email, fail_silently=False)
+            message = body % form.cleaned_data            
+            msg = EmailMessage(subject, message, from_email, to_email, headers=headers)
+            msg.content_subtype = "html"
+            msg.send()
             if request.POST.get('formPolicy'):
                 write_logs(form.cleaned_data)
             result = 1
