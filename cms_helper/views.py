@@ -48,8 +48,8 @@ def write_to_us_politics(request):
             msg = EmailMessage(subject, message, from_email, to_email, headers=headers)
             msg.content_subtype = "html"
             msg.send()
-            if request.POST.get('formPolicy'):
-                write_logs(form.cleaned_data)
+            # if request.POST.get('formPolicy'):
+            #     write_logs(form.cleaned_data)
             result = 1
     return HttpResponse(json.dumps({'result': result}), content_type="application/json")
 
@@ -77,12 +77,11 @@ def write_to_us(request):
             msg = EmailMessage(subject, body, from_email, to_email, headers=headers)
             msg.content_subtype = "html"
             msg.send()
-            if request.POST.get('formPolicy'):
-                write_logs(form.cleaned_data)
+            # if request.POST.get('formPolicy'):
+            #     write_logs(form.cleaned_data)
             result = 1
 
     return HttpResponse(json.dumps({'result': result}), content_type="application/json")
-
 
 
 def search(request):     
