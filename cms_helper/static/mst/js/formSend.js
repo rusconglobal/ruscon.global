@@ -45,8 +45,7 @@ $(document).ready(function () {
     $("#send-form").submit(function() {
 	    var url = "/helper/writetouspolitics/";
 		const formDataArray = $("#send-form").serializeArray();
-		var data = `${$("#send-form").serialize()}&formPolicy=Y`;
-
+		var data = `${$("#send-form").serialize()}&formPolicy=Y&location=${window.location.pathname}`;
 		if (!formDataArray.find(function (el) {
 			return el.name === 'agree';
 		})) {

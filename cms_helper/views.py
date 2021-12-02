@@ -35,7 +35,9 @@ def write_to_us_politics(request):
             headers = {'Reply-To': form.cleaned_data['email']}
             subject = u'Анонимная обратная связь с сайта ruscon.global'
             from_email = DEFAULT_FROM_EMAIL
-            email_param = Params.objects.get(key='write_to_us_politics_email')
+            if ((request.POST['location'] != '/ru/about/ethics/') and (request.POST['location'] != '/en/about/ethics/') and (request.POST['location'] != '/zh-cn/about/ethics/')) :
+                email_param = Params.objects.get(key='write_to_us_politics_email')
+            else: email_param = Params.objects.get(key='write_to_us_ethics_email')
             to_email = [x.strip() for x in email_param.value.split(',')]
             lines = []
             lines.append(u"<strong>Через контактную форму сайта Рускон получено обращение</strong>")
