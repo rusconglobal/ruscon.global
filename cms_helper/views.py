@@ -32,9 +32,11 @@ def write_to_us_politics(request):
             return HttpResponse(json.dumps({'result': result}), content_type="application/json")
         form = WriteToUs(request.POST)
         if form.is_valid():
+            headers = {'Reply-To': form.cleaned_data['email']}
             subject = u'Анонимная обратная связь с сайта ruscon.global'
             from_email = DEFAULT_FROM_EMAIL
-            to_email = ['info@ruscon.global']
+            email_param = Params.objects.get(key='write_to_us_politics_email')
+            to_email = [x.strip() for x in email_param.value.split(',')]
             lines = []
             lines.append(u"<strong>Через контактную форму сайта Рускон получено обращение</strong>")
             lines.append(u"Имя: <strong>%(name)s</strong>")
@@ -42,10 +44,12 @@ def write_to_us_politics(request):
             lines.append(u"Сообщение:")
             lines.append(u"<blockquote>%(message)s</blockquote>")
             body = u"<br>".join(lines)
-            message = body % form.cleaned_data
-            send_mail(subject, message, from_email, to_email, fail_silently=False)
-            if request.POST.get('formPolicy'):
-                write_logs(form.cleaned_data)
+            message = body % form.cleaned_data            
+            msg = EmailMessage(subject, message, from_email, to_email, headers=headers)
+            msg.content_subtype = "html"
+            msg.send()
+            # if request.POST.get('formPolicy'):
+            #     write_logs(form.cleaned_data)
             result = 1
     return HttpResponse(json.dumps({'result': result}), content_type="application/json")
 
@@ -73,12 +77,11 @@ def write_to_us(request):
             msg = EmailMessage(subject, body, from_email, to_email, headers=headers)
             msg.content_subtype = "html"
             msg.send()
-            if request.POST.get('formPolicy'):
-                write_logs(form.cleaned_data)
+            # if request.POST.get('formPolicy'):
+            #     write_logs(form.cleaned_data)
             result = 1
 
     return HttpResponse(json.dumps({'result': result}), content_type="application/json")
-
 
 
 def search(request):     
