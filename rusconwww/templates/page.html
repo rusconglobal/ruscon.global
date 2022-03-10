@@ -90,9 +90,9 @@
 {% endblock body %}
 
 {% block custom_js %}
-	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.7/vendors/jquery.slimscroll.min.js"></script>
+	<script src="{{ STATIC_URL }}mst/js/jquery.min.js"></script>
+	<script src="{{ STATIC_URL }}mst/js/jquery.mask.min.js"></script>
+    <script src="{{ STATIC_URL }}mst/js/jquery.slimscroll.min.js"></script>
     <script src="{{ STATIC_URL }}mst/js/jquery.fullPage.js"></script>
     <script src="{{ STATIC_URL }}mst/js/materialize.min.js?v=1"></script>
     <script src="{{ STATIC_URL }}mst/js/jquery.mCustomScrollbar.concat.min.js"></script>
@@ -119,8 +119,7 @@
 		$('.anonim-label').text('匿名的');
 		$('.id_label').text("我同意根据 2006 年 7 月 27 日联邦法第 9 条第 152-ФЗ“关于个人数据”的规定处理我的个人数据，并接受保密协议的条款 ");
 	}
-  $(document).ready(function(){
-	  // console.log(window.location.pathname);
+  $(document).ready(function(){	  
 	  $(function() {
   		 $('.phone-form').mask('+7(000)000-00-00');
 	  });
