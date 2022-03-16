@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-15 04:15-0500\n"
+"POT-Creation-Date: 2022-03-16 15:34+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,15 +19,11 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-
-msgid "I give my consent to the processing of my personal data in accordance with Article 9 of the Federal Law of July 27, 2006 No. 152-ФЗ «On Personal Data» and accept the terms of the Confidentiality Agreement"
-msgstr "Я даю свое согласие на обработку своих персональных данных в соответствии со статьей 9 Федерального закона от 27.07.2006 г. №152–ФЗ «О персональных данных» и принимаю условия Соглашения о конфиденциальности"
-
 #: templates/base.html:31
 msgid "Your web browser is out of date, please update."
 msgstr "Ваш веб-браузер устарел, пожалуйста обновитесь."
 
-#: templates/base.html:43 templates/base.html.py:113
+#: templates/base.html:43 templates/base.html.py:113 templates/page.html:42
 msgid "Contact us"
 msgstr "Написать нам"
 
@@ -39,82 +35,92 @@ msgstr "Отследить груз"
 msgid "Download presentation"
 msgstr "Скачать презентацию"
 
-#: templates/base.html:120
+#: templates/base.html:120 templates/page.html:50
 msgid "Your name"
 msgstr "Ваше Имя"
 
-#: templates/base.html:126
+#: templates/base.html:126 templates/page.html:61
 msgid "Phone"
 msgstr "Телефон"
 
-
-
-#: templates/base.html:132
+#: templates/base.html:132 templates/page.html:66
 msgid "Message"
 msgstr "Сообщение"
 
-#: templates/base.html:136
+#: templates/base.html:136 templates/page.html:75
 msgid "Send"
 msgstr "Отправить"
 
-#: templates/base.html:152 templates/base.html.py:208 templates/home.html:310
+#: templates/base.html:152 templates/base.html.py:211 templates/home.html:310
 msgid "Moscow"
 msgstr "Москва"
 
-#: templates/base.html:153 templates/base.html.py:209 templates/home.html:372
+#: templates/base.html:153 templates/base.html.py:212 templates/home.html:372
 #: templates/home.html.py:604
 msgid "Novorossiysk"
 msgstr "Новороссийск"
 
-#: templates/base.html:154 templates/base.html.py:210
+#: templates/base.html:154 templates/base.html.py:213
 msgid "St. Petersburg"
 msgstr "Санкт-Петербург"
 
-#: templates/base.html:155 templates/base.html.py:211
+#: templates/base.html:155 templates/base.html.py:214
 msgid "Almaty"
 msgstr "Алматы"
 
-#: templates/base.html:156 templates/base.html.py:212
+#: templates/base.html:156 templates/base.html.py:215
 msgid "Shanghai"
 msgstr "Шанхай"
 
-#: templates/base.html:157 templates/base.html.py:213
+#: templates/base.html:157 templates/base.html.py:216
 msgid "Nakhodka"
 msgstr "Находка"
 
-#: templates/base.html:158 templates/base.html.py:214
+#: templates/base.html:158 templates/base.html.py:217
 msgid "Ekaterinburg"
 msgstr "Екатеринбург"
 
-#: templates/base.html:159 templates/base.html.py:215
+#: templates/base.html:159 templates/base.html.py:218
 msgid "Novosibirsk"
 msgstr "Новороссийск"
 
-#: templates/base.html:160 templates/base.html.py:216
+#: templates/base.html:160 templates/base.html.py:219
 msgid "Irkutsk"
 msgstr "Иркутск"
 
-#: templates/base.html:161 templates/base.html.py:217
+#: templates/base.html:161 templates/base.html.py:220
 msgid "Krasnoyarsk"
 msgstr "Красноярск"
 
-#: templates/base.html:162 templates/base.html.py:218
+#: templates/base.html:162 templates/base.html.py:221
 msgid "Rotterdam"
 msgstr "Роттердам"
 
-#: templates/base.html:174
+#: templates/base.html:163 templates/base.html.py:222
+msgid "Samara"
+msgstr "Самара"
+
+#: templates/base.html:164 templates/base.html.py:223
+msgid "Vladivostok"
+msgstr "Владивосток"
+
+#: templates/base.html:165 templates/base.html.py:224
+msgid "Omsk"
+msgstr "Омск"
+
+#: templates/base.html:177
 msgid "Write to us"
 msgstr "Написать нам"
 
-#: templates/base.html:199
+#: templates/base.html:202
 msgid "Search results"
 msgstr "Результаты поиска"
 
-#: templates/base.html:200
+#: templates/base.html:203
 msgid "On your query results are not found"
 msgstr "По вашему запросу результатов не обнаружено"
 
-#: templates/base.html:203
+#: templates/base.html:206
 msgid "Close"
 msgstr "Закрыть"
 
@@ -549,6 +555,15 @@ msgstr ""
 #, python-format
 msgid "Author archives: %(author)s"
 msgstr ""
+
+#~ msgid ""
+#~ "I give my consent to the processing of my personal data in accordance "
+#~ "with Article 9 of the Federal Law of July 27, 2006 No. 152-ФЗ «On "
+#~ "Personal Data» and accept the terms of the Confidentiality Agreement"
+#~ msgstr ""
+#~ "Я даю свое согласие на обработку своих персональных данных в соответствии "
+#~ "со статьей 9 Федерального закона от 27.07.2006 г. №152–ФЗ «О персональных "
+#~ "данных» и принимаю условия Соглашения о конфиденциальности"
 
 #~ msgid "2nd railway loop, Kirillovka, Novorossiysk, 353900, Russia"
 #~ msgstr "Россия, 353900, Новороссийск, п. Кирилловка, 2-я жд петля"
