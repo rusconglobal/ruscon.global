@@ -82,7 +82,7 @@ msgstr "Екатеринбург"
 
 #: templates/base.html:159 templates/base.html.py:218
 msgid "Novosibirsk"
-msgstr "Новороссийск"
+msgstr "Новосибирск"
 
 #: templates/base.html:160 templates/base.html.py:219
 msgid "Irkutsk"
