@@ -170,7 +170,13 @@ def instagram(context, url, link_text='Instagram'):
     return context    
 
 @register.inclusion_tag('django_social_share/templatetags/post_to_vk.html', takes_context=True)
-def instagram(context, url, link_text='vk'):    
+def vk(context, url, link_text='vk'):    
     context['vk_url'] = url
     context['vk_text'] = link_text
+    return context    
+
+@register.inclusion_tag('django_social_share/templatetags/post_to_telegram.html', takes_context=True)
+def telegram(context, url, link_text='telegram'):    
+    context['telegram_url'] = url
+    context['telegram_text'] = link_text
     return context    
