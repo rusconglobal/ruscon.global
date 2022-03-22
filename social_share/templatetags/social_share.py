@@ -168,3 +168,9 @@ def instagram(context, url, link_text='Instagram'):
     context['instagram_url'] = url
     context['instagram_text'] = link_text
     return context    
+
+@register.inclusion_tag('django_social_share/templatetags/post_to_vk.html', takes_context=True)
+def instagram(context, url, link_text='vk'):    
+    context['vk_url'] = url
+    context['vk_text'] = link_text
+    return context    
