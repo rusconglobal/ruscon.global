@@ -32,7 +32,7 @@ $(document).ready(function () {
                                                     </div>\
                                                 </div>\
                                             </div>\
-                                            <div class="offices-leadership">\
+                                            <div style="display: none" class="offices-leadership">\
                                                 <div class="offices-table-title">\
                                                     #LEADER_TITLE#\
                                                 </div>\
@@ -92,7 +92,7 @@ $(document).ready(function () {
                                                     </div>\
                                                 </div>\
                                             </div>\
-                                            <div class="offices-leadership">\
+                                            <div style="display: none" class="offices-leadership">\
                                                 <div class="offices-table-title">\
                                                     #LEADER_TITLE#\
                                                 </div>\
@@ -175,7 +175,7 @@ $(document).ready(function () {
                                         <a class="modal-trigger" href="#google-map1">Показать на карте</a>\
                                     </div>\
                                     <div class="city-block">\
-                                        <div class="city-desc">\
+                                        <div style="display: none" class="city-desc">\
                                             <div class="city-desc-left">\
                                                 #LEADER_TITLE#\
                                             </div>\

@@ -17,8 +17,8 @@ def get_offices(request):
             
             office_dict['city'] = office.town.name
             office_dict['country'] = office.town.country.name
-            office_dict['leader'] = office.head
-            office_dict['leader_title'] = office.office_type.head_title_template
+            office_dict['leader'] = None # office.head
+            office_dict['leader_title'] = None # office.office_type.head_title_template
             
             office_dict['phone'] = "%s" % office.prime_phone
             office_dict['fax'] = "%s" % office.prime_fax
